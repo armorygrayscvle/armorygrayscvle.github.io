@@ -1,0 +1,80 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  background: #0e0e0e;
+  color: #eaeaea;
+  font-family: "Times New Roman", serif;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10vw;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* Product */
+.product {
+  padding: 15vh 10vw;
+}
+
+.product h2 {
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.price {
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+/* Button */
+button {
+  background: transparent;
+  border: 1px solid #eaeaea;
+  color: #eaeaea;
+  padding: 14px 36px;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #eaeaea;
+  color: #0e0e0e;
+}
+
+/* Footer */
+footer {
+  padding: 10vh 0 5vh;
+  font-size: 0.7rem;
+  opacity: 0.4;
+}
