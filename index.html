@@ -2,51 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GRAYSCVLE</title>
+  <title>armory grayscvle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Snipcart CSS -->
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+  <!-- Signature serif font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
 
-  <!-- Site styles -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* BASE */
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #fafafa;
+      color: #000;
+    }
+
+    /* SIGNATURE HOMEPAGE */
+    .home {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+
+      font-size: clamp(48px, 8vw, 120px);
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+
+      user-select: none;
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <h1>OWN LESS. MEAN MORE.</h1>
-    <p>Limited handmade objects guided by restraint and craft.</p>
-  </header>
-
-  <main class="product">
-    <h2>GRAYSCVLE Hoodie</h2>
-    <p class="price">€250</p>
-    <p class="description">
-      Handmade limited-run hoodie. Designed to last. Produced in restraint.
-    </p>
-
-    <button
-      class="snipcart-add-item"
-      data-item-id="grayscale-hoodie-01"
-      data-item-name="GRAYSCVLE Hoodie"
-      data-item-price="250.00"
-      data-item-url="/"
-      data-item-description="Limited handmade hoodie">
-      Add to cart
-    </button>
-  </main>
-
-  <footer>
-    <p>© GRAYSCVLE</p>
-  </footer>
-
-  <!-- Snipcart -->
-  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
-  <div
-    hidden
-    id="snipcart"
-    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBlLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx">
+  <div class="home">
+    armory grayscvle
   </div>
 
 </body>
