@@ -1,87 +1,24 @@
-/* Reset */
-* {
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap');
+
+html, body {
   margin: 0;
   padding: 0;
+  background: #fafafa;
+  color: #000;
+  height: 100%;
 }
 
-/* Base */
-body {
-  background: #0d0d0d;
-  color: #f2f2f2;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: center;
-  line-height: 1.5;
-}
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/* Header */
-.site-header {
-  padding: 90px 20px 50px;
-}
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
 
-.site-header h1 {
-  font-size: 2.4rem;
-  letter-spacing: 0.25em;
-  font-weight: 500;
-  margin-bottom: 14px;
-}
-
-.site-header p {
-  font-size: 0.85rem;
-  opacity: 0.6;
-}
-
-/* Product section */
-.product {
-  padding: 40px 20px 60px;
-}
-
-.product h2 {
-  font-size: 1.2rem;
-  letter-spacing: 0.15em;
-  font-weight: 400;
-  margin-bottom: 12px;
-}
-
-.price {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-}
-
-.description {
-  font-size: 0.85rem;
-  opacity: 0.65;
-  max-width: 420px;
-  margin: 0 auto 34px;
-}
-
-/* Button */
-button {
-  background: transparent;
-  color: #f2f2f2;
-  border: 1px solid #f2f2f2;
-  padding: 12px 34px;
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.35s ease;
-}
-
-button:hover {
-  background: #f2f2f2;
-  color: #0d0d0d;
-}
-
-/* Footer */
-footer {
-  padding: 60px 20px 40px;
-  font-size: 0.7rem;
-  opacity: 0.4;
-}
-
-/* Snipcart minimal overrides */
-.snipcart-modal,
-.snipcart-cart-header {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(48px, 8vw, 120px);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
 }
