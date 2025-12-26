@@ -3,44 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <title>GRAYSCVLE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Snipcart -->
-  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
-  <link href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" rel="stylesheet">
+  <!-- Snipcart CSS -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
 
-  <!-- Styles -->
+  <!-- Site styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
+  <header class="site-header">
     <h1>OWN LESS. MEAN MORE.</h1>
     <p>Limited handmade objects guided by restraint and craft.</p>
   </header>
 
-  <section class="product">
-    <h2>HOODIE I</h2>
-    <p class="meta">Handmade · Limited run</p>
-    <p class="price">€420</p>
+  <main class="product">
+    <h2>GRAYSCVLE Hoodie</h2>
+    <p class="price">€250</p>
+    <p class="description">
+      Handmade limited-run hoodie. Designed to last. Produced in restraint.
+    </p>
 
     <button
       class="snipcart-add-item"
-      data-item-id="hoodie-01"
-      data-item-name="HOODIE I"
-      data-item-price="420"
+      data-item-id="grayscale-hoodie-01"
+      data-item-name="GRAYSCVLE Hoodie"
+      data-item-price="250.00"
       data-item-url="/"
-      data-item-description="Handmade hoodie. Limited run.">
+      data-item-description="Limited handmade hoodie">
       Add to cart
     </button>
-  </section>
+  </main>
 
   <footer>
-    © 2025 GRAYSCVLE
+    <p>© GRAYSCVLE</p>
   </footer>
 
-  <!-- Snipcart root -->
-  <div hidden id="snipcart" data-api-key="PASTE_YOUR_SNIPCART_KEY_HERE"></div>
+  <!-- Snipcart -->
+  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+  <div
+    hidden
+    id="snipcart"
+    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBlLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx">
+  </div>
 
 </body>
 </html>
