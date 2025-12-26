@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>armory grayscvle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Didot&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Snipcart -->
+  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+  <link href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" rel="stylesheet" />
 
-    html, body {
-      width: 100%;
-      height: 100%;
-      background: #fafafa;
-    }
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .signature {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(48px, 8vw, 120px);
-      letter-spacing: 0.08em;
-      text-transform: lowercase;
-      color: #000;
-    }
-  </style>
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="signature">armory grayscvle</div>
+
+  <!-- Snipcart container -->
+  <div hidden id="snipcart" data-api-key="PASTE_YOUR_PUBLIC_TEST_API_KEY_HERE"></div>
+
+  <main class="container">
+
+    <header class="hero">
+      <h1>OWN LESS. MEAN MORE.</h1>
+      <p>Limited handmade objects guided by restraint and craft.</p>
+    </header>
+
+    <section class="product">
+      <h2>GRAYS CVLE Hoodie</h2>
+      <span class="price">€250</span>
+
+      <p class="description">
+        Handmade limited-run hoodie. Designed to last. Produced in restraint.
+      </p>
+
+      <button
+        class="snipcart-add-item buy"
+        data-item-id="hoodie-001"
+        data-item-name="GRAYS CVLE Hoodie"
+        data-item-price="250"
+        data-item-currency="EUR"
+        data-item-url="/"
+        data-item-description="Handmade limited-run hoodie">
+        Add to cart
+      </button>
+    </section>
+
+    <footer>
+      © GRAYSCVLE
+    </footer>
+
+  </main>
+
 </body>
 </html>
