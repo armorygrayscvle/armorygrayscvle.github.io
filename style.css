@@ -1,80 +1,87 @@
 /* Reset */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /* Base */
 body {
-  background: #0e0e0e;
-  color: #eaeaea;
-  font-family: "Times New Roman", serif;
+  background: #0d0d0d;
+  color: #f2f2f2;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* Header */
-header {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10vw;
+.site-header {
+  padding: 90px 20px 50px;
 }
 
-header h1 {
-  font-size: 3rem;
-  letter-spacing: 0.15em;
-  margin-bottom: 1rem;
+.site-header h1 {
+  font-size: 2.4rem;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  margin-bottom: 14px;
 }
 
-header p {
-  font-size: 0.9rem;
+.site-header p {
+  font-size: 0.85rem;
   opacity: 0.6;
 }
 
-/* Product */
+/* Product section */
 .product {
-  padding: 15vh 10vw;
+  padding: 40px 20px 60px;
 }
 
 .product h2 {
-  font-size: 1.4rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
-}
-
-.meta {
-  font-size: 0.8rem;
-  opacity: 0.5;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  margin-bottom: 12px;
 }
 
 .price {
-  margin: 2rem 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  max-width: 420px;
+  margin: 0 auto 34px;
 }
 
 /* Button */
 button {
   background: transparent;
-  border: 1px solid #eaeaea;
-  color: #eaeaea;
-  padding: 14px 36px;
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  padding: 12px 34px;
   font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 button:hover {
-  background: #eaeaea;
-  color: #0e0e0e;
+  background: #f2f2f2;
+  color: #0d0d0d;
 }
 
 /* Footer */
 footer {
-  padding: 10vh 0 5vh;
+  padding: 60px 20px 40px;
   font-size: 0.7rem;
   opacity: 0.4;
+}
+
+/* Snipcart minimal overrides */
+.snipcart-modal,
+.snipcart-cart-header {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
