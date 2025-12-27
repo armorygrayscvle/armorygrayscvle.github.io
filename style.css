@@ -26,8 +26,8 @@ html, body {
 }
 
 .loader-text {
-  font-size: 38px;          /* BIGGER NAME */
-  letter-spacing: 0.4em;
+  font-size: 30px;          /* BIGGER NAME */
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   opacity: 0.9;
 }
