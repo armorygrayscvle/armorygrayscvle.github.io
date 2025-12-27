@@ -50,9 +50,11 @@ html, body {
 
 .banner img {
   width: 100vw;
-  height: 70vh;
-  object-fit: cover;
+  height: auto;
   display: block;
+}
+
+
 }
 
 /* PRIVATE ACCESS — BELOW BANNER */
