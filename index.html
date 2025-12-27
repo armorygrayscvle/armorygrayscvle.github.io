@@ -38,7 +38,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 48px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: lowercase;
     }
 
@@ -48,7 +48,7 @@
       transition: opacity 1.2s ease;
     }
 
-    /* MAIN CONTENT */
+    /* MAIN PAGE */
     .page {
       opacity: 0;
       transition: opacity 1.2s ease;
@@ -61,37 +61,33 @@
     /* LAYOUT */
     .container {
       max-width: 880px;
-      padding: 140px 60px 200px;
+      padding: 140px 60px 220px;
     }
 
-    /* HOMEPAGE TITLE */
+    /* BRAND */
     .brand {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 64px;
       letter-spacing: 0.1em;
       text-transform: lowercase;
-      margin-bottom: 120px;
+      margin-bottom: 140px;
     }
 
     /* TEXT */
     p {
       max-width: 420px;
       line-height: 1.9;
-      margin-bottom: 80px;
-      opacity: 0.75;
+      margin-bottom: 120px;
+      opacity: 0.7;
     }
 
-    /* IMAGES */
-    .fabric {
-      margin-bottom: 140px;
-    }
-
+    /* FABRIC IMAGES */
     .fabric img {
       width: 100%;
       max-width: 420px;
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 120px;
       filter: grayscale(100%);
     }
 
@@ -100,6 +96,17 @@
       font-size: 10px;
       opacity: 0.4;
       margin-top: 200px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .container {
+        padding: 100px 30px 180px;
+      }
+
+      .brand {
+        font-size: 42px;
+      }
     }
   </style>
 </head>
@@ -111,7 +118,7 @@
     armory grayscvle
   </div>
 
-  <!-- MAIN PAGE -->
+  <!-- MAIN CONTENT -->
   <div class="page">
     <div class="container">
 
@@ -124,10 +131,13 @@
         Objects guided by restraint, form, and material integrity.
       </p>
 
-      <!-- FABRIC IMAGE BLOCK -->
       <div class="fabric">
-        <img src="fabric-01.jpg" alt="fabric detail">
-        <img src="fabric-02.jpg" alt="fabric detail">
+        <img src="grayscvlepic1.jpg" alt="fabric detail">
+        <img src="grayscvlepic2.jpg" alt="fabric detail">
+        <img src="grayscvlepic3.jpg" alt="fabric detail">
+        <img src="grayscvlepic4.jpg" alt="fabric detail">
+        <img src="grayscvlepic5.jpg" alt="fabric detail">
+        <img src="grayscvlepic6.jpg" alt="fabric detail">
       </div>
 
       <footer>
