@@ -16,6 +16,7 @@ window.addEventListener("load", () => {
 
 /* FORMSPREE (NO REDIRECT, CLEAN CONFIRMATION) */
 const form = document.getElementById("signup-form");
+const discountCode = "ARMORY10"; // 10% off code shown after successful signup
 
 if (form) {
   form.addEventListener("submit", async (e) => {
@@ -32,7 +33,28 @@ if (form) {
     });
 
     if (response.ok) {
-      form.innerHTML = "<p style='opacity:.6'>Thank you.</p>";
+      form.innerHTML = `
+        <div class="discount-success">
+          <p>You're in. Use <span class="discount-code">${discountCode}</span> for 10% off.</p>
+          <button type="button" id="copy-code-btn">Copy code</button>
+        </div>
+      `;
+
+      const copyBtn = document.getElementById("copy-code-btn");
+      copyBtn?.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(discountCode);
+          copyBtn.textContent = "Copied!";
+          setTimeout(() => {
+            copyBtn.textContent = "Copy code";
+          }, 2000);
+        } catch (err) {
+          copyBtn.textContent = "Copy failed";
+          setTimeout(() => {
+            copyBtn.textContent = "Copy code";
+          }, 2000);
+        }
+      });
     } else {
       form.innerHTML = "<p style='opacity:.6'>Error. Try again.</p>";
     }

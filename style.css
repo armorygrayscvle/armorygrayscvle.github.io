@@ -97,6 +97,43 @@ body {
   cursor: pointer;
 }
 
+.discount-success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.discount-success p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.discount-code {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 6px 10px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+#copy-code-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 14px;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#copy-code-btn:hover {
+  background: #e5e5e5;
+  color: #000;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
   body {
