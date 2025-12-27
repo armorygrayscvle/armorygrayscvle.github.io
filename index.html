@@ -6,80 +6,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <img src="signature.png" alt="ARMORY GRAYSCVLE" />
-</div>
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-text">ARMORY GRAYSCVLE</div>
+  </div>
 
-<!-- SITE -->
-<div id="site">
+  <!-- SITE -->
+  <div id="site">
 
-  <!-- TOP LEFT BRAND / ABOUT -->
-  <header class="top-bar">
-    <a href="#" class="brand-link">ARMORY GRAYSCVLE</a>
-  </header>
+    <!-- TOP LEFT BRAND / ABOUT -->
+    <header class="top-bar">
+      <a href="#about" class="brand-link">ARMORY GRAYSCVLE</a>
+    </header>
 
-  <!-- BANNER -->
-  <section class="banner">
-    <img src="grayscvlepic4.jpg" alt="Banner image" />
-  </section>
-
-  <!-- CONTENT -->
-  <main class="content">
-
-    <!-- PRODUCT -->
-    <section class="product">
-      <h2>GRAYSCVLE HOODIE</h2>
-      <p class="price">€250</p>
-      <p class="description">
-        Handmade limited-run hoodie.<br>
-        Designed to last.<br>
-        Produced in restraint.
-      </p>
-
-      <!-- SNIPCART BUTTON (keep for later) -->
-      <button class="shop-btn">
-        SHOP NOW
-      </button>
+    <!-- BANNER -->
+    <section class="banner">
+      <img src="grayscvlepic4.jpg" alt="GRAYSCALE banner">
     </section>
 
-  </main>
+    <!-- PRIVATE ACCESS -->
+    <aside class="private-access">
+      <p class="private-title">PRIVATE ACCESS</p>
+      <p class="private-sub">Private discount & releases</p>
 
-  <!-- SIGNUP SIDE -->
-  <aside class="signup">
-    <p class="signup-title">PRIVATE ACCESS</p>
-    <p class="signup-text">Private discount & releases</p>
+      <form action="https://formspree.io/f/mpqzdwko" method="POST">
+        <input type="email" name="email" placeholder="Email address" required>
+        <button type="submit">REQUEST ACCESS</button>
+      </form>
+    </aside>
 
-    <form action="https://formspree.io/f/mpqzdwko" method="POST">
-      <input type="email" name="email" placeholder="Email address" required />
-      <button type="submit">REQUEST ACCESS</button>
-    </form>
-  </aside>
+    <!-- PRODUCTS -->
+    <main class="products">
 
-  <!-- FOOTER BRAND -->
-  <footer class="footer">
-    ARMORY GRAYSCVLE
-  </footer>
+      <section class="product">
+        <h2>GRAYSCALE HOODIE</h2>
+        <p class="price">€250</p>
+        <p class="desc">
+          Handmade limited-run hoodie.<br>
+          Designed to last.
+        </p>
+        <button class="shop-btn">SHOP NOW</button>
+      </section>
 
-</div>
+      <!-- Add more products later by duplicating this block -->
 
-<!-- LOADER SCRIPT -->
-<script>
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("loader").classList.add("hide");
-      document.getElementById("site").classList.add("show");
-    }, 1600);
-  });
-</script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      ARMORY GRAYSCVLE
+    </footer>
+
+  </div>
+
+  <!-- LOADER SCRIPT -->
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").style.opacity = "0";
+        document.getElementById("loader").style.pointerEvents = "none";
+      }, 1200);
+    });
+  </script>
 
 </body>
 </html>
