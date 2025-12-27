@@ -12,7 +12,7 @@ body {
   overflow: hidden;
 }
 
-/* LOADER */
+/* LOADING SCREEN */
 #loader {
   position: fixed;
   inset: 0;
@@ -37,7 +37,7 @@ body {
   overflow-x: hidden;
 }
 
-/* TITLE */
+/* BRAND TITLE */
 .main-title {
   text-align: center;
   padding-top: 40px;
@@ -48,7 +48,7 @@ body {
 
 /* BANNER */
 .banner {
-  margin-top: 80px; /* breathing space */
+  margin-top: 80px;
   width: 100vw;
   height: 60vh;
   background-image: url("grayscvlepic4.jpg");
@@ -57,7 +57,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* SIGNUP */
+/* SIGN UP */
 .signup {
   max-width: 420px;
   margin-left: auto;
