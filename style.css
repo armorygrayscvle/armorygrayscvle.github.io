@@ -1,3 +1,29 @@
+/* ===== LOADING SCREEN ===== */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 1.8s ease-in-out forwards;
+  animation-delay: 2.4s; /* how long signature stays */
+}
+
+#loader img {
+  max-width: 70vw;
+  max-height: 25vh;
+  opacity: 0.95;
+}
+
+/* Fade animation */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 /* RESET */
 * {
   margin: 0;
