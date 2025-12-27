@@ -26,8 +26,8 @@ html, body {
 }
 
 .loader-text {
-  font-size: 52px;
-  letter-spacing: 0.4em;
+  font-size: 30px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
 }
 
