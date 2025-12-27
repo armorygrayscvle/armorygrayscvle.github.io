@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Armory Grayscvle</title>
 
-  <!-- Elegant minimal font -->
+  <!-- Minimal elegant font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -31,8 +31,30 @@
     <!-- BANNER -->
     <section class="banner"></section>
 
-    <!-- SIGNUP -->
+    <!-- SIGN UP -->
     <section class="signup">
       <h2>SIGN UP FOR DISCOUNT</h2>
 
-      <form action="https://formspr
+      <form
+        id="signup-form"
+        action="https://formspree.io/f/mpqzdwko"
+        method="POST"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          required
+        >
+
+        <button type="submit">
+          REQUEST ACCESS
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
