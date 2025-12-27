@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ARMORY GRAYSCVLE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Elegant serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Snipcart -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-text">ARMORY GRAYSCVLE</div>
+  </div>
+
+  <!-- SNIPCART -->
+  <div hidden id="snipcart" data-api-key="PASTE_YOUR_PUBLIC_TEST_API_KEY_HERE"></div>
+
+  <!-- TOP LEFT LOGO (ABOUT TRIGGER) -->
+  <div class="about-trigger" onclick="toggleAbout()">
+    ARMORY<br>GRAYSCVLE
+  </div>
+
+  <!-- RIGHT SIDE SIGNUP -->
+  <aside class="signup">
+    <span>SIGN UP</span>
+    <span>PRIVATE DISCOUNT</span>
+  </aside>
+
+  <!-- ABOUT OVERLAY -->
+  <div id="about">
+    <div class="about-content">
+      <p>
+        GRAYSCVLE IS A STUDY IN RESTRAINT.<br><br>
+        OBJECTS MADE IN LIMITED RUNS,<br>
+        GUIDED BY FORM, MATERIAL,<br>
+        AND THE QUIET POWER OF LESS.
+      </p>
+      <span class="close" onclick="toggleAbout()">CLOSE</span>
+    </div>
+  </div>
+
+  <!-- MAIN SITE -->
+  <main id="site">
+
+    <!-- TOP BRAND -->
+    <header class="brand-top">
+      ARMORY GRAYSCVLE
+    </header>
+
+    <!-- HERO IMAGE (ORIGINAL COLOR) -->
+    <section class="hero">
+      <img src="grayscvlepic4.jpg" alt="FABRIC DETAIL">
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products">
+
+      <!-- PRODUCT 1 -->
+      <div class="product">
+        <h2>GRAYSCVLE HOODIE</h2>
+        <p>HANDMADE LIMITED-RUN HOODIE.</p>
+        <span class="price">€250</span>
+
+        <button
+          class="snipcart-add-item"
+          data-item-id="hoodie-001"
+          data-item-name="GRAYSCVLE HOODIE"
+          data-item-price="250"
+          data-item-currency="EUR"
+          data-item-url="/"
+          data-item-description="LIMITED HANDMADE HOODIE">
+          SHOP NOW
+        </button>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product">
+        <h2>GRAYSCVLE T-SHIRT</h2>
+        <p>HEAVY COTTON. LIMITED.</p>
+        <span class="price">€90</span>
+
+        <button
+          class="snipcart-add-item"
+          data-item-id="tee-001"
+          data-item-name="GRAYSCVLE T-SHIRT"
+          data-item-price="90"
+          data-item-currency="EUR"
+          data-item-url="/"
+          data-item-description="LIMITED T-SHIRT">
+          SHOP NOW
+        </button>
+      </div>
+
+    </section>
+
+    <!-- BOTTOM BRAND -->
+    <footer class="brand-bottom">
+      ARMORY GRAYSCVLE
+    </footer>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").classList.add("hide");
+        document.getElementById("site").classList.add("show");
+      }, 1200);
+    });
+
+    function toggleAbout() {
+      document.getElementById("about").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
