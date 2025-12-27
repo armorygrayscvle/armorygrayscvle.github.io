@@ -26,7 +26,7 @@ html, body {
 }
 
 .loader-text {
-  font-size: 48px;          /* BIGGER NAME */
+  font-size: 38px;          /* BIGGER NAME */
   letter-spacing: 0.4em;
   text-transform: uppercase;
   opacity: 0.9;
