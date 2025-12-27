@@ -5,158 +5,114 @@
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  background: black;
-  color: white;
-  font-family: 'Cormorant Garamond', serif;
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
 /* LOADER */
 #loader {
   position: fixed;
   inset: 0;
-  background: black;
+  background: #000;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 9999;
+  justify-content: center;
+  z-index: 999;
   transition: opacity 1.2s ease;
 }
 
-.loader-text {
+#loader h1 {
   font-size: 30px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-weight: 300;
 }
 
-/* TOP BAR */
-.top-bar {
-  position: absolute;
-  top: 32px;
-  left: 40px;
-  font-size: 13px;
-  letter-spacing: 0.3em;
-  opacity: 0.7;
-  z-index: 10;
+/* MAIN CONTENT */
+#main-content {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  overflow-x: hidden;
 }
 
-/* FULL BLEED BANNER */
+/* TITLE */
+.main-title {
+  text-align: center;
+  padding-top: 40px;
+  font-size: 30px;
+  letter-spacing: 0.35em;
+  font-weight: 300;
+}
+
+/* BANNER */
 .banner {
+  margin-top: 80px; /* breathing space */
   width: 100vw;
-  margin-top: 120px;
+  height: 60vh;
+  background-image: url("grayscvlepic4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.banner img {
-  width: 100vw;
-  height: auto;
-  display: block;
+/* SIGNUP */
+.signup {
+  max-width: 420px;
+  margin-left: auto;
+  padding: 120px 80px 160px 0;
+  text-align: left;
 }
 
-
-}
-
-/* PRIVATE ACCESS — BELOW BANNER */
-.private-access {
-  margin: 90px auto 0;
-  max-width: 320px;
-  text-align: center;
-}
-
-.private-title {
-  font-size: 12px;
+.signup h2 {
+  font-size: 0.85rem;
   letter-spacing: 0.3em;
-  margin-bottom: 6px;
-}
-
-.private-sub {
-  font-size: 12px;
-  opacity: 0.6;
-  margin-bottom: 14px;
-}
-
-.private-access input {
-  width: 100%;
-  background: none;
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.4);
-  color: white;
-  padding: 6px 0;
-  font-family: inherit;
-}
-
-.private-access button {
-  margin-top: 18px;
-  background: none;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: white;
-  padding: 9px 18px;
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  cursor: pointer;
-}
-
-/* PRODUCTS */
-.products {
-  margin: 160px auto;
-  max-width: 800px;
-  padding: 0 40px;
-}
-
-.product {
-  margin-bottom: 180px;
-}
-
-.product h2 {
-  font-size: 28px;
-  letter-spacing: 0.2em;
-  margin-bottom: 12px;
-}
-
-.price {
-  font-size: 16px;
-  opacity: 0.7;
-  margin-bottom: 16px;
-}
-
-.desc {
-  font-size: 14px;
-  opacity: 0.6;
-  line-height: 1.6;
   margin-bottom: 24px;
+  font-weight: 400;
 }
 
-.shop-btn {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: white;
-  padding: 10px 22px;
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  cursor: pointer;
+.signup input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  padding: 12px 0;
+  color: #fff;
+  margin-bottom: 28px;
+  font-size: 14px;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
+.signup input::placeholder {
+  color: #777;
+}
+
+.signup button {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 12px 24px;
+  color: #fff;
+  letter-spacing: 0.2em;
   font-size: 12px;
-  letter-spacing: 0.3em;
-  opacity: 0.4;
-  margin-bottom: 60px;
+  cursor: pointer;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .banner img {
-    height: 55vh;
+  body {
+    overflow: auto;
   }
 
-  .products {
-    padding: 0 20px;
+  .banner {
+    height: 50vh;
   }
 
-  .loader-text {
-    font-size: 28px;
+  .signup {
+    padding: 80px 40px;
+    margin-left: 0;
+  }
+
+  .main-title {
+    font-size: 24px;
   }
 }
