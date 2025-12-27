@@ -96,15 +96,17 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero img {
-    height: 60vh;
-  }
-
-  .loader-text {
-    font-size: 1.6rem;
-  }
 
   .signup {
-    display: none;
+    display: block;
+    position: fixed;
+    bottom: 24px;
+    right: 50%;
+    transform: translateX(50%);
+    writing-mode: horizontal-tb;
+    font-size: 0.6rem;
+    opacity: 0.6;
+    letter-spacing: 0.25em;
   }
+
 }
