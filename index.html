@@ -5,157 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Armory Grayscvle</title>
 
-  <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Elegant minimal font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-    body {
-      background: #000;
-      color: #fff;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
-    /* HEADER TITLE */
-    .site-header {
-      position: absolute;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      text-align: center;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .site-title {
-      font-size: 30px;
-      letter-spacing: 0.35em;
-      font-weight: 300;
-    }
-
-    /* HERO / BANNER */
-    .banner {
-      width: 100vw;
-      height: 60vh;
-      background: url("banner.jpg") center / cover no-repeat;
-    }
-
-    /* OPENING TEXT (if you want one) */
-    .opening {
-      padding: 120px 40px;
-      text-align: center;
-    }
-
-    .opening-text {
-      font-size: 30px;
-      letter-spacing: 0.08em;
-      line-height: 1.3;
-      opacity: 0.9;
-    }
-
-    /* PRODUCTS PLACEHOLDER */
-    .products {
-      padding: 160px 40px;
-      min-height: 60vh;
-    }
-
-    /* SIGNUP */
-    .signup {
-      max-width: 420px;
-      margin-left: auto;
-      padding: 120px 80px 160px 0;
-      text-align: left;
-    }
-
-    .signup h2 {
-      font-size: 0.9rem;
-      letter-spacing: 0.3em;
-      margin-bottom: 12px;
-    }
-
-    .signup p {
-      font-size: 0.8rem;
-      opacity: 0.7;
-      margin-bottom: 32px;
-    }
-
-    .signup input {
-      width: 100%;
-      padding: 12px 0;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #666;
-      color: white;
-      margin-bottom: 32px;
-      font-size: 14px;
-    }
-
-    .signup input::placeholder {
-      color: #777;
-    }
-
-    .signup button {
-      background: transparent;
-      border: 1px solid white;
-      padding: 12px 24px;
-      color: white;
-      letter-spacing: 0.2em;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .site-title {
-        font-size: 24px;
-      }
-
-      .opening-text {
-        font-size: 24px;
-      }
-
-      .signup {
-        padding: 80px 40px;
-        margin-left: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- TITLE -->
-  <header class="site-header">
-    <h1 class="site-title">ARMORY GRAYSCVLE</h1>
-  </header>
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <h1>ARMORY GRAYSCVLE</h1>
+  </div>
 
-  <!-- BANNER -->
-  <section class="banner"></section>
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
 
-  <!-- OPENING TEXT (optional) -->
-  <section class="opening">
-    <p class="opening-text">OWN LESS. MEAN MORE.</p>
-  </section>
+    <!-- BRAND TITLE -->
+    <header class="main-title">
+      ARMORY GRAYSCVLE
+    </header>
 
-  <!-- PRODUCTS -->
-  <section class="products">
-    <!-- products will live here -->
-  </section>
+    <!-- BANNER -->
+    <section class="banner"></section>
 
-  <!-- SIGNUP -->
-  <section class="signup">
-    <h2>PRIVATE ACCESS</h2>
-    <p>Private discount & releases</p>
+    <!-- SIGNUP -->
+    <section class="signup">
+      <h2>SIGN UP FOR DISCOUNT</h2>
 
-    <form action="https://formspree.io/f/mpqzdwko" method="POST">
-      <input type="email" name="email" placeholder="Email address" required />
-      <button type="submit">REQUEST ACCESS</button>
-    </form>
-  </section>
-
-</body>
-</html>
+      <form action="https://formspr
