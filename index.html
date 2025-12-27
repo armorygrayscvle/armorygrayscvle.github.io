@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ARMORY GRAYSCVLE</title>
+
+  <!-- CORMORANT GARAMOND (YOHJI-LIKE SERIF) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-text">
+      ARMORY GRAYSCVLE <span class="inc">INC.</span>
+    </div>
+  </div>
+
+  <!-- MAIN SITE -->
+  <main id="site">
+
+    <!-- TITLE -->
+    <section class="hero-title">
+      ARMORY GRAYSCVLE
+    </section>
+
+    <!-- TOP BANNER IMAGE -->
+    <section class="hero-image">
+      <img src="grayscvlepic4.jpg" alt="GRAYSCALE FABRIC DETAIL">
+    </section>
+
+    <!-- IMAGE GRID -->
+    <section class="gallery">
+      <img src="grayscvlepic1.jpg">
+      <img src="grayscvlepic2.jpg">
+      <img src="grayscvlepic3.jpg">
+      <img src="grayscvlepic5.jpg">
+      <img src="grayscvlepic6.jpg">
+    </section>
+
+  </main>
+
+  <!-- LOADER SCRIPT -->
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").classList.add("fade-out");
+        document.getElementById("site").classList.add("show");
+      }, 1200);
+    });
+  </script>
+
+</body>
+</html>
