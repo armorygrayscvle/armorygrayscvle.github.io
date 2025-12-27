@@ -5,9 +5,7 @@
   <title>ARMORY GRAYSCVLE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,51 +16,46 @@
     <div class="loader-text">ARMORY GRAYSCVLE</div>
   </div>
 
-  <!-- SITE -->
-  <div id="site">
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    ARMORY GRAYSCVLE
+  </header>
 
-    <!-- TOP LEFT BRAND -->
-    <header class="top-bar">
-      <span class="brand-link">ARMORY GRAYSCVLE</span>
-    </header>
+  <!-- FULL BLEED BANNER (NO CONTAINER) -->
+  <section class="banner">
+    <img src="grayscvlepic4.jpg" alt="Banner">
+  </section>
 
-    <!-- FULL-BLEED BANNER -->
-    <section class="banner">
-      <img src="grayscvlepic4.jpg" alt="GRAYSCALE banner">
+  <!-- PRIVATE ACCESS (SEPARATE SECTION) -->
+  <section class="private-access">
+    <p class="private-title">PRIVATE ACCESS</p>
+    <p class="private-sub">Private discount & releases</p>
+
+    <form action="https://formspree.io/f/mpqzdwko" method="POST">
+      <input type="email" name="email" placeholder="Email address" required>
+      <button type="submit">REQUEST ACCESS</button>
+    </form>
+  </section>
+
+  <!-- PRODUCTS -->
+  <main class="products">
+
+    <section class="product">
+      <h2>GRAYSCALE HOODIE</h2>
+      <p class="price">€250</p>
+      <p class="desc">
+        Handmade limited-run hoodie.<br>
+        Designed to last.
+      </p>
+      <button class="shop-btn">SHOP NOW</button>
     </section>
 
-    <!-- PRIVATE ACCESS (NOT OVER IMAGE) -->
-    <aside class="private-access">
-      <p class="private-title">PRIVATE ACCESS</p>
-      <p class="private-sub">Private discount & releases</p>
+  </main>
 
-      <form action="https://formspree.io/f/mpqzdwko" method="POST">
-        <input type="email" name="email" placeholder="Email address" required>
-        <button type="submit">REQUEST ACCESS</button>
-      </form>
-    </aside>
-
-    <!-- PRODUCTS -->
-    <main class="products">
-
-      <section class="product">
-        <h2>GRAYSCALE HOODIE</h2>
-        <p class="price">€250</p>
-        <p class="desc">
-          Handmade limited-run hoodie.<br>
-          Designed to last.
-        </p>
-        <button class="shop-btn">SHOP NOW</button>
-      </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      ARMORY GRAYSCVLE
-    </footer>
-
-  </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    ARMORY GRAYSCVLE
+  </footer>
 
   <!-- LOADER SCRIPT -->
   <script>
