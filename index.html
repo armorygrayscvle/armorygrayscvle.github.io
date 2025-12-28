@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Armory Grayscvle</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png?v=1" />
-  <link rel="shortcut icon" href="favicon.png?v=1" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png?v=2" />
+  <link rel="shortcut icon" href="favicon.png?v=2" />
 
-  <!-- Minimal elegant font -->
+  <!-- Minimal elegant fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -25,34 +25,75 @@
   <!-- MAIN CONTENT -->
   <main id="main-content">
 
-    <!-- BRAND TITLE -->
-    <header class="main-title">
-      ARMORY GRAYSCVLE
+    <!-- TOP LINE -->
+    <header class="nav">
+      <span class="wordmark">ARMORY GRAYSCVLE</span>
+      <div class="nav-line"></div>
+      <span class="season">STUDIO / MMXXV</span>
     </header>
 
-    <!-- BANNER -->
-    <section class="banner"></section>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-media">
+        <div class="logo-circle">
+          <img src="favicon.png?v=1" alt="Armory Grayscvle mark">
+        </div>
+        <div class="hero-line"></div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">MONOCHROME STUDY</p>
+        <h1>Cut to the bone</h1>
+        <p class="lede">
+          Long lines, black-on-black layering, restrained hardware. Precision tailoring in grayscale.
+        </p>
+        <div class="cta-row">
+          <a class="cta-primary" href="#signup">JOIN FOR 10% OFF</a>
+          <span class="cta-note">Limited allocations · Next drop imminent</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="panels">
+      <article class="panel">
+        <p class="panel-title">Line / Form</p>
+        <p class="panel-copy">Extended proportions, slashed hems, cloth that drapes but holds intent.</p>
+      </article>
+      <article class="panel">
+        <p class="panel-title">Material Quiet</p>
+        <p class="panel-copy">Charcoal wool, coated cotton, matte metal. No noise, only tactility.</p>
+      </article>
+      <article class="panel">
+        <p class="panel-title">Night Palette</p>
+        <p class="panel-copy">Black, ink, smoke. Negative space as the graphic element.</p>
+      </article>
+    </section>
 
     <!-- SIGN UP -->
-    <section class="signup">
-      <h2>SIGN UP FOR DISCOUNT</h2>
+    <section class="signup" id="signup">
+      <div class="signup-inner">
+        <p class="eyebrow">PRIVATE LIST</p>
+        <h2>Reserve access + 10%</h2>
+        <p class="lede">Receive first notice on drops and a 10% code for your initial order.</p>
 
-      <form
-        id="signup-form"
-        action="https://formspree.io/f/mpqzdwko"
-        method="POST"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="Email address"
-          required
+        <form
+          id="signup-form"
+          action="https://formspree.io/f/mpqzdwko"
+          method="POST"
         >
+          <input
+            type="email"
+            name="email"
+            placeholder="Email address"
+            required
+          >
 
-        <button type="submit">
-          REQUEST ACCESS
-        </button>
-      </form>
+          <button type="submit">
+            REQUEST ACCESS
+          </button>
+        </form>
+      </div>
     </section>
 
   </main>
