@@ -42,9 +42,21 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  gap: 16px;
+  gap: 12px;
   z-index: 50;
   text-transform: uppercase;
+}
+
+.notice-left img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.notice-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .notice-text {
@@ -53,13 +65,6 @@ a {
   white-space: nowrap;
   text-transform: uppercase;
   cursor: pointer;
-}
-
-.notice-form {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  display: none;
 }
 
 .notice-form input {
@@ -100,8 +105,18 @@ a {
   color: #000;
 }
 
+.notice-form {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
 .notice-bar.open .notice-form {
   display: flex;
+}
+
+.notice-bar.open .notice-text {
+  display: none;
 }
 
 .notice-success {
@@ -326,7 +341,7 @@ a {
 
   .notice-bar {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: auto;
     padding: 10px 14px;
     gap: 8px 10px;
