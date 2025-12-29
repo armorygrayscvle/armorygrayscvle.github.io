@@ -28,6 +28,74 @@ a {
   text-decoration: none;
 }
 
+/* NOTICE BAR */
+.notice-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #030303;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  gap: 16px;
+  z-index: 50;
+}
+
+.notice-text {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.notice-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notice-form input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+  color: var(--text);
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: 220px;
+}
+
+.notice-form input::placeholder {
+  color: #6f6f6f;
+}
+
+.notice-form input:focus {
+  outline: none;
+  border-color: var(--text);
+}
+
+.notice-form button {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  letter-spacing: 0.18em;
+  padding: 8px 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.notice-form button:hover {
+  background: var(--text);
+  color: #000;
+}
+
 /* LOADING SCREEN */
 #loader {
   position: fixed;
@@ -51,7 +119,7 @@ a {
   opacity: 0;
   transition: opacity 1.2s ease;
   min-height: 100vh;
-  padding: 48px 6vw 140px;
+  padding: 96px 6vw 200px;
   overflow-x: hidden;
 }
 
@@ -65,6 +133,7 @@ a {
   font-size: 28px;
   letter-spacing: 0.32em;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 /* BANNER */
@@ -105,6 +174,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  text-transform: uppercase;
 }
 
 .product-image {
@@ -135,124 +205,13 @@ a {
   color: var(--muted);
   line-height: 1.6;
   max-width: 640px;
+  text-transform: none;
 }
 
 .product-price {
   letter-spacing: 0.22em;
   font-size: 12px;
   color: var(--text);
-}
-
-/* SIGN UP */
-.signup {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.signup-inner {
-  max-width: 420px;
-  width: 100%;
-  text-align: left;
-  padding-top: 40px;
-}
-
-.signup .eyebrow {
-  letter-spacing: 0.3em;
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-
-.signup h2 {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
-  font-size: 30px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
-}
-
-.signup .lede {
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 18px;
-}
-
-.signup form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.signup input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--line);
-  padding: 12px 0;
-  color: var(--text);
-  font-size: 14px;
-}
-
-.signup input::placeholder {
-  color: #7a7a7a;
-}
-
-.signup input:focus {
-  outline: none;
-  border-color: var(--text);
-}
-
-.signup button {
-  background: transparent;
-  border: 1px solid var(--text);
-  padding: 12px 20px;
-  color: var(--text);
-  letter-spacing: 0.2em;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-  width: fit-content;
-}
-
-.signup button:hover {
-  background: var(--text);
-  color: #000;
-}
-
-.discount-success {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.discount-success p {
-  margin: 0;
-  opacity: 0.85;
-  font-size: 14px;
-}
-
-.discount-code {
-  display: inline-block;
-  border: 1px solid var(--text);
-  padding: 6px 10px;
-  letter-spacing: 0.18em;
-  font-weight: 600;
-}
-
-#copy-code-btn {
-  background: var(--text);
-  color: #000;
-  border: none;
-  padding: 10px 14px;
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
-}
-
-#copy-code-btn:hover {
-  background: #e8e8e8;
 }
 
 /* MOBILE */
@@ -262,7 +221,7 @@ a {
   }
 
   #main-content {
-    padding: 32px 24px 120px;
+    padding: 96px 20px 200px;
   }
 
   .brand-name {
@@ -280,7 +239,41 @@ a {
     gap: 64px;
   }
 
-  .signup {
-    justify-content: flex-start;
+  .notice-bar {
+    padding: 0 14px;
+    gap: 10px;
   }
+
+  .notice-text {
+    letter-spacing: 0.26em;
+    font-size: 10px;
+  }
+
+  .notice-form input {
+    width: 160px;
+  }
+}
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.footer-left,
+.footer-right {
+  white-space: nowrap;
+  color: #cfcfcf;
 }
