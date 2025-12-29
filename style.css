@@ -52,12 +52,35 @@ a {
   height: 32px;
   display: block;
   object-fit: contain;
+  cursor: pointer;
+}
+
+.details-button {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  letter-spacing: 0.18em;
+  padding: 6px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  display: none;
 }
 
 .notice-right {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.details-button:hover {
+  background: var(--text);
+  color: #000;
+}
+
+.notice-left.show-details .details-button {
+  display: inline-block;
 }
 
 .notice-text {
@@ -118,6 +141,33 @@ a {
 
 .notice-bar.open .notice-text {
   display: none;
+}
+
+.details {
+  background: var(--bg);
+  padding: 80px 6vw 60px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.details-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.detail-block h3 {
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.detail-block p {
+  color: var(--muted);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
 }
 
 .notice-success {

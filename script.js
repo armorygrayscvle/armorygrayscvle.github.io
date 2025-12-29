@@ -17,6 +17,8 @@ window.addEventListener("load", () => {
 /* NOTICE TOGGLE + FORMSPREE */
 const noticeBar = document.getElementById("notice-bar");
 const noticeToggle = document.getElementById("notice-toggle");
+const logoToggle = document.getElementById("logo-toggle");
+const detailsTrigger = document.getElementById("details-trigger");
 const form = document.getElementById("notice-form");
 const discountCode = "ARMORY10"; // 10% off code shown after successful signup
 
@@ -25,12 +27,43 @@ function openNotice() {
   noticeBar.classList.add("open");
 }
 
+function scrollToDetails() {
+  const details = document.getElementById("details");
+  if (details) {
+    details.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
 if (noticeToggle) {
   noticeToggle.addEventListener("click", openNotice);
   noticeToggle.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       openNotice();
+    }
+  });
+}
+
+if (logoToggle) {
+  logoToggle.addEventListener("click", () => {
+    const noticeLeft = logoToggle.parentElement;
+    noticeLeft?.classList.add("show-details");
+  });
+  logoToggle.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      const noticeLeft = logoToggle.parentElement;
+      noticeLeft?.classList.add("show-details");
+    }
+  });
+}
+
+if (detailsTrigger) {
+  detailsTrigger.addEventListener("click", scrollToDetails);
+  detailsTrigger.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      scrollToDetails();
     }
   });
 }
