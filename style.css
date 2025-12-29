@@ -354,16 +354,18 @@ a {
   .footer {
     padding: 12px 14px;
     font-size: 10px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.12em;
     height: auto;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
   }
 
   .footer-left,
   .footer-right {
     white-space: normal;
+    width: 100%;
   }
 }
 
