@@ -66,7 +66,8 @@ async function loadProducts() {
       const imageWrap = document.createElement("div");
       imageWrap.className = "product-image";
       const img = document.createElement("img");
-      img.src = product.image;
+      const images = Array.isArray(product.images) && product.images.length ? product.images : [product.image];
+      img.src = images[0];
       img.alt = product.name || "Product image";
       imageWrap.appendChild(img);
 
@@ -87,6 +88,35 @@ async function loadProducts() {
 
       meta.append(name, desc, price);
       card.append(imageWrap, meta);
+
+      // thumbs
+      if (images.length > 1) {
+        const thumbs = document.createElement("div");
+        thumbs.className = "thumbs";
+        images.forEach((src, idx) => {
+          const t = document.createElement("button");
+          t.type = "button";
+          t.className = "thumb";
+          t.setAttribute("aria-label", `View image ${idx + 1} of ${product.name || "product"}`);
+          const ti = document.createElement("img");
+          ti.src = src;
+          ti.alt = product.name || "Product thumbnail";
+          t.appendChild(ti);
+          t.addEventListener("click", () => {
+            img.src = src;
+          });
+          thumbs.appendChild(t);
+        });
+        card.appendChild(thumbs);
+      }
+
+      // hover states: zoom handled by CSS; toggle description
+      imageWrap.addEventListener("mouseenter", () => {
+        meta.classList.add("show-description");
+      });
+      imageWrap.addEventListener("mouseleave", () => {
+        meta.classList.remove("show-description");
+      });
       productList.appendChild(card);
     });
   } catch (error) {
