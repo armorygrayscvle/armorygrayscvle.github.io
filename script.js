@@ -34,9 +34,7 @@ if (form) {
 
     if (response.ok) {
       form.innerHTML = `
-        <div class="discount-success">
-          <p>You're in. Use <span class="discount-code">${discountCode}</span> for 10% off.</p>
-        </div>
+        <span class="notice-success">USE “GRAYSCVLE” FOR 10% DISCOUNT.</span>
       `;
     } else {
       form.innerHTML = "<p style='opacity:.6'>Error. Try again.</p>";

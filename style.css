@@ -97,6 +97,14 @@ a {
   color: #000;
 }
 
+.notice-success {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--text);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
 /* LOADING SCREEN */
 #loader {
   position: fixed;
