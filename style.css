@@ -161,6 +161,7 @@ a {
   min-height: 100vh;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background-image: url("grayscvlepic4.jpg");
   background-size: cover;
   background-position: center;
