@@ -14,9 +14,26 @@ window.addEventListener("load", () => {
   }, 1200);
 });
 
-/* FORMSPREE (NO REDIRECT, CLEAN CONFIRMATION) */
+/* NOTICE TOGGLE + FORMSPREE */
+const noticeBar = document.getElementById("notice-bar");
+const noticeToggle = document.getElementById("notice-toggle");
 const form = document.getElementById("notice-form");
 const discountCode = "ARMORY10"; // 10% off code shown after successful signup
+
+function openNotice() {
+  if (!noticeBar) return;
+  noticeBar.classList.add("open");
+}
+
+if (noticeToggle) {
+  noticeToggle.addEventListener("click", openNotice);
+  noticeToggle.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openNotice();
+    }
+  });
+}
 
 if (form) {
   form.addEventListener("submit", async (e) => {

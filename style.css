@@ -52,12 +52,14 @@ a {
   letter-spacing: 0.24em;
   white-space: nowrap;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .notice-form {
   display: flex;
   align-items: center;
   gap: 10px;
+  display: none;
 }
 
 .notice-form input {
@@ -96,6 +98,10 @@ a {
 .notice-form button:hover {
   background: var(--text);
   color: #000;
+}
+
+.notice-bar.open .notice-form {
+  display: flex;
 }
 
 .notice-success {
@@ -334,6 +340,7 @@ a {
   .notice-form {
     width: 100%;
     flex-wrap: wrap;
+    display: none;
   }
 
   .notice-form input {
