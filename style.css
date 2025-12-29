@@ -35,7 +35,8 @@ a {
   left: 0;
   right: 0;
   height: 48px;
-  background: #030303;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -128,14 +129,38 @@ a {
   opacity: 0;
   transition: opacity 1.2s ease;
   min-height: 100vh;
-  padding: 136px 6vw 200px;
+  padding: 0 6vw 200px;
   overflow-x: hidden;
 }
 
-/* BRAND HEADER */
-.brand-header {
-  text-align: center;
-  margin-bottom: 52px;
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("grayscvlepic4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
 .brand-name {
@@ -143,19 +168,6 @@ a {
   letter-spacing: 0.26em;
   font-weight: 300;
   text-transform: uppercase;
-}
-
-/* BANNER */
-.banner {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 70vh;
-  background-image: url("grayscvlepic4.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 90px;
 }
 
 /* PRODUCTS */
@@ -274,20 +286,13 @@ a {
   }
 
   #main-content {
-    padding: 120px 20px 200px;
+    padding: 0 20px 200px;
   }
 
   .brand-name {
   font-size: 24px;
   letter-spacing: 0.14em;
 }
-
-  .banner {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    height: 52vh;
-  }
 
   .product-list {
     gap: 64px;
@@ -345,10 +350,6 @@ a {
     font-size: 11px;
     letter-spacing: 0.16em;
     display: block;
-  }
-
-  .banner {
-    height: 46vh;
   }
 
   .footer {
