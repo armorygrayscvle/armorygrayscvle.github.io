@@ -35,7 +35,7 @@ if (form) {
     if (response.ok) {
       form.innerHTML = `
         <div class="discount-success">
-          <p>YOU'RE IN. USE <span class="discount-code">${discountCode}</span> FOR 10% OFF.</p>
+          <p>You're in. Use <span class="discount-code">${discountCode}</span> for 10% off.</p>
         </div>
       `;
     } else {
