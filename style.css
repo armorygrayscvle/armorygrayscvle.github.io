@@ -367,6 +367,10 @@ a {
     white-space: normal;
     width: 100%;
   }
+
+  .footer-left {
+    display: none;
+  }
 }
 
 /* FOOTER */
