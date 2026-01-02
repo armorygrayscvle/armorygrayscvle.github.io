@@ -237,7 +237,7 @@ a {
   opacity: 0;
   transition: opacity 1.2s ease;
   min-height: 100vh;
-  padding: 0 6vw 200px;
+  padding: 64px 6vw 200px;
   overflow-x: hidden;
 }
 
@@ -245,9 +245,8 @@ a {
 .hero {
   position: relative;
   min-height: 100vh;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  margin: 0;
   background-image: url("grayscvlepic4.jpg");
   background-size: cover;
   background-position: center;
@@ -408,7 +407,7 @@ a {
   }
 
   #main-content {
-    padding: 0 20px 200px;
+    padding: 72px 20px 200px;
   }
 
   .brand-name {
