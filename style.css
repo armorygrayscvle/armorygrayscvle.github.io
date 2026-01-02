@@ -55,6 +55,12 @@ a {
   cursor: pointer;
 }
 
+.notice-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .details-button {
   background: transparent;
   border: 1px solid var(--text);
@@ -82,7 +88,6 @@ a {
 .notice-left.show-details .details-button {
   display: inline-block;
 }
-
 .notice-text {
   font-size: 12px;
   letter-spacing: 0.24em;

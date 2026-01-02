@@ -45,15 +45,18 @@ if (noticeToggle) {
 }
 
 if (logoToggle) {
-  logoToggle.addEventListener("click", () => {
-    const noticeLeft = logoToggle.parentElement;
-    noticeLeft?.classList.add("show-details");
-  });
+  const noticeLeft = logoToggle.parentElement;
+
+  const toggleDetailsButton = () => {
+    if (!noticeLeft) return;
+    noticeLeft.classList.toggle("show-details");
+  };
+
+  logoToggle.addEventListener("click", toggleDetailsButton);
   logoToggle.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      const noticeLeft = logoToggle.parentElement;
-      noticeLeft?.classList.add("show-details");
+      toggleDetailsButton();
     }
   });
 }
