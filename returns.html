@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Returns Info — Armory Grayscvle</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader"><h1>ARMORY GRAYSCVLE</h1></div>
+
+  <section class="notice-bar" id="notice-bar">
+    <div class="notice-left">
+      <img src="/logowhite.png" alt="Armory Grayscvle logo" id="logo-toggle" role="button" tabindex="0" />
+      <button class="details-button" id="details-trigger" type="button" aria-label="View details">DETAILS</button>
+    </div>
+    <div class="notice-right">
+      <div class="notice-text" id="notice-toggle" role="button" tabindex="0">NEWSLETTER</div>
+      <form id="notice-form" class="notice-form" action="https://formspree.io/f/mpqzdwko" method="POST">
+        <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="notice-helper" id="notice-helper"></div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <section class="hero" aria-label="Armory Grayscvle hero">
+      <div class="hero-overlay"></div>
+    </section>
+
+    <section class="details">
+      <div class="details-inner">
+        <div class="detail-block">
+          <h3>RETURNS INFO</h3>
+          <p>We accept returns within 14 days of delivery, in accordance with EU consumer law.</p>
+          <p>Returned items must be:</p>
+          <ul>
+            <li>Unworn, unused, and unwashed</li>
+            <li>In original condition, with all tags and packaging intact</li>
+          </ul>
+          <p>Due to the limited and artisanal nature of our pieces, we kindly ask that items are handled with care.</p>
+          <p><strong>Exceptions</strong><br>Items that are made-to-order, customized, or explicitly marked as non-returnable are not eligible for return.</p>
+          <p><strong>Return Process</strong><br>To initiate a return, please contact us at <a href="mailto:office@armorygrayscvle.com">office@armorygrayscvle.com</a> with your order number.</p>
+          <p>Return shipping costs are the responsibility of the customer, unless the item is faulty or incorrect.</p>
+          <p>Once your return is received and inspected, a refund will be issued to the original payment method within a reasonable timeframe.</p>
+          <p>Original shipping fees are non-refundable.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
