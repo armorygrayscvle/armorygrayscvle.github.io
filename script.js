@@ -20,7 +20,8 @@ const noticeToggle = document.getElementById("notice-toggle");
 const logoToggle = document.getElementById("logo-toggle");
 const detailsTrigger = document.getElementById("details-trigger");
 const form = document.getElementById("notice-form");
-const discountCode = "ARMORY10"; // 10% off code shown after successful signup
+const noticeHelper = document.getElementById("notice-helper");
+const discountCode = "GRAYSCVLE"; // 10% off code shown after successful signup
 
 function openNotice() {
   if (!noticeBar) return;
@@ -32,6 +33,73 @@ function scrollToDetails() {
   if (details) {
     details.scrollIntoView({ behavior: "smooth" });
   }
+}
+
+async function applyDiscountCode() {
+  if (window.Snipcart && Snipcart.api && Snipcart.api.discounts) {
+    try {
+      await Snipcart.api.discounts.applyDiscountCode(discountCode);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  return false;
+}
+
+function setHelperMessage(message, actions = []) {
+  if (!noticeHelper) return;
+  noticeHelper.innerHTML = message;
+
+  // remove old actions
+  const existing = noticeHelper.parentElement?.querySelector(".notice-actions");
+  if (existing) existing.remove();
+
+  if (actions.length) {
+    const actionWrap = document.createElement("div");
+    actionWrap.className = "notice-actions";
+    actions.forEach((btn) => actionWrap.appendChild(btn));
+    noticeHelper.parentElement?.appendChild(actionWrap);
+  }
+}
+
+function createCopyButton() {
+  const copyBtn = document.createElement("button");
+  copyBtn.type = "button";
+  copyBtn.textContent = "Copy code";
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(discountCode);
+      copyBtn.textContent = "Copied";
+      setTimeout(() => (copyBtn.textContent = "Copy code"), 1500);
+    } catch (err) {
+      copyBtn.textContent = "Copy failed";
+      setTimeout(() => (copyBtn.textContent = "Copy code"), 1500);
+    }
+  });
+  return copyBtn;
+}
+
+function createShopButton() {
+  const shopBtn = document.createElement("button");
+  shopBtn.type = "button";
+  shopBtn.textContent = "Shop now";
+  shopBtn.addEventListener("click", async () => {
+    const ok = await applyDiscountCode();
+    if (!ok) {
+      setHelperMessage(
+        'Code couldn’t be applied automatically — you can still enter GRAYSCVLE at checkout.'
+      );
+    }
+    if (window.Snipcart && Snipcart.api && Snipcart.api.cart) {
+      try {
+        await Snipcart.api.cart.open();
+      } catch (e) {
+        // ignore
+      }
+    }
+  });
+  return shopBtn;
 }
 
 if (noticeToggle) {
@@ -77,20 +145,32 @@ if (form) {
 
     const data = new FormData(form);
 
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: {
-        "Accept": "application/json"
-      }
-    });
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
 
-    if (response.ok) {
-      form.innerHTML = `
-        <span class="notice-success">USE “GRAYSCVLE” FOR 10% DISCOUNT.</span>
-      `;
-    } else {
-      form.innerHTML = "<p style='opacity:.6'>Error. Try again.</p>";
+      if (response.ok) {
+        const copyBtn = createCopyButton();
+        const shopBtn = createShopButton();
+        setHelperMessage(`USE “${discountCode}” FOR 10% DISCOUNT`, [copyBtn, shopBtn]);
+        form.reset();
+        const applied = await applyDiscountCode();
+        if (!applied) {
+          setHelperMessage(
+            'Code couldn’t be applied automatically — you can still enter GRAYSCVLE at checkout.',
+            [copyBtn, shopBtn]
+          );
+        }
+      } else {
+        setHelperMessage("Error. Try again.");
+      }
+    } catch (err) {
+      setHelperMessage("Error. Try again.");
     }
   });
 }

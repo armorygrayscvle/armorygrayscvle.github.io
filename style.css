@@ -134,6 +134,14 @@ a {
   color: #000;
 }
 
+.notice-helper {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
 .notice-form {
   display: none;
   align-items: center;
@@ -146,6 +154,29 @@ a {
 
 .notice-bar.open .notice-text {
   display: none;
+}
+
+.notice-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.notice-actions button {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  letter-spacing: 0.16em;
+  padding: 6px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.notice-actions button:hover {
+  background: var(--text);
+  color: #000;
 }
 
 .details {
