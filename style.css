@@ -253,15 +253,16 @@ a {
 .products {
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  margin: 100px auto 80px;
+  padding: 0 6vw;
 }
 
 .product-list {
   width: 100%;
-  max-width: 960px;
-  display: flex;
-  flex-direction: column;
-  gap: 96px;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
 }
 
 .products-empty {
@@ -273,7 +274,7 @@ a {
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 }
 
 .product-image {
@@ -373,8 +374,14 @@ a {
   letter-spacing: 0.14em;
 }
 
+  .products {
+    margin: 80px auto 60px;
+    padding: 0 20px;
+  }
+
   .product-list {
-    gap: 64px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
   }
 
   .notice-bar {
