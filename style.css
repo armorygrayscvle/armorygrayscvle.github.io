@@ -276,6 +276,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  height: 100%;
+  align-items: stretch;
 }
 
 .product-image {
@@ -284,7 +286,9 @@ a {
   padding: 0;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 .product-image img {
@@ -304,6 +308,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1 0 auto;
+  align-items: flex-start;
 }
 
 .product-name {
