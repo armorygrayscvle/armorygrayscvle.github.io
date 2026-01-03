@@ -31,26 +31,34 @@ a {
 }
 
 /* HEADER */
-.site-header {
+.notice-bar {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 12px 18px;
+  right: 0;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 12px;
   z-index: 60;
 }
 
-.logo-button {
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+.notice-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo-button img {
+.notice-left img {
   width: 32px;
   height: 32px;
   display: block;
   object-fit: contain;
+  cursor: pointer;
 }
 
 /* UPPER FOOTER */
