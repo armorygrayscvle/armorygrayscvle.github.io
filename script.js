@@ -106,7 +106,7 @@ if (noticeToggle) {
 
 if (logoToggle) {
   const goHome = () => {
-    window.location.href = "/";
+    window.location.href = "index.html";
   };
 
   logoToggle.addEventListener("click", goHome);
