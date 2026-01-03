@@ -1,4 +1,6 @@
 /* RESET */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+
 *,
 *::before,
 *::after {
@@ -248,9 +250,10 @@ a {
   color: #f4f4f4;
   text-decoration: none;
   font-size: 14px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   font-weight: 400;
-  text-transform: uppercase;
+  font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  text-transform: none;
   transition: opacity 0.2s ease;
 }
 
