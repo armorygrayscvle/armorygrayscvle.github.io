@@ -205,8 +205,8 @@ a {
 
 /* UPPER FOOTER */
 .footer-upper {
-  background: #000;
-  color: #f4f4f4;
+  background: #fff;
+  color: #0b0b0b;
   padding: 180px 0 240px;
   font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
 }
@@ -247,7 +247,7 @@ a {
 }
 
 .footer-upper-links a {
-  color: #f4f4f4;
+  color: #0b0b0b;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 0.01em;
@@ -270,14 +270,14 @@ a {
 
 .footer-upper-ig {
   display: inline-flex;
-  color: #f4f4f4;
+  color: #0b0b0b;
   transition: opacity 0.2s ease;
 }
 
 .footer-upper-ig svg {
   width: 18px;
   height: 18px;
-  stroke: #f4f4f4;
+  stroke: #0b0b0b;
   stroke-width: 1.35;
 }
 
@@ -288,7 +288,7 @@ a {
 .footer-upper-separator {
   width: 100%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* INFO PAGES */
