@@ -77,13 +77,6 @@ async function loadProducts() {
       meta.append(name, desc, price);
       card.append(imageWrap, meta);
 
-      // hover states: zoom handled by CSS; toggle description
-      imageWrap.addEventListener("mouseenter", () => {
-        meta.classList.add("show-description");
-      });
-      imageWrap.addEventListener("mouseleave", () => {
-        meta.classList.remove("show-description");
-      });
       productList.appendChild(card);
     });
   } catch (error) {
