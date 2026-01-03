@@ -18,7 +18,6 @@ window.addEventListener("load", () => {
 const noticeBar = document.getElementById("notice-bar");
 const noticeToggle = document.getElementById("notice-toggle");
 const logoToggle = document.getElementById("logo-toggle");
-const detailsTrigger = document.getElementById("details-trigger");
 const form = document.getElementById("notice-form");
 const noticeHelper = document.getElementById("notice-helper");
 const discountCode = "GRAYSCVLE"; // 10% off code shown after successful signup
@@ -26,13 +25,6 @@ const discountCode = "GRAYSCVLE"; // 10% off code shown after successful signup
 function openNotice() {
   if (!noticeBar) return;
   noticeBar.classList.add("open");
-}
-
-function scrollToDetails() {
-  const details = document.getElementById("details");
-  if (details) {
-    details.scrollIntoView({ behavior: "smooth" });
-  }
 }
 
 async function applyDiscountCode() {
@@ -113,28 +105,15 @@ if (noticeToggle) {
 }
 
 if (logoToggle) {
-  const noticeLeft = logoToggle.parentElement;
-
-  const toggleDetailsButton = () => {
-    if (!noticeLeft) return;
-    noticeLeft.classList.toggle("show-details");
+  const goHome = () => {
+    window.location.href = "/";
   };
 
-  logoToggle.addEventListener("click", toggleDetailsButton);
+  logoToggle.addEventListener("click", goHome);
   logoToggle.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      toggleDetailsButton();
-    }
-  });
-}
-
-if (detailsTrigger) {
-  detailsTrigger.addEventListener("click", scrollToDetails);
-  detailsTrigger.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      scrollToDetails();
+      goHome();
     }
   });
 }
