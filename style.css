@@ -1,5 +1,5 @@
 /* RESET */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap");
 
 *,
 *::before,
@@ -208,7 +208,7 @@ a {
   background: #fff;
   color: #0b0b0b;
   padding: 180px 0 240px;
-  font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
+  font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
 }
 
 .footer-upper-inner {
@@ -252,7 +252,7 @@ a {
   font-size: 14px;
   letter-spacing: 0.01em;
   font-weight: 400;
-  font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
   text-transform: none;
   transition: opacity 0.2s ease;
 }
@@ -686,7 +686,7 @@ a {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 12px;
-  font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
+  font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
   font-weight: 400;
 }
 
