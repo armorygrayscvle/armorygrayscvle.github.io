@@ -372,8 +372,8 @@ a {
 .products {
   display: flex;
   justify-content: flex-start;
-  margin: 120px auto 220px;
-  padding: 0 6vw 0 14vw; /* intentional left negative space */
+  margin: 120px auto 200px;
+  padding: 0 6vw 0 12vw; /* intentional left negative space */
   background: #000;
   color: #f4f4f4;
 }
@@ -383,7 +383,7 @@ a {
   max-width: 1500px;
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 180px;
   align-items: stretch;
 }
 
@@ -397,12 +397,12 @@ a {
   position: relative;
   overflow: hidden;
   border: none;
-  min-height: 520px;
-  height: 640px;
-  max-height: 780px;
+  min-height: 500px;
+  height: 620px;
+  max-height: 760px;
   display: grid;
-  grid-template-columns: minmax(420px, 1.1fr) minmax(260px, 0.9fr);
-  column-gap: 100px;
+  grid-template-columns: minmax(420px, 1.1fr) minmax(240px, 0.9fr);
+  column-gap: 80px;
   align-items: center;
   background: #000;
 }
@@ -418,7 +418,7 @@ a {
 .product-image-frame {
   width: 100%;
   background: #000;
-  padding: 42px 38px;
+  padding: 32px 32px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -431,7 +431,13 @@ a {
   height: auto;
   object-fit: contain;
   display: block;
-  filter: none;
+  filter: grayscale(100%);
+  transition: filter 0.35s ease;
+}
+
+.product-card:hover .product-image img,
+.product-image:hover img {
+  filter: grayscale(0%);
 }
 
 .product-meta {
@@ -497,8 +503,8 @@ a {
 }
 
   .products {
-    margin: 120px auto 120px;
-    padding: 0 18px 0 10vw;
+    margin: 110px auto 120px;
+    padding: 0 18px 0 8vw;
   }
 
   .notice-bar {
@@ -516,14 +522,14 @@ a {
   }
 
   .product-list {
-    gap: 160px;
+    gap: 140px;
   }
 
   .product-card {
-    grid-template-columns: minmax(320px, 1fr) minmax(220px, 0.9fr);
-    column-gap: 60px;
-    height: 540px;
-    min-height: 420px;
+    grid-template-columns: minmax(300px, 1fr) minmax(200px, 0.9fr);
+    column-gap: 50px;
+    height: 520px;
+    min-height: 400px;
   }
 
   .footer-upper {
@@ -548,8 +554,8 @@ a {
   }
 
   .products {
-    margin: 120px auto 100px;
-    padding: 0 14px 0 8vw;
+    margin: 110px auto 80px;
+    padding: 0 14px 0 6vw;
   }
 
   .product-list {
@@ -558,9 +564,9 @@ a {
 
   .product-card {
     grid-template-columns: 1fr 1fr;
-    column-gap: 24px;
-    height: 420px;
-    min-height: 320px;
+    column-gap: 20px;
+    height: 400px;
+    min-height: 300px;
   }
 
   .info-page {
