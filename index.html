@@ -63,6 +63,18 @@
 
     <!-- PRODUCTS -->
     <section class="products" id="products">
+      <div class="snipcart-test-btn">
+        <button
+          class="snipcart-add-item"
+          data-item-id="test-001"
+          data-item-name="Test Item"
+          data-item-price="10.00"
+          data-item-url="https://armorygrayscvle.com/"
+          data-item-description="Test"
+          data-item-image="https://armorygrayscvle.com/grayscvlepic4.jpg">
+          ADD TO CART
+        </button>
+      </div>
       <div class="product-list" id="product-list"></div>
     </section>
 
@@ -112,8 +124,8 @@
 
   <script src="script.js"></script>
   <!-- Snipcart -->
-  <div hidden id="snipcart" data-api-key="PASTE_YOUR_SNIPCART_PUBLIC_API_KEY_HERE"></div>
-  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+  <div id="snipcart" data-api-key="PASTE_YOUR_SNIPCART_PUBLIC_API_KEY_HERE"></div>
+  <script src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
   <script>
     window.addEventListener("load", () => {
       console.log("Snipcart present?", !!window.Snipcart);
