@@ -273,9 +273,9 @@ a {
 /* PRODUCTS */
 .products {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 120px auto 140px;
-  padding: 0 4vw;
+  padding: 0 6vw;
 }
 
 .product-list {
