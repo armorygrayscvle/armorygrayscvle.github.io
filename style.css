@@ -42,6 +42,7 @@ a {
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 24px;
   gap: 12px;
   z-index: 60;
@@ -59,6 +60,103 @@ a {
   display: block;
   object-fit: contain;
   cursor: pointer;
+}
+
+.notice-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notice-text {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.notice-form {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.notice-form input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+  color: var(--text);
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  width: 220px;
+  text-transform: uppercase;
+}
+
+.notice-form input::placeholder {
+  color: #6f6f6f;
+}
+
+.notice-form input:focus {
+  outline: none;
+  border-color: var(--text);
+}
+
+.notice-form button {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  letter-spacing: 0.18em;
+  padding: 8px 14px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.notice-form button:hover {
+  background: var(--text);
+  color: #000;
+}
+
+.notice-helper {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.notice-bar.open .notice-form {
+  display: flex;
+}
+
+.notice-bar.open .notice-text {
+  display: none;
+}
+
+.notice-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.notice-actions button {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  letter-spacing: 0.16em;
+  padding: 6px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.notice-actions button:hover {
+  background: var(--text);
+  color: #000;
 }
 
 /* UPPER FOOTER */
@@ -405,6 +503,20 @@ a {
   .products {
     margin: 100px auto 80px;
     padding: 0 20px;
+  }
+
+  .notice-bar {
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .notice-text {
+    letter-spacing: 0.12em;
+    font-size: 11px;
+  }
+
+  .notice-form input {
+    width: 160px;
   }
 
   .product-list {
