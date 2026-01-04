@@ -654,6 +654,24 @@ a {
   color: #111;
   text-align: center;
 }
+
+.test-product {
+  max-width: 540px;
+  width: 92vw;
+  margin: 60px auto 0;
+  text-align: center;
+  color: #f4f4f4;
+}
+.test-product .product-title {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.test-product .product-price {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
+}
 .thumbs,
 .thumb {
   display: none;
