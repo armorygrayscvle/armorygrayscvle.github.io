@@ -32,7 +32,7 @@
       <img src="/logowhite.png" alt="Armory Grayscvle logo" id="logo-toggle" role="button" tabindex="0" />
     </div>
     <div class="notice-right">
-      <a href="#" class="snipcart-checkout">CART</a>
+      <button class="snipcart-checkout" type="button">CART</button>
       <div class="notice-text" id="notice-toggle" role="button" tabindex="0">NEWSLETTER</div>
       <form
         id="notice-form"
@@ -114,5 +114,13 @@
   <!-- Snipcart -->
   <div hidden id="snipcart" data-api-key="PASTE_YOUR_SNIPCART_PUBLIC_API_KEY_HERE"></div>
   <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      console.log("Snipcart present?", !!window.Snipcart);
+      if (window.Snipcart) {
+        console.log("Snipcart version:", window.Snipcart.version || "unknown");
+      }
+    });
+  </script>
 </body>
 </html>

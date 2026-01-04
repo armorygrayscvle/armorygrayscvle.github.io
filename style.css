@@ -482,6 +482,8 @@ a {
   text-decoration: none;
   padding: 6px 10px;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  cursor: pointer;
   transition: opacity 0.2s ease, border-color 0.2s ease;
 }
 
