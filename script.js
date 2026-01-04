@@ -193,21 +193,11 @@ async function loadProducts() {
       name.className = "product-name";
       name.textContent = product.name || "";
 
-      const categories = document.createElement("nav");
-      categories.className = "product-categories";
-      const catLinks = [
-        { label: "WOMEN", href: "women.html" },
-        { label: "MEN", href: "men.html" },
-      ];
-      catLinks.forEach((cat) => {
-        const link = document.createElement("a");
-        link.textContent = cat.label;
-        link.href = cat.href;
-        link.setAttribute("aria-label", `${cat.label} collection`);
-        categories.appendChild(link);
-      });
+      const price = document.createElement("p");
+      price.className = "product-price";
+      price.textContent = product.price || "";
 
-      meta.append(name, categories);
+      meta.append(name, price);
       card.append(imageWrap, meta);
 
       productList.appendChild(card);
