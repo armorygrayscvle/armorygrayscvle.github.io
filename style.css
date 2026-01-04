@@ -512,6 +512,134 @@ a {
   border-color: #fff;
 }
 
+/* ============================= */
+/* SNIPCART — INVISIBLE DRAWER */
+/* ============================= */
+
+/* Soft, almost unnoticeable overlay */
+.snipcart-modal__overlay {
+  background: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Right-side drawer */
+.snipcart-modal__container {
+  width: min(420px, 92vw) !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: 0 !important;
+
+  margin: 0 !important;
+  padding: 32px 28px !important;
+
+  background: #fff !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Ensure modal aligns to the right */
+.snipcart-modal {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: stretch !important;
+}
+
+/* Typography — identical to site */
+#snipcart,
+.snipcart *,
+.snipcart__font--primary,
+.snipcart__font--secondary {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color: #111 !important;
+}
+
+/* Remove all decorative UI noise */
+.snipcart__box,
+.snipcart-cart-header,
+.snipcart-cart__content,
+.snipcart-cart-summary,
+.snipcart-item-line,
+.snipcart-form,
+.snipcart-form__field,
+.snipcart-input {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Header — quiet, editorial */
+.snipcart-cart-header__title {
+  font-size: 12px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+/* Item names — understated */
+.snipcart-item-line__title {
+  font-size: 13px !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Prices — calm */
+.snipcart-item-line__price,
+.snipcart-summary-fees__amount,
+.snipcart-summary-total__amount {
+  font-weight: 400 !important;
+}
+
+/* Inputs — museum label style */
+.snipcart-input {
+  border-bottom: 1px solid #111 !important;
+  padding: 6px 0 !important;
+  font-size: 12px !important;
+}
+
+/* Primary action — restrained */
+.snipcart-button-primary {
+  background: transparent !important;
+  color: #111 !important;
+  border: 1px solid #111 !important;
+
+  padding: 12px 16px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+}
+
+/* Secondary actions — almost invisible */
+.snipcart-button-secondary {
+  background: none !important;
+  border: none !important;
+  color: #111 !important;
+  font-size: 10px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+/* Remove icons & excess affordances */
+.snipcart__icon,
+.snipcart-cart-header__close {
+  opacity: 0.4 !important;
+}
+
+/* Hover effects: minimal */
+.snipcart-button-primary:hover,
+.snipcart-button-secondary:hover {
+  opacity: 0.65 !important;
+}
+
+/* Mobile — drawer becomes full width */
+@media (max-width: 640px) {
+  .snipcart-modal__container {
+    width: 100vw !important;
+    padding: 24px 20px !important;
+  }
+}
 .thumbs,
 .thumb {
   display: none;
