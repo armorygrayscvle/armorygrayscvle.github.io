@@ -197,7 +197,17 @@ async function loadProducts() {
       price.className = "product-price";
       price.textContent = product.price || "";
 
-      meta.append(name, price);
+      const addBtn = document.createElement("button");
+      addBtn.className = "snipcart-add-item";
+      addBtn.textContent = "ADD TO CART";
+      addBtn.setAttribute("data-item-id", (product.name || "product").toLowerCase().replace(/\s+/g, "-"));
+      addBtn.setAttribute("data-item-name", product.name || "Product");
+      addBtn.setAttribute("data-item-price", (product.price || "").replace(/[^\d.]/g, "") || "0.00");
+      addBtn.setAttribute("data-item-url", window.location.href);
+      addBtn.setAttribute("data-item-description", product.description || "");
+      addBtn.setAttribute("data-item-image", images[0]);
+
+      meta.append(name, price, addBtn);
       card.append(imageWrap, meta);
 
       productList.appendChild(card);

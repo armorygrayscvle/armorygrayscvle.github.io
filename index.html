@@ -9,6 +9,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
 
   <!-- Typeface: Helvetica Neue primary, Inter fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +32,7 @@
       <img src="/logowhite.png" alt="Armory Grayscvle logo" id="logo-toggle" role="button" tabindex="0" />
     </div>
     <div class="notice-right">
+      <a href="#" class="snipcart-checkout">CART</a>
       <div class="notice-text" id="notice-toggle" role="button" tabindex="0">NEWSLETTER</div>
       <form
         id="notice-form"
@@ -109,5 +111,8 @@
   </footer>
 
   <script src="script.js"></script>
+  <!-- Snipcart -->
+  <div hidden id="snipcart" data-api-key="PASTE_YOUR_SNIPCART_PUBLIC_API_KEY_HERE"></div>
+  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 </body>
 </html>

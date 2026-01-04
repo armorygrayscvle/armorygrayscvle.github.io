@@ -474,6 +474,42 @@ a {
   font-weight: 500;
 }
 
+.snipcart-checkout {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f4f4f4;
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.snipcart-checkout:hover,
+.snipcart-checkout:focus-visible {
+  opacity: 0.7;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Minimal Snipcart button styling */
+.snipcart-add-item {
+  border: 1px solid #f4f4f4;
+  background: transparent;
+  color: #f4f4f4;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.snipcart-add-item:hover,
+.snipcart-add-item:focus-visible {
+  opacity: 0.7;
+  border-color: #fff;
+}
+
 .thumbs,
 .thumb {
   display: none;
