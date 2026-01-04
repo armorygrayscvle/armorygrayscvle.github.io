@@ -172,16 +172,19 @@ async function loadProducts() {
 
     productList.innerHTML = "";
     products.forEach((product) => {
-      const card = document.createElement("article");
+      const card = document.createElement("section");
       card.className = "product-card";
 
       const imageWrap = document.createElement("div");
       imageWrap.className = "product-image";
+      const frame = document.createElement("div");
+      frame.className = "product-image-frame";
       const img = document.createElement("img");
       const images = Array.isArray(product.images) && product.images.length ? product.images : [product.image];
       img.src = images[0];
       img.alt = product.name || "Product image";
-      imageWrap.appendChild(img);
+      frame.appendChild(img);
+      imageWrap.appendChild(frame);
 
       const meta = document.createElement("div");
       meta.className = "product-meta";
@@ -190,15 +193,21 @@ async function loadProducts() {
       name.className = "product-name";
       name.textContent = product.name || "";
 
-      const desc = document.createElement("p");
-      desc.className = "product-description";
-      desc.textContent = product.description || "";
+      const categories = document.createElement("nav");
+      categories.className = "product-categories";
+      const catLinks = [
+        { label: "WOMEN", href: "women.html" },
+        { label: "MEN", href: "men.html" },
+      ];
+      catLinks.forEach((cat) => {
+        const link = document.createElement("a");
+        link.textContent = cat.label;
+        link.href = cat.href;
+        link.setAttribute("aria-label", `${cat.label} collection`);
+        categories.appendChild(link);
+      });
 
-      const price = document.createElement("p");
-      price.className = "product-price";
-      price.textContent = product.price || "";
-
-      meta.append(name, desc, price);
+      meta.append(name, categories);
       card.append(imageWrap, meta);
 
       productList.appendChild(card);
