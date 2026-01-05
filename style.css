@@ -345,13 +345,6 @@ a {
   justify-content: center;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-
 .hero-overlay {
   position: relative;
   z-index: 1;
