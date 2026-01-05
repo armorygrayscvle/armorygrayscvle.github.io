@@ -366,7 +366,7 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 28px 32px 18px 6vw;
+  padding: 28px 40px 18px 6vw;
   background: #000;
   color: #f4f4f4;
   border-bottom: 1px solid #111;
@@ -826,7 +826,7 @@ a {
   }
 
   .utility-header {
-    padding: 22px 28px 14px 18px;
+    padding: 22px 34px 14px 18px;
   }
 
   .icon-btn {
@@ -887,7 +887,7 @@ a {
   }
 
   .utility-header {
-    padding: 18px 22px 12px 14px;
+    padding: 18px 28px 12px 14px;
   }
 
   .icon-btn {
