@@ -62,6 +62,15 @@ a {
   color: #f4f4f4;
 }
 
+.notice-brand-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
 .notice-left img {
   width: 32px;
   height: 32px;

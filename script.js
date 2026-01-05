@@ -34,6 +34,7 @@ window.addEventListener("load", () => {
 const noticeBar = document.getElementById("notice-bar");
 const noticeToggle = document.getElementById("notice-toggle");
 const logoToggle = document.getElementById("logo-toggle");
+const brandButtons = document.querySelectorAll(".notice-brand-btn");
 const form = document.getElementById("notice-form");
 const noticeHelper = document.getElementById("notice-helper");
 const discountCode = "GRAYSCVLE"; // 10% off code shown after successful signup
@@ -128,6 +129,21 @@ if (logoToggle) {
       e.preventDefault();
       goHome();
     }
+  });
+}
+
+if (brandButtons && brandButtons.length) {
+  const goHome = () => {
+    window.location.href = "index.html";
+  };
+  brandButtons.forEach((btn) => {
+    btn.addEventListener("click", goHome);
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        goHome();
+      }
+    });
   });
 }
 
