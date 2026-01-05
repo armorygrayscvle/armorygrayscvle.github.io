@@ -326,7 +326,7 @@ a {
   opacity: 0;
   transition: opacity 1.2s ease;
   min-height: 100vh;
-  padding: 0 6vw 200px;
+  padding: 0 var(--edge-pad) 200px;
   overflow-x: hidden;
 }
 
@@ -819,7 +819,7 @@ a {
   }
 
   #main-content {
-    padding: 0 20px 200px;
+    padding: 0 var(--edge-pad) 200px;
   }
 
   .brand-name {
@@ -885,7 +885,7 @@ a {
 
 @media (max-width: 600px) {
   #main-content {
-    padding: 120px 16px 180px;
+    padding: 120px var(--edge-pad) 180px;
   }
 
   .products {
