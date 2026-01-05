@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Armory Grayscvle</title>
-  <!-- Favicons -->
+  <title>Cart — Armory Grayscvle</title>
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -13,7 +12,6 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <!-- Typeface: Helvetica Neue primary, Inter fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -31,48 +29,28 @@
     })();
   </script>
 </head>
-
 <body>
-  <!-- LOADING SCREEN -->
-  <div id="loader">
-    <h1>ARMORY GRAYSCVLE</h1>
-  </div>
+  <div id="loader"><h1>ARMORY GRAYSCVLE</h1></div>
 
-  <!-- TOP BAR -->
   <section class="notice-bar" id="notice-bar">
     <div class="notice-left">
       <img src="/logowhite.png" alt="Armory Grayscvle logo" id="logo-toggle" role="button" tabindex="0" />
     </div>
     <div class="notice-right">
       <div class="notice-text" id="notice-toggle" role="button" tabindex="0">NEWSLETTER</div>
-      <form
-        id="notice-form"
-        class="notice-form"
-        action="https://formspree.io/f/mpqzdwko"
-        method="POST"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-        >
+      <form id="notice-form" class="notice-form" action="https://formspree.io/f/mpqzdwko" method="POST">
+        <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
         <button type="submit">Submit</button>
       </form>
       <div class="notice-helper" id="notice-helper"></div>
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
   <main id="main-content">
-
-    <!-- HERO -->
     <section class="hero" aria-label="Armory Grayscvle hero">
       <div class="hero-overlay"></div>
     </section>
 
-    <!-- UTILITY HEADER -->
     <section class="utility-header" aria-label="Utility actions">
       <div class="utility-actions">
         <button class="icon-btn" type="button" aria-label="Search">
@@ -101,16 +79,21 @@
       </div>
     </section>
 
-    <!-- PRODUCTS -->
-    <section class="products" id="products">
-      <div class="product-list" id="product-list"></div>
+    <section class="cart-page">
+      <h1 class="page-title">Cart</h1>
+      <div id="cart-page" class="cart-shell">
+        <div id="cart-empty" class="cart-empty">
+          <span>Your cart is empty.</span>
+          <a class="quiet-link" href="index.html">Continue shopping</a>
+        </div>
+        <div id="cart-filled" class="cart-filled">
+          <div id="cart-items" class="cart-items"></div>
+          <div id="cart-summary" class="cart-summary"></div>
+        </div>
+      </div>
     </section>
-
-    <p class="about-line">Limited-run pieces. Quiet construction. Own less. Mean more.</p>
-
   </main>
 
-  <!-- UPPER FOOTER / MAISON -->
   <section class="footer-upper" id="maison">
     <div class="footer-upper-inner">
       <div class="footer-upper-empty"></div>
@@ -140,7 +123,6 @@
 
   <div class="footer-upper-separator"></div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-left"></div>
