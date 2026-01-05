@@ -558,7 +558,7 @@ a {
 
 /* Soft, almost unnoticeable overlay */
 .snipcart-modal__overlay {
-  background: rgba(0, 0, 0, 0.18) !important;
+  background: rgba(0, 0, 0, 0.45) !important;
 }
 
 /* Right-side drawer */
@@ -578,7 +578,8 @@ a {
 
   background: #fff !important;
   border-radius: 0 !important;
-  box-shadow: none !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.32) !important;
+  overflow-y: auto !important;
 }
 
 /* Ensure modal aligns to the right */
@@ -616,7 +617,7 @@ a {
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  background: transparent !important;
+  background: #fff !important;
 }
 
 /* Header — quiet, editorial */
