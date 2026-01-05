@@ -215,6 +215,19 @@ function updateSavedIcons() {
   });
 }
 
+/* SEARCH TOGGLE */
+const searchToggle = document.querySelectorAll(".search-toggle");
+searchToggle.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const searchBar = document.querySelector(".search-bar");
+    if (searchBar) {
+      searchBar.classList.add("open");
+      const input = searchBar.querySelector("input");
+      if (input) input.focus();
+    }
+  });
+});
+
 /* CART UI + TOAST */
 const checkoutPage = "checkout.html";
 
@@ -326,6 +339,7 @@ function initSnipcartBindings(attempt = 0) {
 initSnipcartBindings();
 renderSavedPage();
 renderCartPage();
+bindCartButtons();
 
 /* SAVED PAGE RENDER */
 function renderSavedPage() {
@@ -547,6 +561,31 @@ async function removeCartItem(item) {
   } catch (err) {
     /* silent */
   }
+}
+
+/* CART BUTTONS */
+function bindCartButtons(attempt = 0) {
+  const buttons = document.querySelectorAll("[data-open-cart]");
+  if (!buttons.length) return;
+
+  const handler = async (e) => {
+    e.preventDefault();
+    try {
+      await ensureSnipcartReady();
+      if (window.Snipcart?.api?.theme?.cart?.open) {
+        window.Snipcart.api.theme.cart.open();
+      } else if (window.Snipcart?.api?.cart?.open) {
+        window.Snipcart.api.cart.open();
+      }
+    } catch (err) {
+      window.location.href = "cart.html";
+    }
+  };
+
+  buttons.forEach((btn) => {
+    btn.removeEventListener("click", handler);
+    btn.addEventListener("click", handler);
+  });
 }
 
 /* PRODUCTS */
