@@ -15,7 +15,7 @@
   --text: #f4f4f4;
   --muted: #8f8f8f;
   --line: #161616;
-  --edge-pad: 1cm;
+  --edge-pad: 0.2cm;
 }
 
 body {
