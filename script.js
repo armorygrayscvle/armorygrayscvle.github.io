@@ -1,3 +1,10 @@
+// Remove any old service workers that could cache stale assets
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    registrations.forEach((registration) => registration.unregister());
+  });
+}
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
@@ -83,12 +90,9 @@ function createShopButton() {
         'Code couldn’t be applied automatically — you can still enter GRAYSCVLE at checkout.'
       );
     }
-    if (window.Snipcart && Snipcart.api && Snipcart.api.cart) {
-      try {
-        await Snipcart.api.cart.open();
-      } catch (e) {
-        // ignore
-      }
+    const productsSection = document.getElementById("products");
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: "smooth" });
     }
   });
   return shopBtn;
@@ -155,13 +159,35 @@ if (form) {
 }
 
 /* PRODUCTS */
+const STORE_BASE_URL = "https://armorygrayscvle.com/";
+
+function buildStoreUrl(path = "/") {
+  try {
+    return new URL(path || "/", STORE_BASE_URL).href;
+  } catch (err) {
+    return STORE_BASE_URL;
+  }
+}
+
+function formatPrice(value) {
+  const numeric = parseFloat(String(value ?? "").replace(",", ".").replace(/[^0-9.]/g, ""));
+  if (Number.isNaN(numeric)) return "0.00";
+  return numeric.toFixed(2);
+}
+
+function buildItemId(product) {
+  const base = product?.id || product?.name || "product";
+  const cleaned = String(base).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  return cleaned || "product";
+}
+
 const productList = document.getElementById("product-list");
 
 async function loadProducts() {
   if (!productList) return;
 
   try {
-    const res = await fetch("products.json", { cache: "no-cache" });
+    const res = await fetch("products.json", { cache: "no-store" });
     if (!res.ok) throw new Error("Fetch failed");
     const products = await res.json();
 
@@ -197,13 +223,18 @@ async function loadProducts() {
       price.className = "product-price";
       price.textContent = product.price || "";
 
+      const itemId = buildItemId(product);
+      const itemPrice = formatPrice(product.price);
+      const itemUrl = buildStoreUrl(window.location.pathname || "/");
+
       const addBtn = document.createElement("button");
       addBtn.className = "snipcart-add-item";
       addBtn.textContent = "ADD TO CART";
-      addBtn.setAttribute("data-item-id", (product.name || "product").toLowerCase().replace(/\s+/g, "-"));
+      addBtn.setAttribute("data-item-id", itemId);
       addBtn.setAttribute("data-item-name", product.name || "Product");
-      addBtn.setAttribute("data-item-price", (product.price || "").replace(/[^\d.]/g, "") || "0.00");
-      addBtn.setAttribute("data-item-url", window.location.href);
+      addBtn.setAttribute("data-item-price", itemPrice);
+      addBtn.setAttribute("data-item-currency", "EUR");
+      addBtn.setAttribute("data-item-url", itemUrl);
       addBtn.setAttribute("data-item-description", product.description || "");
       addBtn.setAttribute("data-item-image", images[0]);
 

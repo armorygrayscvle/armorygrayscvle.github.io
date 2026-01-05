@@ -370,16 +370,60 @@ a {
 
 /* PRODUCTS */
 .products {
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  align-items: flex-start;
+  gap: 32px;
   margin: 120px auto 200px;
   padding: 0 4vw 0 4vw; /* pull content further left */
   background: #000;
   color: #f4f4f4;
 }
 
+.bag-rail {
+  position: sticky;
+  top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 220px;
+}
+
+.bag-rail::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  bottom: -80px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bag-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 18px 12px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.22em;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.bag-button:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .product-list {
-  width: 100%;
+  flex: 1 1 0;
+  width: auto;
   max-width: 1500px;
   display: flex;
   flex-direction: column;
@@ -551,6 +595,13 @@ a {
   align-items: stretch !important;
 }
 
+/* Keep cart above the blurred header */
+.snipcart-modal,
+.snipcart-modal__container,
+.snipcart-modal__overlay {
+  z-index: 200 !important;
+}
+
 /* Typography — identical to site */
 #snipcart,
 .snipcart *,
@@ -703,6 +754,22 @@ a {
   .products {
     margin: 110px auto 120px;
     padding: 0 18px 0 3vw;
+    gap: 18px;
+    grid-template-columns: 60px 1fr;
+  }
+
+  .bag-rail {
+    position: sticky;
+    top: 110px;
+    min-height: 140px;
+    justify-content: center;
+  }
+
+  .bag-button {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 12px 10px;
+    background: rgba(0, 0, 0, 0.6);
   }
 
   .notice-bar {
@@ -754,6 +821,13 @@ a {
   .products {
     margin: 110px auto 80px;
     padding: 0 14px 0 2vw;
+    gap: 16px;
+    grid-template-columns: 56px 1fr;
+  }
+
+  .bag-button {
+    border-color: rgba(255, 255, 255, 0.8);
+    padding: 11px 9px;
   }
 
   .product-list {
