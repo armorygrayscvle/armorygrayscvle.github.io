@@ -55,6 +55,13 @@ a {
   gap: 10px;
 }
 
+.notice-brand {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
 .notice-left img {
   width: 32px;
   height: 32px;
