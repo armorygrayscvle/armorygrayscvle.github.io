@@ -367,7 +367,7 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 28px var(--edge-pad) 18px 6vw;
+  padding: 28px var(--edge-pad) 18px var(--edge-pad);
   background: #000;
   color: #f4f4f4;
   border-bottom: 1px solid #111;
@@ -838,7 +838,7 @@ a {
   }
 
   .utility-header {
-    padding: 22px 38px 14px 18px;
+    padding: 22px var(--edge-pad) 14px var(--edge-pad);
   }
 
   .icon-btn {
@@ -903,7 +903,7 @@ a {
   }
 
   .utility-header {
-    padding: 18px 34px 12px 14px;
+    padding: 18px var(--edge-pad) 12px var(--edge-pad);
   }
 
   .icon-btn {
