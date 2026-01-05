@@ -60,6 +60,7 @@ a {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: #f4f4f4;
+  font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
 }
 
 .notice-brand-btn {
@@ -69,6 +70,9 @@ a {
   cursor: pointer;
   font: inherit;
   color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 12px;
 }
 
 .notice-left img {
@@ -495,7 +499,7 @@ a {
   max-width: 1800px;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
   align-items: stretch;
 }
 
@@ -510,8 +514,8 @@ a {
   overflow: hidden;
   border: none;
   min-height: 500px;
-  height: 540px;
-  max-height: 680px;
+  height: 460px;
+  max-height: 520px;
   display: grid;
   grid-template-columns: minmax(560px, 1.1fr) minmax(320px, 0.9fr);
   column-gap: 200px;
