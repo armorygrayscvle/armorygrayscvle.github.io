@@ -17,6 +17,7 @@ window.addEventListener("beforeunload", resetScroll);
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
+  jumpToInfo();
 
   setTimeout(() => {
     loader.style.opacity = "0";
@@ -29,6 +30,15 @@ window.addEventListener("load", () => {
 
   }, 1200);
 });
+
+window.addEventListener("pageshow", jumpToInfo);
+
+function jumpToInfo() {
+  const info = document.querySelector(".info-page");
+  if (!info) return;
+  const top = info.getBoundingClientRect().top + window.pageYOffset - 10;
+  window.scrollTo({ top, behavior: "auto" });
+}
 
 /* NOTICE TOGGLE + FORMSPREE */
 const noticeBar = document.getElementById("notice-bar");
