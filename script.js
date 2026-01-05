@@ -365,6 +365,100 @@ initSnipcartBindings();
 renderSavedPage();
 renderCartPage();
 bindCartButtons();
+renderProductPage();
+
+/* PRODUCT DETAIL PAGE */
+async function renderProductPage() {
+  const detail = document.getElementById("product-detail");
+  const gallery = document.getElementById("product-gallery");
+  if (!detail || !gallery) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+  if (!productId) {
+    detail.innerHTML = `<p class="products-empty">Product unavailable.</p>`;
+    return;
+  }
+
+  try {
+    const res = await fetch("products.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("Fetch failed");
+    const products = await res.json();
+    const product = Array.isArray(products)
+      ? products.find((p) => buildItemId(p) === productId)
+      : null;
+
+    if (!product) {
+      detail.innerHTML = `<p class="products-empty">Product unavailable.</p>`;
+      return;
+    }
+
+    const itemId = buildItemId(product);
+    const itemPrice = formatPrice(product.price);
+    const primaryImage =
+      (Array.isArray(product.images) && product.images.length && product.images[0]) ||
+      product.image ||
+      "";
+
+    gallery.innerHTML = "";
+    const img = document.createElement("img");
+    img.src = primaryImage;
+    img.alt = product.name || "Product image";
+    gallery.appendChild(img);
+
+    detail.innerHTML = "";
+    const title = document.createElement("h1");
+    title.className = "product-detail-title";
+    title.textContent = product.name || "";
+
+    const price = document.createElement("p");
+    price.className = "product-detail-price";
+    price.textContent = product.price || "";
+
+    const desc = document.createElement("p");
+    desc.className = "product-detail-desc";
+    desc.textContent = product.description || "";
+
+    const actions = document.createElement("div");
+    actions.className = "product-detail-actions";
+
+    const addBtn = document.createElement("button");
+    addBtn.className = "snipcart-add-item";
+    addBtn.textContent = "ADD TO CART";
+    addBtn.setAttribute("data-item-id", itemId);
+    addBtn.setAttribute("data-item-name", product.name || "Product");
+    addBtn.setAttribute("data-item-price", itemPrice);
+    addBtn.setAttribute("data-item-currency", "EUR");
+    addBtn.setAttribute("data-item-url", buildStoreUrl(window.location.pathname || "/"));
+    addBtn.setAttribute("data-item-description", product.description || "");
+    addBtn.setAttribute("data-item-image", primaryImage);
+
+    const savedBtn = document.createElement("button");
+    savedBtn.type = "button";
+    savedBtn.className = "saved-toggle saved-link";
+    savedBtn.setAttribute("aria-label", "Add to wishlist");
+    savedBtn.setAttribute("data-item-id", itemId);
+    savedBtn.setAttribute("data-item-name", product.name || "");
+    savedBtn.setAttribute("data-item-price", itemPrice);
+    savedBtn.setAttribute("data-item-image", primaryImage);
+    savedBtn.textContent = "Add to wishlist";
+    savedBtn.addEventListener("click", () => {
+      toggleSavedItem({
+        id: itemId,
+        name: product.name || "Saved item",
+        price: product.price || "",
+        numericPrice: itemPrice,
+        image: primaryImage || "",
+      });
+    });
+
+    actions.append(addBtn, savedBtn);
+    detail.append(title, price, desc, actions);
+    updateSavedIcons();
+  } catch (err) {
+    detail.innerHTML = `<p class="products-empty">Product unavailable.</p>`;
+  }
+}
 
 /* SAVED PAGE RENDER */
 function renderSavedPage() {
@@ -386,22 +480,31 @@ function renderSavedPage() {
     const card = document.createElement("article");
     card.className = "saved-card";
 
+    const link = document.createElement("a");
+    link.href = `product.html?id=${item.id}`;
+    link.className = "product-link";
+
     const imgWrap = document.createElement("div");
     imgWrap.className = "saved-image";
     const img = document.createElement("img");
     img.src = item.image || "";
     img.alt = item.name || "Saved item";
     imgWrap.appendChild(img);
+    link.appendChild(imgWrap);
 
     const meta = document.createElement("div");
     meta.className = "saved-meta";
     const title = document.createElement("h3");
     title.className = "saved-name";
     title.textContent = item.name || "";
+    const titleLink = document.createElement("a");
+    titleLink.href = `product.html?id=${item.id}`;
+    titleLink.className = "product-link";
+    titleLink.appendChild(title);
     const price = document.createElement("p");
     price.className = "saved-price";
     price.textContent = item.price || "";
-    meta.append(title, price);
+    meta.append(titleLink, price);
 
     const actions = document.createElement("div");
     actions.className = "saved-actions";
@@ -434,7 +537,7 @@ function renderSavedPage() {
 
     actions.append(add, remove);
 
-    card.append(imgWrap, meta, actions);
+    card.append(link, meta, actions);
     savedListEl.appendChild(card);
   });
 }
@@ -665,6 +768,10 @@ async function loadProducts() {
       const name = document.createElement("h3");
       name.className = "product-name";
       name.textContent = product.name || "";
+      const nameLink = document.createElement("a");
+      nameLink.href = `product.html?id=${buildItemId(product)}`;
+      nameLink.className = "product-link";
+      nameLink.appendChild(name);
 
       const price = document.createElement("p");
       price.className = "product-price";
@@ -705,8 +812,13 @@ async function loadProducts() {
         });
       });
 
-      meta.append(name, price, addBtn, savedBtn);
-      card.append(imageWrap, meta);
+      const imageLink = document.createElement("a");
+      imageLink.href = `product.html?id=${buildItemId(product)}`;
+      imageLink.className = "product-link";
+      imageLink.appendChild(imageWrap);
+
+      meta.append(nameLink, price, addBtn, savedBtn);
+      card.append(imageLink, meta);
 
       productList.appendChild(card);
     });
