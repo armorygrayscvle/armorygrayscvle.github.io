@@ -306,9 +306,7 @@ if (toastCheckout) {
 
 if (toastView) {
   toastView.addEventListener("click", () => {
-    if (window.Snipcart?.api?.theme?.cart?.open) {
-      window.Snipcart.api.theme.cart.open();
-    }
+    window.location.href = "cart.html";
     hideCartToast();
   });
 }
@@ -569,18 +567,9 @@ function bindCartButtons(attempt = 0) {
   const buttons = document.querySelectorAll("[data-open-cart]");
   if (!buttons.length) return;
 
-  const handler = async (e) => {
+  const handler = (e) => {
     e.preventDefault();
-    try {
-      await ensureSnipcartReady();
-      if (window.Snipcart?.api?.theme?.cart?.open) {
-        window.Snipcart.api.theme.cart.open();
-      } else if (window.Snipcart?.api?.cart?.open) {
-        window.Snipcart.api.cart.open();
-      }
-    } catch (err) {
-      window.location.href = "cart.html";
-    }
+    window.location.href = "cart.html";
   };
 
   buttons.forEach((btn) => {
