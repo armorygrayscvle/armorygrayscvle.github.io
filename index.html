@@ -72,6 +72,45 @@
       <div class="hero-overlay"></div>
     </section>
 
+    <!-- UTILITY HEADER -->
+    <section class="utility-header" aria-label="Utility actions">
+      <div class="utility-icons">
+        <button class="icon-btn" type="button" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 20c1.6-3.2 4.4-5 8-5s6.4 1.8 8 5"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-4.35-7-10a5 5 0 0 1 9-2.9A5 5 0 0 1 19 11c0 5.65-7 10-7 10z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="utility-bag">
+        <button class="snipcart-checkout bag-button" type="button">
+          <span class="bag-label">BAG</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+      <div class="utility-cart">
+        <button class="icon-btn snipcart-checkout" type="button" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 6h15l-1.2 7H7.5L6 6z"></path>
+            <circle cx="9" cy="19" r="1.1"></circle>
+            <circle cx="17" cy="19" r="1.1"></circle>
+          </svg>
+          <span class="cart-count-badge" data-cart-count>0</span>
+        </button>
+      </div>
+    </section>
+
     <!-- SNIPCART TEST PRODUCT (per docs) -->
     <section class="test-product">
       <p class="product-title">Prototype 001</p>
@@ -95,9 +134,6 @@
 
     <!-- PRODUCTS -->
     <section class="products" id="products">
-      <div class="bag-rail">
-        <button class="snipcart-checkout bag-button" type="button">BAG</button>
-      </div>
       <div class="product-list" id="product-list"></div>
     </section>
 

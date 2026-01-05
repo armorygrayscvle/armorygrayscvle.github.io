@@ -361,57 +361,118 @@ a {
   text-transform: uppercase;
 }
 
-/* PRODUCTS */
-.products {
+/* UTILITY HEADER */
+.utility-header {
   display: grid;
-  grid-template-columns: 74px 1fr;
-  align-items: flex-start;
-  gap: 32px;
-  margin: 120px auto 200px;
-  padding: 0 4vw 0 4vw; /* pull content further left */
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 28px 6vw 18px;
   background: #000;
   color: #f4f4f4;
+  border-bottom: 1px solid #111;
+  gap: 20px;
 }
 
-.bag-rail {
-  position: sticky;
-  top: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 220px;
+.utility-icons,
+.utility-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: flex-start;
 }
 
-.bag-rail::after {
-  content: "";
-  position: absolute;
-  top: -60px;
-  bottom: -80px;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.08);
-  left: 50%;
-  transform: translateX(-50%);
+.utility-cart {
+  justify-content: flex-end;
 }
 
-.bag-button {
-  position: relative;
+.icon-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #f4f4f4;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  padding: 18px 12px;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  letter-spacing: 0.22em;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
 }
 
-.bag-button:hover {
+.icon-btn:hover,
+.icon-btn:focus-visible {
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  opacity: 0.8;
+}
+
+.cart-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin-left: 8px;
+  background: #f4f4f4;
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.utility-bag {
+  display: flex;
+  justify-content: center;
+}
+
+.bag-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #f4f4f4;
+  letter-spacing: 0.28em;
+  padding: 12px 18px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.bag-button:hover,
+.bag-button:focus-visible {
+  border-color: #fff;
+  opacity: 0.85;
+}
+
+.bag-label {
+  display: inline-block;
+}
+
+.cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  background: #f4f4f4;
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* PRODUCTS */
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin: 120px auto 200px;
+  padding: 0 4vw 0 4vw;
+  background: #000;
+  color: #f4f4f4;
 }
 
 .product-list {
@@ -681,6 +742,98 @@ a {
   opacity: 0.65 !important;
 }
 
+/* ADD-TO-CART POPUP */
+.cart-toast-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+}
+
+.cart-toast-backdrop.active {
+  display: flex;
+}
+
+.cart-toast {
+  background: #000;
+  color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  max-width: 560px;
+  width: 90vw;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 18px;
+  row-gap: 12px;
+}
+
+.cart-toast-img {
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-toast-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  display: block;
+}
+
+.cart-toast-message {
+  grid-column: span 1;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.cart-toast-name {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #dcdcdc;
+  margin-top: 6px;
+}
+
+.cart-toast-actions {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cart-toast-actions button {
+  background: #000;
+  color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  padding: 12px 10px;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.cart-toast-actions button:hover,
+.cart-toast-actions button:focus-visible {
+  opacity: 0.8;
+  border-color: #fff;
+}
+
+.cart-toast-close {
+  grid-column: 1 / -1;
+  text-align: right;
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
 /* Mobile — drawer becomes full width */
 @media (max-width: 640px) {
   .snipcart-modal__container {
@@ -748,22 +901,18 @@ a {
   .products {
     margin: 110px auto 120px;
     padding: 0 18px 0 3vw;
-    gap: 18px;
-    grid-template-columns: 60px 1fr;
+    gap: 22px;
   }
 
-  .bag-rail {
-    position: sticky;
-    top: 110px;
-    min-height: 140px;
-    justify-content: center;
+  .utility-header {
+    grid-template-columns: 1fr auto 1fr;
+    padding: 22px 18px 14px;
+    gap: 16px;
   }
 
-  .bag-button {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    padding: 12px 10px;
-    background: rgba(0, 0, 0, 0.6);
+  .icon-btn {
+    width: 40px;
+    height: 40px;
   }
 
   .notice-bar {
@@ -815,13 +964,42 @@ a {
   .products {
     margin: 110px auto 80px;
     padding: 0 14px 0 2vw;
-    gap: 16px;
-    grid-template-columns: 56px 1fr;
+    gap: 18px;
+  }
+
+  .utility-header {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 18px 14px 12px;
+    gap: 12px;
+  }
+
+  .icon-btn {
+    width: 38px;
+    height: 38px;
   }
 
   .bag-button {
-    border-color: rgba(255, 255, 255, 0.8);
-    padding: 11px 9px;
+    padding: 10px 14px;
+    letter-spacing: 0.22em;
+  }
+
+  .cart-toast {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    text-align: center;
+  }
+
+  .cart-toast-img {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .cart-toast-message {
+    justify-self: center;
+  }
+
+  .cart-toast-actions {
+    grid-template-columns: 1fr;
   }
 
   .product-list {

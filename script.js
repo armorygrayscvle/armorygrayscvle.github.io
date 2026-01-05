@@ -158,6 +158,137 @@ if (form) {
   });
 }
 
+/* CART UI + COUNT + TOAST */
+const cartCountTargets = document.querySelectorAll("[data-cart-count]");
+const checkoutPage = "checkout.html";
+
+function updateCartCount(count = 0) {
+  cartCountTargets.forEach((el) => {
+    el.textContent = typeof count === "number" ? count : 0;
+  });
+}
+
+// Build toast once
+const toastBackdrop = document.createElement("div");
+toastBackdrop.className = "cart-toast-backdrop";
+toastBackdrop.innerHTML = `
+  <div class="cart-toast" role="dialog" aria-live="polite">
+    <div class="cart-toast-img">
+      <img data-toast-image src="" alt="Item added" />
+    </div>
+    <div class="cart-toast-message">
+      <div>Item added to your cart</div>
+      <div class="cart-toast-name" data-toast-name></div>
+    </div>
+    <div class="cart-toast-actions">
+      <button type="button" data-toast-checkout>Checkout</button>
+      <button type="button" data-toast-view>View Cart</button>
+      <button type="button" data-toast-continue>Continue Shopping</button>
+    </div>
+    <div class="cart-toast-close" data-toast-close>Close</div>
+  </div>
+`;
+document.body.appendChild(toastBackdrop);
+
+const toastImage = toastBackdrop.querySelector("[data-toast-image]");
+const toastName = toastBackdrop.querySelector("[data-toast-name]");
+const toastCheckout = toastBackdrop.querySelector("[data-toast-checkout]");
+const toastView = toastBackdrop.querySelector("[data-toast-view]");
+const toastContinue = toastBackdrop.querySelector("[data-toast-continue]");
+const toastClose = toastBackdrop.querySelector("[data-toast-close]");
+let toastHideTimer;
+
+function hideCartToast() {
+  toastBackdrop.classList.remove("active");
+}
+
+function showCartToast(item = {}) {
+  const imgSrc = item.image || item.imagePath || item?.item?.image || "";
+  const name = item.name || item?.item?.name || "Item";
+
+  if (toastImage) {
+    if (imgSrc) {
+      toastImage.src = imgSrc;
+      toastImage.style.visibility = "visible";
+    } else {
+      toastImage.removeAttribute("src");
+      toastImage.style.visibility = "hidden";
+    }
+  }
+  if (toastName) toastName.textContent = name;
+
+  toastBackdrop.classList.add("active");
+  clearTimeout(toastHideTimer);
+  toastHideTimer = setTimeout(hideCartToast, 4500);
+}
+
+toastBackdrop.addEventListener("click", (e) => {
+  if (e.target === toastBackdrop) {
+    hideCartToast();
+  }
+});
+
+[toastContinue, toastClose].forEach((el) => {
+  if (el) {
+    el.addEventListener("click", hideCartToast);
+  }
+});
+
+if (toastCheckout) {
+  toastCheckout.addEventListener("click", () => {
+    window.location.href = checkoutPage;
+  });
+}
+
+if (toastView) {
+  toastView.addEventListener("click", () => {
+    if (window.Snipcart?.api?.theme?.cart?.open) {
+      window.Snipcart.api.theme.cart.open();
+    }
+    hideCartToast();
+  });
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && toastBackdrop.classList.contains("active")) {
+    hideCartToast();
+  }
+});
+
+function initSnipcartBindings(attempt = 0) {
+  const maxAttempts = 25;
+  if (!window.Snipcart || !window.Snipcart.store || !window.Snipcart.store.subscribe) {
+    if (attempt < maxAttempts) {
+      setTimeout(() => initSnipcartBindings(attempt + 1), 400);
+    }
+    return;
+  }
+
+  const { store, events } = window.Snipcart;
+
+  const syncCount = () => {
+    const state = store.getState ? store.getState() : null;
+    const count =
+      state?.cart?.items?.count ??
+      state?.cart?.items?.items?.length ??
+      state?.cart?.items?.length ??
+      0;
+    updateCartCount(count);
+  };
+
+  store.subscribe(syncCount);
+  syncCount();
+
+  if (events?.on) {
+    events.on("item.added", (item) => {
+      showCartToast(item);
+      syncCount();
+    });
+  }
+}
+
+initSnipcartBindings();
+
 /* PRODUCTS */
 const STORE_BASE_URL = "https://armorygrayscvle.com/";
 
