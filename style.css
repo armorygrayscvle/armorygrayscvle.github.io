@@ -420,9 +420,9 @@ a {
   top: 48px;
   left: 0;
   right: 0;
-  background: #000;
+  background: #f8f8f8;
   padding: 14px var(--edge-pad);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid #111;
   display: none;
   justify-content: center;
   z-index: 70;
@@ -433,19 +433,19 @@ a {
 }
 
 .search-bar form {
-  width: min(480px, 92vw);
+  width: min(540px, 94vw);
+  position: relative;
   display: flex;
-  gap: 10px;
+  align-items: center;
 }
 
 .search-bar button {
+  position: absolute;
+  right: 0;
   background: transparent;
-  border: 1px solid #f4f4f4;
-  color: #f4f4f4;
-  padding: 10px 14px;
-  letter-spacing: 0.14em;
-  font-size: 11px;
-  text-transform: uppercase;
+  border: none;
+  color: #111;
+  padding: 10px;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
@@ -459,15 +459,16 @@ a {
   flex: 1;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  color: #f4f4f4;
-  padding: 10px 4px;
+  border-bottom: 1px solid #111;
+  color: #111;
+  padding: 12px 40px 12px 2px;
   letter-spacing: 0.08em;
+  font-size: 14px;
 }
 
 .search-bar input:focus {
   outline: none;
-  border-bottom-color: #f4f4f4;
+  border-bottom-color: #000;
 }
 
 .saved-toggle {
