@@ -5,6 +5,15 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+// Always start at top on reload
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+const resetScroll = () => window.scrollTo(0, 0);
+resetScroll();
+window.addEventListener("pageshow", resetScroll);
+window.addEventListener("beforeunload", resetScroll);
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
