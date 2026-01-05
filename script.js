@@ -158,15 +158,8 @@ if (form) {
   });
 }
 
-/* CART UI + COUNT + TOAST */
-const cartCountTargets = document.querySelectorAll("[data-cart-count]");
+/* CART UI + TOAST */
 const checkoutPage = "checkout.html";
-
-function updateCartCount(count = 0) {
-  cartCountTargets.forEach((el) => {
-    el.textContent = typeof count === "number" ? count : 0;
-  });
-}
 
 // Build toast once
 const toastBackdrop = document.createElement("div");
@@ -257,32 +250,18 @@ document.addEventListener("keydown", (e) => {
 
 function initSnipcartBindings(attempt = 0) {
   const maxAttempts = 25;
-  if (!window.Snipcart || !window.Snipcart.store || !window.Snipcart.store.subscribe) {
+  if (!window.Snipcart || !window.Snipcart.events) {
     if (attempt < maxAttempts) {
       setTimeout(() => initSnipcartBindings(attempt + 1), 400);
     }
     return;
   }
 
-  const { store, events } = window.Snipcart;
-
-  const syncCount = () => {
-    const state = store.getState ? store.getState() : null;
-    const count =
-      state?.cart?.items?.count ??
-      state?.cart?.items?.items?.length ??
-      state?.cart?.items?.length ??
-      0;
-    updateCartCount(count);
-  };
-
-  store.subscribe(syncCount);
-  syncCount();
+  const { events } = window.Snipcart;
 
   if (events?.on) {
     events.on("item.added", (item) => {
       showCartToast(item);
-      syncCount();
     });
   }
 }
