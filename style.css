@@ -23,7 +23,7 @@ body {
   color: var(--text);
   font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
   letter-spacing: 0.01em;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -344,6 +344,7 @@ a {
   min-height: 100vh;
   padding: 0 var(--edge-pad) 200px;
   overflow-x: hidden;
+  background: #fff;
 }
 
 /* HERO */
