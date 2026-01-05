@@ -322,6 +322,32 @@ a {
   color: #111;
 }
 
+.returns-page {
+  background: #000;
+  color: #f4f4f4;
+}
+
+.returns-page .info-title {
+  letter-spacing: 0.22em;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.returns-page .info-divider {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.returns-page p {
+  margin-bottom: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: #f4f4f4;
+}
+
+.returns-page a {
+  color: #f4f4f4;
+}
+
 /* LOADING SCREEN */
 #loader {
   position: fixed;
