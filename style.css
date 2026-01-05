@@ -415,60 +415,30 @@ a {
   position: relative;
 }
 
-.search-bar {
-  position: fixed;
-  top: 48px;
-  left: 0;
-  right: 0;
-  background: #f8f8f8;
-  padding: 14px var(--edge-pad);
-  border-bottom: 1px solid #111;
+.search-inline {
   display: none;
-  justify-content: center;
-  z-index: 70;
-}
-
-.search-bar.open {
-  display: flex;
-}
-
-.search-bar form {
-  width: min(540px, 94vw);
-  position: relative;
-  display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-.search-bar button {
-  position: absolute;
-  right: 0;
+.search-inline.open {
+  display: inline-flex;
+}
+
+.search-inline input {
   background: transparent;
   border: none;
-  color: #111;
-  padding: 10px;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.search-bar button:hover,
-.search-bar button:focus-visible {
-  opacity: 0.8;
-}
-
-.search-bar input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #111;
-  color: #111;
-  padding: 12px 40px 12px 2px;
+  border-bottom: 1px solid #f4f4f4;
+  color: #f4f4f4;
+  padding: 6px 4px;
   letter-spacing: 0.08em;
-  font-size: 14px;
+  font-size: 13px;
+  width: 180px;
 }
 
-.search-bar input:focus {
+.search-inline input:focus {
   outline: none;
-  border-bottom-color: #000;
+  border-bottom-color: #fff;
 }
 
 .saved-toggle {

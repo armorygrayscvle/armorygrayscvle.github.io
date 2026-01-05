@@ -220,11 +220,11 @@ function updateSavedIcons() {
 const searchToggle = document.querySelectorAll(".search-toggle");
 searchToggle.forEach((btn) => {
   btn.addEventListener("click", () => {
-    const searchBar = document.querySelector(".search-bar");
-    if (searchBar) {
-      searchBar.classList.add("open");
-      const input = searchBar.querySelector("input");
-      if (input) input.focus();
+    const inline = btn.parentElement?.querySelector(".search-inline");
+    if (inline) {
+      inline.classList.toggle("open");
+      const input = inline.querySelector("input");
+      if (inline.classList.contains("open") && input) input.focus();
     }
   });
 });
