@@ -379,6 +379,12 @@ a {
   gap: 14px;
 }
 
+.utility-actions .snipcart-checkout {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
 .icon-btn {
   background: transparent;
   border: none;
