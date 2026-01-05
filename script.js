@@ -208,10 +208,11 @@ function toggleSavedItem(data) {
 function updateSavedIcons() {
   const savedNow = loadSavedItems();
   const ids = new Set(savedNow.map((item) => item.id));
-  document.querySelectorAll(".saved-toggle").forEach((btn) => {
+  document.querySelectorAll(".saved-toggle, .saved-link").forEach((btn) => {
     const id = btn.getAttribute("data-item-id");
     if (!id) return;
     btn.classList.toggle("saved-active", ids.has(id));
+    btn.textContent = ids.has(id) ? "Saved" : "Add to wishlist";
   });
 }
 
@@ -672,17 +673,13 @@ async function loadProducts() {
 
       const savedBtn = document.createElement("button");
       savedBtn.type = "button";
-      savedBtn.className = "saved-toggle";
-      savedBtn.setAttribute("aria-label", "Save item");
+      savedBtn.className = "saved-toggle saved-link";
+      savedBtn.setAttribute("aria-label", "Add to wishlist");
       savedBtn.setAttribute("data-item-id", itemId);
       savedBtn.setAttribute("data-item-name", product.name || "");
       savedBtn.setAttribute("data-item-price", itemPrice);
       savedBtn.setAttribute("data-item-image", primaryImage);
-      savedBtn.innerHTML = `
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 4h10v16l-5-3-5 3V4z"></path>
-        </svg>
-      `;
+      savedBtn.textContent = "Add to wishlist";
       savedBtn.addEventListener("click", () => {
         toggleSavedItem({
           id: itemId,
@@ -693,8 +690,8 @@ async function loadProducts() {
         });
       });
 
-      meta.append(name, price, addBtn);
-      card.append(imageWrap, meta, savedBtn);
+      meta.append(name, price, addBtn, savedBtn);
+      card.append(imageWrap, meta);
 
       productList.appendChild(card);
     });
