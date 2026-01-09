@@ -1119,7 +1119,7 @@ a {
   display: grid;
   align-content: center;
   justify-items: center;
-  margin: 120px auto;
+  margin: 80px auto;
 }
 
 .info-card {
@@ -1917,7 +1917,7 @@ a {
   }
 
   .info-hero-content {
-    margin: 100px auto;
+    margin: 70px auto;
   }
 
   .contact-grid {
@@ -2095,6 +2095,10 @@ a {
 
   .info-logo img {
     height: 36px;
+  }
+
+  .info-hero-content {
+    margin: 60px auto;
   }
 
   .contact-grid {
