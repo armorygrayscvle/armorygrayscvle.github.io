@@ -953,15 +953,75 @@ a {
 }
 
 /* LOGIN PAGE */
-.login-page {
-  padding: 80px 0 200px;
+.login-body {
+  background: #000;
+  color: #111;
 }
 
-.login-shell {
-  max-width: 520px;
-  margin: 0 auto;
+.login-body #main-content {
+  padding: 0;
+  background: #000;
+}
+
+.hero.login-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: url("herooo.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 80px;
+  overflow: hidden;
+}
+
+.hero.login-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.login-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(620px, 94vw);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  padding: 32px 32px 36px;
   display: grid;
-  gap: 20px;
+  gap: 16px;
+  color: #0c0c0c;
+  backdrop-filter: blur(2px);
+}
+
+.login-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.login-title {
+  font-family: "Cinzel", "EB Garamond", serif;
+  font-size: 26px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0b0b0b;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #333;
+  line-height: 1.6;
 }
 
 .login-actions {
@@ -976,14 +1036,14 @@ a {
   justify-content: center;
   width: 100%;
   background: transparent;
-  color: #f4f4f4;
-  border: 1px solid #f4f4f4;
+  color: #0c0c0c;
+  border: 1px solid #0c0c0c;
   padding: 12px 14px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-size: 11px;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
 }
 
 .login-alt-icon {
@@ -998,6 +1058,7 @@ a {
 .login-alt:hover,
 .login-alt:focus-visible {
   opacity: 0.75;
+  border-color: #111;
 }
 
 .login-divider {
@@ -1005,7 +1066,8 @@ a {
   text-align: center;
   font-size: 11px;
   letter-spacing: 0.14em;
-  color: #d0d0d0;
+  color: #333;
+  text-transform: uppercase;
 }
 
 .login-divider::before,
@@ -1015,7 +1077,7 @@ a {
   top: 50%;
   width: 45%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .login-divider::before {
@@ -1034,40 +1096,48 @@ a {
 .login-form input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
   padding: 12px 6px;
-  color: #f4f4f4;
+  color: #0c0c0c;
   font-size: 13px;
   letter-spacing: 0.08em;
 }
 
+.login-form input::placeholder {
+  color: #666;
+}
+
 .login-form input:focus {
   outline: none;
-  border-bottom-color: #f4f4f4;
+  border-bottom-color: #000;
 }
 
 .login-link {
   font-size: 11px;
   letter-spacing: 0.14em;
-  color: #d0d0d0;
+  color: #333;
   text-transform: uppercase;
 }
 
 .login-primary {
-  background: transparent;
+  background: #0c0c0c;
   color: #f4f4f4;
-  border: 1px solid #f4f4f4;
+  border: 1px solid #0c0c0c;
   padding: 12px 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 11px;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
 .login-primary:hover,
 .login-primary:focus-visible {
-  opacity: 0.75;
+  opacity: 0.9;
+}
+
+.login-primary:active {
+  transform: translateY(1px);
 }
 
 .visually-hidden {
@@ -1478,6 +1548,10 @@ a {
     overflow: auto;
   }
 
+  .login-body #main-content {
+    padding: 0;
+  }
+
   .home #main-content {
     padding: 0;
   }
@@ -1550,6 +1624,14 @@ a {
   font-size: 24px;
   letter-spacing: 0.14em;
 }
+
+  .hero.login-hero {
+    padding: 110px 16px 60px;
+  }
+
+  .login-card {
+    padding: 26px 22px 30px;
+  }
 
   .products {
     margin: 80px auto 120px;
@@ -1624,6 +1706,10 @@ a {
     padding: 0;
   }
 
+  .login-body #main-content {
+    padding: 0;
+  }
+
   .ch-header {
     height: 70px;
   }
@@ -1668,6 +1754,14 @@ a {
 
   .ch-legal-copy {
     display: none;
+  }
+
+  .hero.login-hero {
+    padding: 100px 14px 50px;
+  }
+
+  .login-card {
+    padding: 22px 20px 26px;
   }
 
   .products {
