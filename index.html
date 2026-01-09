@@ -18,7 +18,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
   <link id="site-style" rel="stylesheet" href="style.css">
   <script>
     (function() {
@@ -32,129 +31,57 @@
   </script>
 </head>
 
-<body>
+<body class="home">
   <!-- LOADING SCREEN -->
   <div id="loader">
     <h1>ARMORY GRAYSCVLE</h1>
   </div>
 
-  <!-- TOP BAR -->
-  <section class="notice-bar" id="notice-bar">
-    <div class="notice-left">
-      <img src="/logowhite.png" alt="Armory Grayscvle logo" id="logo-toggle" role="button" tabindex="0" />
-      <button class="notice-brand notice-brand-btn" type="button">ARMORY GRAYSCVLE</button>
-    </div>
-    <div class="notice-right">
-      <div class="notice-text" id="notice-toggle" role="button" tabindex="0">NEWSLETTER</div>
-      <form
-        id="notice-form"
-        class="notice-form"
-        action="https://formspree.io/f/mpqzdwko"
-        method="POST"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-        >
-        <button type="submit">Submit</button>
-      </form>
-      <div class="notice-helper" id="notice-helper"></div>
-    </div>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="hero" aria-label="Armory Grayscvle hero">
-      <div class="hero-overlay"></div>
-    </section>
-
-    <!-- UTILITY HEADER -->
-    <section class="utility-header" aria-label="Utility actions">
-      <div class="utility-actions">
-        <button class="icon-btn search-toggle" type="button" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"></circle>
-            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
-          </svg>
-        </button>
-        <div class="search-inline">
-          <input type="search" name="q" aria-label="Search" autocomplete="off">
-        </div>
-        <a class="icon-btn" href="login.html" aria-label="Account">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="4"></circle>
-            <path d="M4 20c1.6-3.2 4.4-5 8-5s6.4 1.8 8 5"></path>
-          </svg>
-        </a>
-        <a class="icon-btn saved-icon-btn" href="saved.html" aria-label="Saved">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 4h10v16l-5-3-5 3V4z"></path>
-          </svg>
-        </a>
-        <a class="icon-btn bag-icon-btn" href="cart.html" aria-label="Cart" data-open-cart>
+  <!-- HEADER -->
+  <header class="ch-header" aria-label="Site header">
+    <div class="ch-header-inner">
+      <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Open Maison links">
+        <img src="/logowhite.png" alt="Armory Grayscvle logo">
+      </button>
+      <span class="ch-brand">ARMORY GRAYSCVLE</span>
+      <div class="ch-actions" aria-label="Account and bag links">
+        <a class="ch-action-link" href="login.html">Login</a>
+        <a class="ch-action-link" href="cart.html" aria-label="Shopping bag">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7 8l1 11h8l1-11z"></path>
             <path d="M9 8a3 3 0 1 1 6 0"></path>
           </svg>
+          <span>Bag</span>
         </a>
       </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <section class="hero ch-hero" aria-label="Armory Grayscvle hero">
+      <div class="ch-hero-overlay">
+        <p class="ch-hero-wordmark">Armory Grayscvle</p>
+      </div>
     </section>
-
-    <!-- PRODUCTS -->
-    <section class="products" id="products">
-      <div class="product-list" id="product-list"></div>
-    </section>
-
-    <p class="about-line">Limited-run pieces. Quiet construction. Own less. Mean more.</p>
-
   </main>
 
-  <!-- UPPER FOOTER / MAISON -->
-  <section class="footer-upper" id="maison">
-    <div class="footer-upper-inner">
-      <div class="footer-upper-empty"></div>
-      <div class="footer-upper-column">
-        <h4 class="footer-upper-title">MAISON</h4>
-        <nav class="footer-upper-links">
-          <a href="returns.html">Returns Info</a>
-          <a href="delivery.html">Delivery Info</a>
-          <a href="terms.html">Terms &amp; Conditions</a>
-          <a href="preorders.html">Pre-Orders &amp; Drops</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="footer-upper-follow">
-          <h4 class="footer-upper-title">FOLLOW US</h4>
-          <a class="footer-upper-ig" href="https://www.instagram.com/armorygrayscvle" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="4"></rect>
-              <circle cx="12" cy="12" r="4.5"></circle>
-              <circle cx="17.5" cy="6.5" r="0.8"></circle>
-            </svg>
-          </a>
-        </div>
+  <aside class="ch-menu" id="ch-menu" aria-label="Maison menu">
+    <div class="ch-menu-inner">
+      <div class="ch-menu-top">
+        <span class="ch-menu-title">MAISON</span>
+        <button class="ch-menu-close" type="button" aria-label="Close menu">×</button>
       </div>
+      <nav class="ch-menu-links">
+        <a href="returns.html">Returns Info</a>
+        <a href="delivery.html">Delivery Info</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="preorders.html">Pre-Orders &amp; Drops</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-  </section>
-
-  <div class="footer-upper-separator"></div>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-left"></div>
-      <div class="footer-center">
-        <span class="footer-brand">ARMORY GRAYSCVLE</span>
-        <span class="footer-inc">Inc.</span>
-      </div>
-      <div class="footer-right">© ARMORY GRAYSCVLE. All Rights Reserved.</div>
-    </div>
-  </footer>
+  </aside>
 
   <script>
     (function() {
@@ -165,11 +92,5 @@
       document.body.appendChild(mainScript);
     })();
   </script>
-  <div
-    id="snipcart"
-    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
-    data-config-add-product-behavior="none"
-  ></div>
-  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 </body>
 </html>
