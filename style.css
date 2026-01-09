@@ -1053,11 +1053,12 @@ a {
 .info-main {
   padding: 0;
   background: #000;
+  min-height: auto;
 }
 
 .hero.info-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   width: 100vw;
   margin: 0;
   margin-left: calc(50% - 50vw);
@@ -1187,13 +1188,6 @@ a {
 .contact-form textarea {
   resize: vertical;
   min-height: 120px;
-}
-
-.contact-page .info-card {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
 }
 
 .contact-consent {
