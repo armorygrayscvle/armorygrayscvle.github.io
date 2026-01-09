@@ -1122,6 +1122,10 @@ a {
   margin: 80px auto;
 }
 
+.contact-page .info-hero-content {
+  margin: 80px auto;
+}
+
 .info-card {
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1920,6 +1924,10 @@ a {
     margin: 70px auto;
   }
 
+  .contact-page .info-hero-content {
+    margin: 70px auto;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -2039,6 +2047,10 @@ a {
   }
 
   .info-hero-content {
+    margin: 80px auto;
+  }
+
+  .contact-page .info-hero-content {
     margin: 80px auto;
   }
 
