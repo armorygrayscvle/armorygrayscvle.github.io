@@ -210,45 +210,54 @@ body.home {
   padding: 120px 32px 40px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
   color: #f4f4f4;
 }
 
-.ch-menu-top {
+.ch-menu-header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-.ch-menu-close {
+.ch-menu-logo {
+  display: inline-flex;
+  align-items: center;
   background: transparent;
   border: none;
-  color: #f8f8f8;
-  font-size: 26px;
-  line-height: 1;
-  cursor: pointer;
   padding: 0;
 }
 
-.ch-menu-links {
+.ch-menu-logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.ch-menu-grid {
   display: grid;
-  gap: 16px;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  gap: 12px;
 }
 
-.ch-menu-links a {
+.ch-menu-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.3);
   color: #f8f8f8;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 4px;
-  transition: border-color 0.2s ease, opacity 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
 }
 
-.ch-menu-links a:hover,
-.ch-menu-links a:focus-visible {
-  border-color: rgba(255, 255, 255, 0.8);
+.ch-menu-tile:hover,
+.ch-menu-tile:focus-visible {
   opacity: 0.85;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .ch-menu-locale {
@@ -1825,8 +1834,24 @@ a {
     padding: 120px 18px 60px;
   }
 
+  .ch-menu-logo img {
+    height: 32px;
+  }
+
+  .ch-menu-grid {
+    gap: 10px;
+  }
+
   .ch-hero-overlay {
     padding: 22px 24px;
+  }
+
+  .ch-menu-logo img {
+    height: 32px;
+  }
+
+  .ch-menu-grid {
+    gap: 10px;
   }
 
   .ch-menu {
@@ -2013,6 +2038,14 @@ a {
 
   .ch-menu {
     width: min(300px, 92vw);
+  }
+
+  .ch-menu-logo img {
+    height: 28px;
+  }
+
+  .ch-menu-grid {
+    gap: 10px;
   }
 
   .ch-legal-links {
