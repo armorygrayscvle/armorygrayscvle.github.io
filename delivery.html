@@ -28,144 +28,29 @@
     })();
   </script>
 </head>
-<body>
-  <script>
-    window.SnipcartSettings = {
-      publicApiKey: "YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx",
-      modalStyle: "side",
-      currency: "eur"
-    };
-
-    (function () {
-      var c, d;
-      (d = (c = window.SnipcartSettings).version) != null || (c.version = "3.0");
-      var s, S;
-      (S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750);
-      var l, p;
-      (p = (l = window.SnipcartSettings).domain) != null || (l.domain = "cdn.snipcart.com");
-      var w, u;
-      (u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = "https");
-      var m, g;
-      (g = (m = window.SnipcartSettings).loadCSS) != null || (m.loadCSS = !0);
-      var y =
-          window.SnipcartSettings.version.includes("v3.0.0-ci") ||
-          (window.SnipcartSettings.version != "3.0" &&
-            window.SnipcartSettings.version.localeCompare("3.4.0", void 0, { numeric: !0, sensitivity: "base" }) === -1),
-        f = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
-      window.LoadSnipcart = o;
-      document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", r) : r();
-      function r() {
-        window.SnipcartSettings.loadStrategy
-          ? window.SnipcartSettings.loadStrategy === "on-user-interaction" &&
-            (f.forEach(function (t) {
-              return document.addEventListener(t, o);
-            }),
-            setTimeout(o, window.SnipcartSettings.timeoutDuration))
-          : o();
-      }
-      var a = !1;
-      function o() {
-        if (a) return;
-        a = !0;
-        let t = document.getElementsByTagName("head")[0],
-          n = document.querySelector("#snipcart"),
-          i = document.querySelector(
-            'src[src^="'.concat(window.SnipcartSettings.protocol, "://").concat(window.SnipcartSettings.domain, '"][src$="snipcart.js"]')
-          ),
-          e = document.querySelector(
-            'link[href^="'.concat(window.SnipcartSettings.protocol, "://").concat(window.SnipcartSettings.domain, '"][href$="snipcart.css"]')
-          );
-        n || ((n = document.createElement("div")), n.id = "snipcart", n.setAttribute("hidden", "true"), document.body.appendChild(n)), h(n),
-          i ||
-            ((i = document.createElement("script")),
-            (i.src = "".concat(window.SnipcartSettings.protocol, "://")
-              .concat(window.SnipcartSettings.domain, "/themes/v")
-              .concat(window.SnipcartSettings.version, "/default/snipcart.js")),
-            (i.async = !0),
-            t.appendChild(i)),
-          !e &&
-            window.SnipcartSettings.loadCSS &&
-            ((e = document.createElement("link")),
-            (e.rel = "stylesheet"),
-            (e.type = "text/css"),
-            (e.href = "".concat(window.SnipcartSettings.protocol, "://")
-              .concat(window.SnipcartSettings.domain, "/themes/v")
-              .concat(window.SnipcartSettings.version, "/default/snipcart.css")),
-            t.prepend(e)),
-          f.forEach(function (v) {
-            return document.removeEventListener(v, o);
-          });
-      }
-      function h(t) {
-        !y ||
-          ((t.dataset.apiKey = window.SnipcartSettings.publicApiKey),
-          window.SnipcartSettings.addProductBehavior && (t.dataset.configAddProductBehavior = window.SnipcartSettings.addProductBehavior),
-          window.SnipcartSettings.modalStyle && (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle),
-          window.SnipcartSettings.currency && (t.dataset.currency = window.SnipcartSettings.currency),
-          window.SnipcartSettings.templatesUrl && (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl));
-      }
-    })();
-  </script>
+<body class="info-hero-body">
   <div id="loader"><h1>ARMORY GRAYSCVLE</h1></div>
 
-  <main id="main-content">
-    <section class="hero" aria-label="Armory Grayscvle hero">
-      <div class="hero-overlay"></div>
-    </section>
-
-    <section class="info-page">
-      <div class="info-divider"></div>
-      <div class="info-inner">
-        <h1 class="info-title">DELIVERY INFO</h1>
-        <p>We ship worldwide from Portugal.</p>
-        <p>Shipping fees are calculated at checkout based on destination and order weight.</p>
-        <p>Delivery times are estimates and may vary due to customs processing, carrier delays, or external conditions beyond our control.</p>
-        <p>Any customs duties, import taxes, or additional charges imposed by local authorities are the responsibility of the customer.</p>
-        <p>For delivery-related inquiries, please contact <a href="mailto:office@armorygrayscvle.com">office@armorygrayscvle.com</a></p>
-        <p class="info-contact"><a href="mailto:office@armorygrayscvle.com">office@armorygrayscvle.com</a></p>
+  <main id="main-content" class="info-main">
+    <section class="hero info-hero" aria-label="Delivery">
+      <div class="info-topbar">
+        <a class="info-logo info-logo-dark" href="index.html" aria-label="Back to home">
+          <img src="/logowhite.png" alt="Armory Grayscvle logo">
+        </a>
+      </div>
+      <div class="info-hero-content">
+        <div class="info-card">
+          <p class="info-eyebrow">Delivery</p>
+          <h1 class="info-headline">Delivery Info</h1>
+          <p>We ship worldwide from Portugal.</p>
+          <p>Shipping fees are calculated at checkout based on destination and order weight.</p>
+          <p>Delivery times are estimates and may vary due to customs processing, carrier delays, or external conditions beyond our control.</p>
+          <p>Any customs duties, import taxes, or additional charges imposed by local authorities are the responsibility of the customer.</p>
+          <p>For delivery-related inquiries, please contact <a href="mailto:office@armorygrayscvle.com">office@armorygrayscvle.com</a>.</p>
+        </div>
       </div>
     </section>
   </main>
-
-  <section class="footer-upper" id="maison">
-    <div class="footer-upper-inner">
-      <div class="footer-upper-empty"></div>
-      <div class="footer-upper-column">
-        <h4 class="footer-upper-title">MAISON</h4>
-        <nav class="footer-upper-links">
-          <a href="returns.html">Returns Info</a>
-          <a href="delivery.html">Delivery Info</a>
-          <a href="terms.html">Terms &amp; Conditions</a>
-          <a href="preorders.html">Pre-Orders &amp; Drops</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="footer-upper-follow">
-          <h4 class="footer-upper-title">FOLLOW US</h4>
-          <a class="footer-upper-ig" href="https://www.instagram.com/armorygrayscvle" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="4"></rect>
-              <circle cx="12" cy="12" r="4.5"></circle>
-              <circle cx="17.5" cy="6.5" r="0.8"></circle>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="footer-upper-separator"></div>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-left"></div>
-      <div class="footer-center">
-        <span class="footer-brand">ARMORY GRAYSCVLE</span>
-        <span class="footer-inc">Inc.</span>
-      </div>
-      <div class="footer-right">© ARMORY GRAYSCVLE. All Rights Reserved.</div>
-    </div>
-  </footer>
 
   <script>
     (function() {

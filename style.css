@@ -1021,6 +1021,111 @@ a {
   width: min(620px, 94vw);
 }
 
+.info-hero-body {
+  background: #000;
+  color: #111;
+}
+
+.info-main {
+  padding: 0;
+  background: #000;
+}
+
+.hero.info-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: url("herooo.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 80px;
+  overflow: hidden;
+}
+
+.hero.info-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.info-topbar {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  z-index: 2;
+}
+
+.info-logo {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.info-logo img {
+  height: 46px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+}
+
+.info-logo-dark img {
+  filter: brightness(0);
+}
+
+.info-logo:hover,
+.info-logo:focus-visible {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.info-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(700px, 94vw);
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  padding: 32px 34px 38px;
+  display: grid;
+  gap: 14px;
+  color: #0c0c0c;
+  backdrop-filter: blur(2px);
+}
+
+.info-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.info-headline {
+  font-family: "Cinzel", "EB Garamond", serif;
+  font-size: 24px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0b0b0b;
+}
+
+.info-card p {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #333;
+  line-height: 1.7;
+}
+
 .login-card {
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1676,6 +1781,23 @@ a {
     height: 40px;
   }
 
+  .hero.info-hero {
+    padding: 110px 16px 60px;
+  }
+
+  .info-card {
+    padding: 28px 26px 32px;
+  }
+
+  .info-topbar {
+    top: 18px;
+    left: 14px;
+  }
+
+  .info-logo img {
+    height: 40px;
+  }
+
   .products {
     margin: 80px auto 120px;
     padding: 0 var(--edge-pad);
@@ -1817,6 +1939,23 @@ a {
   }
 
   .login-logo img {
+    height: 36px;
+  }
+
+  .hero.info-hero {
+    padding: 100px 14px 50px;
+  }
+
+  .info-card {
+    padding: 24px 22px 28px;
+  }
+
+  .info-topbar {
+    top: 16px;
+    left: 12px;
+  }
+
+  .info-logo img {
     height: 36px;
   }
 
