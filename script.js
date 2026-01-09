@@ -112,6 +112,19 @@ if (localeButtons.length) {
   });
 }
 
+/* FAB MENU TOGGLE */
+const fabStack = document.querySelector(".ch-fab-stack");
+const fabToggle = document.getElementById("ch-menu-toggle");
+
+function toggleFabStack() {
+  if (!fabStack) return;
+  fabStack.classList.toggle("open");
+}
+
+if (fabToggle) {
+  fabToggle.addEventListener("click", toggleFabStack);
+}
+
 /* SAVE / WISHLIST */
 const SAVED_KEY = "savedItems";
 
