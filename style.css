@@ -1050,6 +1050,25 @@ a {
   color: #111;
 }
 
+.policy-page .hero.info-hero,
+.policy-page .hero.login-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.policy-page .info-hero-content,
+.policy-page .login-hero-content {
+  margin: 0;
+  width: min(620px, 94vw);
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  padding: 80px 0;
+}
+
 .info-main {
   padding: 0;
   background: #000;
@@ -1112,6 +1131,40 @@ a {
   transform: translateY(-1px);
 }
 
+.info-locale-switch {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+}
+
+.policy-page .info-locale-switch .locale-btn {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  color: #0c0c0c;
+  font-family: "Cinzel", "EB Garamond", serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  opacity: 0.94;
+}
+
+.policy-page .info-locale-switch .locale-btn.locale-active {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.7);
+}
+
+.policy-page .info-locale-switch .locale-btn:hover,
+.policy-page .info-locale-switch .locale-btn:focus-visible {
+  opacity: 0.9;
+  border-color: #000;
+}
+
 .info-hero-content {
   position: relative;
   z-index: 1;
@@ -1119,10 +1172,6 @@ a {
   display: grid;
   align-content: center;
   justify-items: center;
-  margin: 80px auto;
-}
-
-.contact-page .info-hero-content {
   margin: 80px auto;
 }
 
@@ -1168,20 +1217,6 @@ a {
 }
 
 .general-page .info-hero-content {
-  margin: 0;
-}
-
-.terms-page .hero.info-hero,
-.privacy-page .hero.info-hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-
-.terms-page .info-hero-content,
-.privacy-page .info-hero-content {
   margin: 0;
 }
 

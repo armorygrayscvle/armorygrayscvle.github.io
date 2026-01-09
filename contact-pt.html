@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Armory Grayscvle</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#000000">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <link id="site-style" rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const cacheBust = String(Date.now());
+      window.__assetCacheBust = cacheBust;
+      const styleEl = document.getElementById("site-style");
+      if (styleEl) {
+        styleEl.href = `style.css?v=${cacheBust}`;
+      }
+    })();
+  </script>
+</head>
+<body class="info-hero-body contact-page policy-page">
+  <div id="loader"><h1>ARMORY GRAYSCVLE</h1></div>
+
+  <main id="main-content" class="info-main">
+    <section class="hero info-hero" aria-label="Contacto">
+      <div class="info-topbar">
+        <a class="info-logo info-logo-dark" href="index.html" aria-label="Voltar à página inicial">
+          <img src="/logowhite.png" alt="Logótipo Armory Grayscvle">
+        </a>
+      </div>
+      <div class="info-locale-switch">
+        <button class="locale-btn" data-locale="en" type="button">EN</button>
+        <button class="locale-btn" data-locale="pt" type="button">PT</button>
+      </div>
+      <div class="info-hero-content">
+        <div class="info-card">
+          <p class="info-eyebrow">Contacto</p>
+          <h1 class="info-headline">Fale Connosco</h1>
+          <form class="contact-form">
+            <div class="contact-grid">
+              <label class="visually-hidden" for="contact-first">Nome</label>
+              <input id="contact-first" name="firstName" type="text" placeholder="Nome" required>
+
+              <label class="visually-hidden" for="contact-last">Apelido</label>
+              <input id="contact-last" name="lastName" type="text" placeholder="Apelido" required>
+
+              <label class="visually-hidden" for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" placeholder="Email" required>
+
+              <label class="visually-hidden" for="contact-phone">Telemóvel</label>
+              <input id="contact-phone" name="phone" type="tel" placeholder="Telemóvel">
+
+              <label class="visually-hidden" for="contact-order">N.º de encomenda</label>
+              <input id="contact-order" name="orderNumber" type="text" placeholder="N.º de encomenda">
+
+              <label class="visually-hidden" for="contact-subject">Assunto</label>
+              <input id="contact-subject" name="subject" type="text" placeholder="Assunto" required>
+            </div>
+
+            <label class="visually-hidden" for="contact-message">Mensagem</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Mensagem" required></textarea>
+
+            <p class="contact-consent">
+              Ao clicar em Submeter, concordo com os <a href="terms.html">Termos de Uso</a> e li a <a href="privacy.html">Política de Privacidade</a>.
+            </p>
+
+            <button type="submit" class="contact-submit">Submeter</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function() {
+      const cacheBust = window.__assetCacheBust || String(Date.now());
+      const mainScript = document.createElement("script");
+      mainScript.src = `script.js?v=${cacheBust}`;
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+    })();
+  </script>
+</body>
+</html>

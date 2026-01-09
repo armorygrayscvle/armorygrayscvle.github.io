@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Armory Grayscvle</title>
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#000000">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Typeface: Helvetica Neue primary, Inter fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <link id="site-style" rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const cacheBust = String(Date.now());
+      window.__assetCacheBust = cacheBust;
+      const styleEl = document.getElementById("site-style");
+      if (styleEl) {
+        styleEl.href = `style.css?v=${cacheBust}`;
+      }
+    })();
+  </script>
+</head>
+
+<body class="home">
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <h1>ARMORY GRAYSCVLE</h1>
+  </div>
+
+  <!-- HEADER -->
+  <header class="ch-header" aria-label="Cabeçalho">
+    <div class="ch-header-inner">
+      <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Abrir menu">
+        <img src="/logowhite.png" alt="Logótipo Armory Grayscvle">
+      </button>
+      <span class="ch-brand">ARMORY GRAYSCVLE</span>
+      <div class="ch-actions" aria-label="Conta e saco">
+        <a class="ch-action-link" href="login.html">Entrar</a>
+        <a class="ch-action-link" href="cart.html" aria-label="Saco de compras">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 8l1 11h8l1-11z"></path>
+            <path d="M9 8a3 3 0 1 1 6 0"></path>
+          </svg>
+          <span>Saco</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <section class="hero ch-hero" aria-label="Armory Grayscvle">
+    </section>
+  </main>
+
+  <div class="ch-legal-links">
+    <a class="ch-legal-link" href="terms.html">Termos</a>
+    <a class="ch-legal-link" href="privacy.html">Privacidade</a>
+    <span class="ch-legal-copy">© 2026 ARMORY GRAYSCVLE. ALL RIGHTS RESERVED.</span>
+  </div>
+
+  <div class="ch-fab-stack">
+    <a class="fab-btn" href="#products" style="--fab-delay:0ms">Criações</a>
+    <a class="fab-btn" href="general.html" style="--fab-delay:120ms">Geral</a>
+    <a class="fab-btn" href="contact.html" style="--fab-delay:240ms">Contacto</a>
+    <div class="fab-locale">
+      <button class="locale-btn" data-locale="en" type="button" style="--fab-delay:360ms">EN</button>
+      <button class="locale-btn locale-active" data-locale="pt" type="button" style="--fab-delay:420ms">PT</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const cacheBust = window.__assetCacheBust || String(Date.now());
+      const mainScript = document.createElement("script");
+      mainScript.src = `script.js?v=${cacheBust}`;
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+    })();
+  </script>
+</body>
+</html>

@@ -76,6 +76,7 @@ document.addEventListener("keydown", (e) => {
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
+const LOCALE_PAGES = ["index", "general", "terms", "privacy", "contact", "login", "cart"];
 const translations = {
   en: {
     "menu.general": "General",
@@ -118,13 +119,15 @@ const translations = {
       <p class="info-eyebrow">General</p>
       <h1 class="info-headline">Information</h1>
       <p><strong>General Information</strong><br>
-      Shipping | Returns, Replacements &amp; Exchanges | Legal</p>
-      <p><strong>Shipping &amp; Delivery</strong><br>
+      SHIPPING | RETURNS, REPLACEMENTS &amp; EXCHANGES | LEGAL</p>
+
+      <p><strong>SHIPPING &amp; DELIVERY</strong><br>
       <em>Delivery Zones</em><br>
-      ARMORY GRAYSCVLE currently ships to European Union member states only.<br>
-      International shipping may be introduced in the future on a limited, destination-specific basis.<br>
+      ARMORY GRAYSCVLE ships within the European Union and to selected international destinations.<br>
       Orders can only be delivered to a valid physical street address.<br>
-      We do not ship to post office boxes or forwarding services.</p>
+      Orders containing incomplete, invalid, or non-serviceable addresses may be refused or cancelled.<br>
+      We do not ship to post office boxes, APO/FPO addresses, or similar forwarding services.</p>
+
       <p><em>Processing &amp; Production Time</em><br>
       Most ARMORY GRAYSCVLE pieces are made-to-order or produced in limited, non-repeatable runs.<br>
       As a result:<br>
@@ -132,22 +135,27 @@ const translations = {
       Orders may require additional processing before shipment<br>
       Estimated delivery times begin after the order has been processed, not at checkout<br>
       Specific timelines, when applicable, will be communicated by email.</p>
+
       <p><em>Shipping Costs</em><br>
       Shipping costs depend on:<br>
       Destination<br>
       Order value<br>
       Weight and dimensions of the package<br>
       All applicable shipping fees are clearly displayed before order confirmation and are payable in addition to the product price (VAT included where applicable).</p>
+
       <p><em>Tracking</em><br>
       Once your order has shipped, you will receive a confirmation email containing your tracking information, when available.</p>
+
       <p><em>Delivery Issues</em><br>
       If your order has not arrived within a reasonable timeframe after shipment, please contact Customer Care promptly.<br>
       You are responsible for checking your order upon delivery.<br>
       Any visible damage or discrepancies should be noted with the carrier at the time of delivery, where possible.</p>
-      <p><strong>Returns, Replacements &amp; Exchanges</strong><br>
+
+      <p><strong>RETURNS, REPLACEMENTS &amp; EXCHANGES</strong><br>
       <em>General Policy</em><br>
       ARMORY GRAYSCVLE operates on a limited-production and made-to-order model.<br>
       Returns are therefore strongly discouraged and accepted only where required by applicable EU consumer law.</p>
+
       <p><em>Right of Withdrawal (EU Customers)</em><br>
       In accordance with EU consumer protection law, customers residing in the European Union may have the right to withdraw from certain purchases within 14 days of delivery, unless an exemption applies.<br>
       The right of withdrawal does not apply to:<br>
@@ -155,31 +163,38 @@ const translations = {
       Customized or personalized products<br>
       Limited-run items produced specifically for the customer<br>
       Items that cannot be resold for hygiene or integrity reasons once opened or worn</p>
+
       <p><em>Conditions for Accepted Returns</em><br>
       Where a return is legally accepted:<br>
       Items must be unused, unworn, unwashed<br>
       Items must be returned in their original condition and packaging<br>
       Proof of purchase is required<br>
       ARMORY GRAYSCVLE reserves the right to assess the condition of returned items before approving any refund or replacement.</p>
+
       <p><em>Replacements</em><br>
       Where applicable, replacements are limited to the same item, size permitting.<br>
       Only one replacement per item will be considered.</p>
+
       <p><em>Refunds</em><br>
       Approved refunds are issued to the original payment method within a reasonable timeframe after receipt and inspection of the returned item.<br>
       Store credit is not issued.</p>
+
       <p><em>International Orders</em><br>
       For orders shipped outside the European Union:<br>
       Customs duties, import taxes, and handling fees may apply<br>
       These charges are the responsibility of the customer unless explicitly stated otherwise<br>
       International sales may be considered final, subject to local law</p>
-      <p><strong>Legal</strong><br>
+
+      <p><strong>LEGAL</strong><br>
       <em>Intellectual Property</em><br>
       All designs, texts, images, and materials displayed on this website are the exclusive property of ARMORY GRAYSCVLE.<br>
       Any reproduction, distribution, modification, or unauthorized use, in whole or in part, is strictly prohibited.</p>
+
       <p><em>Limitation of Quantities</em><br>
       ARMORY GRAYSCVLE reserves the right to limit quantities per item, per order, or per customer in order to preserve fairness, availability, and the integrity of limited releases.<br>
       Orders placed in circumvention of such limits may be cancelled.</p>
-      <p><strong>Contact</strong><br>
+
+      <p><strong>CONTACT</strong><br>
       For all enquiries related to orders, shipping, or legal matters:<br>
       <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
     `,
@@ -343,46 +358,60 @@ const translations = {
       <p class="info-eyebrow">Geral</p>
       <h1 class="info-headline">Informações</h1>
       <p><strong>Informação Geral</strong><br>
-      Envios | Devoluções, Substituições &amp; Trocas | Legal</p>
+      ENVIO | DEVOLUÇÕES, SUBSTITUIÇÕES &amp; TROCAS | LEGAL</p>
+
       <p><strong>Envios &amp; Entregas</strong><br>
       <em>Destinos</em><br>
-      A ARMORY GRAYSCVLE envia apenas para países da União Europeia.<br>
-      O envio internacional poderá ser introduzido futuramente de forma limitada e específica por destino.<br>
-      Entregamos apenas em moradas físicas válidas.<br>
-      Não enviamos para apartados ou serviços de reexpedição.</p>
+      A ARMORY GRAYSCVLE envia para países da União Europeia e para destinos internacionais selecionados.<br>
+      As encomendas só podem ser entregues numa morada física válida.<br>
+      Encomendas com moradas incompletas, inválidas ou fora de serviço podem ser recusadas ou canceladas.<br>
+      Não enviamos para apartados, endereços APO/FPO ou serviços de reexpedição.</p>
+
       <p><em>Tempo de Produção e Processamento</em><br>
       A maioria das peças é feita por encomenda ou em séries limitadas e irrepetíveis.<br>
       Os tempos de produção podem variar e podem ser necessários passos adicionais antes do envio.<br>
       Os prazos estimados começam após o processamento, não no checkout.<br>
       Quando aplicável, os prazos serão comunicados por email.</p>
+
       <p><em>Custos de Envio</em><br>
       Dependem do destino, valor da encomenda e peso/dimensões.<br>
       Todas as taxas são apresentadas antes da confirmação e são pagas além do preço do produto (IVA incluído quando aplicável).</p>
+
       <p><em>Tracking</em><br>
       Após expedição, receberá um email com tracking, quando disponível.</p>
+
       <p><em>Questões de Entrega</em><br>
       Se a encomenda não chegar num prazo razoável após a expedição, contacte-nos de imediato.<br>
       Deve verificar a encomenda no momento da entrega e registar eventuais danos ou discrepâncias junto do transportador sempre que possível.</p>
+
       <p><strong>Devoluções, Substituições &amp; Trocas</strong><br>
       <em>Política Geral</em><br>
       Operamos com produção limitada e feita por encomenda; as devoluções são desencorajadas e apenas aceites quando exigido pela lei de consumo da UE.</p>
+
       <p><em>Direito de Livre Resolução (Clientes UE)</em><br>
       Pode existir direito de resolução em 14 dias após a entrega, salvo exceções.<br>
       Este direito não se aplica a peças feitas por encomenda, personalizadas, séries limitadas irrepetíveis ou itens que não possam ser revendidos por motivos de higiene/integridade.</p>
+
       <p><em>Condições para Devoluções Aceites</em><br>
       Itens sem uso, sem lavagem e no estado/embalagem originais, com prova de compra.<br>
       Reservamo-nos o direito de avaliar o estado antes de aprovar reembolso ou substituição.</p>
+
       <p><em>Substituições</em><br>
       Quando aplicável, apenas para o mesmo artigo, sujeito a stock. Só é considerada uma substituição por artigo.</p>
+
       <p><em>Reembolsos</em><br>
       Reembolsos aprovados são emitidos para o mesmo método de pagamento, após receção e inspeção. Não emitimos crédito em loja.</p>
+
       <p><em>Encomendas Internacionais</em><br>
       Para envios fora da UE, impostos, taxas e encargos são da responsabilidade do cliente, salvo indicação em contrário. Vendas internacionais podem ser finais, conforme a lei local.</p>
+
       <p><strong>Legal</strong><br>
       <em>Propriedade Intelectual</em><br>
       Todo o conteúdo do site é propriedade exclusiva da ARMORY GRAYSCVLE. Qualquer reprodução, distribuição, modificação ou uso sem autorização é proibido.</p>
+
       <p><em>Limitação de Quantidades</em><br>
       Podemos limitar quantidades por artigo/encomenda/cliente para preservar a equidade e a integridade de lançamentos limitados. Encomendas que contornem estas limitações podem ser canceladas.</p>
+
       <p><strong>Contacto</strong><br>
       Para questões sobre encomendas, envios ou legal: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
     `,
@@ -506,42 +535,6 @@ const translations = {
   }
 };
 
-function setLocale(locale = "en", options = {}) {
-  const lang = locale || "en";
-  document.documentElement.lang = lang;
-  localeButtons.forEach((btn) => {
-    const btnLocale = btn.getAttribute("data-locale");
-    btn.classList.toggle("locale-active", btnLocale === lang);
-  });
-  try {
-    localStorage.setItem(LOCALE_KEY, lang);
-  } catch (err) {
-    /* ignore */
-  }
-
-  if (options.reloadHome && lang === "pt") {
-    window.location.href = "index.html";
-  }
-}
-
-if (localeButtons.length) {
-  const savedLocale = (() => {
-    try {
-      return localStorage.getItem(LOCALE_KEY);
-    } catch (err) {
-      return null;
-    }
-  })();
-  setLocale(savedLocale || "en");
-  localeButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const locale = btn.getAttribute("data-locale") || "en";
-      setLocale(locale, { reloadHome: true });
-      applyTranslations(locale);
-    });
-  });
-}
-
 function applyTranslations(lang = "en") {
   const dict = translations[lang] || translations.en;
   document.documentElement.lang = lang;
@@ -562,15 +555,106 @@ function applyTranslations(lang = "en") {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  let saved = "en";
+function getSavedLocale() {
   try {
-    saved = localStorage.getItem(LOCALE_KEY) || "en";
+    return localStorage.getItem(LOCALE_KEY);
   } catch (err) {
-    saved = "en";
+    return null;
   }
-  applyTranslations(saved);
-});
+}
+
+function getCurrentLocaleFromPage() {
+  const file = (window.location.pathname.split("/").pop() || "").toLowerCase();
+  return file.includes("-pt.") ? "pt" : "en";
+}
+
+function getBasePageName() {
+  const file = window.location.pathname.split("/").pop() || "";
+  return file.replace(/-pt(?=\.html$)/i, "").replace(/\.html$/i, "") || "index";
+}
+
+function hasLocalePair() {
+  return LOCALE_PAGES.includes(getBasePageName());
+}
+
+function buildLocaleHref(targetLocale = "en") {
+  const base = getBasePageName();
+  const suffix = targetLocale === "pt" ? "-pt" : "";
+  return `${base}${suffix}.html`;
+}
+
+function rewriteHrefForLocale(href = "", lang = "en") {
+  if (/^(https?:|mailto:|tel:|#)/i.test(href)) return href;
+  const [pathAndQuery, hash] = href.split("#");
+  const [path, query] = pathAndQuery.split("?");
+  const match = path.match(/^([a-z0-9_-]+)(-pt)?\.html$/i);
+  if (!match) return href;
+  const base = match[1].toLowerCase();
+  if (!LOCALE_PAGES.includes(base)) return href;
+  const targetBase = lang === "pt" ? `${match[1]}-pt` : match[1];
+  const newPath = `${targetBase}.html${query ? `?${query}` : ""}`;
+  return hash ? `${newPath}#${hash}` : newPath;
+}
+
+function rewriteLocaleLinks(lang = "en") {
+  document.querySelectorAll("a[href]").forEach((anchor) => {
+    const original = anchor.getAttribute("href") || "";
+    const updated = rewriteHrefForLocale(original, lang);
+    if (updated !== original) {
+      anchor.setAttribute("href", updated);
+    }
+  });
+}
+
+function enforceLocaleOnLoad() {
+  if (!hasLocalePair()) return;
+  const saved = getSavedLocale();
+  if (!saved) return;
+  const current = getCurrentLocaleFromPage();
+  if (saved !== current) {
+    window.location.replace(buildLocaleHref(saved));
+  }
+}
+
+enforceLocaleOnLoad();
+
+function updateLocaleButtons(lang = "en") {
+  localeButtons.forEach((btn) => {
+    const btnLocale = btn.getAttribute("data-locale") || "en";
+    btn.classList.toggle("locale-active", btnLocale === lang);
+  });
+}
+
+function handleLocaleSwitch(targetLocale = "en") {
+  const lang = targetLocale === "pt" ? "pt" : "en";
+  try {
+    localStorage.setItem(LOCALE_KEY, lang);
+  } catch (err) {
+    /* ignore */
+  }
+  updateLocaleButtons(lang);
+  rewriteLocaleLinks(lang);
+
+  if (hasLocalePair()) {
+    const current = getCurrentLocaleFromPage();
+    if (current !== lang) {
+      window.location.href = buildLocaleHref(lang);
+    }
+  }
+}
+
+const initialLocale = getSavedLocale() || getCurrentLocaleFromPage() || "en";
+updateLocaleButtons(initialLocale);
+rewriteLocaleLinks(initialLocale);
+
+if (localeButtons.length) {
+  localeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const locale = btn.getAttribute("data-locale") || "en";
+      handleLocaleSwitch(locale);
+    });
+  });
+}
 
 /* FAB MENU TOGGLE */
 const fabStack = document.querySelector(".ch-fab-stack");
@@ -756,6 +840,7 @@ function initSnipcartBindings(attempt = 0) {
 initSnipcartBindings();
 renderSavedPage();
 renderCartPage();
+bindCartLiveUpdates();
 bindCartButtons();
 renderProductPage();
 
@@ -1040,15 +1125,8 @@ async function renderCartPage() {
         <span>Total</span>
         <span>€${formatPrice(total)}</span>
       </div>
-      <button class="summary-checkout" type="button" id="checkout-trigger">Checkout</button>
+      <button class="summary-checkout snipcart-checkout" type="button">Checkout</button>
     `;
-
-    const checkoutBtn = document.getElementById("checkout-trigger");
-    if (checkoutBtn) {
-      checkoutBtn.addEventListener("click", () => {
-        window.location.href = "checkout.html";
-      });
-    }
   } catch (err) {
     if (cartWrap) {
       cartWrap.innerHTML = `<p class="products-empty">Cart unavailable. Try again.</p>`;
@@ -1097,6 +1175,20 @@ function bindCartButtons(attempt = 0) {
     btn.removeEventListener("click", handler);
     btn.addEventListener("click", handler);
   });
+}
+
+function bindCartLiveUpdates() {
+  const cartWrap = document.getElementById("cart-page");
+  if (!cartWrap) return;
+  ensureSnipcartReady()
+    .then(() => {
+      const events = window.Snipcart?.events;
+      if (!events?.on) return;
+      ["item.added", "item.updated", "item.removed", "cart.confirmed", "cart.canceled"].forEach((evt) => {
+        events.on(evt, renderCartPage);
+      });
+    })
+    .catch(() => {});
 }
 
 /* PRODUCTS */
