@@ -1067,6 +1067,8 @@ a {
   justify-items: center;
   align-content: center;
   padding: 80px 0;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .info-main {
@@ -1077,7 +1079,7 @@ a {
 
 .hero.info-hero {
   position: relative;
-  min-height: auto;
+  min-height: 100vh;
   width: 100vw;
   margin: 0;
   margin-left: calc(50% - 50vw);
@@ -1086,7 +1088,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 20px 0;
+  padding: 0 20px;
   overflow: hidden;
 }
 
@@ -1172,7 +1174,7 @@ a {
   display: grid;
   align-content: center;
   justify-items: center;
-  margin: 80px auto;
+  margin: 0 auto;
 }
 
 .info-card {
