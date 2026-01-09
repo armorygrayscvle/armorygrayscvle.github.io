@@ -93,6 +93,29 @@ body.home {
   gap: 18px;
 }
 
+.ch-terms-link {
+  position: fixed;
+  bottom: 24px;
+  left: 22px;
+  z-index: 110;
+  font-family: "Cinzel", "EB Garamond", serif;
+  letter-spacing: 0.24em;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #f7f7f7;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.ch-terms-link:hover,
+.ch-terms-link:focus-visible {
+  opacity: 0.85;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
 .ch-action-link {
   display: inline-flex;
   align-items: center;
@@ -1476,6 +1499,14 @@ a {
     width: min(320px, 88vw);
   }
 
+  .ch-terms-link {
+    bottom: 18px;
+    left: 16px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    padding: 7px 10px;
+  }
+
   .info-page {
     padding: 72px 20px 100px;
   }
@@ -1593,6 +1624,14 @@ a {
 
   .ch-menu {
     width: min(300px, 92vw);
+  }
+
+  .ch-terms-link {
+    bottom: 14px;
+    left: 12px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    padding: 6px 9px;
   }
 
   .products {
