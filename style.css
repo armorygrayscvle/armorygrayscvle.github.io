@@ -985,6 +985,41 @@ a {
   background: rgba(255, 255, 255, 0.7);
 }
 
+.login-topbar {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  z-index: 2;
+}
+
+.login-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0c0c0c;
+  font-family: "Cinzel", "EB Garamond", serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.login-logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.login-logo:hover,
+.login-logo:focus-visible {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
 .login-hero-content {
   position: relative;
   z-index: 1;
@@ -1633,6 +1668,21 @@ a {
     padding: 26px 22px 30px;
   }
 
+  .login-topbar {
+    top: 18px;
+    left: 14px;
+  }
+
+  .login-logo {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    padding: 7px 9px;
+  }
+
+  .login-logo img {
+    height: 28px;
+  }
+
   .products {
     margin: 80px auto 120px;
     padding: 0 var(--edge-pad);
@@ -1762,6 +1812,21 @@ a {
 
   .login-card {
     padding: 22px 20px 26px;
+  }
+
+  .login-topbar {
+    top: 16px;
+    left: 12px;
+  }
+
+  .login-logo {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    padding: 7px 9px;
+  }
+
+  .login-logo img {
+    height: 26px;
   }
 
   .products {
