@@ -80,7 +80,7 @@ body.home {
 .ch-brand {
   justify-self: center;
   font-family: "Cinzel", "EB Garamond", serif;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.3em;
   font-size: 18px;
   text-transform: uppercase;
   color: #f7f7f7;
@@ -1456,7 +1456,7 @@ a {
 
   .ch-brand {
     font-size: 16px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.26em;
   }
 
   .ch-action-link {
@@ -1572,7 +1572,7 @@ a {
 
   .ch-brand {
     font-size: 14px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
   }
 
   .ch-actions {
