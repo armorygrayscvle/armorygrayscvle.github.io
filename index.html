@@ -69,25 +69,15 @@
     <span class="ch-legal-copy">© 2026 ARMORY GRAYSCVLE. ALL RIGHTS RESERVED.</span>
   </div>
 
-  <aside class="ch-menu" id="ch-menu" aria-label="Maison menu">
-    <div class="ch-menu-inner">
-      <div class="ch-menu-header">
-        <a class="ch-menu-logo" href="index.html" aria-label="Armory Grayscvle home">
-          <img src="/logowhite.png" alt="Armory Grayscvle logo">
-        </a>
-        <button class="ch-menu-close" type="button" aria-label="Close menu">×</button>
-      </div>
-      <div class="ch-menu-grid">
-        <a class="ch-menu-tile" href="general.html">General</a>
-        <a class="ch-menu-tile" href="#products">Creations</a>
-        <a class="ch-menu-tile" href="contact.html">Contact</a>
-      </div>
-      <div class="ch-menu-locale" aria-label="Select language">
-        <button class="locale-btn locale-active" data-locale="en" type="button">EN</button>
-        <button class="locale-btn" data-locale="pt" type="button">PT</button>
-      </div>
+  <div class="ch-fab-stack">
+    <a class="fab-btn" href="general.html" style="--fab-delay:0ms">General</a>
+    <a class="fab-btn" href="#products" style="--fab-delay:120ms">Creations</a>
+    <a class="fab-btn" href="contact.html" style="--fab-delay:240ms">Contact</a>
+    <div class="fab-locale">
+      <button class="locale-btn locale-active" data-locale="en" type="button" style="--fab-delay:360ms">EN</button>
+      <button class="locale-btn" data-locale="pt" type="button" style="--fab-delay:420ms">PT</button>
     </div>
-  </aside>
+  </div>
 
   <script>
     (function() {

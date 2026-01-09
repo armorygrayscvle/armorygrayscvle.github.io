@@ -188,80 +188,40 @@ body.home {
   color: #f6f6f6;
 }
 
-.ch-menu {
+.ch-fab-stack {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: min(360px, 86vw);
-  background: rgba(3, 3, 3, 0.95);
-  border-right: 1px solid #161616;
-  transform: translateX(-100%);
-  transition: transform 0.35s ease;
+  top: 110px;
+  left: 32px;
   z-index: 120;
-  backdrop-filter: blur(6px);
-}
-
-.ch-menu.open {
-  transform: translateX(0);
-}
-
-.ch-menu-inner {
-  padding: 120px 32px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  color: #f4f4f4;
-}
-
-.ch-menu-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.ch-menu-logo {
-  display: inline-flex;
-  align-items: center;
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-.ch-menu-logo img {
-  height: 44px;
-  width: auto;
-  display: block;
-}
-
-.ch-menu-grid {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
-.ch-menu-tile {
+.fab-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 11px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.55);
   color: #f8f8f8;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 11px;
-  transition: opacity 0.2s ease, border-color 0.2s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  animation: fabFade 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(6px);
+  animation-delay: var(--fab-delay, 0ms);
 }
 
-.ch-menu-tile:hover,
-.ch-menu-tile:focus-visible {
+.fab-btn:hover,
+.fab-btn:focus-visible {
   opacity: 0.85;
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
-.ch-menu-locale {
-  margin-top: auto;
+.fab-locale {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -269,18 +229,22 @@ body.home {
 
 .locale-btn {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: #f8f8f8;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 10px;
   padding: 6px 10px;
   cursor: pointer;
-  transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: opacity 0.25s ease, border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  animation: fabFade 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(6px);
+  animation-delay: var(--fab-delay, 0ms);
 }
 
 .locale-btn.locale-active {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -288,6 +252,13 @@ body.home {
 .locale-btn:focus-visible {
   opacity: 0.85;
   border-color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fabFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 a {
