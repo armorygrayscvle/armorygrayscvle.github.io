@@ -76,6 +76,435 @@ document.addEventListener("keydown", (e) => {
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
+const translations = {
+  en: {
+    "menu.general": "General",
+    "menu.creations": "Creations",
+    "menu.contact": "Contact",
+    "menu.lang_en": "EN",
+    "menu.lang_pt": "PT",
+
+    "login.eyebrow": "Account",
+    "login.title": "Armory Grayscvle",
+    "login.subtitle": "Access your orders and saved items.",
+    "login.google": "Continue with Google",
+    "login.apple": "Continue with Apple",
+    "login.or": "or",
+    "login.email": "Email",
+    "login.password": "Password",
+    "login.forgot": "Forgot your password?",
+    "login.submit": "Log in",
+    "login.create": "Create account",
+
+    "cart.eyebrow": "Bag",
+    "cart.title": "Your Cart",
+    "cart.empty": "Your cart is empty.",
+    "cart.continue": "Continue shopping",
+    "cart.returns": "Returns & Exchanges",
+
+    "contact.eyebrow": "Contact",
+    "contact.headline": "Get in Touch",
+    "contact.first": "First Name",
+    "contact.last": "Last Name",
+    "contact.email": "Email",
+    "contact.phone": "Phone Number",
+    "contact.order": "Order Number",
+    "contact.subject": "Subject",
+    "contact.message": "Message",
+    "contact.consent": 'By clicking Submit, I agree to the <a href="terms.html">Terms of Use</a> and I have read the <a href="privacy.html">Privacy Policy</a>.',
+    "contact.submit": "Submit",
+
+    "general.body": `
+      <p class="info-eyebrow">General</p>
+      <h1 class="info-headline">Information</h1>
+      <p><strong>General Information</strong><br>
+      Shipping | Returns, Replacements &amp; Exchanges | Legal</p>
+      <p><strong>Shipping &amp; Delivery</strong><br>
+      <em>Delivery Zones</em><br>
+      ARMORY GRAYSCVLE currently ships to European Union member states only.<br>
+      International shipping may be introduced in the future on a limited, destination-specific basis.<br>
+      Orders can only be delivered to a valid physical street address.<br>
+      We do not ship to post office boxes or forwarding services.</p>
+      <p><em>Processing &amp; Production Time</em><br>
+      Most ARMORY GRAYSCVLE pieces are made-to-order or produced in limited, non-repeatable runs.<br>
+      As a result:<br>
+      Production times may vary<br>
+      Orders may require additional processing before shipment<br>
+      Estimated delivery times begin after the order has been processed, not at checkout<br>
+      Specific timelines, when applicable, will be communicated by email.</p>
+      <p><em>Shipping Costs</em><br>
+      Shipping costs depend on:<br>
+      Destination<br>
+      Order value<br>
+      Weight and dimensions of the package<br>
+      All applicable shipping fees are clearly displayed before order confirmation and are payable in addition to the product price (VAT included where applicable).</p>
+      <p><em>Tracking</em><br>
+      Once your order has shipped, you will receive a confirmation email containing your tracking information, when available.</p>
+      <p><em>Delivery Issues</em><br>
+      If your order has not arrived within a reasonable timeframe after shipment, please contact Customer Care promptly.<br>
+      You are responsible for checking your order upon delivery.<br>
+      Any visible damage or discrepancies should be noted with the carrier at the time of delivery, where possible.</p>
+      <p><strong>Returns, Replacements &amp; Exchanges</strong><br>
+      <em>General Policy</em><br>
+      ARMORY GRAYSCVLE operates on a limited-production and made-to-order model.<br>
+      Returns are therefore strongly discouraged and accepted only where required by applicable EU consumer law.</p>
+      <p><em>Right of Withdrawal (EU Customers)</em><br>
+      In accordance with EU consumer protection law, customers residing in the European Union may have the right to withdraw from certain purchases within 14 days of delivery, unless an exemption applies.<br>
+      The right of withdrawal does not apply to:<br>
+      Made-to-order items<br>
+      Customized or personalized products<br>
+      Limited-run items produced specifically for the customer<br>
+      Items that cannot be resold for hygiene or integrity reasons once opened or worn</p>
+      <p><em>Conditions for Accepted Returns</em><br>
+      Where a return is legally accepted:<br>
+      Items must be unused, unworn, unwashed<br>
+      Items must be returned in their original condition and packaging<br>
+      Proof of purchase is required<br>
+      ARMORY GRAYSCVLE reserves the right to assess the condition of returned items before approving any refund or replacement.</p>
+      <p><em>Replacements</em><br>
+      Where applicable, replacements are limited to the same item, size permitting.<br>
+      Only one replacement per item will be considered.</p>
+      <p><em>Refunds</em><br>
+      Approved refunds are issued to the original payment method within a reasonable timeframe after receipt and inspection of the returned item.<br>
+      Store credit is not issued.</p>
+      <p><em>International Orders</em><br>
+      For orders shipped outside the European Union:<br>
+      Customs duties, import taxes, and handling fees may apply<br>
+      These charges are the responsibility of the customer unless explicitly stated otherwise<br>
+      International sales may be considered final, subject to local law</p>
+      <p><strong>Legal</strong><br>
+      <em>Intellectual Property</em><br>
+      All designs, texts, images, and materials displayed on this website are the exclusive property of ARMORY GRAYSCVLE.<br>
+      Any reproduction, distribution, modification, or unauthorized use, in whole or in part, is strictly prohibited.</p>
+      <p><em>Limitation of Quantities</em><br>
+      ARMORY GRAYSCVLE reserves the right to limit quantities per item, per order, or per customer in order to preserve fairness, availability, and the integrity of limited releases.<br>
+      Orders placed in circumvention of such limits may be cancelled.</p>
+      <p><strong>Contact</strong><br>
+      For all enquiries related to orders, shipping, or legal matters:<br>
+      <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "returns.body": `
+      <p class="info-eyebrow">Returns</p>
+      <h1 class="info-headline">Returns &amp; Exchanges</h1>
+      <p>Each ARMORY GRAYSCVLE piece is produced in limited quantities, with intention and care. As a result, we do not operate under a traditional mass-return model.</p>
+      <p>Where permitted by law, purchases are considered final.</p>
+      <p>In accordance with European Union consumer law, customers located in the EU retain a 14-day right of withdrawal for distance purchases, unless an exception applies. This right does not apply to made-to-order items, customized pieces, or products produced in limited, non-repeatable runs once production has begun, as permitted under Directive 2011/83/EU.</p>
+      <p>We encourage deliberate selection prior to purchase — including careful consideration of sizing and silhouette — and we remain available before checkout to assist with any questions.</p>
+      <p>If an item arrives with a verified defect or if an incorrect piece is received, please contact us and the matter will be addressed with care and discretion.</p>
+      <p>In select cases, size exchanges may be considered, subject to availability. Availability is not guaranteed.</p>
+      <p>ARMORY GRAYSCVLE exists to promote conscious ownership — fewer pieces, chosen deliberately, and intended to be kept.</p>
+      <p>For all return-related inquiries, contact:<br><a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "delivery.body": `
+      <p class="info-eyebrow">Delivery</p>
+      <h1 class="info-headline">Delivery Info</h1>
+      <p><strong>Delivery Zones</strong><br>
+      ARMORY GRAYSCVLE currently ships to European Union member states only.<br>
+      International shipping may be introduced in the future on a limited, destination-specific basis.<br>
+      Orders can only be delivered to a valid physical street address.<br>
+      We do not ship to post office boxes or forwarding services.</p>
+      <p><strong>Shipping Costs</strong><br>
+      Shipping fees are calculated at checkout based on destination and order weight.</p>
+      <p><strong>Delivery Timing</strong><br>
+      Delivery times are estimates and may vary due to processing, carrier delays, or external conditions beyond our control.</p>
+      <p><strong>Customs &amp; Duties</strong><br>
+      Any customs duties, import taxes, or additional charges imposed by local authorities are the responsibility of the customer.</p>
+      <p>For delivery-related inquiries, please contact <a href="mailto:office@armorygrayscvle.com">office@armorygrayscvle.com</a>.</p>
+    `,
+
+    "privacy.body": `
+      <h1 class="info-title">PRIVACY POLICY</h1>
+      <p><strong>Last Revised: January 9, 2026</strong></p>
+      <p>This Privacy Policy explains how ARMORY GRAYSCVLE, operated by Filipa Angeja, collects, uses, and protects personal data in accordance with the General Data Protection Regulation (GDPR) and applicable EU law.</p>
+      <p><strong>1. DATA CONTROLLER</strong><br>
+      ARMORY GRAYSCVLE<br>
+      Operated by: Filipa Angeja<br>
+      Address: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+      <p><strong>2. PERSONAL DATA WE COLLECT</strong><br>
+      We collect only data that is necessary for the operation of the Website and fulfillment of orders, including: Name; Email address; Shipping and billing address; Payment-related information (processed securely by third-party providers); Order history; Technical data (IP address, browser type, device data). We do not collect unnecessary or excessive personal data.</p>
+      <p><strong>3. PURPOSE OF PROCESSING</strong><br>
+      Your personal data is processed for: Order processing and fulfillment; Customer communication; Payment processing; Legal and accounting compliance; Website security and functionality. We do not use personal data for automated decision-making or profiling.</p>
+      <p><strong>4. LEGAL BASIS FOR PROCESSING</strong><br>
+      We process personal data on the basis of: Contractual necessity; Legal obligations; Legitimate interests (security, fraud prevention, site functionality); Consent, where required (e.g. optional communications).</p>
+      <p><strong>5. DATA SHARING</strong><br>
+      Personal data may be shared only with: Payment processors; Shipping and logistics providers; IT and hosting service providers. All third parties are required to process data in compliance with GDPR. We do not sell or trade personal data.</p>
+      <p><strong>6. DATA RETENTION</strong><br>
+      Personal data is retained only for as long as necessary to fulfill its purpose or to comply with legal obligations. When data is no longer required, it is securely deleted or anonymized.</p>
+      <p><strong>7. YOUR RIGHTS UNDER GDPR</strong><br>
+      You have the right to: Access your personal data; Request correction of inaccurate data; Request erasure (“right to be forgotten”), where applicable; Restrict or object to processing; Request data portability; Withdraw consent at any time, where processing is based on consent. Requests may be sent to <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a>.</p>
+      <p><strong>8. COOKIES</strong><br>
+      The Website may use essential cookies required for functionality and security. Where non-essential cookies are used, consent will be obtained in accordance with applicable law.</p>
+      <p><strong>9. DATA SECURITY</strong><br>
+      We implement appropriate technical and organizational measures to protect personal data against loss, misuse, unauthorized access, disclosure, or alteration. No system is entirely secure; however, we take data protection seriously.</p>
+      <p><strong>10. INTERNATIONAL DATA TRANSFERS</strong><br>
+      Where personal data is transferred outside the EU, appropriate safeguards are applied in accordance with GDPR requirements.</p>
+      <p><strong>11. CHANGES TO THIS POLICY</strong><br>
+      We may update this Privacy Policy from time to time. Changes take effect immediately upon publication.</p>
+      <p><strong>12. CONTACT</strong><br>
+      For privacy-related inquiries or to exercise your rights: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "terms.body": `
+      <h1 class="info-title">TERMS &amp; CONDITIONS</h1>
+      <p><strong>Last Revised: January 9, 2026</strong></p>
+      <p>This website, www.armorygrayscvle.com (the “Website”), is operated by ARMORY GRAYSCVLE, a sole trader operated by Filipa Angeja, registered in Portugal (“ARMORY GRAYSCVLE,” “we,” “us,” or “our”).</p>
+      <p>These Terms &amp; Conditions (“Terms”) govern all access to and use of the Website, including browsing, account creation, and the purchase of any products offered through the Website.</p>
+      <p>By accessing or using the Website, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must discontinue use of the Website.</p>
+      <p><strong>USE OF THE WEBSITE</strong><br>
+      The Website may only be used for lawful purposes. Any use that interferes with the integrity, security, operation, or intended experience of the Website is prohibited.<br>
+      We reserve the right, at our sole discretion and without prior notice, to restrict, suspend, or terminate access to the Website or any part of it, including user accounts, where necessary to protect the Website, the brand, or its users.</p>
+      <p><strong>USER ACCOUNTS</strong><br>
+      Certain features may require the creation of an account. You are responsible for all activity conducted through your account and for maintaining the confidentiality of your login credentials.<br>
+      We are not responsible for loss, damage, or unauthorized access resulting from your failure to safeguard your account information.</p>
+      <p><strong>PRODUCTS, PRODUCTION, AND AVAILABILITY</strong><br>
+      All products offered on the Website are produced in limited quantities, and many items are made-to-order or customized.<br>
+      Some collections or drops are fully limited and non-repeatable. Once production has begun or a drop has concluded, products may not be reproduced.<br>
+      Availability is not guaranteed and may change without notice. The absence of a product does not imply restock or future availability.</p>
+      <p><strong>PRICING AND PAYMENT</strong><br>
+      All prices are listed in EUR (€) and are VAT included, unless stated otherwise.<br>
+      Prices, product details, and availability may be modified at any time without notice. Orders are not accepted until payment has been received in full.<br>
+      We reserve the right to correct pricing errors and to cancel orders placed at incorrect prices. If payment has been received for a canceled order, a refund will be issued for the amount paid.</p>
+      <p><strong>PRODUCT REPRESENTATION</strong><br>
+      We make reasonable efforts to display products accurately. However, due to handcrafted production, limited runs, and material variation: Colors, textures, finishes, and measurements may vary; Measurements are approximate; Screen settings may affect visual representation. Such variations are inherent to the product and do not constitute defects.</p>
+      <p><strong>SHIPPING AND DELIVERY</strong><br>
+      We ship within the European Union and internationally.<br>
+      Delivery times are estimates only and not guaranteed. Delays caused by carriers, customs authorities, or circumstances beyond our control are not our responsibility.<br>
+      For international orders, customers are solely responsible for any customs duties, import taxes, or additional charges imposed by the destination country.<br>
+      Risk of loss transfers to the customer once the order is handed to the carrier.</p>
+      <p><strong>RIGHT OF WITHDRAWAL AND RETURNS (EU COMPLIANCE)</strong><br>
+      Under European Union consumer law, customers located in the EU have the right to withdraw from a distance purchase within 14 days of delivery, without providing a reason, unless an exception applies.<br>
+      This right of withdrawal does not apply to: Products made to order or customized to the customer; Products produced in limited, non-repeatable runs once production has begun. Where withdrawal rights apply, return conditions and procedures are detailed in our separate Returns Policy. Due to the intentional and limited nature of our production, returns are discouraged to the maximum extent permitted by law.</p>
+      <p><strong>ACCESS CODES AND PRIVATE RELEASES</strong><br>
+      Any access codes, promotional codes, or private release invitations are issued at our discretion. Such codes may not be shared, sold, transferred, or publicly distributed and may be revoked or expire at any time. Possession of a code does not guarantee product availability.</p>
+      <p><strong>INTELLECTUAL PROPERTY</strong><br>
+      All content on the Website — including designs, text, images, graphics, logos, layout, and overall visual identity — is owned by ARMORY GRAYSCVLE or its licensors and is protected by applicable intellectual property laws.<br>
+      No content may be copied, reproduced, modified, distributed, or used without prior written consent.</p>
+      <p><strong>PROHIBITED CONDUCT</strong><br>
+      You agree not to: Access or attempt to access restricted areas of the Website; Use automated tools, bots, scrapers, or similar technologies; Interfere with the Website’s operation or security; Use the Website for unlawful, misleading, or abusive purposes. Unauthorized use may result in immediate termination of access and legal action.</p>
+      <p><strong>DISCLAIMER</strong><br>
+      The Website and all content are provided “AS IS” and “AS AVAILABLE.”<br>
+      We make no representations or warranties of any kind, express or implied, regarding availability, accuracy, or suitability for any particular purpose.</p>
+      <p><strong>LIMITATION OF LIABILITY</strong><br>
+      To the fullest extent permitted by law, ARMORY GRAYSCVLE shall not be liable for any indirect, incidental, special, or consequential damages arising from or related to the use of the Website or products.<br>
+      Our total liability shall not exceed the amount paid by the customer for the product giving rise to the claim.<br>
+      Nothing in these Terms limits or excludes consumer rights that cannot be excluded under applicable European Union law.</p>
+      <p><strong>GOVERNING LAW</strong><br>
+      These Terms are governed by and construed in accordance with the laws of Portugal, without regard to conflict-of-law principles. Any disputes shall be subject to the exclusive jurisdiction of the courts of Portugal, unless otherwise required by mandatory consumer protection law.</p>
+      <p><strong>MODIFICATIONS</strong><br>
+      We reserve the right to revise these Terms at any time. Updates take effect immediately upon publication. Continued use of the Website constitutes acceptance of the revised Terms.</p>
+      <p><strong>CONTACT</strong><br>
+      ARMORY GRAYSCVLE<br>
+      Operated by: Filipa Angeja<br>
+      Address: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `
+  },
+  pt: {
+    "menu.general": "Geral",
+    "menu.creations": "Criações",
+    "menu.contact": "Contacto",
+    "menu.lang_en": "EN",
+    "menu.lang_pt": "PT",
+
+    "login.eyebrow": "Conta",
+    "login.title": "Armory Grayscvle",
+    "login.subtitle": "Aceda às suas encomendas e itens guardados.",
+    "login.google": "Continuar com Google",
+    "login.apple": "Continuar com Apple",
+    "login.or": "ou",
+    "login.email": "Email",
+    "login.password": "Palavra-passe",
+    "login.forgot": "Esqueceu-se da palavra-passe?",
+    "login.submit": "Entrar",
+    "login.create": "Criar conta",
+
+    "cart.eyebrow": "Saco",
+    "cart.title": "O seu saco",
+    "cart.empty": "O seu saco está vazio.",
+    "cart.continue": "Continuar a comprar",
+    "cart.returns": "Devoluções e Trocas",
+
+    "contact.eyebrow": "Contacto",
+    "contact.headline": "Fale connosco",
+    "contact.first": "Nome",
+    "contact.last": "Apelido",
+    "contact.email": "Email",
+    "contact.phone": "Telemóvel",
+    "contact.order": "N.º de encomenda",
+    "contact.subject": "Assunto",
+    "contact.message": "Mensagem",
+    "contact.consent": 'Ao clicar em Submeter, concordo com os <a href="terms.html">Termos de Uso</a> e li a <a href="privacy.html">Política de Privacidade</a>.',
+    "contact.submit": "Submeter",
+
+    "general.body": `
+      <p class="info-eyebrow">Geral</p>
+      <h1 class="info-headline">Informações</h1>
+      <p><strong>Informação Geral</strong><br>
+      Envios | Devoluções, Substituições &amp; Trocas | Legal</p>
+      <p><strong>Envios &amp; Entregas</strong><br>
+      <em>Destinos</em><br>
+      A ARMORY GRAYSCVLE envia apenas para países da União Europeia.<br>
+      O envio internacional poderá ser introduzido futuramente de forma limitada e específica por destino.<br>
+      Entregamos apenas em moradas físicas válidas.<br>
+      Não enviamos para apartados ou serviços de reexpedição.</p>
+      <p><em>Tempo de Produção e Processamento</em><br>
+      A maioria das peças é feita por encomenda ou em séries limitadas e irrepetíveis.<br>
+      Os tempos de produção podem variar e podem ser necessários passos adicionais antes do envio.<br>
+      Os prazos estimados começam após o processamento, não no checkout.<br>
+      Quando aplicável, os prazos serão comunicados por email.</p>
+      <p><em>Custos de Envio</em><br>
+      Dependem do destino, valor da encomenda e peso/dimensões.<br>
+      Todas as taxas são apresentadas antes da confirmação e são pagas além do preço do produto (IVA incluído quando aplicável).</p>
+      <p><em>Tracking</em><br>
+      Após expedição, receberá um email com tracking, quando disponível.</p>
+      <p><em>Questões de Entrega</em><br>
+      Se a encomenda não chegar num prazo razoável após a expedição, contacte-nos de imediato.<br>
+      Deve verificar a encomenda no momento da entrega e registar eventuais danos ou discrepâncias junto do transportador sempre que possível.</p>
+      <p><strong>Devoluções, Substituições &amp; Trocas</strong><br>
+      <em>Política Geral</em><br>
+      Operamos com produção limitada e feita por encomenda; as devoluções são desencorajadas e apenas aceites quando exigido pela lei de consumo da UE.</p>
+      <p><em>Direito de Livre Resolução (Clientes UE)</em><br>
+      Pode existir direito de resolução em 14 dias após a entrega, salvo exceções.<br>
+      Este direito não se aplica a peças feitas por encomenda, personalizadas, séries limitadas irrepetíveis ou itens que não possam ser revendidos por motivos de higiene/integridade.</p>
+      <p><em>Condições para Devoluções Aceites</em><br>
+      Itens sem uso, sem lavagem e no estado/embalagem originais, com prova de compra.<br>
+      Reservamo-nos o direito de avaliar o estado antes de aprovar reembolso ou substituição.</p>
+      <p><em>Substituições</em><br>
+      Quando aplicável, apenas para o mesmo artigo, sujeito a stock. Só é considerada uma substituição por artigo.</p>
+      <p><em>Reembolsos</em><br>
+      Reembolsos aprovados são emitidos para o mesmo método de pagamento, após receção e inspeção. Não emitimos crédito em loja.</p>
+      <p><em>Encomendas Internacionais</em><br>
+      Para envios fora da UE, impostos, taxas e encargos são da responsabilidade do cliente, salvo indicação em contrário. Vendas internacionais podem ser finais, conforme a lei local.</p>
+      <p><strong>Legal</strong><br>
+      <em>Propriedade Intelectual</em><br>
+      Todo o conteúdo do site é propriedade exclusiva da ARMORY GRAYSCVLE. Qualquer reprodução, distribuição, modificação ou uso sem autorização é proibido.</p>
+      <p><em>Limitação de Quantidades</em><br>
+      Podemos limitar quantidades por artigo/encomenda/cliente para preservar a equidade e a integridade de lançamentos limitados. Encomendas que contornem estas limitações podem ser canceladas.</p>
+      <p><strong>Contacto</strong><br>
+      Para questões sobre encomendas, envios ou legal: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "returns.body": `
+      <p class="info-eyebrow">Devoluções</p>
+      <h1 class="info-headline">Devoluções &amp; Trocas</h1>
+      <p>Cada peça ARMORY GRAYSCVLE é produzida em quantidades limitadas, com intenção e cuidado. Por isso, não seguimos um modelo de devoluções massificado.</p>
+      <p>Quando a lei o permite, as compras são consideradas finais.</p>
+      <p>Nos termos da lei de consumo da UE, clientes na UE têm 14 dias para resolver compras à distância, salvo exceção. Este direito não se aplica a peças feitas por encomenda, personalizadas ou a séries limitadas irrepetíveis após início de produção (Diretiva 2011/83/EU).</p>
+      <p>Encorajamos uma escolha deliberada — incluindo tamanho e silhueta — e estamos disponíveis antes da compra para esclarecer dúvidas.</p>
+      <p>Se um artigo chegar com defeito verificado ou se recebeu o artigo errado, contacte-nos para tratarmos da situação com cuidado e discrição.</p>
+      <p>Em alguns casos, podem ser consideradas trocas de tamanho, sujeitas a disponibilidade (não garantida).</p>
+      <p>ARMORY GRAYSCVLE existe para promover posse consciente — menos peças, escolhidas deliberadamente, para ficar.</p>
+      <p>Questões sobre devoluções: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "delivery.body": `
+      <p class="info-eyebrow">Envios</p>
+      <h1 class="info-headline">Informação de Entrega</h1>
+      <p><strong>Destinos</strong><br>
+      Enviamos apenas para países da União Europeia.<br>
+      O envio internacional poderá ser introduzido futuramente de forma limitada e específica por destino.<br>
+      Entregamos apenas em moradas físicas válidas.<br>
+      Não enviamos para apartados ou serviços de reexpedição.</p>
+      <p><strong>Custos de Envio</strong><br>
+      Calculados no checkout consoante destino e peso/dimensão.</p>
+      <p><strong>Prazo de Entrega</strong><br>
+      Prazos são estimativas e podem variar por processamento, transportadora ou fatores externos.</p>
+      <p><strong>Direitos &amp; Taxas</strong><br>
+      Impostos ou taxas impostas pelas autoridades locais são responsabilidade do cliente.</p>
+      <p>Contactos sobre entregas: <a href="mailto:office@armorygrayscvle.com">office@armorygrayscvle.com</a></p>
+    `,
+
+    "privacy.body": `
+      <h1 class="info-title">POLÍTICA DE PRIVACIDADE</h1>
+      <p><strong>Última revisão: 9 de janeiro de 2026</strong></p>
+      <p>Esta Política de Privacidade explica como a ARMORY GRAYSCVLE, operada por Filipa Angeja, recolhe, usa e protege dados pessoais em conformidade com o RGPD e a lei aplicável da UE.</p>
+      <p><strong>1. RESPONSÁVEL PELO TRATAMENTO</strong><br>
+      ARMORY GRAYSCVLE<br>
+      Operada por: Filipa Angeja<br>
+      Morada: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+      <p><strong>2. DADOS PESSOAIS RECOLHIDOS</strong><br>
+      Apenas os necessários para operar o site e cumprir encomendas: Nome; Email; Morada de envio e faturação; Informação de pagamento (processada por terceiros); Histórico de encomendas; Dados técnicos (IP, browser, dispositivo). Não recolhemos dados excessivos.</p>
+      <p><strong>3. FINALIDADES</strong><br>
+      Processamento e envio de encomendas; Comunicação com o cliente; Processamento de pagamentos; Cumprimento legal e contabilístico; Segurança e funcionamento do site. Não fazemos decisões automatizadas ou perfis.</p>
+      <p><strong>4. FUNDAMENTO JURÍDICO</strong><br>
+      Necessidade contratual; Obrigações legais; Interesses legítimos (segurança, prevenção de fraude, funcionalidade); Consentimento quando necessário (ex. comunicações opcionais).</p>
+      <p><strong>5. PARTILHA DE DADOS</strong><br>
+      Apenas com: processadores de pagamento; logística; serviços de TI/hosting. Todos devem cumprir RGPD. Não vendemos nem trocamos dados.</p>
+      <p><strong>6. CONSERVAÇÃO</strong><br>
+      Apenas pelo tempo necessário para a finalidade ou obrigação legal. Depois, apagamos ou anonimizamos.</p>
+      <p><strong>7. OS SEUS DIREITOS</strong><br>
+      Aceder, corrigir, apagar, restringir/opor, portabilidade, retirar consentimento (quando aplicável). Pedidos para <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a>.</p>
+      <p><strong>8. COOKIES</strong><br>
+      Podem ser usados cookies essenciais para funcionalidade/segurança. Cookies não essenciais só com consentimento, conforme lei.</p>
+      <p><strong>9. SEGURANÇA</strong><br>
+      Medidas técnicas/organizacionais para proteger os dados. Nenhum sistema é totalmente seguro, mas levamos a proteção a sério.</p>
+      <p><strong>10. TRANSFERÊNCIAS INTERNACIONAIS</strong><br>
+      Se houver transferências fora da UE, aplicam-se garantias adequadas segundo o RGPD.</p>
+      <p><strong>11. ALTERAÇÕES</strong><br>
+      Podemos atualizar esta política; as alterações são eficazes na publicação.</p>
+      <p><strong>12. CONTACTO</strong><br>
+      Questões de privacidade ou exercício de direitos: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "terms.body": `
+      <h1 class="info-title">TERMOS &amp; CONDIÇÕES</h1>
+      <p><strong>Última revisão: 9 de janeiro de 2026</strong></p>
+      <p>O site www.armorygrayscvle.com é operado pela ARMORY GRAYSCVLE, empresário em nome individual Filipa Angeja, registada em Portugal (“ARMORY GRAYSCVLE”, “nós”).</p>
+      <p>Estes Termos regem o acesso e uso do site, incluindo navegação, criação de conta e compra de produtos.</p>
+      <p>Ao usar o site, confirma que leu e aceita os Termos; se não concorda, deve cessar o uso.</p>
+      <p><strong>USO DO SITE</strong><br>
+      Só pode usar o site para fins lícitos. É proibido qualquer uso que afete a integridade, segurança ou funcionamento do site.<br>
+      Podemos restringir ou terminar o acesso, incluindo contas, para proteger o site, a marca ou os utilizadores.</p>
+      <p><strong>CONTAS</strong><br>
+      Algumas funções exigem conta. É responsável por toda a atividade e por manter as credenciais confidenciais.<br>
+      Não somos responsáveis por perdas ou acessos não autorizados resultantes de falta de proteção das credenciais.</p>
+      <p><strong>PRODUTOS, PRODUÇÃO, DISPONIBILIDADE</strong><br>
+      Produtos em quantidades limitadas; muitos são feitos por encomenda ou personalizados.<br>
+      Algumas coleções são irrepetíveis; após início de produção ou fecho de drop, podem não ser reproduzidas.<br>
+      Disponibilidade não é garantida e pode mudar sem aviso.</p>
+      <p><strong>PREÇOS E PAGAMENTO</strong><br>
+      Preços em EUR (€), IVA incluído salvo indicação. Podem mudar sem aviso. Encomendas só são aceites após pagamento integral.<br>
+      Podemos corrigir erros de preço e cancelar encomendas com preço incorreto; se pago, será reembolsado.</p>
+      <p><strong>REPRESENTAÇÃO DE PRODUTO</strong><br>
+      Esforçamo-nos por mostrar os produtos com precisão, mas devido a produção artesanal e séries limitadas podem existir variações de cor, textura, acabamento e medidas (aproximadas). Ajustes de ecrã podem afetar a visualização. Estas variações não constituem defeito.</p>
+      <p><strong>ENVIO E ENTREGA</strong><br>
+      Enviamos na UE e, quando aplicável, internacionalmente.<br>
+      Prazos de entrega são estimativas e podem sofrer atrasos de transportadoras, alfândegas ou fatores externos.<br>
+      Taxas alfandegárias/impostos fora do controlo da ARMORY GRAYSCVLE são do cliente.<br>
+      O risco transfere para o cliente quando a encomenda é entregue ao transportador.</p>
+      <p><strong>DIREITO DE LIVRE RESOLUÇÃO &amp; DEVOLUÇÕES (UE)</strong><br>
+      Clientes UE podem ter direito de resolução em 14 dias após entrega, salvo exceções.<br>
+      Não se aplica a peças feitas por encomenda/personalizadas ou séries limitadas irrepetíveis após início de produção.<br>
+      Onde aplicável, condições e procedimentos constam da nossa política de devoluções.<br>
+      Devido à produção intencional e limitada, as devoluções são desencorajadas na medida da lei.</p>
+      <p><strong>CÓDIGOS DE ACESSO E LANÇAMENTOS PRIVADOS</strong><br>
+      Códigos/invites são discricionários; não podem ser partilhados, vendidos ou tornados públicos e podem ser revogados. Possuir um código não garante disponibilidade.</p>
+      <p><strong>PROPRIEDADE INTELECTUAL</strong><br>
+      Todo o conteúdo do site é propriedade da ARMORY GRAYSCVLE ou licenciantes e protegido por lei. Não pode ser copiado, reproduzido, modificado ou distribuído sem autorização.</p>
+      <p><strong>CONDUTA PROIBIDA</strong><br>
+      Não pode: aceder a áreas restritas; usar bots/scrapers; interferir com a segurança/operacionalidade; usar para fins ilícitos ou abusivos. Uso não autorizado pode levar ao bloqueio e ação legal.</p>
+      <p><strong>EXCLUSÃO DE GARANTIAS</strong><br>
+      O site e conteúdos são fornecidos “TAL COMO ESTÃO”. Não damos garantias de disponibilidade, exatidão ou adequação.</p>
+      <p><strong>LIMITAÇÃO DE RESPONSABILIDADE</strong><br>
+      Na medida permitida por lei, não somos responsáveis por danos indiretos, incidentais ou consequenciais relacionados com o uso do site ou produtos.<br>
+      A responsabilidade total não excederá o montante pago pelo produto em causa.<br>
+      Nada limita direitos de consumidor irrenunciáveis.</p>
+      <p><strong>LEI APLICÁVEL</strong><br>
+      Lei portuguesa; foro de Portugal, salvo disposição imperativa de proteção do consumidor.</p>
+      <p><strong>ALTERAÇÕES</strong><br>
+      Podemos rever estes Termos a qualquer momento; tornam-se eficazes na publicação. O uso continuado implica aceitação.</p>
+      <p><strong>CONTACTO</strong><br>
+      ARMORY GRAYSCVLE<br>
+      Operada por: Filipa Angeja<br>
+      Morada: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `
+  }
+};
 
 function setLocale(locale = "en", options = {}) {
   const lang = locale || "en";
@@ -108,9 +537,40 @@ if (localeButtons.length) {
     btn.addEventListener("click", () => {
       const locale = btn.getAttribute("data-locale") || "en";
       setLocale(locale, { reloadHome: true });
+      applyTranslations(locale);
     });
   });
 }
+
+function applyTranslations(lang = "en") {
+  const dict = translations[lang] || translations.en;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) el.textContent = dict[key];
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-html");
+    if (dict[key]) el.innerHTML = dict[key];
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (dict[key]) el.placeholder = dict[key];
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let saved = "en";
+  try {
+    saved = localStorage.getItem(LOCALE_KEY) || "en";
+  } catch (err) {
+    saved = "en";
+  }
+  applyTranslations(saved);
+});
 
 /* FAB MENU TOGGLE */
 const fabStack = document.querySelector(".ch-fab-stack");
