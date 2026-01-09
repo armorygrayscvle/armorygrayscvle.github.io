@@ -1189,6 +1189,13 @@ a {
   min-height: 120px;
 }
 
+.contact-page .info-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
 .contact-consent {
   font-size: 11px;
   letter-spacing: 0.06em;
