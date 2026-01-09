@@ -1159,6 +1159,32 @@ a {
   line-height: 1.7;
 }
 
+.general-page .hero.info-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.general-page .info-hero-content {
+  margin: 0;
+}
+
+.terms-page .hero.info-hero,
+.privacy-page .hero.info-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.terms-page .info-hero-content,
+.privacy-page .info-hero-content {
+  margin: 0;
+}
+
 .contact-form {
   display: grid;
   gap: 14px;
