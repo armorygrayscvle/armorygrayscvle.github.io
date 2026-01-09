@@ -1076,7 +1076,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 20px 80px;
+  padding: 120px 20px 0;
   overflow: hidden;
 }
 
@@ -1889,7 +1889,7 @@ a {
   }
 
   .hero.info-hero {
-    padding: 110px 16px 60px;
+    padding: 110px 16px 0;
   }
 
   .info-card {
@@ -2054,7 +2054,7 @@ a {
   }
 
   .hero.info-hero {
-    padding: 100px 14px 50px;
+    padding: 100px 14px 0;
   }
 
   .info-card {
