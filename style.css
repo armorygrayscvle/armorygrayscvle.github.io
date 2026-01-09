@@ -468,8 +468,8 @@ a {
 #main-content {
   opacity: 0;
   transition: opacity 1.2s ease;
-  min-height: 100vh;
-  padding: 0 var(--edge-pad) 200px;
+  min-height: auto;
+  padding: 0 var(--edge-pad) 0;
   overflow-x: hidden;
   background: #fff;
 }
@@ -1866,7 +1866,7 @@ a {
   }
 
   #main-content {
-    padding: 0 var(--edge-pad) 200px;
+    padding: 0 var(--edge-pad) 0;
   }
 
   .brand-name {
@@ -1982,7 +1982,7 @@ a {
 
 @media (max-width: 600px) {
   #main-content {
-    padding: 120px var(--edge-pad) 180px;
+    padding: 0 var(--edge-pad) 0;
   }
 
   .home #main-content {
