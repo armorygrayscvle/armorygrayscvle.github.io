@@ -1,5 +1,5 @@
 /* RESET */
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=UnifrakturMaguntia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Cinzel:wght@400;600&display=swap");
 
 *,
 *::before,
@@ -79,8 +79,8 @@ body.home {
 
 .ch-brand {
   justify-self: center;
-  font-family: "UnifrakturMaguntia", "EB Garamond", serif;
-  letter-spacing: 0.26em;
+  font-family: "Cinzel", "EB Garamond", serif;
+  letter-spacing: 0.22em;
   font-size: 22px;
   text-transform: uppercase;
   color: #f7f7f7;
@@ -142,9 +142,9 @@ body.home {
 }
 
 .ch-hero-wordmark {
-  font-family: "UnifrakturMaguntia", "EB Garamond", serif;
-  font-size: clamp(40px, 6vw, 78px);
-  letter-spacing: 0.18em;
+  font-family: "Cinzel", "EB Garamond", serif;
+  font-size: clamp(40px, 6vw, 74px);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #f6f6f6;
 }
@@ -182,8 +182,8 @@ body.home {
 }
 
 .ch-menu-title {
-  font-family: "UnifrakturMaguntia", "EB Garamond", serif;
-  letter-spacing: 0.18em;
+  font-family: "Cinzel", "EB Garamond", serif;
+  letter-spacing: 0.2em;
   font-size: 18px;
 }
 
