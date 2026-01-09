@@ -46,7 +46,7 @@
       <span class="ch-brand">ARMORY GRAYSCVLE</span>
       <div class="ch-actions" aria-label="Conta e saco">
         <a class="ch-action-link" href="login.html">Entrar</a>
-        <a class="ch-action-link" href="cart.html" aria-label="Saco de compras">
+        <a class="ch-action-link snipcart-checkout" href="#" aria-label="Saco de compras">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7 8l1 11h8l1-11z"></path>
             <path d="M9 8a3 3 0 1 1 6 0"></path>
@@ -88,5 +88,15 @@
       document.body.appendChild(mainScript);
     })();
   </script>
+  <div
+    id="snipcart"
+    hidden
+    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
+    data-config-add-product-behavior="none"
+    data-config-modal-style="side"
+    data-currency="eur"
+  ></div>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 </body>
 </html>
