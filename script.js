@@ -77,7 +77,7 @@ document.addEventListener("keydown", (e) => {
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
 
-function setLocale(locale = "en") {
+function setLocale(locale = "en", options = {}) {
   const lang = locale || "en";
   document.documentElement.lang = lang;
   localeButtons.forEach((btn) => {
@@ -88,6 +88,10 @@ function setLocale(locale = "en") {
     localStorage.setItem(LOCALE_KEY, lang);
   } catch (err) {
     /* ignore */
+  }
+
+  if (options.reloadHome && lang === "pt") {
+    window.location.href = "index.html";
   }
 }
 
@@ -103,7 +107,7 @@ if (localeButtons.length) {
   localeButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const locale = btn.getAttribute("data-locale") || "en";
-      setLocale(locale);
+      setLocale(locale, { reloadHome: true });
     });
   });
 }
