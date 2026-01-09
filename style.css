@@ -178,13 +178,7 @@ body.home {
 .ch-menu-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.ch-menu-title {
-  font-family: "Cinzel", "EB Garamond", serif;
-  letter-spacing: 0.2em;
-  font-size: 18px;
+  justify-content: flex-end;
 }
 
 .ch-menu-close {
