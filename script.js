@@ -73,6 +73,41 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeChMenu();
 });
 
+/* LOCALE PICKER */
+const localeButtons = document.querySelectorAll(".locale-btn");
+const LOCALE_KEY = "preferredLocale";
+
+function setLocale(locale = "en") {
+  const lang = locale || "en";
+  document.documentElement.lang = lang;
+  localeButtons.forEach((btn) => {
+    const btnLocale = btn.getAttribute("data-locale");
+    btn.classList.toggle("locale-active", btnLocale === lang);
+  });
+  try {
+    localStorage.setItem(LOCALE_KEY, lang);
+  } catch (err) {
+    /* ignore */
+  }
+}
+
+if (localeButtons.length) {
+  const savedLocale = (() => {
+    try {
+      return localStorage.getItem(LOCALE_KEY);
+    } catch (err) {
+      return null;
+    }
+  })();
+  setLocale(savedLocale || "en");
+  localeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const locale = btn.getAttribute("data-locale") || "en";
+      setLocale(locale);
+    });
+  });
+}
+
 /* SAVE / WISHLIST */
 const SAVED_KEY = "savedItems";
 
