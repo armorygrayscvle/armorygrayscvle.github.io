@@ -587,12 +587,13 @@ function rewriteHrefForLocale(href = "", lang = "en") {
   if (/^(https?:|mailto:|tel:|#)/i.test(href)) return href;
   const [pathAndQuery, hash] = href.split("#");
   const [path, query] = pathAndQuery.split("?");
-  const match = path.match(/^([a-z0-9_-]+)(-pt)?\.html$/i);
+  const match = path.match(/^\/?([a-z0-9_-]+)(-pt)?\.html$/i);
   if (!match) return href;
   const base = match[1].toLowerCase();
   if (!LOCALE_PAGES.includes(base)) return href;
   const targetBase = lang === "pt" ? `${match[1]}-pt` : match[1];
-  const newPath = `${targetBase}.html${query ? `?${query}` : ""}`;
+  const leadingSlash = path.startsWith("/") ? "/" : "";
+  const newPath = `${leadingSlash}${targetBase}.html${query ? `?${query}` : ""}`;
   return hash ? `${newPath}#${hash}` : newPath;
 }
 
@@ -638,8 +639,12 @@ function handleLocaleSwitch(targetLocale = "en") {
   if (hasLocalePair()) {
     const current = getCurrentLocaleFromPage();
     if (current !== lang) {
-      window.location.href = buildLocaleHref(lang);
+      window.location.replace(buildLocaleHref(lang));
+      return;
     }
+    // Already on the correct language page: reload to ensure consistent copy.
+    window.location.reload();
+    return;
   }
 }
 
