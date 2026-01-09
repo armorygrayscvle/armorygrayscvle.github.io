@@ -77,6 +77,11 @@ document.addEventListener("keydown", (e) => {
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
 const LOCALE_PAGES = ["index", "general", "terms", "privacy", "contact", "login", "cart"];
+const LEGACY_REDIRECTS = {
+  "returns": "general.html",
+  "delivery": "general.html",
+  "preorders": "general.html",
+};
 const translations = {
   en: {
     "menu.general": "General",
@@ -577,6 +582,13 @@ function hasLocalePair() {
   return LOCALE_PAGES.includes(getBasePageName());
 }
 
+function handleLegacyRedirect() {
+  const file = (window.location.pathname.split("/").pop() || "").toLowerCase().replace(/\.html$/, "");
+  if (LEGACY_REDIRECTS[file]) {
+    window.location.replace(LEGACY_REDIRECTS[file]);
+  }
+}
+
 function buildLocaleHref(targetLocale = "en") {
   const base = getBasePageName();
   const suffix = targetLocale === "pt" ? "-pt" : "";
@@ -618,6 +630,7 @@ function enforceLocaleOnLoad() {
 }
 
 enforceLocaleOnLoad();
+handleLegacyRedirect();
 
 function updateLocaleButtons(lang = "en") {
   localeButtons.forEach((btn) => {
