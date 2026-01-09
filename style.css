@@ -80,8 +80,8 @@ body.home {
 .ch-brand {
   justify-self: center;
   font-family: "Cinzel", "EB Garamond", serif;
-  letter-spacing: 0.22em;
-  font-size: 22px;
+  letter-spacing: 0.18em;
+  font-size: 18px;
   text-transform: uppercase;
   color: #f7f7f7;
 }
@@ -408,7 +408,7 @@ a {
   font-size: 30px;
   letter-spacing: 0.28em;
   font-weight: 300;
-  font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
+  font-family: "Cinzel", "EB Garamond", serif;
 }
 
 /* MAIN CONTENT */
@@ -1463,8 +1463,8 @@ a {
   }
 
   .ch-brand {
-    font-size: 18px;
-    letter-spacing: 0.18em;
+    font-size: 16px;
+    letter-spacing: 0.14em;
   }
 
   .ch-action-link {
@@ -1579,8 +1579,8 @@ a {
   }
 
   .ch-brand {
-    font-size: 16px;
-    letter-spacing: 0.14em;
+    font-size: 14px;
+    letter-spacing: 0.12em;
   }
 
   .ch-actions {
