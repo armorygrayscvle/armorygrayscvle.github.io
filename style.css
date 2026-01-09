@@ -123,6 +123,17 @@ body.home {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
+.ch-legal-copy {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.14em;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #e8e8e8;
+  white-space: nowrap;
+  padding: 3px 4px 3px 2px;
+  opacity: 0.9;
+}
+
 .ch-action-link {
   display: inline-flex;
   align-items: center;
@@ -1519,6 +1530,10 @@ a {
     padding: 3px 6px;
   }
 
+  .ch-legal-copy {
+    display: none;
+  }
+
   .info-page {
     padding: 72px 20px 100px;
   }
@@ -1649,6 +1664,10 @@ a {
     font-size: 10px;
     letter-spacing: 0.18em;
     padding: 3px 6px;
+  }
+
+  .ch-legal-copy {
+    display: none;
   }
 
   .products {
