@@ -42,11 +42,16 @@ function setMobileHeroHeight() {
 
   const headerHeight = Math.ceil(header.getBoundingClientRect().height);
   document.documentElement.style.setProperty("--header-height", `${headerHeight}px`);
+  document.documentElement.style.setProperty(
+    "--mobile-hero-height",
+    `${Math.max(window.innerHeight - headerHeight, 0)}px`
+  );
   const targetHeight = Math.max(window.innerHeight - headerHeight, 0);
   hero.style.height = `${targetHeight}px`;
   hero.style.minHeight = `${targetHeight}px`;
   hero.style.paddingTop = `calc(${headerHeight}px + 20px)`;
   hero.style.paddingBottom = "0px";
+  hero.style.marginBottom = "0px";
 }
 
 window.addEventListener("load", () => {

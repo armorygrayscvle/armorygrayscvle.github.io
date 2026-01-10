@@ -2377,8 +2377,8 @@ a {
   }
 
   .home .hero.ch-hero {
-    height: calc(100vh - var(--header-height, 70px));
-    min-height: calc(100vh - var(--header-height, 70px));
+    height: var(--mobile-hero-height, calc(100vh - var(--header-height, 70px)));
+    min-height: var(--mobile-hero-height, calc(100vh - var(--header-height, 70px)));
     padding-top: calc(var(--header-height, 70px) + 20px);
     padding-bottom: 0;
     margin-bottom: 0;
