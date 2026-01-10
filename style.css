@@ -184,6 +184,7 @@ body.home {
   color: #0b0b0b;
   text-decoration: none;
   opacity: 0.9;
+  margin-left: 4px;
 }
 
 .ch-instagram-link svg {

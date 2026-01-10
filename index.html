@@ -13,11 +13,39 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
+  <style>
+    /* Critical header/link defaults to avoid blue flash */
+    .ch-header a,
+    .ch-brand {
+      color: #000;
+      text-decoration: none;
+    }
+    .ch-brand {
+      display: inline-flex;
+      align-items: center;
+      letter-spacing: 0.3em;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-family: "Cinzel","EB Garamond",serif;
+    }
+    .ch-brand img {
+      display: block;
+      height: 22px;
+      width: auto;
+      filter: brightness(0) saturate(100%);
+    }
+    .ch-logo img {
+      display: block;
+      height: 46px;
+      width: auto;
+    }
+  </style>
   <!-- Typeface: Helvetica Neue primary, Inter fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
+  <link rel="preload" href="style.css" as="style">
   <link id="site-style" rel="stylesheet" href="style.css">
   <script>
     (function() {
@@ -43,7 +71,9 @@
       <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Toggle menu">
         <img src="/logowhite.png" alt="Armory Grayscvle logo">
       </button>
-      <a class="ch-brand" href="index.html" aria-label="Armory Grayscvle home">ARMORY GRAYSCVLE</a>
+      <a class="ch-brand brand-image" href="index.html" aria-label="Armory Grayscvle home">
+        <img src="/logowhite.png" alt="Armory Grayscvle">
+      </a>
       <div class="ch-actions" aria-label="Account and bag links">
         <a class="ch-action-link header-action" href="login.html">Login</a>
         <a class="ch-action-link snipcart-checkout header-action" href="#" aria-label="Shopping bag" data-open-cart>
