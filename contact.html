@@ -66,15 +66,42 @@
           <p>We respond within 1–3 business days.</p>
           <form class="contact-form" id="contact-form">
             <div class="contact-grid">
-              <label class="visually-hidden" for="contact-name">Name</label>
-              <input id="contact-name" name="name" type="text" placeholder="Name" required>
-
-              <label class="visually-hidden" for="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" placeholder="Email" required>
+              <label class="contact-field">
+                <span>First Name *</span>
+                <input id="contact-first" name="first" type="text" placeholder="First Name" required>
+              </label>
+              <label class="contact-field">
+                <span>Last Name *</span>
+                <input id="contact-last" name="last" type="text" placeholder="Last Name" required>
+              </label>
             </div>
 
-            <label class="visually-hidden" for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="4" placeholder="Message" required></textarea>
+            <div class="contact-grid">
+              <label class="contact-field">
+                <span>Email *</span>
+                <input id="contact-email" name="email" type="email" placeholder="name@email.com" required>
+              </label>
+              <label class="contact-field">
+                <span>Phone Number</span>
+                <input id="contact-phone" name="phone" type="tel" placeholder="+351 000 000 000">
+              </label>
+            </div>
+
+            <div class="contact-grid">
+              <label class="contact-field">
+                <span>Order Number (optional)</span>
+                <input id="contact-order" name="order" type="text" placeholder="Order #">
+              </label>
+              <label class="contact-field">
+                <span>Subject *</span>
+                <input id="contact-subject" name="subject" type="text" placeholder="Subject" required>
+              </label>
+            </div>
+
+            <label class="contact-field">
+              <span>Message *</span>
+              <textarea id="contact-message" name="message" rows="4" placeholder="Message" required></textarea>
+            </label>
 
           <p class="contact-consent">
             By clicking Submit, I agree to the <a href="terms.html">Terms of Use</a> and I have read the <a href="privacy.html">Privacy Policy</a>.
