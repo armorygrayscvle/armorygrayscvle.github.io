@@ -11,10 +11,19 @@
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+  <style>
+    a, .ch-header a, .ch-brand, .ch-logo { color: #f7f7f7; text-decoration: none; }
+    .ch-legal-links, .ch-legal-links-ig { background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.3); }
+    .ch-legal-links svg, .ch-legal-links-ig svg { stroke: currentColor; fill: none; }
+  </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <link id="site-style" rel="stylesheet" href="style.css">
+  <link rel="preload" href="style.css?v=3" as="style">
+
+  <link id="site-style" rel="stylesheet" href="style.css?v=3">
   <script>
     (function() {
       const cacheBust = String(Date.now());

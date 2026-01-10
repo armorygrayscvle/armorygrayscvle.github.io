@@ -18,7 +18,7 @@ window.addEventListener("beforeunload", resetScroll);
 (function bumpStylesheet() {
   const styleEl = document.getElementById("site-style");
   if (!styleEl) return;
-  const version = "2";
+  const version = "3";
   const base = (styleEl.getAttribute("href") || "style.css").split("?")[0];
   styleEl.setAttribute("href", `${base}?v=${version}&t=${Date.now()}`);
 })();

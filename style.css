@@ -1,5 +1,4 @@
 /* RESET */
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Cinzel:wght@400;600&display=swap");
 
 *,
 *::before,
@@ -105,6 +104,7 @@ body.home {
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 7px 9px;
   backdrop-filter: blur(6px);
+  outline: 1px solid rgba(255, 0, 0, 0.25); /* temporary visibility test */
 }
 
 .ch-legal-link {
@@ -179,6 +179,7 @@ body.home {
   backdrop-filter: blur(6px);
   min-width: 140px;
   width: auto;
+  outline: 1px solid rgba(255, 0, 0, 0.25); /* temporary visibility test */
 }
 
 .ch-legal-links-ig a {
