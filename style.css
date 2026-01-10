@@ -1304,6 +1304,10 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 14px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .info-actions .info-locale-switch {
@@ -1317,9 +1321,6 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 11px;
   color: #0c0c0c;
   text-decoration: none;
   padding-bottom: 0;
@@ -1336,22 +1337,18 @@ a {
 .info-login-link {
   display: inline-flex;
   align-items: center;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 11px;
   gap: 8px;
   height: 100%;
   color: #0c0c0c;
   text-decoration: none;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+  padding-bottom: 0;
+  border-bottom: none;
   transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .info-login-link:hover,
 .info-login-link:focus-visible {
   opacity: 0.8;
-  border-color: rgba(0, 0, 0, 0.55);
   transform: translateY(-1px);
 }
 
