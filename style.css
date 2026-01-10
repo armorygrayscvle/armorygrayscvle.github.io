@@ -1496,18 +1496,33 @@ a {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 14px;
+}
+
+.contact-grid.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-field {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-field span {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .contact-form input,
 .contact-form textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  padding: 12px 6px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px 12px;
   color: #0c0c0c;
   font-size: 13px;
   letter-spacing: 0.06em;
+  border-radius: 3px;
 }
 
 .contact-form input::placeholder,
