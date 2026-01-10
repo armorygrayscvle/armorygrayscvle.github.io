@@ -43,39 +43,12 @@
           <button class="locale-btn" data-locale="en" type="button">EN</button>
           <button class="locale-btn" data-locale="pt" type="button">PT</button>
         </div>
-        <a class="info-login-link" href="login.html">Login</a>
-        <a class="info-bag-link snipcart-checkout" href="#" aria-label="Abrir saco">
-          <span data-i18n="cart.eyebrow">Saco</span>
-        </a>
       </div>
       <div class="info-hero-content creations-content">
         <div class="info-card creations-card">
-          <div class="creations-card-header">
-            <div>
-              <p class="info-eyebrow">Criações</p>
-              <h1 class="info-headline">Armory Grayscvle</h1>
-              <p class="creations-subhead">Objetos editados em séries contidas. Silenciosos, precisos, feitos para serem guardados.</p>
-            </div>
-            <div class="creations-actions" aria-label="Links de conta e saco">
-              <a class="icon-btn" href="login.html" aria-label="Conta">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="8" r="4"></circle>
-                  <path d="M4 20c1.6-3.2 4.4-5 8-5s6.4 1.8 8 5"></path>
-                </svg>
-              </a>
-              <a class="icon-btn saved-icon-btn" href="saved.html" aria-label="Guardados">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M7 4h10v16l-5-3-5 3V4z"></path>
-                </svg>
-              </a>
-              <a class="icon-btn bag-icon-btn snipcart-checkout" href="#" aria-label="Saco">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M7 8l1 11h8l1-11z"></path>
-                  <path d="M9 8a3 3 0 1 1 6 0"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
+          <p class="info-eyebrow">Criações</p>
+          <h1 class="info-headline">Armory Grayscvle</h1>
+          <p class="creations-subhead">Objetos editados em séries contidas. Silenciosos, precisos, feitos para serem guardados.</p>
           <div class="creations-list product-list" id="product-list"></div>
           <div class="test-product-card">
             <h2>Produto Teste</h2>
@@ -88,14 +61,22 @@
               data-item-url="https://armorygrayscvle.com/creations-pt.html"
               data-item-name="Test Product"
               data-item-description="Minimal test product"
+              data-item-image="favicon-32x32.png"
             >
               Adicionar ao Saco
             </button>
           </div>
+          <a class="info-bag-link" href="saved.html" aria-label="Guardados">Ver Guardados</a>
         </div>
       </div>
     </section>
   </main>
+
+  <div class="ch-legal-links">
+    <a class="ch-legal-link" href="terms-pt.html">Termos</a>
+    <a class="ch-legal-link" href="privacy-pt.html">Privacidade</a>
+    <a class="ch-legal-link" href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a>
+  </div>
 
   <script>
     (function() {

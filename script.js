@@ -44,6 +44,7 @@ function jumpToInfo() {
 const chMenuToggle = document.getElementById("ch-menu-toggle");
 const chMenu = document.getElementById("ch-menu");
 const chMenuClose = document.querySelector(".ch-menu-close");
+let checkoutBusy = false;
 
 function openChMenu() {
   if (!chMenu) return;
@@ -237,6 +238,7 @@ const translations = {
     "privacy.body": `
       <h1 class="info-title">PRIVACY POLICY</h1>
       <p><strong>Last Revised: January 9, 2026</strong></p>
+      <p>We do not use cookies or similar tracking technologies.</p>
       <p>This Privacy Policy explains how ARMORY GRAYSCVLE collects, uses, and protects personal data in accordance with the General Data Protection Regulation (GDPR) and applicable EU law.</p>
       <p><strong>1. DATA CONTROLLER</strong><br>
       ARMORY GRAYSCVLE<br>
@@ -315,7 +317,8 @@ const translations = {
       We reserve the right to revise these Terms at any time. Updates take effect immediately upon publication. Continued use of the Website constitutes acceptance of the revised Terms.</p>
       <p><strong>CONTACT</strong><br>
       ARMORY GRAYSCVLE<br>
-      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a><br>
+      Location: Lisbon, Portugal</p>
     `
   },
   pt: {
@@ -450,6 +453,7 @@ const translations = {
     "privacy.body": `
       <h1 class="info-title">POLÍTICA DE PRIVACIDADE</h1>
       <p><strong>Última revisão: 9 de janeiro de 2026</strong></p>
+      <p>Não utilizamos cookies ou tecnologias de rastreamento semelhantes.</p>
       <p>Esta Política de Privacidade explica como a ARMORY GRAYSCVLE recolhe, usa e protege dados pessoais em conformidade com o RGPD e a lei aplicável da UE.</p>
       <p><strong>1. RESPONSÁVEL PELO TRATAMENTO</strong><br>
       ARMORY GRAYSCVLE<br>
@@ -527,7 +531,8 @@ const translations = {
       Podemos rever estes Termos a qualquer momento; tornam-se eficazes na publicação. O uso continuado implica aceitação.</p>
       <p><strong>CONTACTO</strong><br>
       ARMORY GRAYSCVLE<br>
-      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a><br>
+      Localização: Lisboa, Portugal</p>
     `
   }
 };
@@ -844,6 +849,9 @@ function initSnipcartBindings(attempt = 0) {
     events.on("item.added", (item) => {
       showCartToast(item);
     });
+    events.on("cart.confirmed", resetCheckoutButtons);
+    events.on("cart.closed", resetCheckoutButtons);
+    events.on("cart.canceled", resetCheckoutButtons);
   }
 }
 
@@ -852,6 +860,7 @@ renderSavedPage();
 renderCartPage();
 bindCartLiveUpdates();
 bindCartButtons();
+enforceShippingRules();
 renderProductPage();
 
 /* PRODUCT DETAIL PAGE */
@@ -1123,20 +1132,21 @@ async function renderCartPage() {
       itemsEl.appendChild(row);
     });
 
-    const shippingNote = cart?.summary?.shipping || "";
-    const total = cart?.summary?.total || subtotal;
-    summaryEl.innerHTML = `
-      <div class="summary-row">
-        <span>Subtotal</span>
-        <span>€${formatPrice(subtotal)}</span>
-      </div>
-      <div class="summary-row summary-note">${shippingNote || "Shipping calculated at checkout."}</div>
-      <div class="summary-row summary-total">
-        <span>Total</span>
-        <span>€${formatPrice(total)}</span>
-      </div>
-      <button class="summary-checkout snipcart-checkout" type="button">Checkout</button>
-    `;
+  const shippingNote = cart?.summary?.shipping || "";
+  const total = cart?.summary?.total || subtotal;
+  summaryEl.innerHTML = `
+    <div class="summary-row">
+      <span>Subtotal</span>
+      <span>€${formatPrice(subtotal)}</span>
+    </div>
+    <div class="summary-row summary-note">${shippingNote || "Shipping calculated at checkout. We currently ship within EU member states only. Prices shown include VAT where applicable."}</div>
+    <div class="summary-row summary-total">
+      <span>Total</span>
+      <span>€${formatPrice(total)}</span>
+    </div>
+    <button class="summary-checkout snipcart-checkout" type="button">Checkout</button>
+  `;
+    guardCheckoutTriggers();
   } catch (err) {
     if (cartWrap) {
       cartWrap.innerHTML = `<p class="products-empty">Cart unavailable. Try again.</p>`;
@@ -1410,3 +1420,83 @@ function initContactForm() {
 }
 
 initContactForm();
+
+/* SHIPPING RULES */
+const ALLOWED_SHIP_COUNTRIES = new Set([
+  "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE"
+]);
+
+function isAllowedCountry(code = "") {
+  return ALLOWED_SHIP_COUNTRIES.has(String(code).toUpperCase());
+}
+
+/* CHECKOUT DOUBLE-SUBMIT GUARD */
+function resetCheckoutButtons() {
+  checkoutBusy = false;
+  document.querySelectorAll(".snipcart-checkout").forEach((btn) => {
+    btn.classList.remove("is-checkout-busy");
+    btn.removeAttribute("aria-busy");
+    if (btn.tagName === "BUTTON") {
+      btn.disabled = false;
+    }
+  });
+}
+
+function guardCheckoutTriggers() {
+  const triggers = document.querySelectorAll(".snipcart-checkout");
+  if (!triggers.length) return;
+
+  triggers.forEach((btn) => {
+    if (btn._checkoutGuard) {
+      btn.removeEventListener("click", btn._checkoutGuard);
+    }
+    btn._checkoutGuard = (e) => {
+      if (checkoutBusy) {
+        e.preventDefault();
+        return;
+      }
+      checkoutBusy = true;
+      btn.classList.add("is-checkout-busy");
+      btn.setAttribute("aria-busy", "true");
+      if (btn.tagName === "BUTTON") {
+        btn.disabled = true;
+      }
+      setTimeout(resetCheckoutButtons, 8000);
+    };
+    btn.addEventListener("click", btn._checkoutGuard);
+  });
+}
+
+function enforceShippingRules(attempt = 0) {
+  const maxAttempts = 25;
+  if (!window.Snipcart || !window.Snipcart.events) {
+    if (attempt < maxAttempts) setTimeout(() => enforceShippingRules(attempt + 1), 400);
+    return;
+  }
+
+  const { events, api } = window.Snipcart;
+  if (!events?.on) return;
+
+  const shippingMessage = "We currently ship to EU member states only.";
+
+  events.on("shippingaddress.changed", (address) => {
+    if (!address?.country) return;
+    if (isAllowedCountry(address.country)) return;
+    try {
+      api?.cart?.notifications?.show?.({
+        type: "error",
+        message: shippingMessage,
+        dismissable: true,
+      });
+    } catch (err) {
+      /* ignore */
+    }
+  });
+
+  events.on("beforeCheckoutConfirmation", (cart) => {
+    const country = cart?.shippingAddress?.country;
+    if (country && !isAllowedCountry(country)) {
+      throw new Error(shippingMessage);
+    }
+  });
+}
