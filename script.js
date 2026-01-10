@@ -129,6 +129,7 @@ const translations = {
     "menu.contact": "Contact",
     "menu.lang_en": "EN",
     "menu.lang_pt": "PT",
+    "menu.lang_de": "DE",
 
     "login.eyebrow": "Account",
     "login.title": "Armory Grayscvle",
@@ -363,6 +364,7 @@ const translations = {
     "menu.contact": "Contacto",
     "menu.lang_en": "EN",
     "menu.lang_pt": "PT",
+    "menu.lang_de": "DE",
 
     "login.eyebrow": "Conta",
     "login.title": "Armory Grayscvle",
@@ -567,6 +569,182 @@ const translations = {
       Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a><br>
       Localização: Lisboa, Portugal</p>
     `
+  },
+  de: {
+    "menu.general": "Allgemein",
+    "menu.creations": "Kreationen",
+    "menu.contact": "Kontakt",
+    "menu.lang_en": "EN",
+    "menu.lang_pt": "PT",
+    "menu.lang_de": "DE",
+
+    "login.eyebrow": "Konto",
+    "login.title": "Armory Grayscvle",
+    "login.subtitle": "Zugang zu Bestellungen und Gespeichertes.",
+    "login.google": "Weiter mit Google",
+    "login.apple": "Weiter mit Apple",
+    "login.or": "oder",
+    "login.email": "Email",
+    "login.password": "Passwort",
+    "login.forgot": "Passwort vergessen?",
+    "login.submit": "Anmelden",
+    "login.create": "Konto anlegen",
+
+    "cart.eyebrow": "Tasche",
+    "cart.title": "Ihre Tasche",
+    "cart.empty": "Ihre Tasche ist leer.",
+    "cart.continue": "Weiter einkaufen",
+    "cart.returns": "Rueckgabe & Umtausch",
+
+    "contact.eyebrow": "Kontakt",
+    "contact.headline": "Kontakt aufnehmen",
+    "contact.first": "Vorname",
+    "contact.last": "Nachname",
+    "contact.email": "Email",
+    "contact.phone": "Telefon",
+    "contact.order": "Bestellnummer",
+    "contact.subject": "Betreff",
+    "contact.message": "Nachricht",
+    "contact.consent": 'Mit Senden stimme ich den <a href="terms.html">AGB</a> zu und habe die <a href="privacy.html">Datenschutzrichtlinie</a> gelesen.',
+    "contact.submit": "Senden",
+
+    "general.body": `
+      <p class="info-eyebrow">Allgemein</p>
+      <h1 class="info-headline">Information</h1>
+      <p><strong>VERSAND &amp; LIEFERUNG</strong><br>
+      <em>Gebiete</em><br>
+      ARMORY GRAYSCVLE liefert innerhalb der EU und zu ausgewaehlten internationalen Zielen.<br>
+      Nur physische Adressen; keine Postfaecher, APO/FPO oder Weiterleitungsdienste.</p>
+
+      <p><em>Fertigung &amp; Verarbeitung</em><br>
+      Viele Stuecke sind Made-to-Order oder in knappen Serien.<br>
+      Zeiten koennen variieren; Laufzeiten beginnen erst nach Verarbeitung.</p>
+
+      <p><em>Versandkosten</em><br>
+      Abhaengig von Ziel, Warenwert, Gewicht und Abmessungen.<br>
+      Alle Gebuehren werden vor Bestaetigung gezeigt; Preise enthalten MwSt., wo anwendbar.</p>
+
+      <p><em>Tracking</em><br>
+      Nach Versand erhalten Sie, sofern verfuegbar, eine Tracking-Info per Email.</p>
+
+      <p><em>Lieferprobleme</em><br>
+      Wenn eine Sendung verzoegert, melden Sie sich zeitnah.<br>
+      Pruefen Sie die Lieferung bei Erhalt; sichtbare Schaeden oder Abweichungen beim Zusteller notieren, wenn moeglich.</p>
+
+      <p><strong>RUECKGABEN, ERSATZ &amp; UMTAUSCH</strong><br>
+      <em>Grundsatz</em><br>
+      Wir arbeiten bewusst und limitiert; Rueckgaben sind ungern gesehen und nur, wenn gesetzlich gefordert.</p>
+
+      <p><em>Widerruf (EU)</em><br>
+      EU-Kunden koennen, soweit anwendbar, binnen 14 Tagen widerrufen, ausser bei Ausnahmen.<br>
+      Kein Widerruf bei Sonderanfertigungen, personalisierten Stuecken oder limitierten Serien nach Produktionsstart.</p>
+
+      <p><em>Bedingungen</em><br>
+      Artikel ungetragen, ungewaschen, im Originalzustand und mit Kaufnachweis.<br>
+      Wir pruefen den Zustand vor Rueckerstattung oder Ersatz.</p>
+
+      <p><em>Erstattungen</em><br>
+      Erfolgen auf die urspruengliche Zahlungsart nach Eingang und Pruefung.</p>
+
+      <p><em>Internationale Bestellungen</em><br>
+      Zusaetzliche Zoelle/Steuern/Abgaben liegen beim Kunden, sofern nicht anders genannt.<br>
+      Internationale Verkaeufe koennen final sein, vorbehaltlich lokalen Rechts.</p>
+
+      <p><strong>RECHTLICHES</strong><br>
+      <em>Geistiges Eigentum</em><br>
+      Saemtliche Inhalte gehoeren ARMORY GRAYSCVLE. Reproduktion oder Nutzung ohne Zustimmung ist untersagt.</p>
+
+      <p><em>Mengenlimits</em><br>
+      Wir koennen Mengen pro Artikel/Bestellung/Kunde begrenzen, um Fairness und Integritaet zu wahren. Versuche zur Umgehung koennen storniert werden.</p>
+
+      <p><strong>KONTAKT</strong><br>
+      Anfragen zu Bestellungen, Versand oder Recht:<br>
+      <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "returns.body": `
+      <p class="info-eyebrow">Rueckgaben</p>
+      <h1 class="info-headline">Rueckgabe &amp; Umtausch</h1>
+      <p>Jedes Stueck ist limitiert und bedacht gefertigt. Massen-Retouren gehoeren nicht zu unserem Modell.</p>
+      <p>Soweit rechtlich zulaessig, gelten Kauefe als final.</p>
+      <p>EU-Kunden haben, wenn keine Ausnahme greift, 14 Tage Widerrufsrecht. Nicht anwendbar auf Sonderanfertigungen, personalisierte Stuecke oder limitierte Serien nach Produktionsstart.</p>
+      <p>Wir bitten um bewusste Auswahl vor dem Kauf. Wir beraten vorab gern.</p>
+      <p>Bei nachweislichem Mangel oder falscher Lieferung loesen wir den Fall diskret.</p>
+      <p>Groessentausch nur ausnahmsweise und nur bei Verfuegbarkeit.</p>
+      <p>ARMORY GRAYSCVLE steht fuer bewusstes Besitzen — weniger, gezielt, zum Behalten.</p>
+      <p>Rueckgabeanfragen:<br><a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "privacy.body": `
+      <h1 class="info-title">DATENSCHUTZ</h1>
+      <p><strong>Letzte Aktualisierung: 9. Januar 2026</strong></p>
+      <p>Wir nutzen keine Cookies oder aehnliche Tracking-Technologien.</p>
+      <p>Diese Richtlinie erklaert, wie ARMORY GRAYSCVLE personenbezogene Daten gemaess DSGVO verarbeitet.</p>
+      <p><strong>1. VERANTWORTLICHER</strong><br>
+      ARMORY GRAYSCVLE<br>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+      <p><strong>2. DATEN</strong><br>
+      Wir erfassen nur, was fuer Betrieb und Bestellungen noetig ist: Name, Email, Liefer- und Rechnungsadresse, zahlungsbezogene Infos (ueber Drittanbieter), Bestellhistorie, technische Daten (IP, Browser, Geraet). Keine ueberfluessigen Daten.</p>
+      <p><strong>3. ZWECKE</strong><br>
+      Bestellabwicklung, Kommunikation, Zahlung, rechtliche Pflichten, Sicherheit. Keine Profilbildung.</p>
+      <p><strong>4. RECHTSGRUNDLAGEN</strong><br>
+      Vertrag, gesetzliche Pflichten, berechtigtes Interesse (Sicherheit, Betrugsschutz, Funktion), Einwilligung wo noetig.</p>
+      <p><strong>5. WEITERGABE</strong><br>
+      Nur an Zahlungsdienstleister, Versand/Logistik, IT/Hosting. Keine Datenverkaeufe.</p>
+      <p><strong>6. AUFBEWAHRUNG</strong><br>
+      Nur solange erforderlich oder gesetzlich vorgeschrieben; danach Loeschung oder Anonymisierung.</p>
+      <p><strong>7. RECHTE</strong><br>
+      Auskunft, Berichtigung, Loeschung (soweit anwendbar), Einschraenkung/Widerspruch, Datenuebertragbarkeit, Widerruf von Einwilligungen. Anfragen an <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a>.</p>
+      <p><strong>8. COOKIES</strong><br>
+      Wir setzen nur notwendige Cookies fuer Funktion/Sicherheit ein. Keine optionalen Cookies ohne Einwilligung.</p>
+      <p><strong>9. SICHERHEIT</strong><br>
+      Technische und organisatorische Schutzmassnahmen; kein System ist perfekt, aber Schutz hat Prioritaet.</p>
+      <p><strong>10. DATENTRANSFER</strong><br>
+      Bei Uebermittlungen ausserhalb der EU nutzen wir DSGVO-konforme Sicherungen.</p>
+      <p><strong>11. AENDERUNGEN</strong><br>
+      Anpassungen treten mit Veroeffentlichung in Kraft.</p>
+      <p><strong>12. KONTAKT</strong><br>
+      Datenschutzanfragen an <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
+    `,
+
+    "terms.body": `
+      <h1 class="info-title">AGB</h1>
+      <p><strong>Letzte Aktualisierung: 9. Januar 2026</strong></p>
+      <p>www.armorygrayscvle.com wird von ARMORY GRAYSCVLE betrieben.</p>
+      <p>Diese Bedingungen regeln Nutzung, Konto und Kauefe.</p>
+      <p><strong>NUTZUNG</strong><br>
+      Nur rechtmaessige Nutzung. Keine Stoerung von Integritaet, Sicherheit oder Betrieb. Wir koennen Zugriff sperren, wenn noetig.</p>
+      <p><strong>KONTO</strong><br>
+      Sie sichern Ihre Zugangsdaten. Verantwortung fuer alle Aktionen im Konto.</p>
+      <p><strong>PRODUKTE</strong><br>
+      Limitierte Stuecke, oft auf Bestellung oder personalisiert. Verfuegbarkeit kann jederzeit aendern; kein Anspruch auf Restock.</p>
+      <p><strong>PREISE &amp; ZAHLUNG</strong><br>
+      Preise in EUR inkl. MwSt. (sofern angegeben). Aenderungen ohne Vorankuendigung moeglich. Bestellung gilt erst nach Zahlungseingang. Preisfehler koennen korrigiert und Bestellungen storniert werden; gezahlte Betraege werden erstattet.</p>
+      <p><strong>DARSTELLUNG</strong><br>
+      Wir zeigen Produkte moeglichst exakt, doch handwerkliche Fertigung und limitierte Serien bedeuten Variationen in Farbe, Textur, Finish, Mass. Screens koennen Darstellung beeinflussen. Diese Abweichungen sind kein Mangel.</p>
+      <p><strong>VERSAND</strong><br>
+      Versand in der EU und selektiv international. Lieferzeiten sind Schaetzungen. Verzoegerungen durch Carrier/Zoll/Fremdfaktoren liegen ausserhalb unserer Kontrolle. Bei internationalen Bestellungen traegt der Kunde Zoelle und Steuern. Risiko geht mit Uebergabe an den Carrier auf den Kunden ueber.</p>
+      <p><strong>WIDERRUF &amp; RUECKGABE (EU)</strong><br>
+      EU-Kunden koennen binnen 14 Tagen widerrufen, sofern keine Ausnahme. Kein Widerruf bei Auftragsarbeiten, personalisierten Stuecken oder limitierten Serien nach Produktionsstart. Bedingungen stehen in der Rueckgaberichtlinie. Rueckgaben bleiben auf das gesetzliche Minimum beschraenkt.</p>
+      <p><strong>ZUGANGSCODES</strong><br>
+      Codes/Einladungen sind diskretionaer, nicht uebertragbar, koennen jederzeit entzogen werden. Kein Anspruch auf Verfuegbarkeit.</p>
+      <p><strong>GEISTIGES EIGENTUM</strong><br>
+      Alle Inhalte gehoeren ARMORY GRAYSCVLE oder Lizenzgebern. Keine Nutzung ohne schriftliche Zustimmung.</p>
+      <p><strong>VERBOTENE HANDLUNGEN</strong><br>
+      Kein Zugriff auf geschuetzte Bereiche, keine Bots/Scraper, keine Stoerung der Sicherheit oder missbraeuchliche Nutzung. Verstoss kann Sperre und rechtliche Schritte nach sich ziehen.</p>
+      <p><strong>HAFTUNGSAUSSCHLUSS</strong><br>
+      Website und Inhalte werden "WIE BESEHEN" bereitgestellt. Keine Zusicherungen zur Verfuegbarkeit, Genauigkeit oder Eignung.</p>
+      <p><strong>HAFTUNGSBEGRENZUNG</strong><br>
+      Soweit zulaessig keine Haftung fuer indirekte, beilaufige oder Folgeschaeden. Gesamthaftung hoechstens der gezahlte Betrag fuer den betroffenen Artikel. Zwingende Verbraucherrechte bleiben unberuehrt.</p>
+      <p><strong>RECHTSWAHL</strong><br>
+      Portugiesisches Recht; Gerichtsstand Portugal, soweit zwingendes Verbraucherschutzrecht nichts anderes vorgibt.</p>
+      <p><strong>AENDERUNGEN</strong><br>
+      Wir koennen diese Bedingungen anpassen; Wirksamkeit mit Veroeffentlichung. Fortgesetzte Nutzung gilt als Zustimmung.</p>
+      <p><strong>KONTAKT</strong><br>
+      ARMORY GRAYSCVLE<br>
+      Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a><br>
+      Standort: Lissabon, Portugal</p>
+    `
   }
 };
 
@@ -576,17 +754,20 @@ function applyTranslations(lang = "en") {
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    if (dict[key]) el.textContent = dict[key];
+    const val = dict[key] || translations.en[key];
+    if (val) el.textContent = val;
   });
 
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
     const key = el.getAttribute("data-i18n-html");
-    if (dict[key]) el.innerHTML = dict[key];
+    const val = dict[key] || translations.en[key];
+    if (val) el.innerHTML = val;
   });
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
-    if (dict[key]) el.placeholder = dict[key];
+    const val = dict[key] || translations.en[key];
+    if (val) el.placeholder = val;
   });
 }
 
@@ -600,12 +781,14 @@ function getSavedLocale() {
 
 function getCurrentLocaleFromPage() {
   const file = (window.location.pathname.split("/").pop() || "").toLowerCase();
-  return file.includes("-pt.") ? "pt" : "en";
+  if (file.includes("-pt.")) return "pt";
+  if (file.includes("-de.")) return "de";
+  return "en";
 }
 
 function getBasePageName() {
   const file = window.location.pathname.split("/").pop() || "";
-  return file.replace(/-pt(?=\.html$)/i, "").replace(/\.html$/i, "") || "index";
+  return file.replace(/-(pt|de)(?=\.html$)/i, "").replace(/\.html$/i, "") || "index";
 }
 
 function hasLocalePair() {
@@ -621,7 +804,7 @@ function handleLegacyRedirect() {
 
 function buildLocaleHref(targetLocale = "en") {
   const base = getBasePageName();
-  const suffix = targetLocale === "pt" ? "-pt" : "";
+  const suffix = targetLocale === "pt" ? "-pt" : targetLocale === "de" ? "-de" : "";
   return `${base}${suffix}.html`;
 }
 
@@ -629,11 +812,14 @@ function rewriteHrefForLocale(href = "", lang = "en") {
   if (/^(https?:|mailto:|tel:|#)/i.test(href)) return href;
   const [pathAndQuery, hash] = href.split("#");
   const [path, query] = pathAndQuery.split("?");
-  const match = path.match(/^\/?([a-z0-9_-]+)(-pt)?\.html$/i);
+  const match = path.match(/^\/?([a-z0-9_-]+?)(-(pt|de))?\.html$/i);
   if (!match) return href;
   const base = match[1].toLowerCase();
   if (!LOCALE_PAGES.includes(base)) return href;
-  const targetBase = lang === "pt" ? `${match[1]}-pt` : match[1];
+  const targetBase =
+    lang === "pt" ? `${match[1]}-pt` :
+    lang === "de" ? `${match[1]}-de` :
+    match[1];
   const leadingSlash = path.startsWith("/") ? "/" : "";
   const newPath = `${leadingSlash}${targetBase}.html${query ? `?${query}` : ""}`;
   return hash ? `${newPath}#${hash}` : newPath;
@@ -670,7 +856,7 @@ function updateLocaleButtons(lang = "en") {
 }
 
 function handleLocaleSwitch(targetLocale = "en") {
-  const lang = targetLocale === "pt" ? "pt" : "en";
+  const lang = targetLocale === "pt" ? "pt" : targetLocale === "de" ? "de" : "en";
   try {
     localStorage.setItem(LOCALE_KEY, lang);
   } catch (err) {
@@ -694,6 +880,7 @@ function handleLocaleSwitch(targetLocale = "en") {
 const initialLocale = getSavedLocale() || getCurrentLocaleFromPage() || "en";
 updateLocaleButtons(initialLocale);
 rewriteLocaleLinks(initialLocale);
+applyTranslations(initialLocale);
 
 if (localeButtons.length) {
   localeButtons.forEach((btn) => {
@@ -1386,7 +1573,8 @@ function initContactForm() {
   const status = document.getElementById("contact-status");
   const submitBtn = form.querySelector(".contact-submit");
 
-  const locale = (document.documentElement.lang || "en").toLowerCase().startsWith("pt") ? "pt" : "en";
+  const lang = (document.documentElement.lang || "en").toLowerCase();
+  const locale = lang.startsWith("pt") ? "pt" : lang.startsWith("de") ? "de" : "en";
   const copy = {
     en: {
       success: "Message sent. We'll respond shortly.",
@@ -1399,6 +1587,12 @@ function initContactForm() {
       error: "Não foi possível enviar. Tente novamente.",
       invalid: "Verifique nome, email e mensagem.",
       email: "Introduza um email válido.",
+    },
+    de: {
+      success: "Nachricht gesendet. Wir melden uns bald.",
+      error: "Senden nicht moeglich. Bitte erneut versuchen.",
+      invalid: "Name, Email und Nachricht pruefen.",
+      email: "Gueltige Email angeben.",
     },
   }[locale];
 

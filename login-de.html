@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entrar — Armory Grayscvle</title>
+  <title>Anmelden — Armory Grayscvle</title>
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -33,47 +33,47 @@
   <div id="loader"><h1>ARMORY GRAYSCVLE</h1></div>
 
   <main id="main-content" class="login-main">
-    <section class="hero login-hero" aria-label="Entrar">
+    <section class="hero login-hero" aria-label="Anmelden">
       <div class="login-topbar">
-        <a class="login-logo" href="index-pt.html" aria-label="Voltar à página inicial">
-          <img src="/logowhite.png" alt="Logótipo Armory Grayscvle">
+        <a class="login-logo" href="index-de.html" aria-label="Zur Startseite">
+          <img src="/logowhite.png" alt="Armory Grayscvle logo">
         </a>
       </div>
       <div class="info-actions">
         <div class="info-locale-switch">
           <button class="locale-btn" data-locale="en" type="button">EN</button>
           <button class="locale-btn" data-locale="pt" type="button">PT</button>
-          <button class="locale-btn" data-locale="de" type="button">DE</button>
+          <button class="locale-btn locale-active" data-locale="de" type="button">DE</button>
         </div>
-        <a class="info-login-link header-action" href="login-pt.html">Login</a>
-        <a class="info-bag-link snipcart-checkout header-action" href="#" aria-label="Abrir saco">
-          <span data-i18n="cart.eyebrow">Saco</span>
+        <a class="info-login-link header-action" href="login-de.html">Anmelden</a>
+        <a class="info-bag-link snipcart-checkout header-action" href="#" aria-label="Tasche oeffnen">
+          <span data-i18n="cart.eyebrow">Tasche</span>
         </a>
       </div>
       <div class="login-hero-content">
         <div class="login-card">
-          <p class="login-eyebrow">Conta</p>
-          <h1 class="login-title">Armory Grayscvle</h1>
-          <p class="login-subtitle">Aceda às suas encomendas e itens guardados.</p>
+          <p class="login-eyebrow" data-i18n="login.eyebrow">Konto</p>
+          <h1 class="login-title" data-i18n="login.title">Armory Grayscvle</h1>
+          <p class="login-subtitle" data-i18n="login.subtitle">Zugang zu Bestellungen und Gespeichertes.</p>
           <div class="login-actions">
             <button type="button" class="login-alt">
               <span class="login-alt-icon">G</span>
-              <span>Continuar com Google</span>
+              <span data-i18n="login.google">Weiter mit Google</span>
             </button>
             <button type="button" class="login-alt">
               <span class="login-alt-icon"></span>
-              <span>Continuar com Apple</span>
+              <span data-i18n="login.apple">Weiter mit Apple</span>
             </button>
           </div>
-          <div class="login-divider"><span>ou</span></div>
+          <div class="login-divider"><span data-i18n="login.or">oder</span></div>
           <form class="login-form">
             <label class="visually-hidden" for="login-email">Email</label>
-            <input id="login-email" name="email" type="email" placeholder="Email" required>
-            <label class="visually-hidden" for="login-password">Palavra-passe</label>
-            <input id="login-password" name="password" type="password" placeholder="Palavra-passe" required>
-            <a class="login-link" href="#">Esqueceu-se da palavra-passe?</a>
-            <button type="submit" class="login-primary">Entrar</button>
-            <a class="login-link" href="#">Criar conta</a>
+            <input id="login-email" name="email" type="email" placeholder="Email" required data-i18n-placeholder="login.email">
+            <label class="visually-hidden" for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" placeholder="Passwort" required data-i18n-placeholder="login.password">
+            <a class="login-link" href="#" data-i18n="login.forgot">Passwort vergessen?</a>
+            <button type="submit" class="login-primary" data-i18n="login.submit">Anmelden</button>
+            <a class="login-link" href="#" data-i18n="login.create">Konto anlegen</a>
           </form>
         </div>
       </div>
@@ -81,8 +81,8 @@
   </main>
 
   <div class="ch-legal-links">
-    <a class="ch-legal-link" href="terms-pt.html">Termos</a>
-    <a class="ch-legal-link" href="privacy-pt.html">Privacidade</a>
+    <a class="ch-legal-link" href="terms-de.html">AGB</a>
+    <a class="ch-legal-link" href="privacy-de.html">Datenschutz</a>
   </div>
 
   <script>
