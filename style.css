@@ -164,24 +164,13 @@ body.home {
   opacity: 0.85;
 }
 
-.home .ch-legal-links {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  color: #0b0b0b;
-}
-
-.home .ch-legal-link,
-.home .ch-legal-copy {
-  color: #0b0b0b;
-}
-
 .ch-instagram-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 18px;
   height: 18px;
-  color: #0b0b0b;
+  color: #f7f7f7;
   text-decoration: none;
   opacity: 0.9;
   margin-left: 4px;
