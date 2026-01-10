@@ -144,6 +144,7 @@ body.home {
   color: #f8f8f8;
   letter-spacing: 0.18em;
   font-size: 11px;
+  line-height: 1.1;
   text-transform: uppercase;
   padding-bottom: 6px;
   border-bottom: 1px solid transparent;
@@ -151,14 +152,41 @@ body.home {
 }
 
 .ch-action-link svg {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin-top: -1px;
 }
 
 .ch-action-link:hover,
 .ch-action-link:focus-visible {
   border-color: rgba(255, 255, 255, 0.8);
   opacity: 0.85;
+}
+
+/* Force header Bag (Snipcart checkout) to match login typography and alignment */
+.ch-actions .snipcart-checkout,
+.ch-actions .snipcart-checkout * {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1.1 !important;
+}
+
+.ch-actions .snipcart-checkout {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-transform: uppercase !important;
+  border: 1px solid transparent !important;
+  padding-bottom: 6px !important;
+}
+
+.ch-actions .snipcart-checkout svg {
+  width: 14px !important;
+  height: 14px !important;
+  display: block !important;
+  margin-top: -1px !important; /* optical centering */
 }
 
 .hero.ch-hero {
@@ -1354,6 +1382,7 @@ a {
   border-bottom: none;
   transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   font-weight: 500;
+  line-height: 1.1;
 }
 
 .info-login-link:hover,
@@ -2584,4 +2613,28 @@ a {
   font-size: 12px;
   letter-spacing: 0.04em;
   white-space: nowrap;
+}
+.ch-header .ch-actions .snipcart-checkout,
+.ch-header .ch-actions .snipcart-checkout * {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase !important;
+}
+
+.ch-header .ch-actions .snipcart-checkout {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #f8f8f8 !important;
+}
+
+.ch-header .ch-actions .snipcart-checkout svg {
+  width: 14px !important;
+  height: 14px !important;
+  display: block !important;
+  margin-top: -1px !important;
 }

@@ -14,6 +14,15 @@ resetScroll();
 window.addEventListener("pageshow", resetScroll);
 window.addEventListener("beforeunload", resetScroll);
 
+// Force stylesheet cache-bust with explicit version
+(function bumpStylesheet() {
+  const styleEl = document.getElementById("site-style");
+  if (!styleEl) return;
+  const version = "2";
+  const base = (styleEl.getAttribute("href") || "style.css").split("?")[0];
+  styleEl.setAttribute("href", `${base}?v=${version}&t=${Date.now()}`);
+})();
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
