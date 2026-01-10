@@ -172,16 +172,16 @@ body.home {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.4cm;
-  height: 1.4cm;
+  width: 2cm;
+  height: 2cm;
   color: #f7f7f7;
   text-decoration: none;
   opacity: 0.9;
 }
 
 .ch-instagram-floating svg {
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   display: block;
   stroke: currentColor;
   stroke-width: 1.4;
