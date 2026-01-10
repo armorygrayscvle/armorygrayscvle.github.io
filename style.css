@@ -1451,6 +1451,7 @@ a {
   gap: 14px;
   color: #0c0c0c;
   backdrop-filter: blur(2px);
+  font-family: "Cinzel", "EB Garamond", serif;
 }
 
 .info-eyebrow {
@@ -1458,6 +1459,7 @@ a {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: #222;
+  font-family: "Cinzel", "EB Garamond", serif;
 }
 
 .info-headline {
@@ -1473,6 +1475,7 @@ a {
   letter-spacing: 0.04em;
   color: #333;
   line-height: 1.7;
+  font-family: "Cinzel", "EB Garamond", serif;
 }
 
 .general-page .hero.info-hero {
