@@ -750,6 +750,168 @@ a {
   border-color: #000;
 }
 
+/* CREATIONS PAGE */
+.creations-page .hero.info-hero {
+  padding: 0 20px;
+}
+
+.creations-page .info-hero-content {
+  width: min(1040px, 96vw);
+  margin: 0 auto;
+  padding: 80px 0;
+  align-content: center;
+}
+
+.creations-card {
+  width: 100%;
+  gap: 22px;
+  padding: 32px 32px 36px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+}
+
+.creations-card-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.creations-subhead {
+  margin-top: 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #333;
+  line-height: 1.6;
+}
+
+.creations-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.creations-actions .icon-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+
+.creations-actions .icon-btn:hover,
+.creations-actions .icon-btn:focus-visible {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.creations-list.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.creations-list .product-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  min-height: 0;
+  height: auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  column-gap: 0;
+  row-gap: 12px;
+}
+
+.creations-list .product-image {
+  height: 240px;
+}
+
+.creations-list .product-image-frame {
+  height: 100%;
+  border: 1px solid #f0f0f0;
+  padding: 10px;
+}
+
+.creations-list .product-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.creations-list .product-meta {
+  margin-left: 0;
+  max-width: none;
+  gap: 8px;
+}
+
+.creations-list .product-name {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.creations-list .product-price {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.creations-list .snipcart-add-item {
+  padding: 10px 14px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.creations-list .saved-toggle {
+  color: #111;
+}
+
+.creations-list .saved-link {
+  border-color: rgba(0, 0, 0, 0.3);
+  padding-bottom: 2px;
+}
+
+.creations-list .product-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.creations-list .product-link:hover .product-name,
+.creations-list .product-link:focus-visible .product-name {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+}
+
+.test-product-card {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px dashed rgba(0, 0, 0, 0.26);
+  background: #fff;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #111;
+}
+
+.test-product-card h2 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.test-product-card .snipcart-add-item {
+  width: fit-content;
+  padding: 10px 14px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
 /* ============================= */
 /* SNIPCART — INVISIBLE DRAWER */
 /* ============================= */
@@ -1030,7 +1192,7 @@ a {
   height: 46px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+  filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
 }
 
 .login-logo:hover,
@@ -1120,16 +1282,74 @@ a {
   height: 46px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+  filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
 }
 
 .info-logo-dark img {
-  filter: brightness(0);
+  filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
 }
 
 .info-logo:hover,
 .info-logo:focus-visible {
   opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.info-actions {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.info-actions .info-locale-switch {
+  position: static;
+  top: auto;
+  right: auto;
+  display: flex;
+}
+
+.info-bag-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #0c0c0c;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+  transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.info-bag-link:hover,
+.info-bag-link:focus-visible {
+  opacity: 0.8;
+  border-color: rgba(0, 0, 0, 0.55);
+  transform: translateY(-1px);
+}
+
+.info-login-link {
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #0c0c0c;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+  transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.info-login-link:hover,
+.info-login-link:focus-visible {
+  opacity: 0.8;
+  border-color: rgba(0, 0, 0, 0.55);
   transform: translateY(-1px);
 }
 
@@ -1271,6 +1491,22 @@ a {
 .contact-consent a {
   color: inherit;
   text-decoration: underline;
+}
+
+.contact-status {
+  min-height: 16px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+
+.contact-status.error {
+  color: #8b0000;
+}
+
+.contact-status.success {
+  color: #0a4f24;
 }
 
 .contact-submit {
@@ -1964,6 +2200,7 @@ a {
 
   .login-logo img {
     height: 40px;
+    filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
   }
 
   .hero.info-hero {
@@ -1979,8 +2216,15 @@ a {
     left: 14px;
   }
 
+  .info-actions {
+    top: 18px;
+    right: 14px;
+    gap: 10px;
+  }
+
   .info-logo img {
     height: 40px;
+    filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
   }
 
   .info-hero-content {
@@ -2153,6 +2397,7 @@ a {
 
   .login-logo img {
     height: 36px;
+    filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
   }
 
   .hero.info-hero {
@@ -2168,8 +2413,14 @@ a {
     left: 12px;
   }
 
+  .info-actions {
+    top: 16px;
+    right: 12px;
+    gap: 8px;
+  }
   .info-logo img {
     height: 36px;
+    filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
   }
 
   .info-hero-content {

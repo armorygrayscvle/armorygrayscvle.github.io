@@ -38,9 +38,15 @@
           <img src="/logowhite.png" alt="Armory Grayscvle logo">
         </a>
       </div>
-      <div class="info-locale-switch">
-        <button class="locale-btn" data-locale="en" type="button">EN</button>
-        <button class="locale-btn" data-locale="pt" type="button">PT</button>
+      <div class="info-actions">
+        <div class="info-locale-switch">
+          <button class="locale-btn" data-locale="en" type="button">EN</button>
+          <button class="locale-btn" data-locale="pt" type="button">PT</button>
+        </div>
+        <a class="info-login-link" href="login.html">Login</a>
+        <a class="info-bag-link snipcart-checkout" href="#" aria-label="Open bag" data-open-cart>
+          <span data-i18n="cart.eyebrow">Bag</span>
+        </a>
       </div>
       <div class="info-hero-content">
         <div class="info-card">
@@ -48,7 +54,7 @@
           <h1 class="info-headline">Get in Touch</h1>
           <p>Customer Care: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
           <p>We respond within 1–3 business days.</p>
-          <form class="contact-form">
+          <form class="contact-form" id="contact-form">
             <div class="contact-grid">
               <label class="visually-hidden" for="contact-name">Name</label>
               <input id="contact-name" name="name" type="text" placeholder="Name" required>
@@ -60,10 +66,11 @@
             <label class="visually-hidden" for="contact-message">Message</label>
             <textarea id="contact-message" name="message" rows="4" placeholder="Message" required></textarea>
 
-            <p class="contact-consent">
-              By clicking Submit, I agree to the <a href="terms.html">Terms of Use</a> and I have read the <a href="privacy.html">Privacy Policy</a>.
-            </p>
+          <p class="contact-consent">
+            By clicking Submit, I agree to the <a href="terms.html">Terms of Use</a> and I have read the <a href="privacy.html">Privacy Policy</a>.
+          </p>
 
+            <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
             <button type="submit" class="contact-submit">Submit</button>
           </form>
         </div>
@@ -80,5 +87,15 @@
       document.body.appendChild(mainScript);
     })();
   </script>
+  <div
+    id="snipcart"
+    hidden
+    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
+    data-config-add-product-behavior="none"
+    data-config-modal-style="side"
+    data-currency="eur"
+  ></div>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 </body>
 </html>

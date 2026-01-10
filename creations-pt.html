@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criações — Armory Grayscvle</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#000000">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <link id="site-style" rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const cacheBust = String(Date.now());
+      window.__assetCacheBust = cacheBust;
+      const styleEl = document.getElementById("site-style");
+      if (styleEl) {
+        styleEl.href = `style.css?v=${cacheBust}`;
+      }
+    })();
+  </script>
+</head>
+<body class="info-hero-body creations-page policy-page">
+  <div id="loader"><h1>ARMORY GRAYSCVLE</h1></div>
+
+  <main id="main-content" class="info-main">
+    <section class="hero info-hero" aria-label="Criações">
+      <div class="info-topbar">
+        <a class="info-logo info-logo-dark" href="index.html" aria-label="Voltar à página inicial">
+          <img src="/logowhite.png" alt="Logotipo Armory Grayscvle">
+        </a>
+      </div>
+      <div class="info-actions">
+        <div class="info-locale-switch">
+          <button class="locale-btn" data-locale="en" type="button">EN</button>
+          <button class="locale-btn" data-locale="pt" type="button">PT</button>
+        </div>
+        <a class="info-login-link" href="login.html">Login</a>
+        <a class="info-bag-link snipcart-checkout" href="#" aria-label="Abrir saco">
+          <span data-i18n="cart.eyebrow">Saco</span>
+        </a>
+      </div>
+      <div class="info-hero-content creations-content">
+        <div class="info-card creations-card">
+          <div class="creations-card-header">
+            <div>
+              <p class="info-eyebrow">Criações</p>
+              <h1 class="info-headline">Armory Grayscvle</h1>
+              <p class="creations-subhead">Objetos editados em séries contidas. Silenciosos, precisos, feitos para serem guardados.</p>
+            </div>
+            <div class="creations-actions" aria-label="Links de conta e saco">
+              <a class="icon-btn" href="login.html" aria-label="Conta">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4"></circle>
+                  <path d="M4 20c1.6-3.2 4.4-5 8-5s6.4 1.8 8 5"></path>
+                </svg>
+              </a>
+              <a class="icon-btn saved-icon-btn" href="saved.html" aria-label="Guardados">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 4h10v16l-5-3-5 3V4z"></path>
+                </svg>
+              </a>
+              <a class="icon-btn bag-icon-btn snipcart-checkout" href="#" aria-label="Saco">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 8l1 11h8l1-11z"></path>
+                  <path d="M9 8a3 3 0 1 1 6 0"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="creations-list product-list" id="product-list"></div>
+          <div class="test-product-card">
+            <h2>Produto Teste</h2>
+            <p>€10.00</p>
+            <button
+              class="snipcart-add-item"
+              type="button"
+              data-item-id="test-product"
+              data-item-price="10.00"
+              data-item-url="https://armorygrayscvle.com/creations-pt.html"
+              data-item-name="Test Product"
+              data-item-description="Minimal test product"
+            >
+              Adicionar ao Saco
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function() {
+      const cacheBust = window.__assetCacheBust || String(Date.now());
+      const mainScript = document.createElement("script");
+      mainScript.src = `script.js?v=${cacheBust}`;
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+    })();
+  </script>
+  <div
+    id="snipcart"
+    hidden
+    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
+    data-config-add-product-behavior="none"
+    data-config-modal-style="side"
+    data-currency="eur"
+  ></div>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+</body>
+</html>

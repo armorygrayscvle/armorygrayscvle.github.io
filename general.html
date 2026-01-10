@@ -38,9 +38,15 @@
           <img src="/logowhite.png" alt="Armory Grayscvle logo">
         </a>
       </div>
-      <div class="info-locale-switch">
-        <button class="locale-btn" data-locale="en" type="button">EN</button>
-        <button class="locale-btn" data-locale="pt" type="button">PT</button>
+      <div class="info-actions">
+        <div class="info-locale-switch">
+          <button class="locale-btn" data-locale="en" type="button">EN</button>
+          <button class="locale-btn" data-locale="pt" type="button">PT</button>
+        </div>
+        <a class="info-login-link" href="login.html">Login</a>
+        <a class="info-bag-link snipcart-checkout" href="#" aria-label="Open bag" data-open-cart>
+          <span data-i18n="cart.eyebrow">Bag</span>
+        </a>
       </div>
       <div class="info-hero-content">
         <div class="info-card">
@@ -139,5 +145,15 @@
       document.body.appendChild(mainScript);
     })();
   </script>
+  <div
+    id="snipcart"
+    hidden
+    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
+    data-config-add-product-behavior="none"
+    data-config-modal-style="side"
+    data-currency="eur"
+  ></div>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 </body>
 </html>

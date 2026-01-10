@@ -33,6 +33,27 @@
       justify-content: center;
       padding: 40px 24px;
     }
+    .info-topbar {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      z-index: 2;
+    }
+    .info-logo {
+      display: inline-flex;
+      align-items: center;
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .info-logo img {
+      height: 46px;
+      width: auto;
+      display: block;
+      filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+    }
     .checkout-shell {
       max-width: 720px;
       width: 100%;
@@ -78,6 +99,20 @@
       letter-spacing: 0.12em;
       font-size: 11px;
       text-transform: uppercase;
+    }
+    @media (max-width: 900px) {
+      .info-topbar {
+        top: 18px;
+        left: 14px;
+      }
+      .info-logo img {
+        height: 40px;
+      }
+    }
+    @media (max-width: 600px) {
+      .info-logo img {
+        height: 36px;
+      }
     }
   </style>
 </head>

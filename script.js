@@ -76,7 +76,7 @@ document.addEventListener("keydown", (e) => {
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
-const LOCALE_PAGES = ["index", "general", "terms", "privacy", "contact", "login", "cart"];
+const LOCALE_PAGES = ["index", "creations", "general", "terms", "privacy", "contact", "login", "cart"];
 const LEGACY_REDIRECTS = {
   "returns": "general.html",
   "delivery": "general.html",
@@ -237,11 +237,9 @@ const translations = {
     "privacy.body": `
       <h1 class="info-title">PRIVACY POLICY</h1>
       <p><strong>Last Revised: January 9, 2026</strong></p>
-      <p>This Privacy Policy explains how ARMORY GRAYSCVLE, operated by Filipa Angeja, collects, uses, and protects personal data in accordance with the General Data Protection Regulation (GDPR) and applicable EU law.</p>
+      <p>This Privacy Policy explains how ARMORY GRAYSCVLE collects, uses, and protects personal data in accordance with the General Data Protection Regulation (GDPR) and applicable EU law.</p>
       <p><strong>1. DATA CONTROLLER</strong><br>
       ARMORY GRAYSCVLE<br>
-      Operated by: Filipa Angeja<br>
-      Address: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
       Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
       <p><strong>2. PERSONAL DATA WE COLLECT</strong><br>
       We collect only data that is necessary for the operation of the Website and fulfillment of orders, including: Name; Email address; Shipping and billing address; Payment-related information (processed securely by third-party providers); Order history; Technical data (IP address, browser type, device data). We do not collect unnecessary or excessive personal data.</p>
@@ -270,7 +268,7 @@ const translations = {
     "terms.body": `
       <h1 class="info-title">TERMS &amp; CONDITIONS</h1>
       <p><strong>Last Revised: January 9, 2026</strong></p>
-      <p>This website, www.armorygrayscvle.com (the “Website”), is operated by ARMORY GRAYSCVLE, a sole trader operated by Filipa Angeja, registered in Portugal (“ARMORY GRAYSCVLE,” “we,” “us,” or “our”).</p>
+      <p>This website, www.armorygrayscvle.com (the “Website”), is provided by ARMORY GRAYSCVLE (“ARMORY GRAYSCVLE,” “we,” “us,” or “our”).</p>
       <p>These Terms &amp; Conditions (“Terms”) govern all access to and use of the Website, including browsing, account creation, and the purchase of any products offered through the Website.</p>
       <p>By accessing or using the Website, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must discontinue use of the Website.</p>
       <p><strong>USE OF THE WEBSITE</strong><br>
@@ -317,8 +315,6 @@ const translations = {
       We reserve the right to revise these Terms at any time. Updates take effect immediately upon publication. Continued use of the Website constitutes acceptance of the revised Terms.</p>
       <p><strong>CONTACT</strong><br>
       ARMORY GRAYSCVLE<br>
-      Operated by: Filipa Angeja<br>
-      Address: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
       Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
     `
   },
@@ -454,11 +450,9 @@ const translations = {
     "privacy.body": `
       <h1 class="info-title">POLÍTICA DE PRIVACIDADE</h1>
       <p><strong>Última revisão: 9 de janeiro de 2026</strong></p>
-      <p>Esta Política de Privacidade explica como a ARMORY GRAYSCVLE, operada por Filipa Angeja, recolhe, usa e protege dados pessoais em conformidade com o RGPD e a lei aplicável da UE.</p>
+      <p>Esta Política de Privacidade explica como a ARMORY GRAYSCVLE recolhe, usa e protege dados pessoais em conformidade com o RGPD e a lei aplicável da UE.</p>
       <p><strong>1. RESPONSÁVEL PELO TRATAMENTO</strong><br>
       ARMORY GRAYSCVLE<br>
-      Operada por: Filipa Angeja<br>
-      Morada: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
       Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
       <p><strong>2. DADOS PESSOAIS RECOLHIDOS</strong><br>
       Apenas os necessários para operar o site e cumprir encomendas: Nome; Email; Morada de envio e faturação; Informação de pagamento (processada por terceiros); Histórico de encomendas; Dados técnicos (IP, browser, dispositivo). Não recolhemos dados excessivos.</p>
@@ -487,7 +481,7 @@ const translations = {
     "terms.body": `
       <h1 class="info-title">TERMOS &amp; CONDIÇÕES</h1>
       <p><strong>Última revisão: 9 de janeiro de 2026</strong></p>
-      <p>O site www.armorygrayscvle.com é operado pela ARMORY GRAYSCVLE, empresário em nome individual Filipa Angeja, registada em Portugal (“ARMORY GRAYSCVLE”, “nós”).</p>
+      <p>O site www.armorygrayscvle.com é operado pela ARMORY GRAYSCVLE (“ARMORY GRAYSCVLE”, “nós”).</p>
       <p>Estes Termos regem o acesso e uso do site, incluindo navegação, criação de conta e compra de produtos.</p>
       <p>Ao usar o site, confirma que leu e aceita os Termos; se não concorda, deve cessar o uso.</p>
       <p><strong>USO DO SITE</strong><br>
@@ -533,8 +527,6 @@ const translations = {
       Podemos rever estes Termos a qualquer momento; tornam-se eficazes na publicação. O uso continuado implica aceitação.</p>
       <p><strong>CONTACTO</strong><br>
       ARMORY GRAYSCVLE<br>
-      Operada por: Filipa Angeja<br>
-      Morada: R do Pinhal 354, 2765-039 Estoril, Lisboa, Portugal<br>
       Email: <a href="mailto:customercare@armorygrayscvle.com">customercare@armorygrayscvle.com</a></p>
     `
   }
@@ -1184,8 +1176,17 @@ function bindCartButtons(attempt = 0) {
   const buttons = document.querySelectorAll("[data-open-cart]");
   if (!buttons.length) return;
 
-  const handler = (e) => {
+  const handler = async (e) => {
     e.preventDefault();
+    try {
+      await ensureSnipcartReady();
+      if (window.Snipcart?.api?.theme?.cart?.open) {
+        window.Snipcart.api.theme.cart.open();
+        return;
+      }
+    } catch (err) {
+      /* fall back */
+    }
     window.location.href = "cart.html";
   };
 
@@ -1331,3 +1332,81 @@ async function loadProducts() {
 }
 
 loadProducts();
+
+/* CONTACT FORM */
+const CONTACT_ENDPOINT = "https://formspree.io/f/mzzbgngb";
+
+function initContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  const status = document.getElementById("contact-status");
+  const submitBtn = form.querySelector(".contact-submit");
+
+  const locale = (document.documentElement.lang || "en").toLowerCase().startsWith("pt") ? "pt" : "en";
+  const copy = {
+    en: {
+      success: "Message sent. We'll respond shortly.",
+      error: "Unable to send. Please try again.",
+      invalid: "Check name, email, and message.",
+      email: "Enter a valid email.",
+    },
+    pt: {
+      success: "Mensagem enviada. Responderemos em breve.",
+      error: "Não foi possível enviar. Tente novamente.",
+      invalid: "Verifique nome, email e mensagem.",
+      email: "Introduza um email válido.",
+    },
+  }[locale];
+
+  const setStatus = (msg = "", type = "") => {
+    if (!status) return;
+    status.textContent = msg;
+    status.className = `contact-status${type ? ` ${type}` : ""}`;
+  };
+
+  const validateEmail = (value = "") => {
+    return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(value.trim());
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = (form.querySelector("[name='name']")?.value || "").trim();
+    const email = (form.querySelector("[name='email']")?.value || "").trim();
+    const message = (form.querySelector("[name='message']")?.value || "").trim();
+
+    if (!name || !email || !message) {
+      setStatus(copy.invalid, "error");
+      return;
+    }
+    if (!validateEmail(email)) {
+      setStatus(copy.email, "error");
+      return;
+    }
+
+    submitBtn?.setAttribute("disabled", "true");
+    setStatus("");
+
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!res.ok) throw new Error("Submit failed");
+
+      form.reset();
+      setStatus(copy.success, "success");
+    } catch (err) {
+      setStatus(copy.error, "error");
+    } finally {
+      submitBtn?.removeAttribute("disabled");
+    }
+  });
+}
+
+initContactForm();
