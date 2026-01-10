@@ -1240,7 +1240,7 @@ function renderSavedPage() {
     const add = document.createElement("button");
     add.type = "button";
     add.className = "saved-action-button";
-    add.textContent = "Add to cart";
+    add.textContent = "Add to bag";
     add.addEventListener("click", async () => {
       try {
         await ensureSnipcartReady();
