@@ -146,8 +146,8 @@ body.home {
   font-size: 11px;
   line-height: 1.1;
   text-transform: uppercase;
-  padding-bottom: 6px;
-  border-bottom: 1px solid transparent;
+  padding-bottom: 0;
+  border-bottom: none;
   transition: border-color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -162,6 +162,14 @@ body.home {
 .ch-action-link:focus-visible {
   border-color: rgba(255, 255, 255, 0.8);
   opacity: 0.85;
+}
+
+.info-bag-link svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin-top: -1px; /* optical centering */
+  flex-shrink: 0;
 }
 
 /* Force header Bag (Snipcart checkout) to match login typography and alignment */
@@ -1344,51 +1352,6 @@ a {
   top: auto;
   right: auto;
   display: flex;
-}
-
-.info-bag-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #0c0c0c;
-  text-decoration: none;
-  padding-bottom: 0;
-  border-bottom: none;
-  transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-  font-weight: 500;
-}
-
-.info-bag-link:hover,
-.info-bag-link:focus-visible {
-  opacity: 0.8;
-  transform: translateY(-1px);
-}
-
-.info-bag-link svg {
-  width: 14px;
-  height: 14px;
-  display: block;
-  margin-top: -1px; /* optical centering */
-}
-
-.info-login-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 100%;
-  color: #0c0c0c;
-  text-decoration: none;
-  padding-bottom: 0;
-  border-bottom: none;
-  transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-  font-weight: 500;
-  line-height: 1.1;
-}
-
-.info-login-link:hover,
-.info-login-link:focus-visible {
-  opacity: 0.8;
-  transform: translateY(-1px);
 }
 
 .info-locale-switch {
@@ -2637,4 +2600,41 @@ a {
   height: 14px !important;
   display: block !important;
   margin-top: -1px !important;
+}
+.header-action {
+  font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.header-action svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin-top: -1px;
+  flex-shrink: 0;
+}
+
+.header-action:hover,
+.header-action:focus-visible {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.info-actions .header-action {
+  color: #0c0c0c;
+}
+
+.ch-actions .header-action {
+  color: #f8f8f8;
 }
