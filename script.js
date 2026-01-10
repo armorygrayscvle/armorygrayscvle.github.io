@@ -1145,7 +1145,7 @@ async function renderProductPage() {
 
     const addBtn = document.createElement("button");
     addBtn.className = "snipcart-add-item";
-    addBtn.textContent = "ADD TO CART";
+    addBtn.textContent = "Add to bag";
     addBtn.setAttribute("data-item-id", itemId);
     addBtn.setAttribute("data-item-name", product.name || "Product");
     addBtn.setAttribute("data-item-price", itemPrice);
@@ -1522,7 +1522,7 @@ async function loadProducts() {
 
       const addBtn = document.createElement("button");
       addBtn.className = "snipcart-add-item";
-      addBtn.textContent = "ADD TO CART";
+      addBtn.textContent = "Add to bag";
       addBtn.setAttribute("data-item-id", itemId);
       addBtn.setAttribute("data-item-name", product.name || "Product");
       addBtn.setAttribute("data-item-price", itemPrice);
