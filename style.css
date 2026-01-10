@@ -164,32 +164,44 @@ body.home {
   opacity: 0.85;
 }
 
-.ch-instagram-floating {
+.ch-legal-links-ig {
   position: fixed;
+  bottom: 24px;
   right: 22px;
-  bottom: 22px;
-  z-index: 115;
+  z-index: 110;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2cm;
-  height: 2cm;
+  width: auto;
+  height: auto;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 7px 9px;
+  backdrop-filter: blur(6px);
+}
+
+.ch-legal-links-ig a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
   color: #f7f7f7;
   text-decoration: none;
   opacity: 0.9;
 }
 
-.ch-instagram-floating svg {
-  width: 34px;
-  height: 34px;
+.ch-legal-links-ig svg {
+  width: 20px;
+  height: 20px;
   display: block;
   stroke: currentColor;
   stroke-width: 1.4;
   fill: none;
 }
 
-.ch-instagram-floating:hover,
-.ch-instagram-floating:focus-visible {
+.ch-legal-links-ig a:hover,
+.ch-legal-links-ig a:focus-visible {
   opacity: 0.7;
 }
 
@@ -2184,6 +2196,12 @@ a {
     gap: 8px;
   }
 
+  .ch-legal-links-ig {
+    bottom: 18px;
+    right: 16px;
+    padding: 6px 8px;
+  }
+
   .ch-legal-link {
     font-size: 10px;
     letter-spacing: 0.2em;
@@ -2408,6 +2426,12 @@ a {
     left: 12px;
     padding: 6px 8px;
     gap: 6px;
+  }
+
+  .ch-legal-links-ig {
+    bottom: 14px;
+    right: 12px;
+    padding: 6px 8px;
   }
 
   .ch-legal-link {
