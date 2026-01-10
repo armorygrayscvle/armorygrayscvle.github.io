@@ -1502,15 +1502,29 @@ a {
   gap: 12px;
 }
 
+.contact-field {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-field span {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #222;
+}
+
 .contact-form input,
 .contact-form textarea {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  padding: 12px 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  padding: 12px 6px 10px;
   color: #0c0c0c;
   font-size: 13px;
   letter-spacing: 0.06em;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .contact-form input::placeholder,
