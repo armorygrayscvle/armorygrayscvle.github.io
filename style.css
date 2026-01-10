@@ -120,10 +120,7 @@ body.home {
 .ch-legal-link:hover,
 .ch-legal-link:focus-visible {
   opacity: 0.85;
-  border-color: rgba(255, 255, 255, 0.8);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+  border-color: transparent;
 }
 
 .ch-legal-copy {
