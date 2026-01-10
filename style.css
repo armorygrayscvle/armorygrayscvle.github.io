@@ -145,7 +145,7 @@ body.home {
   align-items: center;
   gap: 8px;
   color: #f8f8f8;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   font-size: 11px;
   line-height: 1.1;
   text-transform: uppercase;
@@ -679,7 +679,7 @@ a {
 
 .saved-link {
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding-bottom: 4px;
@@ -944,7 +944,7 @@ a {
 .creations-list .snipcart-add-item {
   padding: 10px 14px;
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 }
 
 .creations-list .saved-toggle {
@@ -990,7 +990,7 @@ a {
   width: fit-content;
   padding: 10px 14px;
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 }
 
 /* ============================= */
@@ -1624,7 +1624,7 @@ a {
   color: #0c0c0c;
   border: 1px solid #0c0c0c;
   padding: 12px 14px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 11px;
   cursor: pointer;
@@ -1812,7 +1812,7 @@ a {
   color: #111;
   padding: 10px 12px;
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
   transition: opacity 0.2s ease;
@@ -1842,7 +1842,7 @@ a {
 
 .quiet-link {
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding-bottom: 2px;
@@ -1973,7 +1973,7 @@ a {
 
 .summary-total {
   font-size: 13px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 }
 
 .summary-checkout {
@@ -2017,7 +2017,7 @@ a {
 
 .summary-total {
   font-size: 13px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 }
 
 .summary-checkout {
@@ -2080,7 +2080,7 @@ a {
 
 .product-detail-price {
   font-size: 13px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -2161,7 +2161,7 @@ a {
 
   .ch-action-link {
     font-size: 10px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
   }
 
   .hero.ch-hero {
@@ -2634,7 +2634,7 @@ a {
 }
 
 .footer-brand {
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -2654,7 +2654,7 @@ a {
 .ch-header .ch-actions .snipcart-checkout * {
   font-size: 11px !important;
   font-weight: 400 !important;
-  letter-spacing: 0.16em !important;
+  letter-spacing: 0.18em !important;
   line-height: 1.1 !important;
   text-transform: uppercase !important;
   font-family: "Helvetica Neue", "Inter", Arial, sans-serif !important;
@@ -2679,7 +2679,7 @@ a {
   font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   line-height: 1.1;
   text-transform: uppercase;
   display: inline-flex;
