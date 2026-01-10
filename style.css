@@ -171,21 +171,22 @@ body.home {
   z-index: 110;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 0;
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 7px 9px;
   backdrop-filter: blur(6px);
-  min-width: 150px;
-  justify-content: center;
+  min-width: 140px;
+  width: auto;
 }
 
 .ch-legal-links-ig a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   color: #f7f7f7;
   text-decoration: none;
   opacity: 0.9;
@@ -2201,7 +2202,7 @@ a {
     right: 16px;
     padding: 6px 8px;
     min-width: 140px;
-    gap: 8px;
+    gap: 0;
   }
 
   .ch-legal-link {
@@ -2435,7 +2436,7 @@ a {
     right: 12px;
     padding: 6px 8px;
     min-width: 140px;
-    gap: 6px;
+    gap: 0;
   }
 
   .ch-legal-link {
