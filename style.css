@@ -166,12 +166,18 @@ body.home {
 
 .ch-legal-links-ig {
   position: fixed;
-  left: auto;
   right: 22px;
   bottom: 24px;
+  z-index: 110;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 7px 9px;
+  backdrop-filter: blur(6px);
+  min-width: 150px;
   justify-content: center;
-  min-width: 140px;
-  gap: 0;
 }
 
 .ch-legal-links-ig a {
@@ -2193,6 +2199,9 @@ a {
   .ch-legal-links-ig {
     bottom: 18px;
     right: 16px;
+    padding: 6px 8px;
+    min-width: 140px;
+    gap: 8px;
   }
 
   .ch-legal-link {
@@ -2422,8 +2431,11 @@ a {
   }
 
   .ch-legal-links-ig {
-    bottom: 14px;
+    bottom: 60px;
     right: 12px;
+    padding: 6px 8px;
+    min-width: 140px;
+    gap: 6px;
   }
 
   .ch-legal-link {
