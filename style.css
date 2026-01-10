@@ -114,6 +114,7 @@ body.home {
   color: #f7f7f7;
   padding: 3px 8px;
   border-bottom: 1px solid transparent;
+  text-decoration: none;
   transition: opacity 0.2s ease, border-color 0.2s ease;
 }
 
@@ -121,6 +122,7 @@ body.home {
 .ch-legal-link:focus-visible {
   opacity: 0.85;
   border-color: transparent;
+  text-decoration: none;
 }
 
 .ch-legal-copy {

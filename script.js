@@ -133,9 +133,6 @@ const translations = {
     "general.body": `
       <p class="info-eyebrow">General</p>
       <h1 class="info-headline">Information</h1>
-      <p><strong>General Information</strong><br>
-      SHIPPING | RETURNS, REPLACEMENTS &amp; EXCHANGES | LEGAL</p>
-
       <p><strong>SHIPPING &amp; DELIVERY</strong><br>
       <em>Delivery Zones</em><br>
       ARMORY GRAYSCVLE ships within the European Union and to selected international destinations.<br>
@@ -370,9 +367,6 @@ const translations = {
     "general.body": `
       <p class="info-eyebrow">Geral</p>
       <h1 class="info-headline">Informações</h1>
-      <p><strong>Informação Geral</strong><br>
-      ENVIO | DEVOLUÇÕES, SUBSTITUIÇÕES &amp; TROCAS | LEGAL</p>
-
       <p><strong>Envios &amp; Entregas</strong><br>
       <em>Destinos</em><br>
       A ARMORY GRAYSCVLE envia para países da União Europeia e para destinos internacionais selecionados.<br>
