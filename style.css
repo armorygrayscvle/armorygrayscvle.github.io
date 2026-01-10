@@ -1307,7 +1307,8 @@ a {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.1;
+  font-weight: 500;
 }
 
 .info-actions .info-locale-switch {
@@ -1326,12 +1327,20 @@ a {
   padding-bottom: 0;
   border-bottom: none;
   transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  font-weight: 500;
 }
 
 .info-bag-link:hover,
 .info-bag-link:focus-visible {
   opacity: 0.8;
   transform: translateY(-1px);
+}
+
+.info-bag-link svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin-top: -1px; /* optical centering */
 }
 
 .info-login-link {
@@ -1344,6 +1353,7 @@ a {
   padding-bottom: 0;
   border-bottom: none;
   transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  font-weight: 500;
 }
 
 .info-login-link:hover,
