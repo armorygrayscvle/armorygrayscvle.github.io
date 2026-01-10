@@ -23,10 +23,37 @@ window.addEventListener("beforeunload", resetScroll);
   styleEl.setAttribute("href", `${base}?v=${version}&t=${Date.now()}`);
 })();
 
+// Mobile hero sizing: fit viewport below the fixed header
+const MOBILE_MAX_WIDTH = 768;
+function setMobileHeroHeight() {
+  const hero = document.querySelector(".home .ch-hero");
+  const header = document.querySelector(".ch-header");
+  if (!hero || !header) return;
+
+  const isMobile = window.matchMedia(`(max-width: ${MOBILE_MAX_WIDTH}px)`).matches;
+  if (!isMobile) {
+    document.documentElement.style.removeProperty("--header-height");
+    hero.style.removeProperty("height");
+    hero.style.removeProperty("minHeight");
+    hero.style.removeProperty("paddingTop");
+    hero.style.removeProperty("paddingBottom");
+    return;
+  }
+
+  const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+  document.documentElement.style.setProperty("--header-height", `${headerHeight}px`);
+  const targetHeight = Math.max(window.innerHeight - headerHeight, 0);
+  hero.style.height = `${targetHeight}px`;
+  hero.style.minHeight = `${targetHeight}px`;
+  hero.style.paddingTop = `calc(${headerHeight}px + 20px)`;
+  hero.style.paddingBottom = "0px";
+}
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
   jumpToInfo();
+  setMobileHeroHeight();
 
   setTimeout(() => {
     loader.style.opacity = "0";
@@ -41,6 +68,9 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("pageshow", jumpToInfo);
+window.addEventListener("resize", setMobileHeroHeight);
+window.addEventListener("orientationchange", setMobileHeroHeight);
+window.addEventListener("pageshow", setMobileHeroHeight);
 
 function jumpToInfo() {
   const info = document.querySelector(".info-page");

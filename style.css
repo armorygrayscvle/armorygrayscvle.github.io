@@ -2310,6 +2310,8 @@ a {
 
   .home #main-content {
     padding: 0;
+    min-height: 0;
+    background: #000;
   }
 
   .login-body #main-content {
@@ -2331,6 +2333,16 @@ a {
 
   .hero.ch-hero {
     padding: 110px 14px 50px;
+  }
+
+  .home .hero.ch-hero {
+    height: calc(100vh - var(--header-height, 70px));
+    min-height: calc(100vh - var(--header-height, 70px));
+    padding-top: calc(var(--header-height, 70px) + 20px);
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background-size: cover;
+    background-position: center;
   }
 
   .ch-hero-overlay {
