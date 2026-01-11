@@ -23,8 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link href=\"https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Cinzel:wght@400;600&display=swap\" rel=\"stylesheet\">
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
-  <style>
+<style>
     :root {
       --bg: #000;
       --text: #f4f4f4;
@@ -130,13 +129,6 @@
       <img src="/logowhite.png" alt="Armory Grayscvle logo">
     </a>
   </div>
-  <script>
-    window.SnipcartSettings = {
-      publicApiKey: "YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx",
-      modalStyle: "side",
-      currency: "eur"
-    };
-  </script>
 
   <div class="checkout-shell">
     <h1>Checkout</h1>
@@ -150,16 +142,7 @@
       <a class="simple-link" href="general.html">Returns &amp; Exchanges</a>
     </p>
   </div>
-
-  <div
-    id="snipcart"
-    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
-    data-config-add-product-behavior="none"
-    data-config-modal-style="side"
-    data-currency="eur"
-  ></div>
-  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-  <script>
+<script>
     (function autoOpen(attempt = 0) {
       const maxAttempts = 30;
       if (window.Snipcart?.api?.theme?.cart?.open) {
@@ -169,5 +152,9 @@
       }
     })();
   </script>
+
+  <script src="snipcart-settings.js"></script>
+  <script src="snipcart-bootstrap.js"></script>
 </body>
 </html>
+
