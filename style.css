@@ -1,6 +1,6 @@
 /* RESET */
 
-@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;500&display=swap");
 
 *,
 *::before,
@@ -17,7 +17,7 @@
   --muted: #8f8f8f;
   --line: #161616;
   --edge-pad: 0.36cm;
-  --brand-font: "Monoton", "Bungee Shade", "Bungee", "Helvetica Neue", "Inter", Arial, sans-serif;
+  --brand-font: "IBM Plex Sans Condensed", "IBM Plex Sans", "Helvetica Neue", "Inter", Arial, sans-serif;
 }
 
 body {
