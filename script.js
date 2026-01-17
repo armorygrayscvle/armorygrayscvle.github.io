@@ -54,9 +54,32 @@ function setMobileHeroHeight() {
   hero.style.marginBottom = "0px";
 }
 
+function applyBrandLockupTo(el) {
+  if (!el) return;
+  if (el.querySelector(".brand-word-grayscvle")) {
+    el.classList.add("brand-lockup");
+    return;
+  }
+
+  const text = (el.textContent || "").trim();
+  const parts = text.split(/\s+/);
+  if (parts.length < 2) return;
+
+  const first = parts.shift();
+  const rest = parts.join(" ");
+  el.classList.add("brand-lockup");
+  el.innerHTML = `<span class="brand-word brand-word-armory">${first}</span><span class="brand-word brand-word-grayscvle">${rest}</span>`;
+}
+
+function applyBrandLockups() {
+  applyBrandLockupTo(document.querySelector("#loader h1"));
+  applyBrandLockupTo(document.querySelector(".ch-brand"));
+}
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
+  applyBrandLockups();
   jumpToInfo();
   setMobileHeroHeight();
 

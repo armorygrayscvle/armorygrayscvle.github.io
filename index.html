@@ -30,7 +30,7 @@
     .ch-brand {
       display: inline-flex;
       align-items: center;
-      letter-spacing: 0.3em;
+      letter-spacing: 0;
       font-size: 18px;
       text-transform: uppercase;
       font-family: "Archivo","Archivo Narrow","Helvetica Neue","Inter",Arial,sans-serif;
@@ -71,7 +71,10 @@
 <body class="home">
   <!-- LOADING SCREEN -->
   <div id="loader">
-    <h1>ARMORY GRAYSCVLE</h1>
+    <h1 class="brand-lockup">
+      <span class="brand-word brand-word-armory">ARMORY</span>
+      <span class="brand-word brand-word-grayscvle">GRAYSCVLE</span>
+    </h1>
   </div>
 
   <!-- HEADER -->
@@ -80,7 +83,10 @@
       <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Toggle menu">
         <img src="/logowhite.png" alt="Armory Grayscvle logo">
       </button>
-      <a class="ch-brand" href="index.html" aria-label="Armory Grayscvle home">ARMORY GRAYSCVLE</a>
+      <a class="ch-brand brand-lockup" href="index.html" aria-label="Armory Grayscvle home">
+        <span class="brand-word brand-word-armory">ARMORY</span>
+        <span class="brand-word brand-word-grayscvle">GRAYSCVLE</span>
+      </a>
       <div class="ch-actions" aria-label="Account and bag links">
         <a class="ch-action-link header-action" href="login.html">Login</a>
         <a class="ch-action-link snipcart-checkout header-action" href="#" aria-label="Shopping bag" data-open-cart>
