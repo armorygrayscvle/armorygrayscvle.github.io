@@ -15,6 +15,7 @@
   --muted: #8f8f8f;
   --line: #161616;
   --edge-pad: 0.36cm;
+  --brand-font: "Suisse Intl", "Suisse Int'l", "SuisseIntl", "Helvetica Neue", "Inter", Arial, sans-serif;
 }
 
 body {
@@ -78,7 +79,7 @@ body.home {
 
 .ch-brand {
   justify-self: center;
-  font-family: "Cinzel", "EB Garamond", serif;
+  font-family: var(--brand-font);
   letter-spacing: 0.3em;
   font-size: 18px;
   text-transform: uppercase;
@@ -542,7 +543,7 @@ a {
   font-size: 30px;
   letter-spacing: 0.28em;
   font-weight: 300;
-  font-family: "Cinzel", "EB Garamond", serif;
+  font-family: var(--brand-font);
 }
 
 /* MAIN CONTENT */
@@ -585,6 +586,7 @@ a {
   letter-spacing: 0.26em;
   font-weight: 300;
   text-transform: uppercase;
+  font-family: var(--brand-font);
 }
 
 /* UTILITY HEADER */
