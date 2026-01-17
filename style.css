@@ -80,6 +80,7 @@ body.home {
 .ch-brand {
   justify-self: center;
   font-family: var(--brand-font);
+  font-weight: 300;
   letter-spacing: 0.3em;
   font-size: 18px;
   text-transform: uppercase;
