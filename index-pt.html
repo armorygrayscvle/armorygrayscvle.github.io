@@ -80,25 +80,30 @@
   <!-- HEADER -->
   <header class="ch-header" aria-label="Cabeçalho">
     <div class="ch-header-inner">
-      <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Abrir menu">
-        <img src="/logowhite.png" alt="Logótipo Armory Grayscvle">
-      </button>
       <a class="ch-brand brand-lockup" href="index-pt.html" aria-label="Página inicial Armory Grayscvle">
         <span class="brand-word brand-word-armory">ARMORY</span>
         <span class="brand-word brand-word-grayscvle">GRAYSCVLE</span>
       </a>
-      <div class="ch-actions" aria-label="Conta e saco">
-        <a class="ch-action-link header-action" href="login-pt.html">Entrar</a>
-        <a class="ch-action-link snipcart-checkout header-action" href="#" aria-label="Saco de compras" data-open-cart>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 8l1 11h8l1-11z"></path>
-            <path d="M9 8a3 3 0 1 1 6 0"></path>
-          </svg>
-          <span>Saco</span>
-        </a>
-      </div>
+      <div class="ch-header-spacer" aria-hidden="true"></div>
+      <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Abrir menu">
+        <img src="/logowhite.png" alt="Logótipo Armory Grayscvle">
+      </button>
     </div>
   </header>
+
+  <nav id="ch-menu" class="ch-menu" aria-label="Menu principal">
+    <div class="ch-menu-header">
+      <span>Menu</span>
+      <button class="ch-menu-close" type="button" aria-label="Fechar menu">Fechar</button>
+    </div>
+    <div class="ch-menu-grid">
+      <a class="ch-menu-link" href="creations-pt.html">Criações</a>
+      <a class="ch-menu-link" href="general-pt.html">Informações</a>
+      <a class="ch-menu-link" href="contact-pt.html">Contacto</a>
+      <a class="ch-menu-link" href="login-pt.html">Login</a>
+      <a class="ch-menu-link snipcart-checkout" href="#" data-open-cart>Saco</a>
+    </div>
+  </nav>
 
   <!-- MAIN CONTENT -->
   <main id="main-content">

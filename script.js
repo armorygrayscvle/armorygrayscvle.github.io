@@ -111,6 +111,7 @@ function jumpToInfo() {
 const chMenuToggle = document.getElementById("ch-menu-toggle");
 const chMenu = document.getElementById("ch-menu");
 const chMenuClose = document.querySelector(".ch-menu-close");
+const chMenuLinks = document.querySelectorAll(".ch-menu-link");
 let checkoutBusy = false;
 
 function openChMenu() {
@@ -135,6 +136,14 @@ if (chMenuToggle) {
 
 if (chMenuClose) {
   chMenuClose.addEventListener("click", closeChMenu);
+}
+
+if (chMenuLinks && chMenuLinks.length) {
+  chMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeChMenu();
+    });
+  });
 }
 
 document.addEventListener("keydown", (e) => {
@@ -921,16 +930,6 @@ if (localeButtons.length) {
 
 /* FAB MENU TOGGLE */
 const fabStack = document.querySelector(".ch-fab-stack");
-const fabToggle = document.getElementById("ch-menu-toggle");
-
-function toggleFabStack() {
-  if (!fabStack) return;
-  fabStack.classList.toggle("open");
-}
-
-if (fabToggle) {
-  fabToggle.addEventListener("click", toggleFabStack);
-}
 
 /* SAVE / WISHLIST */
 const SAVED_KEY = "savedItems";

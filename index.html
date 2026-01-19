@@ -81,21 +81,30 @@
   <!-- HEADER -->
   <header class="ch-header" aria-label="Site header">
     <div class="ch-header-inner">
-      <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Toggle menu">
-        <img src="/logowhite.png" alt="Armory Grayscvle logo">
-      </button>
       <a class="ch-brand brand-lockup" href="index.html" aria-label="Armory Grayscvle home">
         <span class="brand-word brand-word-armory">ARMORY</span>
         <span class="brand-word brand-word-grayscvle">GRAYSCVLE</span>
       </a>
-      <div class="ch-actions" aria-label="Account and bag links">
-        <a class="ch-action-link header-action" href="login.html">Login</a>
-        <a class="ch-action-link snipcart-checkout header-action" href="#" aria-label="Shopping bag" data-open-cart>
-          <span>Bag</span>
-        </a>
-      </div>
+      <div class="ch-header-spacer" aria-hidden="true"></div>
+      <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Toggle menu">
+        <img src="/logowhite.png" alt="Armory Grayscvle logo">
+      </button>
     </div>
   </header>
+
+  <nav id="ch-menu" class="ch-menu" aria-label="Main menu">
+    <div class="ch-menu-header">
+      <span>Menu</span>
+      <button class="ch-menu-close" type="button" aria-label="Close menu">Close</button>
+    </div>
+    <div class="ch-menu-grid">
+      <a class="ch-menu-link" href="creations.html">Creations</a>
+      <a class="ch-menu-link" href="general.html">General</a>
+      <a class="ch-menu-link" href="contact.html">Contact</a>
+      <a class="ch-menu-link" href="login.html">Login</a>
+      <a class="ch-menu-link snipcart-checkout" href="#" data-open-cart>Bag</a>
+    </div>
+  </nav>
 
   <!-- MAIN CONTENT -->
   <main id="main-content">
