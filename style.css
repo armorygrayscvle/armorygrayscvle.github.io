@@ -83,9 +83,9 @@ body.home {
 .ch-brand {
   justify-self: center;
   font-family: var(--brand-font);
-  font-weight: 300;
+  font-weight: 200;
   letter-spacing: 0;
-  font-size: 18px;
+  font-size: 22px;
   text-transform: uppercase;
   color: #f7f7f7;
 }
@@ -98,11 +98,11 @@ body.home {
 
 .brand-word {
   display: inline-flex;
+  font-weight: 200;
 }
 
 .brand-word-armory {
   letter-spacing: 0.3em;
-  font-weight: 300;
 }
 
 .brand-word-grayscvle {
@@ -564,9 +564,9 @@ a {
 }
 
 #loader h1 {
-  font-size: 30px;
+  font-size: 38px;
   letter-spacing: 0;
-  font-weight: 300;
+  font-weight: 200;
   font-family: var(--brand-font);
 }
 
