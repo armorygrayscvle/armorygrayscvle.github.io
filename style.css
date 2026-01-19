@@ -1,6 +1,7 @@
 /* RESET */
 
 @import url("https://fonts.cdnfonts.com/css/akzidenzgrotesk");
+@import url("https://fonts.cdnfonts.com/css/d-din");
 @import url("https://fonts.cdnfonts.com/css/din-condensed");
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap");
 
@@ -19,7 +20,7 @@
   --muted: #8f8f8f;
   --line: #161616;
   --edge-pad: 0.36cm;
-  --brand-font: "DIN Condensed", "Archivo Narrow", "Archivo", "Helvetica Neue", "Inter", Arial, sans-serif;
+  --brand-font: "D-DIN", "DIN Condensed", "Archivo Narrow", "Archivo", "Helvetica Neue", "Inter", Arial, sans-serif;
   --product-title-font: "AkzidenzGrotesk", "Helvetica Neue Condensed", "Arial Narrow", Arial, sans-serif;
 }
 
@@ -85,7 +86,7 @@ body.home {
 .ch-brand {
   justify-self: center;
   font-family: var(--brand-font);
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0;
   font-size: 22px;
   text-transform: uppercase;
@@ -100,7 +101,7 @@ body.home {
 
 .brand-word {
   display: inline-flex;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .brand-word-armory {
@@ -568,7 +569,7 @@ a {
 #loader h1 {
   font-size: 38px;
   letter-spacing: 0;
-  font-weight: 100;
+  font-weight: 300;
   font-family: var(--brand-font);
 }
 
@@ -1502,6 +1503,7 @@ a {
 
 .creations-page .info-headline {
   font-family: var(--brand-font);
+  font-weight: 300;
 }
 
 .info-card p {
@@ -1655,6 +1657,7 @@ a {
 
 .login-body .login-title {
   font-family: var(--brand-font);
+  font-weight: 300;
 }
 
 .login-subtitle {
