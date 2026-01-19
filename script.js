@@ -1512,6 +1512,10 @@ async function loadProducts() {
       card.className = "product-card";
       card.setAttribute("data-item-id", buildItemId(product));
 
+      const link = document.createElement("a");
+      link.href = `product.html?id=${buildItemId(product)}`;
+      link.className = "product-link";
+
       const imageWrap = document.createElement("div");
       imageWrap.className = "product-image";
       const frame = document.createElement("div");
@@ -1526,60 +1530,21 @@ async function loadProducts() {
       const meta = document.createElement("div");
       meta.className = "product-meta";
 
+      const brand = document.createElement("p");
+      brand.className = "product-brand";
+      brand.textContent = (product.brand || "Armory Grayscvle").toUpperCase();
+
       const name = document.createElement("h3");
       name.className = "product-name";
       name.textContent = product.name || "";
-      const nameLink = document.createElement("a");
-      nameLink.href = `product.html?id=${buildItemId(product)}`;
-      nameLink.className = "product-link";
-      nameLink.appendChild(name);
 
       const price = document.createElement("p");
       price.className = "product-price";
       price.textContent = product.price || "";
 
-      const itemId = buildItemId(product);
-      const itemPrice = formatPrice(product.price);
-      const itemUrl = buildStoreUrl(window.location.pathname || "/");
-      const primaryImage = images[0];
-
-      const addBtn = document.createElement("button");
-      addBtn.className = "snipcart-add-item";
-      addBtn.textContent = "Add to bag";
-      addBtn.setAttribute("data-item-id", itemId);
-      addBtn.setAttribute("data-item-name", product.name || "Product");
-      addBtn.setAttribute("data-item-price", itemPrice);
-      addBtn.setAttribute("data-item-currency", "EUR");
-      addBtn.setAttribute("data-item-url", itemUrl);
-      addBtn.setAttribute("data-item-description", product.description || "");
-      addBtn.setAttribute("data-item-image", primaryImage);
-
-      const savedBtn = document.createElement("button");
-      savedBtn.type = "button";
-      savedBtn.className = "saved-toggle saved-link";
-      savedBtn.setAttribute("aria-label", "Add to wishlist");
-      savedBtn.setAttribute("data-item-id", itemId);
-      savedBtn.setAttribute("data-item-name", product.name || "");
-      savedBtn.setAttribute("data-item-price", itemPrice);
-      savedBtn.setAttribute("data-item-image", primaryImage);
-      savedBtn.textContent = "Add to wishlist";
-      savedBtn.addEventListener("click", () => {
-        toggleSavedItem({
-          id: itemId,
-          name: product.name || "Saved item",
-          price: product.price || "",
-          numericPrice: itemPrice,
-          image: primaryImage || "",
-        });
-      });
-
-      const imageLink = document.createElement("a");
-      imageLink.href = `product.html?id=${buildItemId(product)}`;
-      imageLink.className = "product-link";
-      imageLink.appendChild(imageWrap);
-
-      meta.append(nameLink, price, addBtn, savedBtn);
-      card.append(imageLink, meta);
+      meta.append(brand, name, price);
+      link.append(imageWrap, meta);
+      card.append(link);
 
       productList.appendChild(card);
     });
