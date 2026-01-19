@@ -1,5 +1,6 @@
 /* RESET */
 
+@import url("https://fonts.cdnfonts.com/css/akzidenzgrotesk");
 @import url("https://fonts.cdnfonts.com/css/din-condensed");
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap");
 
@@ -19,6 +20,7 @@
   --line: #161616;
   --edge-pad: 0.36cm;
   --brand-font: "DIN Condensed", "Archivo Narrow", "Archivo", "Helvetica Neue", "Inter", Arial, sans-serif;
+  --product-title-font: "AkzidenzGrotesk", "Helvetica Neue Condensed", "Arial Narrow", Arial, sans-serif;
 }
 
 body {
@@ -799,10 +801,10 @@ a {
 
 .product-name {
   font-size: 17px;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  text-transform: none;
-  font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: var(--product-title-font);
   color: #111;
 }
 
@@ -958,8 +960,9 @@ a {
 }
 
 .creations-list .product-name {
-  font-size: 15px;
-  letter-spacing: 0.06em;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  font-weight: 600;
 }
 
 .creations-list .product-price {
@@ -1007,9 +1010,10 @@ a {
 
 .test-product-card h2 {
   font-size: 13px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin: 0;
+  font-family: var(--product-title-font);
 }
 
 .test-product-card .snipcart-add-item {
@@ -2124,9 +2128,11 @@ a {
 }
 
 .product-detail-title {
-  font-size: 18px;
-  letter-spacing: 0.04em;
-  font-weight: 400;
+  font-size: 19px;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: var(--product-title-font);
 }
 
 .product-detail-price {
