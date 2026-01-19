@@ -64,7 +64,7 @@ body.home {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 20px;
+  gap: 32px;
 }
 
 .ch-header-spacer {
