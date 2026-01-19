@@ -1529,10 +1529,6 @@ async function loadProducts() {
       const meta = document.createElement("div");
       meta.className = "product-meta";
 
-      const brand = document.createElement("p");
-      brand.className = "product-brand";
-      brand.textContent = (product.brand || "Armory Grayscvle").toUpperCase();
-
       const name = document.createElement("h3");
       name.className = "product-name";
       name.textContent = product.name || "";
@@ -1541,7 +1537,7 @@ async function loadProducts() {
       price.className = "product-price";
       price.textContent = product.price || "";
 
-      meta.append(brand, name, price);
+      meta.append(name, price);
       link.append(imageWrap, meta);
       card.append(link);
 
