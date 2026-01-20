@@ -681,26 +681,34 @@ a {
 }
 
 .home .hero {
-  animation: heroDrift 32s ease-in-out infinite alternate;
-  background-size: 106%;
+  animation: heroFloat 26s ease-in-out infinite alternate;
+  background-size: 108%;
 }
 
 .home .hero.ch-hero {
-  animation-name: heroDrift;
+  animation-name: heroFloat;
 }
 
-@keyframes heroDrift {
+@keyframes heroFloat {
   0% {
     background-position: 50% 50%;
-    background-size: 106%;
-  }
-  50% {
-    background-position: 48% 52%;
     background-size: 108%;
   }
-  100% {
+  25% {
+    background-position: 48% 52%;
+    background-size: 110%;
+  }
+  50% {
     background-position: 52% 48%;
-    background-size: 106%;
+    background-size: 109%;
+  }
+  75% {
+    background-position: 49% 51%;
+    background-size: 111%;
+  }
+  100% {
+    background-position: 51% 49%;
+    background-size: 108%;
   }
 }
 
