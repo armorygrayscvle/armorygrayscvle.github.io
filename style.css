@@ -705,8 +705,8 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.18);
-  backdrop-filter: grayscale(25%) saturate(72%);
+  background: rgba(0, 0, 0, 0.24);
+  backdrop-filter: grayscale(35%) saturate(65%);
   z-index: 0;
   pointer-events: none;
 }
