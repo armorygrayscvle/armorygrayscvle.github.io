@@ -23,6 +23,7 @@
   --brand-font: "D-DIN", "DIN Condensed", "Archivo Narrow", "Archivo", "Helvetica Neue", "Inter", Arial, sans-serif;
   --product-title-font: "AkzidenzGrotesk", "Helvetica Neue Condensed", "Arial Narrow", Arial, sans-serif;
   --hero-brand-font: "Suisse Intl", "SuisseIntl", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
+  --info-bg: url("bg-texture.jpg");
 }
 
 body {
@@ -1417,7 +1418,7 @@ a {
   display: grid;
   justify-items: center;
   align-content: center;
-  padding: 80px 0;
+  padding: 120px 0 140px;
   min-height: 100vh;
   box-sizing: border-box;
 }
@@ -1435,19 +1436,12 @@ a {
   margin: 0;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: url("herooo.jpg") center / cover no-repeat;
+  background: var(--info-bg) center / cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 20px;
   overflow: hidden;
-}
-
-.hero.info-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.7);
 }
 
 .info-topbar {
@@ -1551,31 +1545,31 @@ a {
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
-  padding: 32px 34px 38px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
   display: grid;
   gap: 14px;
-  color: #0c0c0c;
-  backdrop-filter: blur(2px);
-  font-family: "Cinzel", "EB Garamond", serif;
+  color: #f7f7f7;
+  backdrop-filter: none;
+  font-family: var(--hero-brand-font);
 }
 
 .info-eyebrow {
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #222;
-  font-family: "Cinzel", "EB Garamond", serif;
+  color: #f7f7f7;
+  font-family: var(--hero-brand-font);
 }
 
 .info-headline {
-  font-family: "Cinzel", "EB Garamond", serif;
+  font-family: var(--hero-brand-font);
   font-size: 24px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #0b0b0b;
+  color: #f7f7f7;
 }
 
 .creations-page .info-headline {
@@ -1586,9 +1580,9 @@ a {
 .info-card p {
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: #333;
+  color: #f7f7f7;
   line-height: 1.7;
-  font-family: "Cinzel", "EB Garamond", serif;
+  font-family: var(--hero-brand-font);
 }
 
 .general-page .hero.info-hero {
