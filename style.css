@@ -361,7 +361,6 @@ body.home {
   min-height: 100vh;
   width: 100vw;
   margin: 0;
-  background: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -686,7 +685,7 @@ a {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: #000 url("HERO-v2.jpg") center / cover no-repeat;
+  background: #000 url("hero-walkway-v2.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1420,6 +1419,11 @@ a {
 .info-hero-body {
   background: #000;
   color: #111;
+}
+
+.policy-page {
+  font-family: var(--hero-brand-font);
+  letter-spacing: 0.02em;
 }
 
 .policy-page .hero.info-hero,
