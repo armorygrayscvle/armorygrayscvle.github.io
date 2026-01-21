@@ -112,10 +112,10 @@ body.home {
 }
 
 .hero-brand-lockup {
-  position: absolute;
-  left: 50%;
-  bottom: 12vh;
-  transform: translateX(-50%);
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  transform: none;
   display: inline-flex;
   align-items: center;
   gap: 0.32em;
@@ -654,10 +654,10 @@ a {
 }
 
 #loader h1 {
-  position: absolute;
-  left: 50%;
-  bottom: 12vh;
-  transform: translateX(-50%);
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  transform: none;
   display: inline-flex;
   align-items: center;
   gap: 0.32em;
