@@ -172,7 +172,8 @@ function ensureGlobalBrand() {
 document.addEventListener("DOMContentLoaded", ensureGlobalBrand);
 
 function ensureFooterNav() {
-  if (document.querySelector(".footer-nav-right")) return;
+  const existing = document.querySelector(".footer-nav-right");
+  if (existing) existing.remove();
   const footer = document.createElement("div");
   footer.className = "footer-nav-right";
   footer.innerHTML = `
