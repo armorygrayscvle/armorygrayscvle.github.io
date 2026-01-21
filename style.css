@@ -840,8 +840,9 @@ body.page-fading #main-content {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 0 20px 80px;
+  padding: 0 20px 140px;
   background: transparent;
+  position: relative;
 }
 
 .privacy-line {
@@ -853,6 +854,11 @@ body.page-fading #main-content {
   text-align: center;
   max-width: 1000px;
   margin: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
 }
 
 .brand-name {
