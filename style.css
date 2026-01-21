@@ -840,7 +840,7 @@ body.page-fading #main-content {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 0 20px 40px;
+  padding: 0 20px 80px;
   background: transparent;
 }
 
@@ -852,6 +852,7 @@ body.page-fading #main-content {
   color: #f7f7f7;
   text-align: center;
   max-width: 1000px;
+  margin: 0;
 }
 
 .brand-name {
