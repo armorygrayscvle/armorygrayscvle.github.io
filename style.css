@@ -23,7 +23,7 @@
   --brand-font: "D-DIN", "DIN Condensed", "Archivo Narrow", "Archivo", "Helvetica Neue", "Inter", Arial, sans-serif;
   --product-title-font: "AkzidenzGrotesk", "Helvetica Neue Condensed", "Arial Narrow", Arial, sans-serif;
   --hero-brand-font: "Suisse Intl", "SuisseIntl", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  --info-bg: url("bg-texture.jpg");
+  --info-bg: #000;
 }
 
 body {
