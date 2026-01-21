@@ -23,13 +23,19 @@
   --brand-font: "D-DIN", "DIN Condensed", "Archivo Narrow", "Archivo", "Helvetica Neue", "Inter", Arial, sans-serif;
   --product-title-font: "AkzidenzGrotesk", "Helvetica Neue Condensed", "Arial Narrow", Arial, sans-serif;
   --hero-brand-font: "Suisse Intl", "SuisseIntl", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  --info-bg: url("newhero.jpg") center / cover no-repeat fixed;
-  --site-bg: url("newhero.jpg") center / cover no-repeat fixed;
+  --info-bg: url("/newhero.jpg") center / cover no-repeat fixed;
+  --site-bg: url("/newhero.jpg");
 }
 
 html,
 body {
-  background: #000 var(--site-bg);
+  height: 100%;
+  background-color: #000;
+  background-image: var(--site-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text);
   font-family: "EB Garamond", "Cinzel", "Georgia", serif;
   letter-spacing: 0.01em;
@@ -704,7 +710,7 @@ a {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: var(--site-bg);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1495,7 +1501,7 @@ a {
   margin: 0;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: var(--site-bg);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
