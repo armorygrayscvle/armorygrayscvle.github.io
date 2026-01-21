@@ -79,7 +79,7 @@ body.home {
 .global-brand {
   position: fixed;
   left: 22px;
-  bottom: 22px;
+  bottom: 60px;
   transform: none;
   display: inline-flex;
   align-items: center;
@@ -752,13 +752,13 @@ a {
 #loader h1 {
   position: fixed;
   left: 22px;
-  bottom: 22px;
+  bottom: 60px;
   transform: none;
   display: inline-flex;
   align-items: center;
   gap: 0.32em;
-  font-size: 26px;
-  letter-spacing: 0.04em;
+  font-size: 22px;
+  letter-spacing: 0.08em;
   font-weight: 200;
   font-family: var(--hero-brand-font);
   text-transform: uppercase;
