@@ -69,6 +69,15 @@ body.home {
   gap: 40px;
 }
 
+.ch-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
 .ch-header-spacer {
   flex: 1 1 auto;
   min-width: 0;
@@ -681,35 +690,8 @@ a {
 }
 
 .home .hero {
-  animation: heroFloat 26s ease-in-out infinite alternate;
-  background-size: 108%;
-}
-
-.home .hero.ch-hero {
-  animation-name: heroFloat;
-}
-
-@keyframes heroFloat {
-  0% {
-    background-position: 50% 50%;
-    background-size: 108%;
-  }
-  25% {
-    background-position: 48% 52%;
-    background-size: 110%;
-  }
-  50% {
-    background-position: 52% 48%;
-    background-size: 109%;
-  }
-  75% {
-    background-position: 49% 51%;
-    background-size: 111%;
-  }
-  100% {
-    background-position: 51% 49%;
-    background-size: 108%;
-  }
+  background-size: cover;
+  animation: none;
 }
 
 .hero-overlay {
