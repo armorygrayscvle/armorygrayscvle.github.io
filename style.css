@@ -775,6 +775,14 @@ a {
   background: transparent;
 }
 
+body.page-fade-ready #main-content {
+  transition: opacity 0.6s ease;
+}
+
+body.page-fading #main-content {
+  opacity: 0 !important;
+}
+
 /* HERO */
 .hero {
   position: relative;

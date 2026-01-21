@@ -243,6 +243,38 @@ function initFooterLocale() {
 
 document.addEventListener("DOMContentLoaded", initFooterLocale);
 
+function shouldFadeLink(a) {
+  const href = a.getAttribute("href") || "";
+  if (href.startsWith("#")) return false;
+  if (href.startsWith("mailto:") || href.startsWith("tel:")) return false;
+  if (a.target && a.target !== "_self") return false;
+  const url = new URL(href, window.location.href);
+  if (url.origin !== window.location.origin) return false;
+  return true;
+}
+
+function initPageFade() {
+  const body = document.body;
+  if (!body) return;
+  body.classList.add("page-fade-ready");
+
+  function handleClick(e) {
+    const anchor = e.target.closest("a");
+    if (!anchor) return;
+    if (!shouldFadeLink(anchor)) return;
+    e.preventDefault();
+    body.classList.add("page-fading");
+    const target = anchor.href;
+    setTimeout(() => {
+      window.location.href = target;
+    }, 320);
+  }
+
+  document.addEventListener("click", handleClick);
+}
+
+document.addEventListener("DOMContentLoaded", initPageFade);
+
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
