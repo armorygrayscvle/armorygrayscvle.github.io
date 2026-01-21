@@ -32,7 +32,7 @@ body {
   font-family: "EB Garamond", "Cinzel", "Georgia", serif;
   letter-spacing: 0.01em;
   overflow-x: hidden;
-  cursor: url("logowhite.png") 16 16, auto;
+  cursor: auto;
 }
 
 /* HOME — CHROME HEARTS INSPIRED */
@@ -100,6 +100,19 @@ body.home {
 .footer-nav-right a:hover,
 .footer-nav-right a:focus-visible {
   opacity: 0.7;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor: url("assets/logo-cursor.png") 12 12, auto;
+  }
+
+  a:hover,
+  button:hover,
+  .btn:hover {
+    cursor: url("assets/logo-cursor.png") 12 12, auto;
+  }
 }
 
 .hero-brand-lockup {
@@ -641,13 +654,17 @@ a {
   align-items: center;
   justify-content: center;
   z-index: 999;
-  transition: opacity 1.2s ease;
+  transition: opacity 1.8s ease;
 }
 
 #loader h1 {
-  font-size: 38px;
-  letter-spacing: 0;
-  font-weight: 300;
+  position: absolute;
+  left: 50%;
+  bottom: 12vh;
+  transform: translateX(-50%);
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  font-weight: 200;
   font-family: var(--hero-brand-font);
 }
 
