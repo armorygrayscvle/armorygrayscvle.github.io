@@ -84,6 +84,7 @@ body.home {
   display: inline-flex;
   align-items: center;
   gap: 0.32em;
+  margin: 0;
   color: #f7f7f7;
   text-transform: uppercase;
   font-family: var(--hero-brand-font);
