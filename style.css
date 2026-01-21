@@ -951,6 +951,11 @@ body.page-fading #main-content {
   color: #f7f7f7;
 }
 
+.creations-page .products,
+.creations-page .product-list {
+  color: #0b0b0b;
+}
+
 .product-list {
   width: 100%;
   max-width: 1500px;
@@ -1092,18 +1097,18 @@ body.page-fading #main-content {
 
 /* CREATIONS PAGE */
 .creations-page.info-hero-body {
-  background: transparent;
-  color: #f7f7f7;
+  background: #fff;
+  color: #0b0b0b;
 }
 
 .creations-page .info-main {
-  background: transparent;
+  background: #fff;
 }
 
 .creations-page .hero.info-hero {
   padding: 0;
   margin: 0;
-  background: var(--site-bg);
+  background: #fff;
   min-height: auto;
 }
 
