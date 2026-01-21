@@ -125,6 +125,30 @@ body.home {
   margin-left: 0.32em;
 }
 
+.footer-nav-right {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  gap: 6px;
+  text-align: right;
+  z-index: 140;
+}
+
+.footer-nav-right a {
+  color: #f7f7f7;
+  text-decoration: none;
+  letter-spacing: 0.22em;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.footer-nav-right a:hover,
+.footer-nav-right a:focus-visible {
+  opacity: 0.7;
+}
+
 .hero-brand-lockup {
   position: absolute;
   left: 50%;
