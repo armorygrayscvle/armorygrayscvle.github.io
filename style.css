@@ -662,16 +662,21 @@ a {
   left: 50%;
   bottom: 12vh;
   transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32em;
   font-size: 26px;
   letter-spacing: 0.04em;
   font-weight: 200;
   font-family: var(--hero-brand-font);
+  text-transform: uppercase;
+  color: #f7f7f7;
 }
 
 /* MAIN CONTENT */
 #main-content {
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1.8s ease;
   min-height: auto;
   padding: 0 var(--edge-pad) 0;
   overflow-x: hidden;
@@ -685,7 +690,7 @@ a {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background-image: url("herooo.jpg");
+  background-image: url("HERO.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
