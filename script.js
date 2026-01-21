@@ -177,6 +177,7 @@ function ensureFooterNav() {
   const footer = document.createElement("div");
   footer.className = "footer-nav-right";
   footer.innerHTML = `
+    <a href="index.html">HOME</a> ·
     <a href="creations.html">CREATIONS</a> ·
     <a href="cart.html">CART</a> ·
     <a href="contact.html">CONTACT</a> ·
