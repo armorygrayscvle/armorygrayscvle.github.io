@@ -68,12 +68,12 @@ body.home {
 }
 
 .brand-word-armory {
-  letter-spacing: 0.34em;
+  letter-spacing: 0.4em;
 }
 
 .brand-word-grayscvle {
-  letter-spacing: 0.34em;
-  margin-left: 0.36em;
+  letter-spacing: 0.4em;
+  margin-left: 0.42em;
 }
 
 .global-brand {
@@ -88,8 +88,8 @@ body.home {
   color: #f7f7f7;
   text-transform: uppercase;
   font-family: var(--hero-brand-font);
-  font-size: 22px;
-  letter-spacing: 0.08em;
+  font-size: 19px;
+  letter-spacing: 0.14em;
   font-weight: 200;
   pointer-events: none;
   z-index: 200;
@@ -757,8 +757,8 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.32em;
-  font-size: 22px;
-  letter-spacing: 0.08em;
+  font-size: 19px;
+  letter-spacing: 0.14em;
   font-weight: 200;
   font-family: var(--hero-brand-font);
   text-transform: uppercase;
