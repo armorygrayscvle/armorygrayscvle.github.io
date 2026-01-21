@@ -131,6 +131,13 @@ body.home {
   opacity: 0.7;
 }
 
+.footer-locale-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .footer-locale {
   background: transparent;
   border: none;
@@ -146,6 +153,48 @@ body.home {
 
 .footer-locale:hover,
 .footer-locale:focus-visible {
+  opacity: 0.7;
+}
+
+.footer-locale-menu {
+  position: absolute;
+  right: 0;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 10px;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+  z-index: 150;
+}
+
+.footer-locale-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.footer-locale-menu button {
+  background: transparent;
+  border: none;
+  color: #f7f7f7;
+  letter-spacing: 0.22em;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: var(--hero-brand-font);
+  cursor: pointer;
+  padding: 0;
+  text-align: right;
+}
+
+.footer-locale-menu button:hover,
+.footer-locale-menu button:focus-visible {
   opacity: 0.7;
 }
 

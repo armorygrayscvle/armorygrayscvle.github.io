@@ -192,15 +192,52 @@ function buildLocaleHref(base, locale) {
 
 function initFooterLocale() {
   const btn = document.getElementById("footer-locale");
+  const menu = document.getElementById("footer-locale-menu");
+  const wrapper = btn?.closest(".footer-locale-wrapper");
   if (!btn) return;
   let current = getLocaleFromPath();
   btn.textContent = current.toUpperCase();
   const base = getBaseFromPath();
-  btn.addEventListener("click", () => {
-    const nextIndex = (LOCALE_ORDER.indexOf(current) + 1) % LOCALE_ORDER.length;
-    current = LOCALE_ORDER[nextIndex];
-    const target = buildLocaleHref(base, current);
-    window.location.href = target;
+  const options = menu ? Array.from(menu.querySelectorAll("button[data-locale]")) : [];
+
+  function closeMenu() {
+    menu?.classList.remove("open");
+  }
+
+  function openMenu() {
+    menu?.classList.add("open");
+    options.forEach((opt) => {
+      const loc = opt.dataset.locale;
+      opt.hidden = loc === current;
+      opt.textContent = loc.toUpperCase();
+    });
+  }
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (menu?.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  options.forEach((opt) => {
+    opt.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const targetLoc = opt.dataset.locale;
+      if (!targetLoc || targetLoc === current) {
+        closeMenu();
+        return;
+      }
+      const target = buildLocaleHref(base, targetLoc);
+      window.location.href = target;
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!wrapper) return;
+    if (!wrapper.contains(e.target)) closeMenu();
   });
 }
 
