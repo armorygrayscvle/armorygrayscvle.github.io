@@ -232,7 +232,7 @@ function initFooterLocale() {
     menu?.classList.add("open");
     options.forEach((opt) => {
       const loc = opt.dataset.locale;
-      opt.hidden = false;
+      opt.hidden = loc === current;
       opt.textContent = loc.toUpperCase();
     });
   }
