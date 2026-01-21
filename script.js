@@ -186,7 +186,7 @@ const translations = {
 
     "login.eyebrow": "Account",
     "login.title": "Armory Grayscvle",
-    "login.subtitle": "Access your orders and saved items.",
+    "login.subtitle": "",
     "login.google": "Continue with Google",
     "login.apple": "Continue with Apple",
     "login.or": "or",
@@ -420,7 +420,7 @@ const translations = {
 
     "login.eyebrow": "Conta",
     "login.title": "Armory Grayscvle",
-    "login.subtitle": "Aceda às suas encomendas e itens guardados.",
+    "login.subtitle": "",
     "login.google": "Continuar com Google",
     "login.apple": "Continuar com Apple",
     "login.or": "ou",
@@ -631,7 +631,7 @@ const translations = {
 
     "login.eyebrow": "Konto",
     "login.title": "Armory Grayscvle",
-    "login.subtitle": "Zugang zu Bestellungen und Gespeichertes.",
+    "login.subtitle": "",
     "login.google": "Weiter mit Google",
     "login.apple": "Weiter mit Apple",
     "login.or": "oder",
