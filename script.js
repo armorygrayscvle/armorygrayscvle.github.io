@@ -228,10 +228,12 @@ function initFooterLocale() {
 
   function closeMenu() {
     menu?.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
   }
 
   function openMenu() {
     menu?.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
     options.forEach((opt) => {
       const loc = opt.dataset.locale;
       opt.hidden = loc === current;
@@ -248,9 +250,9 @@ function initFooterLocale() {
     }
   }
 
-  btn.addEventListener("click", (e) => {
-    toggleMenu(e);
-  });
+  const toggleHandler = (e) => toggleMenu(e);
+  btn.addEventListener("click", toggleHandler);
+  btn.addEventListener("touchstart", toggleHandler, { passive: true });
 
   options.forEach((opt) => {
     opt.addEventListener("click", (e) => {
@@ -261,14 +263,28 @@ function initFooterLocale() {
         return;
       }
       const target = buildLocaleHref(base, targetLoc);
+      closeMenu();
       window.location.href = target;
     });
+    opt.addEventListener("touchstart", (e) => {
+      e.stopPropagation();
+      const targetLoc = opt.dataset.locale;
+      if (!targetLoc || targetLoc === current) {
+        closeMenu();
+        return;
+      }
+      closeMenu();
+      window.location.href = buildLocaleHref(base, targetLoc);
+    }, { passive: true });
   });
 
-  document.addEventListener("click", (e) => {
+  const outsideClose = (e) => {
     if (!wrapper) return;
     if (!wrapper.contains(e.target)) closeMenu();
-  });
+  };
+
+  document.addEventListener("click", outsideClose);
+  document.addEventListener("touchstart", outsideClose, { passive: true });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
