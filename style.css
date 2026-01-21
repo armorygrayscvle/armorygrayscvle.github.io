@@ -840,7 +840,7 @@ body.page-fading #main-content {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 0 20px 16px;
+  padding: 0 20px 40px;
   background: transparent;
 }
 
