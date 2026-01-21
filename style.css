@@ -63,7 +63,7 @@ body.home {
 
 .brand-word {
   display: inline-flex;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .brand-word-armory {
@@ -112,9 +112,10 @@ body.home {
   gap: 0.32em;
   color: #f7f7f7;
   text-transform: uppercase;
-  font-family: var(--brand-font);
+  font-family: var(--hero-brand-font);
   font-size: 26px;
   letter-spacing: 0.04em;
+  font-weight: 200;
   pointer-events: none;
   z-index: 2;
 }
