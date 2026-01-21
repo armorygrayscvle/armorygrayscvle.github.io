@@ -73,7 +73,7 @@ body.home {
 .global-brand {
   position: fixed;
   left: 22px;
-  bottom: 22px;
+  bottom: 80px;
   transform: none;
   display: inline-flex;
   align-items: center;
