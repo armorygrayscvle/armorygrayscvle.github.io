@@ -100,6 +100,10 @@ body.home {
   display: none;
 }
 
+.info-locale-switch {
+  display: none !important;
+}
+
 .footer-nav-right {
   position: fixed;
   right: 22px;
@@ -124,6 +128,24 @@ body.home {
 
 .footer-nav-right a:hover,
 .footer-nav-right a:focus-visible {
+  opacity: 0.7;
+}
+
+.footer-locale {
+  background: transparent;
+  border: none;
+  color: #f7f7f7;
+  letter-spacing: 0.22em;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: var(--hero-brand-font);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-locale:hover,
+.footer-locale:focus-visible {
   opacity: 0.7;
 }
 

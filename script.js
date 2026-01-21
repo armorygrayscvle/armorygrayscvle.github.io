@@ -171,6 +171,41 @@ function ensureGlobalBrand() {
 
 document.addEventListener("DOMContentLoaded", ensureGlobalBrand);
 
+const LOCALE_ORDER = ["en", "de", "pt"];
+
+function getLocaleFromPath() {
+  const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+  if (file.includes("-pt")) return "pt";
+  if (file.includes("-de")) return "de";
+  return "en";
+}
+
+function getBaseFromPath() {
+  const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+  return file.replace(/-(pt|de)\.html$/, ".html").replace(".html", "");
+}
+
+function buildLocaleHref(base, locale) {
+  const suffix = locale === "en" ? "" : `-${locale}`;
+  return `${base}${suffix}.html`;
+}
+
+function initFooterLocale() {
+  const btn = document.getElementById("footer-locale");
+  if (!btn) return;
+  let current = getLocaleFromPath();
+  btn.textContent = current.toUpperCase();
+  const base = getBaseFromPath();
+  btn.addEventListener("click", () => {
+    const nextIndex = (LOCALE_ORDER.indexOf(current) + 1) % LOCALE_ORDER.length;
+    current = LOCALE_ORDER[nextIndex];
+    const target = buildLocaleHref(base, current);
+    window.location.href = target;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initFooterLocale);
+
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
