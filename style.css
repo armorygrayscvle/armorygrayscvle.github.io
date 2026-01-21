@@ -684,6 +684,16 @@ a {
   animation: none;
 }
 
+.ch-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: grayscale(25%) saturate(72%);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .hero-overlay {
   position: relative;
   z-index: 1;
