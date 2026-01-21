@@ -101,13 +101,7 @@ body.home {
 }
 
 .ch-brand {
-  justify-self: start;
-  font-family: var(--brand-font);
-  font-weight: 300;
-  letter-spacing: 0;
-  font-size: 22px;
-  text-transform: uppercase;
-  color: #f7f7f7;
+  display: none;
 }
 
 .brand-lockup {
@@ -128,6 +122,23 @@ body.home {
 .brand-word-grayscvle {
   letter-spacing: 0.3em;
   margin-left: 0.32em;
+}
+
+.hero-brand-lockup {
+  position: absolute;
+  left: 50%;
+  bottom: 12vh;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32em;
+  color: #f7f7f7;
+  text-transform: uppercase;
+  font-family: var(--brand-font);
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* MENU OVERLAY */
