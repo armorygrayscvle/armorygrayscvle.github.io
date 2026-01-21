@@ -73,7 +73,7 @@ body.home {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.12) 100%);
   pointer-events: none;
   z-index: -1;
 }
@@ -97,7 +97,7 @@ body.home {
   height: 46px;
   width: auto;
   display: block;
-  filter: invert(1) saturate(0) brightness(0);
+  filter: none;
 }
 
 .ch-brand {
@@ -107,7 +107,7 @@ body.home {
   letter-spacing: 0;
   font-size: 22px;
   text-transform: uppercase;
-  color: #0b0b0b;
+  color: #f7f7f7;
 }
 
 .brand-lockup {
