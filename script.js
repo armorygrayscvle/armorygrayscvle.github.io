@@ -171,6 +171,30 @@ function ensureGlobalBrand() {
 
 document.addEventListener("DOMContentLoaded", ensureGlobalBrand);
 
+function ensureFooterNav() {
+  if (document.querySelector(".footer-nav-right")) return;
+  const footer = document.createElement("div");
+  footer.className = "footer-nav-right";
+  footer.innerHTML = `
+    <a href="creations.html">CREATIONS</a> ·
+    <a href="cart.html">CART</a> ·
+    <a href="contact.html">CONTACT</a> ·
+    <a href="login.html">LOGIN</a> ·
+    <a href="privacy.html">PRIVACY</a> ·
+    <span class="footer-locale-wrapper">
+      <button id="footer-locale" class="footer-locale" type="button">EN</button>
+      <div id="footer-locale-menu" class="footer-locale-menu">
+        <button type="button" data-locale="en">EN</button>
+        <button type="button" data-locale="de">DE</button>
+        <button type="button" data-locale="pt">PT</button>
+      </div>
+    </span>
+  `;
+  document.body.appendChild(footer);
+}
+
+document.addEventListener("DOMContentLoaded", ensureFooterNav);
+
 const LOCALE_ORDER = ["en", "de", "pt"];
 
 function getLocaleFromPath() {
@@ -241,7 +265,9 @@ function initFooterLocale() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", initFooterLocale);
+document.addEventListener("DOMContentLoaded", () => {
+  initFooterLocale();
+});
 
 function shouldFadeLink(a) {
   const href = a.getAttribute("href") || "";
