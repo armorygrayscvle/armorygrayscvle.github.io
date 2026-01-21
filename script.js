@@ -220,10 +220,11 @@ function initFooterLocale() {
   const menu = document.getElementById("footer-locale-menu");
   const wrapper = btn?.closest(".footer-locale-wrapper");
   if (!btn) return;
+  if (!menu) return;
   let current = getLocaleFromPath();
   btn.textContent = current.toUpperCase();
   const base = getBaseFromPath();
-  const options = menu ? Array.from(menu.querySelectorAll("button[data-locale]")) : [];
+  const options = Array.from(menu.querySelectorAll("button[data-locale]"));
 
   function closeMenu() {
     menu?.classList.remove("open");
@@ -238,13 +239,17 @@ function initFooterLocale() {
     });
   }
 
-  btn.addEventListener("click", (e) => {
+  function toggleMenu(e) {
     e.stopPropagation();
     if (menu?.classList.contains("open")) {
       closeMenu();
     } else {
       openMenu();
     }
+  }
+
+  btn.addEventListener("click", (e) => {
+    toggleMenu(e);
   });
 
   options.forEach((opt) => {
