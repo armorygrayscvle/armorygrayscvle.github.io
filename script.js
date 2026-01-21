@@ -182,6 +182,7 @@ function ensureFooterNav() {
     <a href="contact.html">CONTACT</a> ·
     <a href="login.html">LOGIN</a> ·
     <a href="privacy.html">PRIVACY</a> ·
+    <a href="https://instagram.com/armorygrayscvle" target="_blank" rel="noopener noreferrer">IG</a> ·
     <span class="footer-locale-wrapper">
       <button id="footer-locale" class="footer-locale" type="button">EN</button>
       <div id="footer-locale-menu" class="footer-locale-menu">
