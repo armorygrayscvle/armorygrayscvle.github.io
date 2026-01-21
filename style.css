@@ -23,11 +23,13 @@
   --brand-font: "D-DIN", "DIN Condensed", "Archivo Narrow", "Archivo", "Helvetica Neue", "Inter", Arial, sans-serif;
   --product-title-font: "AkzidenzGrotesk", "Helvetica Neue Condensed", "Arial Narrow", Arial, sans-serif;
   --hero-brand-font: "Suisse Intl", "SuisseIntl", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  --info-bg: #000;
+  --info-bg: url("newhero.jpg") center / cover no-repeat fixed;
+  --site-bg: url("newhero.jpg") center / cover no-repeat fixed;
 }
 
+html,
 body {
-  background: var(--bg);
+  background: #000 var(--site-bg);
   color: var(--text);
   font-family: "EB Garamond", "Cinzel", "Georgia", serif;
   letter-spacing: 0.01em;
@@ -36,13 +38,13 @@ body {
 
 /* HOME — CHROME HEARTS INSPIRED */
 body.home {
-  background: #000;
+  background: transparent;
   color: #f4f4f4;
 }
 
 .home #main-content {
   padding: 0;
-  background: #000;
+  background: transparent;
   min-height: 100vh;
 }
 
@@ -52,12 +54,6 @@ body.home {
 
 .ch-brand {
   display: none;
-}
-
-.brand-lockup {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--hero-brand-font);
 }
 
 .brand-word {
@@ -72,6 +68,29 @@ body.home {
 .brand-word-grayscvle {
   letter-spacing: 0.3em;
   margin-left: 0.32em;
+}
+
+.global-brand {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  transform: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32em;
+  color: #f7f7f7;
+  text-transform: uppercase;
+  font-family: var(--hero-brand-font);
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  font-weight: 200;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.brand-lockup,
+.hero-brand-lockup {
+  display: none;
 }
 
 .footer-nav-right {
@@ -474,8 +493,8 @@ a {
 
 /* UPPER FOOTER */
 .footer-upper {
-  background: #fff;
-  color: #0b0b0b;
+  background: transparent;
+  color: #f7f7f7;
   padding: 180px 0 240px;
   font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
 }
@@ -516,7 +535,7 @@ a {
 }
 
 .footer-upper-links a {
-  color: #0b0b0b;
+  color: #f7f7f7;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 0.01em;
@@ -539,14 +558,14 @@ a {
 
 .footer-upper-ig {
   display: inline-flex;
-  color: #0b0b0b;
+  color: #f7f7f7;
   transition: opacity 0.2s ease;
 }
 
 .footer-upper-ig svg {
   width: 18px;
   height: 18px;
-  stroke: #0b0b0b;
+  stroke: #f7f7f7;
   stroke-width: 1.35;
 }
 
@@ -557,20 +576,20 @@ a {
 .footer-upper-separator {
   width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 /* INFO PAGES */
 .info-page {
-  background: #fff;
-  color: #111;
+  background: transparent;
+  color: #f7f7f7;
   padding: 96px 6vw 120px;
 }
 
 .info-divider {
   width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.18);
   margin-bottom: 36px;
 }
 
@@ -675,7 +694,7 @@ a {
   min-height: auto;
   padding: 0 var(--edge-pad) 0;
   overflow-x: hidden;
-  background: #fff;
+  background: transparent;
 }
 
 /* HERO */
@@ -685,7 +704,7 @@ a {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: #000;
+  background: var(--site-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -711,6 +730,25 @@ a {
   padding: 24px;
 }
 
+.minimal-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 20px 40px;
+  background: transparent;
+}
+
+.privacy-line {
+  font-family: var(--hero-brand-font);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #f7f7f7;
+  text-align: center;
+  max-width: 1000px;
+}
+
 .brand-name {
   font-size: 26px;
   letter-spacing: 0;
@@ -725,9 +763,9 @@ a {
   justify-content: flex-end;
   align-items: center;
   padding: 28px 0 18px 0;
-  background: #fff;
-  color: #111;
-  border-bottom: 1px solid #e5e5e5;
+  background: transparent;
+  color: #f7f7f7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .utility-actions {
@@ -823,8 +861,8 @@ a {
   gap: 64px;
   margin: 100px auto 160px;
   padding: 0;
-  background: #fff;
-  color: #0b0b0b;
+  background: transparent;
+  color: #f7f7f7;
 }
 
 .product-list {
@@ -968,18 +1006,18 @@ a {
 
 /* CREATIONS PAGE */
 .creations-page.info-hero-body {
-  background: #fff;
-  color: #0b0b0b;
+  background: transparent;
+  color: #f7f7f7;
 }
 
 .creations-page .info-main {
-  background: #fff;
+  background: transparent;
 }
 
 .creations-page .hero.info-hero {
   padding: 0;
   margin: 0;
-  background: #fff;
+  background: var(--site-bg);
   min-height: auto;
 }
 
@@ -1374,10 +1412,7 @@ a {
 }
 
 .hero.login-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.7);
+  content: none;
 }
 
 .login-topbar {
@@ -1417,8 +1452,8 @@ a {
 }
 
 .info-hero-body {
-  background: #000;
-  color: #111;
+  background: transparent;
+  color: #f7f7f7;
 }
 
 .policy-page {
@@ -1449,7 +1484,7 @@ a {
 
 .info-main {
   padding: 0;
-  background: #000;
+  background: transparent;
   min-height: auto;
 }
 
@@ -1460,7 +1495,7 @@ a {
   margin: 0;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: var(--info-bg) center / cover no-repeat fixed;
+  background: var(--site-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1535,8 +1570,8 @@ a {
 
 .policy-page .info-locale-switch .locale-btn {
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  color: #0c0c0c;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #f7f7f7;
   font-family: "Cinzel", "EB Garamond", serif;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -1548,14 +1583,14 @@ a {
 }
 
 .policy-page .info-locale-switch .locale-btn.locale-active {
-  background: rgba(0, 0, 0, 0.06);
-  border-color: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .policy-page .info-locale-switch .locale-btn:hover,
 .policy-page .info-locale-switch .locale-btn:focus-visible {
   opacity: 0.9;
-  border-color: #000;
+  border-color: #fff;
 }
 
 .info-hero-content {
@@ -1642,16 +1677,16 @@ a {
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #222;
+  color: #f7f7f7;
 }
 
 .contact-form input,
 .contact-form textarea {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   padding: 12px 6px 10px;
-  color: #0c0c0c;
+  color: #f7f7f7;
   font-size: 13px;
   letter-spacing: 0.06em;
   border-radius: 0;
@@ -1660,13 +1695,13 @@ a {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #666;
+  color: #bdbdbd;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-bottom-color: #000;
+  border-bottom-color: #fff;
 }
 
 .contact-form textarea {
@@ -1677,7 +1712,7 @@ a {
 .contact-consent {
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: #333;
+  color: #f7f7f7;
   line-height: 1.6;
 }
 
@@ -1691,15 +1726,15 @@ a {
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2a2a2a;
+  color: #f7f7f7;
 }
 
 .contact-status.error {
-  color: #8b0000;
+  color: #ff5f5f;
 }
 
 .contact-status.success {
-  color: #0a4f24;
+  color: #9cff9c;
 }
 
 .contact-submit {
@@ -1997,16 +2032,16 @@ a {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding-bottom: 2px;
-  color: #111;
+  color: #f7f7f7;
 }
 
 /* CART PAGE */
 .cart-page {
   padding: 80px 0 200px;
-  background: #fff;
-  color: #111;
+  background: transparent;
+  color: #f7f7f7;
 }
 
 .cart-shell {
@@ -2193,8 +2228,8 @@ a {
 
 /* PRODUCT DETAIL */
 .product-page {
-  background: #fff;
-  color: #111;
+  background: transparent;
+  color: #f7f7f7;
   padding: 80px 0 200px;
 }
 
@@ -2206,7 +2241,7 @@ a {
 }
 
 .product-gallery {
-  background: #f4f4f4;
+  background: transparent;
   min-height: 420px;
   display: flex;
   align-items: center;

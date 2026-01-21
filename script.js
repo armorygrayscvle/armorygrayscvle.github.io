@@ -150,18 +150,34 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeChMenu();
 });
 
+const BRAND_HTML = `
+  <span class="brand-word brand-word-armory">ARMORY</span>
+  <span class="brand-word brand-word-grayscvle">GRAYSCVLE</span>
+`;
+
+function ensureGlobalBrand() {
+  const loaderTitle = document.querySelector("#loader h1");
+  if (loaderTitle) {
+    loaderTitle.className = "global-brand";
+    loaderTitle.innerHTML = BRAND_HTML;
+  }
+  if (!document.querySelector(".global-brand.sticky-brand")) {
+    const brand = document.createElement("div");
+    brand.className = "global-brand sticky-brand";
+    brand.innerHTML = BRAND_HTML;
+    document.body.appendChild(brand);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", ensureGlobalBrand);
+
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
-const LOCALE_PAGES = ["index", "creations", "general", "terms", "privacy", "contact", "login", "cart"];
-const LEGACY_REDIRECTS = {
-  "returns": "general.html",
-  "delivery": "general.html",
-  "preorders": "general.html",
-};
+const LOCALE_PAGES = ["index", "creations", "privacy", "contact", "login", "cart"];
+const LEGACY_REDIRECTS = {};
 const translations = {
   en: {
-    "menu.general": "General",
     "menu.creations": "Creations",
     "menu.contact": "Contact",
     "menu.lang_en": "EN",
@@ -195,7 +211,7 @@ const translations = {
     "contact.order": "Order Number",
     "contact.subject": "Subject",
     "contact.message": "Message",
-    "contact.consent": 'By clicking Submit, I agree to the <a href="terms.html">Terms of Use</a> and I have read the <a href="privacy.html">Privacy Policy</a>.',
+    "contact.consent": 'By clicking Submit, I acknowledge the <a href="privacy.html">Privacy Policy</a>.',
     "contact.submit": "Submit",
 
     "general.body": `
@@ -396,7 +412,6 @@ const translations = {
     `
   },
   pt: {
-    "menu.general": "Geral",
     "menu.creations": "Criações",
     "menu.contact": "Contacto",
     "menu.lang_en": "EN",
@@ -430,7 +445,7 @@ const translations = {
     "contact.order": "N.º de encomenda",
     "contact.subject": "Assunto",
     "contact.message": "Mensagem",
-    "contact.consent": 'Ao clicar em Submeter, concordo com os <a href="terms.html">Termos de Uso</a> e li a <a href="privacy.html">Política de Privacidade</a>.',
+    "contact.consent": 'Ao clicar em Submeter, reconheço a <a href="privacy.html">Política de Privacidade</a>.',
     "contact.submit": "Submeter",
 
     "general.body": `
@@ -608,7 +623,6 @@ const translations = {
     `
   },
   de: {
-    "menu.general": "Allgemein",
     "menu.creations": "Kreationen",
     "menu.contact": "Kontakt",
     "menu.lang_en": "EN",
@@ -642,7 +656,7 @@ const translations = {
     "contact.order": "Bestellnummer",
     "contact.subject": "Betreff",
     "contact.message": "Nachricht",
-    "contact.consent": 'Mit Senden stimme ich den <a href="terms.html">AGB</a> zu und habe die <a href="privacy.html">Datenschutzrichtlinie</a> gelesen.',
+    "contact.consent": 'Mit Senden bestätige ich die <a href="privacy.html">Datenschutzrichtlinie</a>.',
     "contact.submit": "Senden",
 
     "general.body": `
