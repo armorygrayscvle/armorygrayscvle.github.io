@@ -232,6 +232,7 @@ function initFooterLocale() {
   }
 
   function openMenu() {
+    menu.style.minWidth = `${btn.offsetWidth}px`;
     menu?.classList.add("open");
     btn.setAttribute("aria-expanded", "true");
     options.forEach((opt) => {
