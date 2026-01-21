@@ -30,6 +30,7 @@ body {
   font-family: "EB Garamond", "Cinzel", "Georgia", serif;
   letter-spacing: 0.01em;
   overflow-x: hidden;
+  cursor: url("logowhite.png") 16 16, auto;
 }
 
 /* HOME — CHROME HEARTS INSPIRED */
