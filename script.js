@@ -184,7 +184,6 @@ function ensureFooterNav() {
     <span class="footer-locale-wrapper">
       <button id="footer-locale" class="footer-locale" type="button">EN</button>
       <div id="footer-locale-menu" class="footer-locale-menu">
-        <button type="button" data-locale="en">EN</button>
         <button type="button" data-locale="de">DE</button>
         <button type="button" data-locale="pt">PT</button>
       </div>
@@ -232,7 +231,7 @@ function initFooterLocale() {
     menu?.classList.add("open");
     options.forEach((opt) => {
       const loc = opt.dataset.locale;
-      opt.hidden = loc === current;
+      opt.hidden = false;
       opt.textContent = loc.toUpperCase();
     });
   }
