@@ -690,7 +690,10 @@ a {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: #000;
+  background-image: url("HERO.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -704,7 +707,13 @@ a {
 }
 
 .ch-hero::after {
-  display: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: grayscale(25%) saturate(70%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-overlay {
