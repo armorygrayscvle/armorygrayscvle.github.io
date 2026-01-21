@@ -856,7 +856,7 @@ body.page-fading #main-content {
   margin: 0;
   position: absolute;
   left: 50%;
-  bottom: 80px;
+  bottom: 70px;
   transform: translateX(-50%);
   width: calc(100% - 40px);
 }
