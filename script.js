@@ -222,6 +222,10 @@ function initFooterLocale() {
   const wrapper = btn?.closest(".footer-locale-wrapper");
   if (!btn) return;
   if (!menu) return;
+  const desiredLocales = ["pt", "de"];
+  menu.innerHTML = desiredLocales
+    .map((loc) => `<button type="button" class="footer-locale-option" data-locale="${loc}">${loc.toUpperCase()}</button>`)
+    .join("");
   btn.setAttribute("aria-haspopup", "true");
   btn.setAttribute("aria-expanded", "false");
   menu.setAttribute("role", "menu");
