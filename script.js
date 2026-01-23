@@ -1132,14 +1132,8 @@ function rewriteLocaleLinks(lang = "en") {
 }
 
 function enforceLocaleOnLoad() {
-  const saved = getSavedLocale();
-  if (!saved) return;
-  const current = getCurrentLocaleFromPage();
-  if (saved !== current) {
-    const base = getBasePageName();
-    if (!localePathExists(base)) return;
-    window.location.replace(buildLocaleHref(saved));
-  }
+  // In-place translation only — no folder redirects
+  return;
 }
 
 enforceLocaleOnLoad();
@@ -1161,12 +1155,6 @@ function handleLocaleSwitch(targetLocale = "en") {
   }
   updateLocaleButtons(lang);
   try {
-    rewriteLocaleLinks(lang);
-    const base = getBasePageName();
-    if (localePathExists(base)) {
-      window.location.replace(resolveLocaleHref(base, lang));
-      return;
-    }
     if (window.i18n && typeof window.i18n.setLang === "function") {
       window.i18n.setLang(lang);
     } else {
