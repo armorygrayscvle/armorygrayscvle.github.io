@@ -1132,8 +1132,14 @@ function rewriteLocaleLinks(lang = "en") {
 }
 
 function enforceLocaleOnLoad() {
-  // No page redirection; translations are applied in-place
-  return;
+  const saved = getSavedLocale();
+  if (!saved) return;
+  const current = getCurrentLocaleFromPage();
+  if (saved !== current) {
+    const base = getBasePageName();
+    if (!localePathExists(base)) return;
+    window.location.replace(buildLocaleHref(saved));
+  }
 }
 
 enforceLocaleOnLoad();
@@ -1155,6 +1161,12 @@ function handleLocaleSwitch(targetLocale = "en") {
   }
   updateLocaleButtons(lang);
   try {
+    rewriteLocaleLinks(lang);
+    const base = getBasePageName();
+    if (localePathExists(base)) {
+      window.location.replace(resolveLocaleHref(base, lang));
+      return;
+    }
     if (window.i18n && typeof window.i18n.setLang === "function") {
       window.i18n.setLang(lang);
     } else {
@@ -1167,6 +1179,7 @@ function handleLocaleSwitch(targetLocale = "en") {
 
 const initialLocale = getSavedLocale() || getCurrentLocaleFromPage() || "en";
 updateLocaleButtons(initialLocale);
+rewriteLocaleLinks(initialLocale);
 applyTranslations(initialLocale);
 
 if (localeButtons.length) {
