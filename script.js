@@ -389,16 +389,12 @@ const LOCALE_KEY = "preferredLocale";
 const LOCALE_PAGES = [
   "index",
   "creations",
-  "privacy",
   "contact",
-  "login",
   "cart",
+  "login",
+  "privacy",
   "terms",
-  "general",
-  "checkout",
-  "product",
-  "saved",
-  "404"
+  "general"
 ];
 const LEGACY_REDIRECTS = {};
 const translations = {
