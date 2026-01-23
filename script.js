@@ -29,6 +29,16 @@ window.addEventListener("beforeunload", resetScroll);
   }
 })();
 
+// Load i18n helper once
+(function loadI18n() {
+  if (window.__i18nLoaded) return;
+  const s = document.createElement("script");
+  s.src = "/assets/js/i18n.js";
+  s.defer = true;
+  document.head.appendChild(s);
+  window.__i18nLoaded = true;
+})();
+
 // Force stylesheet cache-bust with explicit version
 (function bumpStylesheet() {
   const styleEl = document.getElementById("site-style");
@@ -196,18 +206,18 @@ function ensureFooterNav() {
   const footer = document.createElement("div");
   footer.className = "footer-nav-right";
   footer.innerHTML = `
-    <a href="index.html">HOME</a> ·
-    <a href="creations.html">CREATIONS</a> ·
-    <a href="cart.html">CART</a> ·
-    <a href="contact.html">CONTACT</a> ·
-    <a href="login.html">LOGIN</a> ·
-    <a href="privacy.html">PRIVACY</a> ·
+    <a href="index.html" data-i18n="nav.home">HOME</a> ·
+    <a href="creations.html" data-i18n="nav.creations">CREATIONS</a> ·
+    <a href="cart.html" data-i18n="nav.cart">CART</a> ·
+    <a href="contact.html" data-i18n="nav.contact">CONTACT</a> ·
+    <a href="login.html" data-i18n="nav.login">LOGIN</a> ·
+    <a href="privacy.html" data-i18n="nav.privacy">PRIVACY</a> ·
     <a href="https://instagram.com/armorygrayscvle" target="_blank" rel="noopener noreferrer">IG</a> ·
     <span class="footer-locale-wrapper">
-      <button id="footer-locale" class="footer-locale" type="button">EN</button>
+      <button id="footer-locale" class="footer-locale" type="button" data-lang="en" data-i18n="menu.lang_en">EN</button>
       <div id="footer-locale-menu" class="footer-locale-menu">
-        <button type="button" data-locale="pt">PT</button>
-        <button type="button" data-locale="de">DE</button>
+        <button type="button" data-locale="pt" data-lang="pt" data-i18n="menu.lang_pt">PT</button>
+        <button type="button" data-locale="de" data-lang="de" data-i18n="menu.lang_de">DE</button>
       </div>
     </span>
   `;
@@ -254,9 +264,9 @@ function initFooterLocale() {
   const wrapper = btn?.closest(".footer-locale-wrapper");
   if (!btn) return;
   if (!menu) return;
-  const desiredLocales = ["en", "pt", "de"];
+  const desiredLocales = ["pt", "de"];
   menu.innerHTML = desiredLocales
-    .map((loc) => `<button type="button" class="footer-locale-option" data-locale="${loc}">${loc.toUpperCase()}</button>`)
+    .map((loc) => `<button type="button" class="footer-locale-option" data-locale="${loc}" data-lang="${loc}" data-i18n="menu.lang_${loc}">${loc.toUpperCase()}</button>`)
     .join("");
   btn.setAttribute("aria-haspopup", "true");
   btn.setAttribute("aria-expanded", "false");
@@ -399,6 +409,14 @@ const LOCALE_PAGES = [
 const LEGACY_REDIRECTS = {};
 const translations = {
   en: {
+    "nav.home": "Home",
+    "nav.creations": "Creations",
+    "nav.cart": "Cart",
+    "nav.contact": "Contact",
+    "nav.login": "Login",
+    "nav.privacy": "Privacy",
+    "nav.terms": "Terms",
+    "nav.general": "General",
     "menu.creations": "Creations",
     "menu.contact": "Contact",
     "menu.lang_en": "EN",
@@ -633,6 +651,14 @@ const translations = {
     `
   },
   pt: {
+    "nav.home": "Home",
+    "nav.creations": "Criações",
+    "nav.cart": "Saco",
+    "nav.contact": "Contacto",
+    "nav.login": "Login",
+    "nav.privacy": "Privacidade",
+    "nav.terms": "Termos",
+    "nav.general": "Geral",
     "menu.creations": "Criações",
     "menu.contact": "Contacto",
     "menu.lang_en": "EN",
@@ -844,6 +870,14 @@ const translations = {
     `
   },
   de: {
+    "nav.home": "Home",
+    "nav.creations": "Kreationen",
+    "nav.cart": "Tasche",
+    "nav.contact": "Kontakt",
+    "nav.login": "Login",
+    "nav.privacy": "Datenschutz",
+    "nav.terms": "AGB",
+    "nav.general": "Allgemein",
     "menu.creations": "Kreationen",
     "menu.contact": "Kontakt",
     "menu.lang_en": "EN",
@@ -1098,14 +1132,8 @@ function rewriteLocaleLinks(lang = "en") {
 }
 
 function enforceLocaleOnLoad() {
-  const saved = getSavedLocale();
-  if (!saved) return;
-  const current = getCurrentLocaleFromPage();
-  if (saved !== current) {
-    const base = getBasePageName();
-    if (!localePathExists(base)) return;
-    window.location.replace(buildLocaleHref(saved));
-  }
+  // No page redirection; translations are applied in-place
+  return;
 }
 
 enforceLocaleOnLoad();
@@ -1126,28 +1154,19 @@ function handleLocaleSwitch(targetLocale = "en") {
     /* ignore */
   }
   updateLocaleButtons(lang);
-  rewriteLocaleLinks(lang);
-
-  if (hasLocalePair()) {
-    const current = getCurrentLocaleFromPage();
-    if (current !== lang) {
-      const base = getBasePageName();
-      if (localePathExists(base)) {
-        window.location.replace(resolveLocaleHref(base, lang));
-      } else {
-        // stay on the current page if the target does not exist
-      }
-      return;
+  try {
+    if (window.i18n && typeof window.i18n.setLang === "function") {
+      window.i18n.setLang(lang);
+    } else {
+      applyTranslations(lang);
     }
-    // Already on the correct language page: reload to ensure consistent copy.
-    window.location.reload();
-    return;
+  } catch (err) {
+    applyTranslations(lang);
   }
 }
 
 const initialLocale = getSavedLocale() || getCurrentLocaleFromPage() || "en";
 updateLocaleButtons(initialLocale);
-rewriteLocaleLinks(initialLocale);
 applyTranslations(initialLocale);
 
 if (localeButtons.length) {
