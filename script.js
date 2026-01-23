@@ -244,6 +244,10 @@ function resolveLocaleHref(base, locale) {
   return buildLocaleHref(targetBase, locale);
 }
 
+function localePathExists(base) {
+  return LOCALE_PAGES.includes(base);
+}
+
 function initFooterLocale() {
   const btn = document.getElementById("footer-locale");
   const menu = document.getElementById("footer-locale-menu");
@@ -382,7 +386,7 @@ document.addEventListener("DOMContentLoaded", initPageFade);
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
-const LOCALE_PAGES = ["index", "creations", "privacy", "contact", "login", "cart"];
+const LOCALE_PAGES = ["index", "creations", "privacy", "contact", "login", "cart", "terms", "general"];
 const LEGACY_REDIRECTS = {};
 const translations = {
   en: {
@@ -1069,6 +1073,7 @@ function rewriteHrefForLocale(href = "", lang = "en") {
   const normalized = path.replace(/^\/(en|pt|de)\//i, "/").replace(/-(pt|de)(?=\.html$)/i, ".html");
   const match = normalized.match(/^\/?([a-z0-9_-]+)\.html$/i);
   const base = match ? match[1].toLowerCase() : "index";
+  if (!localePathExists(base)) return href;
   const newPath = `/${lang}/${base}.html${query ? `?${query}` : ""}`;
   return hash ? `${newPath}#${hash}` : newPath;
 }
@@ -1088,6 +1093,8 @@ function enforceLocaleOnLoad() {
   if (!saved) return;
   const current = getCurrentLocaleFromPage();
   if (saved !== current) {
+    const base = getBasePageName();
+    if (!localePathExists(base)) return;
     window.location.replace(buildLocaleHref(saved));
   }
 }
@@ -1115,7 +1122,12 @@ function handleLocaleSwitch(targetLocale = "en") {
   if (hasLocalePair()) {
     const current = getCurrentLocaleFromPage();
     if (current !== lang) {
-      window.location.replace(resolveLocaleHref(getBasePageName(), lang));
+      const base = getBasePageName();
+      if (localePathExists(base)) {
+        window.location.replace(resolveLocaleHref(base, lang));
+      } else {
+        // stay on the current page if the target does not exist
+      }
       return;
     }
     // Already on the correct language page: reload to ensure consistent copy.
