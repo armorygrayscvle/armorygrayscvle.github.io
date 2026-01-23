@@ -254,7 +254,7 @@ function initFooterLocale() {
   const wrapper = btn?.closest(".footer-locale-wrapper");
   if (!btn) return;
   if (!menu) return;
-  const desiredLocales = ["pt", "de"];
+  const desiredLocales = ["en", "pt", "de"];
   menu.innerHTML = desiredLocales
     .map((loc) => `<button type="button" class="footer-locale-option" data-locale="${loc}">${loc.toUpperCase()}</button>`)
     .join("");
@@ -386,7 +386,20 @@ document.addEventListener("DOMContentLoaded", initPageFade);
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
-const LOCALE_PAGES = ["index", "creations", "privacy", "contact", "login", "cart", "terms", "general"];
+const LOCALE_PAGES = [
+  "index",
+  "creations",
+  "privacy",
+  "contact",
+  "login",
+  "cart",
+  "terms",
+  "general",
+  "checkout",
+  "product",
+  "saved",
+  "404"
+];
 const LEGACY_REDIRECTS = {};
 const translations = {
   en: {
