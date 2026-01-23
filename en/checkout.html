@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Armory Grayscvle</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#000000">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  
+  <style>
+    a, .ch-header a, .ch-brand, .ch-logo { color: #f7f7f7; text-decoration: none; }
+    .ch-legal-links, .ch-legal-links-ig, .ch-legal-box { background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.3); }
+    .ch-legal-links svg, .ch-legal-links-ig svg { stroke: currentColor; fill: none; }
+  </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href=\"https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Cinzel:wght@400;600&display=swap\" rel=\"stylesheet\">
+<style>
+    :root {
+      --bg: #000;
+      --text: #f4f4f4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+    .info-topbar {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      z-index: 2;
+    }
+    .info-logo {
+      display: inline-flex;
+      align-items: center;
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .info-logo img {
+      height: 46px;
+      width: auto;
+      display: block;
+      filter: brightness(0) saturate(100%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+    }
+    .checkout-shell {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 32px 26px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .checkout-shell h1 {
+      letter-spacing: 0.24em;
+      font-size: 16px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .checkout-shell p {
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      margin-bottom: 22px;
+      color: #dcdcdc;
+    }
+    .checkout-btn {
+      background: #000;
+      color: #f4f4f4;
+      border: 1px solid #f4f4f4;
+      padding: 12px 18px;
+      letter-spacing: 0.22em;
+      font-size: 11px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+    .checkout-btn:hover,
+    .checkout-btn:focus-visible {
+      opacity: 0.85;
+      border-color: #fff;
+    }
+    .simple-link {
+      color: #f4f4f4;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      padding-bottom: 2px;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 900px) {
+      .info-topbar {
+        top: 18px;
+        left: 14px;
+      }
+      .info-logo img {
+        height: 40px;
+      }
+    }
+    @media (max-width: 600px) {
+      .info-logo img {
+        height: 36px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+</head>
+<body>
+  <div class="info-topbar">
+    <a class="info-logo info-logo-dark" href="index.html" aria-label="Back to home">
+      <img src="/logowhite.png" alt="Armory Grayscvle logo">
+    </a>
+  </div>
+
+  <div class="checkout-shell">
+    <h1>Checkout</h1>
+    <p>Minimal, secure checkout in black and white. You can review your cart before confirming.</p>
+    <p>Shipping: EU member states only. Orders to other countries are blocked.</p>
+    <p>Prices shown include VAT where applicable; tax is not added twice at checkout.</p>
+    <button class="snipcart-checkout checkout-btn" type="button">Open Checkout</button>
+    <p>
+      <a class="simple-link" href="index.html">Continue Shopping</a>
+      <br>
+      <span class="simple-link">Returns &amp; Exchanges</span>
+    </p>
+  </div>
+<script>
+    (function autoOpen(attempt = 0) {
+      const maxAttempts = 30;
+      if (window.Snipcart?.api?.theme?.cart?.open) {
+        window.Snipcart.api.theme.cart.open();
+      } else if (attempt < maxAttempts) {
+        setTimeout(() => autoOpen(attempt + 1), 400);
+      }
+    })();
+  </script>
+<div id="snipcart" hidden
+    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
+    data-config-modal-style="side"
+    data-currency="eur"
+  ></div>
+  <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Longline Coat / Ink",
+    "description": "Dropped shoulder, extended hem, matte hardware. Wool blend with soft drape.",
+    "price": "EUR 720",
+    "images": [
+      "grayscvlepic5.jpg",
+      "grayscvlepic2.jpg"
+    ]
+  },
+  {
+    "name": "Structured Jacket / Obsidian",
+    "description": "Clean lapel, hidden closures, articulated sleeves. Minimal sheen, tailored fit.",
+    "price": "EUR 540",
+    "images": [
+      "grayscvlepic5.jpg",
+      "grayscvlepic6.jpg"
+    ]
+  },
+  {
+    "name": "Layered Set / Smoke",
+    "description": "Lightweight shell over tonal base, split hem detailing, quiet movement.",
+    "price": "EUR 460",
+    "images": [
+      "grayscvlepic4.jpg",
+      "grayscvlepic6.jpg"
+    ]
+  }
+]
