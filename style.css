@@ -162,12 +162,11 @@ body.home {
   color: #f7f7f7;
 }
 
-.page-cart .footer-locale-menu {
-  background: rgba(0, 0, 0, 0.7);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
+.page-cart .footer-locale-menu,
 .page-cart .footer-locale-option {
+  background: transparent;
+  border: none;
+  box-shadow: none;
   color: #f7f7f7;
 }
 
@@ -177,12 +176,11 @@ body.home {
   color: #f7f7f7;
 }
 
-.page-contact .footer-locale-menu {
-  background: rgba(0, 0, 0, 0.7);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
+.page-contact .footer-locale-menu,
 .page-contact .footer-locale-option {
+  background: transparent;
+  border: none;
+  box-shadow: none;
   color: #f7f7f7;
 }
 
@@ -192,12 +190,11 @@ body.home {
   color: #f7f7f7;
 }
 
-.page-login .footer-locale-menu {
-  background: rgba(0, 0, 0, 0.7);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
+.page-login .footer-locale-menu,
 .page-login .footer-locale-option {
+  background: transparent;
+  border: none;
+  box-shadow: none;
   color: #f7f7f7;
 }
 
