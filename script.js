@@ -249,7 +249,6 @@ function initFooterLocale() {
     menu.setAttribute("aria-hidden", "false");
     options.forEach((opt) => {
       const loc = opt.dataset.locale;
-      opt.hidden = loc === current;
       opt.textContent = loc.toUpperCase();
     });
   }
