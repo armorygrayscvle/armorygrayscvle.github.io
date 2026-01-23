@@ -216,6 +216,13 @@ function buildLocaleHref(base, locale) {
   return `${base}${suffix}.html`;
 }
 
+function resolveLocaleHref(base, locale) {
+  if (LOCALE_PAGES.includes(base)) {
+    return buildLocaleHref(base, locale);
+  }
+  return locale === "pt" ? "index-pt.html" : locale === "de" ? "index-de.html" : "index.html";
+}
+
 function initFooterLocale() {
   const btn = document.getElementById("footer-locale");
   const menu = document.getElementById("footer-locale-menu");
@@ -282,7 +289,7 @@ function initFooterLocale() {
         closeMenu();
         return;
       }
-      const target = buildLocaleHref(base, targetLoc);
+      const target = resolveLocaleHref(base, targetLoc);
       closeMenu();
       window.location.href = target;
     });
@@ -294,7 +301,7 @@ function initFooterLocale() {
         return;
       }
       closeMenu();
-      window.location.href = buildLocaleHref(base, targetLoc);
+      window.location.href = resolveLocaleHref(base, targetLoc);
     }, { passive: true });
     opt.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMenu();
@@ -1097,7 +1104,7 @@ function handleLocaleSwitch(targetLocale = "en") {
   if (hasLocalePair()) {
     const current = getCurrentLocaleFromPage();
     if (current !== lang) {
-      window.location.replace(buildLocaleHref(lang));
+      window.location.replace(resolveLocaleHref(getBasePageName(), lang));
       return;
     }
     // Already on the correct language page: reload to ensure consistent copy.
