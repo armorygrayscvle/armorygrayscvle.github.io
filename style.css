@@ -98,7 +98,7 @@ body.home {
 .global-brand {
   position: fixed;
   left: 22px;
-  bottom: 60px;
+  bottom: 22px;
   transform: none;
   display: inline-flex;
   align-items: center;
@@ -848,7 +848,7 @@ a {
 #loader h1 {
   position: fixed;
   left: 22px;
-  bottom: 60px;
+  bottom: 22px;
   transform: none;
   display: inline-flex;
   align-items: center;
