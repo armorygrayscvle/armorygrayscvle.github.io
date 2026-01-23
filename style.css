@@ -212,10 +212,14 @@ body.home {
 
 .footer-locale-wrapper {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
 }
 
 .footer-locale {
+  display: inline-flex;
+  align-items: baseline;
   background: transparent;
   border: none;
   color: #f7f7f7;
@@ -226,6 +230,8 @@ body.home {
   cursor: pointer;
   padding: 0;
   margin: 0;
+  line-height: 1;
+  vertical-align: baseline;
 }
 
 .footer-locale:hover,
@@ -1702,6 +1708,14 @@ body.page-fading #main-content {
   top: 28px;
   left: 28px;
   z-index: 2;
+}
+
+.creations-page .info-topbar,
+.login-page .info-topbar,
+.privacy-page .info-topbar,
+.cart-page .info-topbar,
+.contact-page .info-topbar {
+  display: none;
 }
 
 .info-logo {
