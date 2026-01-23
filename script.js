@@ -320,9 +320,11 @@ function initFooterLocale() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+if (document.readyState !== "loading") {
   initFooterLocale();
-});
+} else {
+  document.addEventListener("DOMContentLoaded", initFooterLocale);
+}
 
 function shouldFadeLink(a) {
   const href = a.getAttribute("href") || "";
