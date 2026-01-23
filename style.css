@@ -130,6 +130,7 @@ body.home {
   color: #f7f7f7;
   pointer-events: none;
   z-index: 220;
+  display: inline-flex;
 }
 
 .brand-lockup,
