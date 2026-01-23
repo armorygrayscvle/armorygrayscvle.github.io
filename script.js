@@ -187,8 +187,8 @@ function ensureFooterNav() {
     <span class="footer-locale-wrapper">
       <button id="footer-locale" class="footer-locale" type="button">EN</button>
       <div id="footer-locale-menu" class="footer-locale-menu">
-        <button type="button" data-locale="de">DE</button>
         <button type="button" data-locale="pt">PT</button>
+        <button type="button" data-locale="de">DE</button>
       </div>
     </span>
   `;
@@ -222,20 +222,27 @@ function initFooterLocale() {
   const wrapper = btn?.closest(".footer-locale-wrapper");
   if (!btn) return;
   if (!menu) return;
+  btn.setAttribute("aria-haspopup", "true");
+  btn.setAttribute("aria-expanded", "false");
+  menu.setAttribute("role", "menu");
   let current = getLocaleFromPath();
   btn.textContent = current.toUpperCase();
   const base = getBaseFromPath();
   const options = Array.from(menu.querySelectorAll("button[data-locale]"));
+  options.forEach((opt) => opt.setAttribute("role", "menuitem"));
+  menu.setAttribute("aria-hidden", "true");
 
   function closeMenu() {
     menu?.classList.remove("open");
     btn.setAttribute("aria-expanded", "false");
+    menu.setAttribute("aria-hidden", "true");
   }
 
   function openMenu() {
     menu.style.minWidth = `${btn.offsetWidth}px`;
     menu?.classList.add("open");
     btn.setAttribute("aria-expanded", "true");
+    menu.setAttribute("aria-hidden", "false");
     options.forEach((opt) => {
       const loc = opt.dataset.locale;
       opt.hidden = loc === current;
@@ -255,6 +262,14 @@ function initFooterLocale() {
   const toggleHandler = (e) => toggleMenu(e);
   btn.addEventListener("click", toggleHandler);
   btn.addEventListener("touchstart", toggleHandler, { passive: true });
+  btn.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleMenu(e);
+    } else if (e.key === "Escape") {
+      closeMenu();
+    }
+  });
 
   options.forEach((opt) => {
     opt.addEventListener("click", (e) => {
@@ -278,6 +293,9 @@ function initFooterLocale() {
       closeMenu();
       window.location.href = buildLocaleHref(base, targetLoc);
     }, { passive: true });
+    opt.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
   });
 
   const outsideClose = (e) => {
@@ -287,6 +305,9 @@ function initFooterLocale() {
 
   document.addEventListener("click", outsideClose);
   document.addEventListener("touchstart", outsideClose, { passive: true });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
