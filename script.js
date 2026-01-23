@@ -161,7 +161,11 @@ function ensureGlobalBrand() {
     loaderTitle.className = "global-brand";
     loaderTitle.innerHTML = BRAND_HTML;
   }
-  if (!document.querySelector(".global-brand.sticky-brand")) {
+  const existingSticky = document.querySelector(".global-brand.sticky-brand");
+  if (existingSticky) {
+    existingSticky.className = "global-brand sticky-brand";
+    existingSticky.innerHTML = BRAND_HTML;
+  } else {
     const brand = document.createElement("div");
     brand.className = "global-brand sticky-brand";
     brand.innerHTML = BRAND_HTML;
