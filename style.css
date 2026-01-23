@@ -114,6 +114,24 @@ body.home {
   z-index: 200;
 }
 
+/* Lock homepage brand placement to mirror loader */
+.home .global-brand.sticky-brand {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32em;
+  font-size: 19px;
+  letter-spacing: 0.14em;
+  font-family: var(--hero-brand-font);
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #f7f7f7;
+  pointer-events: none;
+  z-index: 220;
+}
+
 .brand-lockup,
 .hero-brand-lockup {
   display: none;
