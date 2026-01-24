@@ -1109,7 +1109,7 @@ function applyTranslations(lang = "en") {
 
 function getSavedLocale() {
   try {
-    return localStorage.getItem(LOCALE_KEY);
+    return localStorage.getItem("siteLang") || localStorage.getItem(LOCALE_KEY);
   } catch (err) {
     return null;
   }
@@ -1180,15 +1180,16 @@ function handleLocaleSwitch(targetLocale = "en") {
   const lang = targetLocale === "pt" ? "pt" : targetLocale === "de" ? "de" : "en";
   try {
     localStorage.setItem(LOCALE_KEY, lang);
+    localStorage.setItem("siteLang", lang);
   } catch (err) {
     /* ignore */
   }
   updateLocaleButtons(lang);
   try {
-    if (window.i18n && typeof window.i18n.setLang === "function") {
-      window.i18n.setLang(lang);
-    } else if (window.__setSiteLang) {
+    if (window.__setSiteLang) {
       window.__setSiteLang(lang);
+    } else if (window.i18n && typeof window.i18n.setLang === "function") {
+      window.i18n.setLang(lang);
     } else {
       applyTranslations(lang);
     }
