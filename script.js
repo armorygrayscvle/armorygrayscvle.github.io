@@ -39,6 +39,16 @@ window.addEventListener("beforeunload", resetScroll);
   window.__i18nLoaded = true;
 })();
 
+// Load site-wide text-node translator once
+(function loadSiteTranslator() {
+  if (window.__siteTranslateLoaded) return;
+  const s = document.createElement("script");
+  s.src = "/assets/js/site-translate.js";
+  s.defer = true;
+  document.head.appendChild(s);
+  window.__siteTranslateLoaded = true;
+})();
+
 // Force stylesheet cache-bust with explicit version
 (function bumpStylesheet() {
   const styleEl = document.getElementById("site-style");
@@ -1177,6 +1187,8 @@ function handleLocaleSwitch(targetLocale = "en") {
   try {
     if (window.i18n && typeof window.i18n.setLang === "function") {
       window.i18n.setLang(lang);
+    } else if (window.__setSiteLang) {
+      window.__setSiteLang(lang);
     } else {
       applyTranslations(lang);
     }
