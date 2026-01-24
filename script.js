@@ -1054,26 +1054,46 @@ const translations = {
   }
 };
 
+const MISSING_I18N_KEYS = new Set();
+
 function applyTranslations(lang = "en") {
   const dict = translations[lang] || translations.en;
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    const val = dict[key] || translations.en[key];
-    if (val) el.textContent = val;
+    const hasLangVal = dict && Object.prototype.hasOwnProperty.call(dict, key);
+    const val = hasLangVal ? dict[key] : translations.en[key];
+    if (val) {
+      el.textContent = val;
+    } else if (!MISSING_I18N_KEYS.has(`${lang}:${key}`)) {
+      MISSING_I18N_KEYS.add(`${lang}:${key}`);
+      console.warn(`Missing i18n key for lang=${lang}: ${key}`);
+    }
   });
 
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
     const key = el.getAttribute("data-i18n-html");
-    const val = dict[key] || translations.en[key];
-    if (val) el.innerHTML = val;
+    const hasLangVal = dict && Object.prototype.hasOwnProperty.call(dict, key);
+    const val = hasLangVal ? dict[key] : translations.en[key];
+    if (val) {
+      el.innerHTML = val;
+    } else if (!MISSING_I18N_KEYS.has(`${lang}:${key}`)) {
+      MISSING_I18N_KEYS.add(`${lang}:${key}`);
+      console.warn(`Missing i18n key for lang=${lang}: ${key}`);
+    }
   });
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
-    const val = dict[key] || translations.en[key];
-    if (val) el.placeholder = val;
+    const hasLangVal = dict && Object.prototype.hasOwnProperty.call(dict, key);
+    const val = hasLangVal ? dict[key] : translations.en[key];
+    if (val) {
+      el.placeholder = val;
+    } else if (!MISSING_I18N_KEYS.has(`${lang}:${key}`)) {
+      MISSING_I18N_KEYS.add(`${lang}:${key}`);
+      console.warn(`Missing i18n key for lang=${lang}: ${key}`);
+    }
   });
 }
 
@@ -1167,7 +1187,6 @@ function handleLocaleSwitch(targetLocale = "en") {
 
 const initialLocale = getSavedLocale() || getCurrentLocaleFromPage() || "en";
 updateLocaleButtons(initialLocale);
-rewriteLocaleLinks(initialLocale);
 applyTranslations(initialLocale);
 
 if (localeButtons.length) {
