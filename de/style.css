@@ -596,6 +596,88 @@ body.home {
   text-align: center;
 }
 
+.home-hero-overlay {
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  max-width: min(860px, 92vw);
+}
+
+.nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--hero-brand-font);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.nav a {
+  color: #f7f7f7;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  opacity: 0.7;
+}
+
+.nav span {
+  opacity: 0.7;
+}
+
+.nav .lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255,255,255,0.35);
+}
+
+.lang .locale-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #f7f7f7;
+  padding: 6px 10px;
+  font-family: "Helvetica Neue", "Inter", Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.lang .locale-btn:hover,
+.lang .locale-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.lang .locale-btn.locale-active,
+.lang .locale-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-headline {
+  font-family: "Cinzel", "EB Garamond", serif;
+  font-size: clamp(34px, 7vw, 74px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f7f7f7;
+}
+
+.hero-subtitle {
+  font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
+  font-size: clamp(15px, 3vw, 20px);
+  letter-spacing: 0.06em;
+  color: #f2f2f2;
+  margin: 0;
+}
+
 .ch-hero-wordmark {
   font-family: "Cinzel", "EB Garamond", serif;
   font-size: clamp(40px, 6vw, 74px);

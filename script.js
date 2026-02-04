@@ -419,12 +419,15 @@ const LOCALE_PAGES = [
 const LEGACY_REDIRECTS = {};
 const translations = {
   en: {
-    "nav.home": "Home",
-    "nav.creations": "Creations",
-    "nav.cart": "Cart",
-    "nav.contact": "Contact",
-    "nav.login": "Login",
-    "nav.privacy": "Privacy",
+    "home.title": "OWN LESS. MEAN MORE.",
+    "home.subtitle": "Handmade limited-run pieces.",
+
+    "nav.home": "HOME",
+    "nav.creations": "CREATIONS",
+    "nav.cart": "CART",
+    "nav.contact": "CONTACT",
+    "nav.login": "LOGIN",
+    "nav.privacy": "PRIVACY",
     "nav.terms": "Terms",
     "nav.general": "General",
     "menu.creations": "Creations",
@@ -661,12 +664,15 @@ const translations = {
     `
   },
   pt: {
-    "nav.home": "Home",
-    "nav.creations": "Criações",
-    "nav.cart": "Saco",
-    "nav.contact": "Contacto",
-    "nav.login": "Login",
-    "nav.privacy": "Privacidade",
+    "home.title": "POSSUI MENOS. SIGNIFICA MAIS.",
+    "home.subtitle": "Peças artesanais em edição limitada.",
+
+    "nav.home": "HOME",
+    "nav.creations": "CRIAÇÕES",
+    "nav.cart": "CARRINHO",
+    "nav.contact": "CONTACTO",
+    "nav.login": "ENTRAR",
+    "nav.privacy": "PRIVACIDADE",
     "nav.terms": "Termos",
     "nav.general": "Geral",
     "menu.creations": "Criações",
@@ -880,12 +886,15 @@ const translations = {
     `
   },
   de: {
-    "nav.home": "Home",
-    "nav.creations": "Kreationen",
-    "nav.cart": "Tasche",
-    "nav.contact": "Kontakt",
-    "nav.login": "Login",
-    "nav.privacy": "Datenschutz",
+    "home.title": "WENIGER BESITZEN. MEHR BEDEUTEN.",
+    "home.subtitle": "Handgefertigte Stücke in limitierter Auflage.",
+
+    "nav.home": "HOME",
+    "nav.creations": "KREATIONEN",
+    "nav.cart": "WARENKORB",
+    "nav.contact": "KONTAKT",
+    "nav.login": "ANMELDEN",
+    "nav.privacy": "DATENSCHUTZ",
     "nav.terms": "AGB",
     "nav.general": "Allgemein",
     "menu.creations": "Kreationen",
@@ -1173,6 +1182,13 @@ function updateLocaleButtons(lang = "en") {
   localeButtons.forEach((btn) => {
     const btnLocale = btn.getAttribute("data-locale") || "en";
     btn.classList.toggle("locale-active", btnLocale === lang);
+    if (btnLocale === lang) {
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+    } else {
+      btn.classList.remove("active");
+      btn.setAttribute("aria-pressed", "false");
+    }
   });
 }
 

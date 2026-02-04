@@ -1,71 +1,115 @@
-(function () {
-  const STORAGE_KEY = "siteLang";
-  const SUPPORTED = ["en", "pt", "de"];
+// assets/js/i18n.js
+(() => {
+  // 1) TRANSLATIONS (edit/add keys freely)
+  const translations = {
+    en: {
+      nav: {
+        creations: "CREATIONS",
+        cart: "CART",
+        contact: "CONTACT",
+        login: "LOGIN",
+        privacy: "PRIVACY",
+      },
+      home: {
+        title: "OWN LESS. MEAN MORE.",
+        subtitle: "Handmade limited-run pieces.",
+      },
+    },
 
-  function getSaved() {
-    try {
-      const val = localStorage.getItem(STORAGE_KEY);
-      return SUPPORTED.includes(val) ? val : "en";
-    } catch (err) {
-      return "en";
-    }
-  }
+    pt: {
+      nav: {
+        creations: "CRIAÇÕES",
+        cart: "CARRINHO",
+        contact: "CONTACTO",
+        login: "ENTRAR",
+        privacy: "PRIVACIDADE",
+      },
+      home: {
+        title: "POSSUI MENOS. SIGNIFICA MAIS.",
+        subtitle: "Peças artesanais em edição limitada.",
+      },
+    },
 
-  function save(lang) {
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch (err) {
-      /* ignore */
-    }
-  }
+    de: {
+      nav: {
+        creations: "KREATIONEN",
+        cart: "WARENKORB",
+        contact: "KONTAKT",
+        login: "ANMELDEN",
+        privacy: "DATENSCHUTZ",
+      },
+      home: {
+        title: "WENIGER BESITZEN. MEHR BEDEUTEN.",
+        subtitle: "Handgefertigte Stücke in limitierter Auflage.",
+      },
+    },
+  };
 
-  function applyLang(lang) {
-    const target = SUPPORTED.includes(lang) ? lang : "en";
-    document.documentElement.lang = target;
-    if (typeof window.applyTranslations === "function") {
-      window.applyTranslations(target);
-    } else if (window.translations) {
-      // Fallback simple replacer
-      const dict = window.translations[target] || window.translations.en || {};
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        const val = dict[key];
-        if (val) el.textContent = val;
-      });
-      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-        const key = el.getAttribute("data-i18n-placeholder");
-        const val = dict[key];
-        if (val) el.setAttribute("placeholder", val);
-      });
-    }
-  }
+  // 2) HELPERS
+  const get = (obj, path) =>
+    path.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), obj);
 
-  function setLang(lang) {
-    const target = SUPPORTED.includes(lang) ? lang : "en";
-    save(target);
-    applyLang(target);
-    if (typeof window.updateLocaleButtons === "function") {
-      window.updateLocaleButtons(target);
-    }
-  }
+  const applyTranslations = (lang) => {
+    const dict = translations[lang] || translations.en;
 
-  function bindButtons() {
-    document.querySelectorAll("[data-lang]").forEach((btn) => {
-      btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    document.documentElement.lang = lang;
+
+    // Translate text nodes
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const value = get(dict, key);
+      if (typeof value === "string") el.textContent = value;
     });
-  }
 
-  function init() {
-    const lang = getSaved();
-    applyLang(lang);
-    bindButtons();
-  }
+    // Translate placeholders (optional)
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      const value = get(dict, key);
+      if (typeof value === "string") el.setAttribute("placeholder", value);
+    });
 
-  if (document.readyState !== "loading") {
-    init();
-  } else {
-    document.addEventListener("DOMContentLoaded", init);
-  }
+    // Translate titles (optional)
+    document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-title");
+      const value = get(dict, key);
+      if (typeof value === "string") el.setAttribute("title", value);
+    });
 
-  window.i18n = { setLang, applyLang, getSaved };
+    // Mark active language (supports legacy .locale-active)
+    document.querySelectorAll("[data-lang]").forEach((btn) => {
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle("active", isActive);
+      btn.classList.toggle("locale-active", isActive);
+      // If you use <a href=\"#\"> for lang, keep it accessible:
+      btn.setAttribute("aria-current", isActive ? "true" : "false");
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    localStorage.setItem("preferredLang", lang);
+  };
+
+  const setLang = (lang) => {
+    if (!translations[lang]) lang = "en";
+    applyTranslations(lang);
+  };
+
+  // 3) INIT
+  document.addEventListener("DOMContentLoaded", () => {
+    // Click handler (single binding, prevents redirects)
+    document.addEventListener("click", (e) => {
+      const el = e.target.closest("[data-lang]");
+      if (!el) return;
+
+      // Stops <a> navigation if you used <a href=\"...\"
+      e.preventDefault();
+
+      setLang(el.dataset.lang);
+    });
+
+    const saved = localStorage.getItem("preferredLang");
+    setLang(saved || "en");
+  });
+
+  // Optional: expose for debugging
+  window.__setLang = setLang;
 })();

@@ -386,6 +386,14 @@ const LOCALE_PAGES = ["index", "creations", "privacy", "contact", "login", "cart
 const LEGACY_REDIRECTS = {};
 const translations = {
   en: {
+    "home.title": "OWN LESS. MEAN MORE.",
+    "home.subtitle": "Handmade limited-run pieces.",
+
+    "nav.creations": "CREATIONS",
+    "nav.cart": "CART",
+    "nav.contact": "CONTACT",
+    "nav.login": "LOGIN",
+    "nav.privacy": "PRIVACY",
     "menu.creations": "Creations",
     "menu.contact": "Contact",
     "menu.lang_en": "EN",
@@ -620,6 +628,8 @@ const translations = {
     `
   },
   pt: {
+    "home.title": "Ter menos. Significar mais.",
+    "home.subtitle": "Peças artesanais em edições limitadas.",
     "menu.creations": "Criações",
     "menu.contact": "Contacto",
     "menu.lang_en": "EN",
@@ -831,6 +841,8 @@ const translations = {
     `
   },
   de: {
+    "home.title": "Weniger besitzen. Mehr bedeuten.",
+    "home.subtitle": "Handgefertigte Stücke in limitierter Auflage.",
     "menu.creations": "Kreationen",
     "menu.contact": "Kontakt",
     "menu.lang_en": "EN",
@@ -1099,6 +1111,13 @@ function updateLocaleButtons(lang = "en") {
   localeButtons.forEach((btn) => {
     const btnLocale = btn.getAttribute("data-locale") || "en";
     btn.classList.toggle("locale-active", btnLocale === lang);
+    if (btnLocale === lang) {
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+    } else {
+      btn.classList.remove("active");
+      btn.setAttribute("aria-pressed", "false");
+    }
   });
 }
 
