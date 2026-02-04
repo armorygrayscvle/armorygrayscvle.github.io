@@ -1087,9 +1087,11 @@ body.page-fading #main-content {
 
 .privacy-notice {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  width: 100%;
+  max-width: 1200px;
   text-align: center;
   z-index: 20;
   pointer-events: none;
