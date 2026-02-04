@@ -1085,6 +1085,16 @@ body.page-fading #main-content {
   margin: 0 0 80px;
 }
 
+.privacy-notice {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 72px;
+  text-align: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
 .brand-name {
   font-size: 26px;
   letter-spacing: 0;
