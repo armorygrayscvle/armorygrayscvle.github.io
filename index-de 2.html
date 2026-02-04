@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Armory Grayscvle</title>
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#000000">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  
+  <style>
+    a, .ch-header a, .ch-brand, .ch-logo { color: #f7f7f7; text-decoration: none; }
+    .ch-legal-links, .ch-legal-links-ig, .ch-legal-box { background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.3); }
+    .ch-legal-links svg, .ch-legal-links-ig svg { stroke: currentColor; fill: none; }
+  </style>
+
+<style>
+    .ch-header a,
+    .ch-brand {
+      color: #f7f7f7;
+      text-decoration: none;
+    }
+    .ch-brand {
+      display: inline-flex;
+      align-items: center;
+      letter-spacing: 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-family: "Archivo","Archivo Narrow","Helvetica Neue","Inter",Arial,sans-serif;
+    }
+    .ch-brand img {
+      display: block;
+      height: 22px;
+      width: auto;
+      filter: brightness(0) saturate(100%);
+    }
+    .ch-logo img {
+      display: block;
+      height: 46px;
+      width: auto;
+    }
+  </style>
+  <!-- Typeface: Helvetica Neue primary, Inter fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="style.css?v=3" as="style">
+
+  <link id="site-style" rel="stylesheet" href="style.css?v=3">
+  <script>
+    (function() {
+      const cacheBust = String(Date.now());
+      window.__assetCacheBust = cacheBust;
+      const styleEl = document.getElementById("site-style");
+      if (styleEl) {
+        styleEl.href = `style.css?v=${cacheBust}`;
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+</head>
+
+<body class="home">
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <h1 class="brand-lockup">
+      <span class="brand-word brand-word-armory">ARMORY</span>
+      <span class="brand-word brand-word-grayscvle">GRAYSCVLE</span>
+    </h1>
+  </div>
+
+  <!-- HEADER -->
+  <header class="ch-header" aria-label="Seitenkopf">
+    <div class="ch-header-inner">
+      <button class="ch-logo" id="ch-menu-toggle" type="button" aria-label="Menue oeffnen">
+        <img src="/logowhite.png" alt="Armory Grayscvle logo">
+      </button>
+      <a class="ch-brand brand-lockup" href="index-de.html" aria-label="Armory Grayscvle Startseite">
+        <span class="brand-word brand-word-armory">ARMORY</span>
+        <span class="brand-word brand-word-grayscvle">GRAYSCVLE</span>
+      </a>
+      <div class="ch-actions" aria-label="Konto und Tasche">
+        <a class="ch-action-link header-action" href="login-de.html">Anmelden</a>
+        <a class="ch-action-link snipcart-checkout header-action" href="#" aria-label="Shopping bag" data-open-cart>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 8l1 11h8l1-11z"></path>
+            <path d="M9 8a3 3 0 1 1 6 0"></path>
+          </svg>
+          <span>Tasche</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <section class="hero ch-hero" aria-label="Armory Grayscvle hero">
+    </section>
+  </main>
+
+  <div class="ch-legal-links ch-legal-box">
+    <a class="ch-legal-link" href="terms-de.html" data-i18n="legal.terms">AGB</a>
+    <a class="ch-legal-link" href="privacy-de.html" data-i18n="legal.privacy">Datenschutz</a>
+    <span class="ch-legal-copy" data-i18n="legal.copy">© 2026 ARMORY GRAYSCVLE. Alle Rechte vorbehalten.</span>
+  </div>
+
+  <div class="ch-legal-links-ig ch-legal-box">
+    <a href="https://www.instagram.com/armorygrayscvle" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="5" y="5" width="14" height="14" rx="4"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17" cy="7" r="1"></circle>
+      </svg>
+    </a>
+  </div>
+
+  <div class="ch-fab-stack">
+    <a class="fab-btn" href="creations-de.html" style="--fab-delay:0ms" data-i18n="menu.creations">Kreationen</a>
+    <a class="fab-btn" href="general-de.html" style="--fab-delay:120ms" data-i18n="menu.general">Allgemein</a>
+    <a class="fab-btn" href="contact-de.html" style="--fab-delay:240ms" data-i18n="menu.contact">Kontakt</a>
+    <div class="fab-locale">
+      <button class="locale-btn" data-locale="en" type="button" style="--fab-delay:360ms" data-i18n="menu.lang_en">EN</button>
+      <button class="locale-btn" data-locale="pt" type="button" style="--fab-delay:420ms" data-i18n="menu.lang_pt">PT</button>
+      <button class="locale-btn locale-active" data-locale="de" type="button" style="--fab-delay:480ms" data-i18n="menu.lang_de">DE</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const cacheBust = window.__assetCacheBust || String(Date.now());
+      const mainScript = document.createElement("script");
+      mainScript.src = `script.js?v=${cacheBust}`;
+      mainScript.async = false;
+      document.body.appendChild(mainScript);
+    })();
+  </script>
+<div id="snipcart" hidden
+    data-api-key="YjUyZGQ5ZmEtYzA1MC00YTBhLTliNGItNWFhY2FlNTZmYTUzNjM5MDEyMjgzOTUxMjUwNjQx"
+    data-config-modal-style="side"
+    data-currency="eur"
+  ></div>
+  <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+</body>
+</html>
