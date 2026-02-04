@@ -1065,8 +1065,9 @@ body.page-fading #main-content {
 .minimal-main {
   min-height: 100vh;
   display: flex;
-  align-items: stretch;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   padding: 0 20px 140px;
   background: transparent;
   position: relative;
@@ -1081,11 +1082,7 @@ body.page-fading #main-content {
   text-align: center;
   max-width: 960px;
   width: calc(100% - 40px);
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  bottom: 100px;
-  transform: translateX(-50%);
+  margin: 0 0 80px;
 }
 
 .brand-name {
