@@ -3278,6 +3278,9 @@ body.page-fading #main-content {
 .product-page header,
 .product-page .site-header,
 .product-page .header-icons,
-.product-page .logo {
+.product-page .logo,
+.product-page .info-topbar,
+.product-page .utility-header,
+.product-page .utility-actions {
   display: none !important;
 }
