@@ -152,6 +152,11 @@ body.home {
   flex-wrap: nowrap;
   text-align: right;
   z-index: 140;
+  font-family: var(--hero-brand-font);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .footer-nav-right a {
