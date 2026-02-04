@@ -29,25 +29,7 @@ window.addEventListener("beforeunload", resetScroll);
   }
 })();
 
-// Load i18n helper once
-(function loadI18n() {
-  if (window.__i18nLoaded) return;
-  const s = document.createElement("script");
-  s.src = "/assets/js/i18n.js";
-  s.defer = true;
-  document.head.appendChild(s);
-  window.__i18nLoaded = true;
-})();
-
-// Load site-wide text-node translator once
-(function loadSiteTranslator() {
-  if (window.__siteTranslateLoaded) return;
-  const s = document.createElement("script");
-  s.src = "/assets/js/site-translate.js";
-  s.defer = true;
-  document.head.appendChild(s);
-  window.__siteTranslateLoaded = true;
-})();
+// (Languages removed: EN-only)
 
 // Force stylesheet cache-bust with explicit version
 (function bumpStylesheet() {
