@@ -603,6 +603,14 @@ body.home {
   max-width: min(860px, 92vw);
 }
 
+.home .home-hero-overlay {
+  display: none;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
 .nav {
   display: inline-flex;
   align-items: center;
