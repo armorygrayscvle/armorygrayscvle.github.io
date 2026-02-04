@@ -403,6 +403,17 @@ function initPageFade() {
 }
 
 document.addEventListener("DOMContentLoaded", initPageFade);
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  if (!body) return;
+  body.classList.add("page-entering");
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      body.classList.add("page-fade-ready");
+      body.classList.remove("page-entering");
+    });
+  });
+});
 
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");

@@ -997,15 +997,19 @@ body.skip-loader #main-content {
 /* MAIN CONTENT */
 #main-content {
   opacity: 0;
-  transition: opacity 1.8s ease;
+  transition: opacity 0.45s ease;
   min-height: auto;
   padding: 0 var(--edge-pad) 0;
   overflow-x: hidden;
   background: transparent;
 }
 
+body.page-entering #main-content {
+  opacity: 0;
+}
+
 body.page-fade-ready #main-content {
-  transition: opacity 0.6s ease;
+  opacity: 1;
 }
 
 body.page-fading #main-content {
