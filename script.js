@@ -1779,7 +1779,13 @@ function bindCartLiveUpdates() {
 }
 
 /* PRODUCTS */
-const STORE_BASE_URL = "https://armorygrayscvle.com/";
+const STORE_BASE_URL = (() => {
+  try {
+    return window.location.origin || "https://armorygrayscvle.com";
+  } catch (e) {
+    return "https://armorygrayscvle.com";
+  }
+})();
 
 function buildStoreUrl(path = "/") {
   try {
