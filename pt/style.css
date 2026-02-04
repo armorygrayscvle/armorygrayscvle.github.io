@@ -3272,3 +3272,11 @@ body.page-fading #main-content {
 .ch-actions .header-action {
   color: #f8f8f8;
 }
+
+
+.product-page header,
+.product-page .site-header,
+.product-page .header-icons,
+.product-page .logo {
+  display: none !important;
+}
