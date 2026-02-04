@@ -29,6 +29,25 @@ window.addEventListener("beforeunload", resetScroll);
   }
 })();
 
+// Skip loader on internal navigation after first visit
+(function skipLoaderIfReturning() {
+  const KEY = "ag_seen_loader";
+  const hasSeen = (() => {
+    try { return sessionStorage.getItem(KEY); } catch (e) { return null; }
+  })();
+  if (hasSeen) {
+    document.documentElement.classList.add("skip-loader");
+    document.body.classList.add("skip-loader");
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "none";
+    const main = document.getElementById("main-content");
+    if (main) main.style.opacity = "1";
+    document.body.style.overflow = "auto";
+  } else {
+    try { sessionStorage.setItem(KEY, "1"); } catch (e) { /* ignore */ }
+  }
+})();
+
 // (Languages removed: EN-only)
 
 // Force stylesheet cache-bust with explicit version

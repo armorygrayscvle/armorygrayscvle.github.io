@@ -956,6 +956,28 @@ a {
   transition: opacity 1.8s ease;
 }
 
+html.skip-loader #loader,
+body.skip-loader #loader {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+html.skip-loader #main-content,
+body.skip-loader #main-content {
+  opacity: 1 !important;
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: opacity 1.8s ease;
+}
+
 #loader h1 {
   position: fixed;
   left: 22px;
