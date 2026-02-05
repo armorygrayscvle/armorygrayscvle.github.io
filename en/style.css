@@ -2694,6 +2694,73 @@ body.product-page .product-detail-shell {
   margin: 0;
   padding: 0;
 }
+
+/* CREATIONS — runway layout */
+.creations-runway{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.runway-item{
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+}
+
+.runway-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.22));
+  pointer-events:none;
+}
+
+.runway-meta{
+  position: absolute;
+  left: 28px;
+  bottom: 92px;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.runway-item:hover .runway-meta{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.runway-price{
+  opacity: 0.85;
+}
+
+@media (max-width: 900px){
+  .creations-runway{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .runway-meta{
+    bottom: 78px;
+    left: 18px;
+  }
+}
+
+body.creations-page{
+  overflow: hidden;
+}
 /* Mobile — drawer becomes full width */
 @media (max-width: 640px) {
   .snipcart-modal__container {
