@@ -1379,6 +1379,7 @@ body.page-fading {
   margin: 0;
   background: #fff;
   min-height: auto;
+  display: block;
 }
 
 .creations-page .hero.info-hero::after {
@@ -1386,12 +1387,44 @@ body.page-fading {
 }
 
 .creations-page .info-hero-content {
-  width: min(1500px, 96vw);
-  margin: 0 auto;
-  padding: 100px 0 140px;
-  align-content: center;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.creations-grid {
   display: grid;
-  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.creation-card {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.creation-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .creations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .creation-card {
+    height: 80vh;
+  }
 }
 
 .archive-intro {
