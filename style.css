@@ -46,6 +46,10 @@ h6 {
   --site-bg: url("/newhero.jpg");
   --page-fade-duration: 900ms;
   --page-fade-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --product-wall-bg: #000;
+  --product-wall-padding: clamp(18px, 5vw, 56px);
+  --product-caption-color: #a7a7a7;
+  --product-caption-size: 11px;
 }
 
 html,
@@ -2645,28 +2649,36 @@ body.product-page {
   overflow: hidden;
   padding: 0;
   margin: 0;
-  background: #000;
+  background: var(--product-wall-bg, #000);
   color: #f7f7f7;
+  display: flex;
 }
 
 body.product-page #main-content {
   min-height: 100vh;
   padding: 0;
   margin: 0;
+  flex: 1;
 }
 
 .product-full {
+  position: relative;
   width: 100vw;
   height: 100vh;
-}
-
-.product-view {
-  height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: var(--product-wall-padding, 32px);
   box-sizing: border-box;
+}
+
+.product-view {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-view img {
@@ -2676,8 +2688,37 @@ body.product-page #main-content {
   display: block;
 }
 
+.product-caption {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 3vw, 28px);
+  transform: translateX(-50%);
+  font-size: var(--product-caption-size, 11px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--product-caption-color, #a7a7a7);
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
 .product-detail {
   display: none;
+}
+
+@media (max-width: 600px) {
+  body.product-page {
+    background: var(--product-wall-bg, #000);
+  }
+
+  .product-full {
+    padding: clamp(14px, 7vw, 28px);
+  }
+
+  .product-caption {
+    letter-spacing: 0.16em;
+    font-size: 10px;
+  }
 }
 
 /* CREATIONS — runway layout */

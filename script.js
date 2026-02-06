@@ -1442,7 +1442,8 @@ renderProductPage();
 async function renderProductPage() {
   const detail = document.getElementById("product-detail");
   const gallery = document.getElementById("product-gallery");
-  if (!detail && !gallery) return;
+  const caption = document.getElementById("product-caption");
+  if (!detail && !gallery && !caption) return;
 
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
@@ -1477,6 +1478,12 @@ async function renderProductPage() {
       img.src = primaryImage;
       img.alt = product.name || "Product image";
       gallery.appendChild(img);
+    }
+
+    if (caption) {
+      const priceText = product.price || "";
+      const nameText = product.name || "";
+      caption.textContent = [nameText, priceText].filter(Boolean).join(" — ");
     }
 
     if (detail) {
@@ -1531,6 +1538,7 @@ async function renderProductPage() {
       updateSavedIcons();
     }
   } catch (err) {
+    if (caption) caption.textContent = "";
     if (detail) detail.innerHTML = `<p class="products-empty">Product unavailable.</p>`;
   }
 }
