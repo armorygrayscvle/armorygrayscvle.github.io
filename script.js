@@ -387,7 +387,24 @@ function initPageFade() {
   if (!body) return;
   body.classList.add("page-fade-ready");
 
+  function getFadeDurationMs() {
+    const root = document.documentElement;
+    const raw = getComputedStyle(root)
+      .getPropertyValue("--page-fade-duration")
+      .trim()
+      .toLowerCase();
+    if (!raw) return 900;
+    if (raw.endsWith("ms")) return parseFloat(raw);
+    if (raw.endsWith("s")) return parseFloat(raw) * 1000;
+    const numeric = parseFloat(raw);
+    return Number.isFinite(numeric) ? numeric : 900;
+  }
+
+  const fadeDuration = getFadeDurationMs();
+  const fadeDelay = Number.isFinite(fadeDuration) ? fadeDuration : 900;
+
   function handleClick(e) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const anchor = e.target.closest("a");
     if (!anchor) return;
     if (!shouldFadeLink(anchor)) return;
@@ -396,7 +413,7 @@ function initPageFade() {
     const target = anchor.href;
     setTimeout(() => {
       window.location.href = target;
-    }, 320);
+    }, fadeDelay);
   }
 
   document.addEventListener("click", handleClick);

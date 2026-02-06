@@ -44,6 +44,8 @@ h6 {
   --hero-brand-font: "Suisse Intl", "SuisseIntl", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
   --info-bg: url("/newhero.jpg") center / cover no-repeat fixed;
   --site-bg: url("/newhero.jpg");
+  --page-fade-duration: 900ms;
+  --page-fade-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html,
@@ -1010,11 +1012,12 @@ body.skip-loader #main-content {
 /* MAIN CONTENT */
 #main-content {
   opacity: 0;
-  transition: opacity 0.45s ease;
+  transition: opacity var(--page-fade-duration, 0.45s) var(--page-fade-ease, ease);
   min-height: auto;
   padding: 0 var(--edge-pad) 0;
   overflow-x: hidden;
   background: transparent;
+  will-change: opacity;
 }
 
 body.page-entering #main-content {
@@ -1027,6 +1030,10 @@ body.page-fade-ready #main-content {
 
 body.page-fading #main-content {
   opacity: 0 !important;
+}
+
+body.page-fading {
+  pointer-events: none;
 }
 
 /* HERO */
