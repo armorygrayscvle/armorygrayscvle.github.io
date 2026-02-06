@@ -1442,7 +1442,7 @@ renderProductPage();
 async function renderProductPage() {
   const detail = document.getElementById("product-detail");
   const gallery = document.getElementById("product-gallery");
-  if (!detail || !gallery) return;
+  if (!detail && !gallery) return;
 
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
@@ -1471,63 +1471,67 @@ async function renderProductPage() {
       product.image ||
       "";
 
-    gallery.innerHTML = "";
-    const img = document.createElement("img");
-    img.src = primaryImage;
-    img.alt = product.name || "Product image";
-    gallery.appendChild(img);
+    if (gallery) {
+      gallery.innerHTML = "";
+      const img = document.createElement("img");
+      img.src = primaryImage;
+      img.alt = product.name || "Product image";
+      gallery.appendChild(img);
+    }
 
-    detail.innerHTML = "";
-    const title = document.createElement("h1");
-    title.className = "product-detail-title";
-    title.textContent = product.name || "";
+    if (detail) {
+      detail.innerHTML = "";
+      const title = document.createElement("h1");
+      title.className = "product-detail-title";
+      title.textContent = product.name || "";
 
-    const price = document.createElement("p");
-    price.className = "product-detail-price";
-    price.textContent = product.price || "";
+      const price = document.createElement("p");
+      price.className = "product-detail-price";
+      price.textContent = product.price || "";
 
-    const desc = document.createElement("p");
-    desc.className = "product-detail-desc";
-    desc.textContent = product.description || "";
+      const desc = document.createElement("p");
+      desc.className = "product-detail-desc";
+      desc.textContent = product.description || "";
 
-    const actions = document.createElement("div");
-    actions.className = "product-detail-actions";
+      const actions = document.createElement("div");
+      actions.className = "product-detail-actions";
 
-    const addBtn = document.createElement("button");
-    addBtn.className = "snipcart-add-item";
-    addBtn.textContent = "Add to bag";
-    addBtn.setAttribute("data-item-id", itemId);
-    addBtn.setAttribute("data-item-name", product.name || "Product");
-    addBtn.setAttribute("data-item-price", itemPrice);
-    addBtn.setAttribute("data-item-currency", "EUR");
-    addBtn.setAttribute("data-item-url", buildStoreUrl(window.location.pathname || "/"));
-    addBtn.setAttribute("data-item-description", product.description || "");
-    addBtn.setAttribute("data-item-image", primaryImage);
+      const addBtn = document.createElement("button");
+      addBtn.className = "snipcart-add-item";
+      addBtn.textContent = "Add to bag";
+      addBtn.setAttribute("data-item-id", itemId);
+      addBtn.setAttribute("data-item-name", product.name || "Product");
+      addBtn.setAttribute("data-item-price", itemPrice);
+      addBtn.setAttribute("data-item-currency", "EUR");
+      addBtn.setAttribute("data-item-url", buildStoreUrl(window.location.pathname || "/"));
+      addBtn.setAttribute("data-item-description", product.description || "");
+      addBtn.setAttribute("data-item-image", primaryImage);
 
-    const savedBtn = document.createElement("button");
-    savedBtn.type = "button";
-    savedBtn.className = "saved-toggle saved-link";
-    savedBtn.setAttribute("aria-label", "Add to wishlist");
-    savedBtn.setAttribute("data-item-id", itemId);
-    savedBtn.setAttribute("data-item-name", product.name || "");
-    savedBtn.setAttribute("data-item-price", itemPrice);
-    savedBtn.setAttribute("data-item-image", primaryImage);
-    savedBtn.textContent = "Add to wishlist";
-    savedBtn.addEventListener("click", () => {
-      toggleSavedItem({
-        id: itemId,
-        name: product.name || "Saved item",
-        price: product.price || "",
-        numericPrice: itemPrice,
-        image: primaryImage || "",
+      const savedBtn = document.createElement("button");
+      savedBtn.type = "button";
+      savedBtn.className = "saved-toggle saved-link";
+      savedBtn.setAttribute("aria-label", "Add to wishlist");
+      savedBtn.setAttribute("data-item-id", itemId);
+      savedBtn.setAttribute("data-item-name", product.name || "");
+      savedBtn.setAttribute("data-item-price", itemPrice);
+      savedBtn.setAttribute("data-item-image", primaryImage);
+      savedBtn.textContent = "Add to wishlist";
+      savedBtn.addEventListener("click", () => {
+        toggleSavedItem({
+          id: itemId,
+          name: product.name || "Saved item",
+          price: product.price || "",
+          numericPrice: itemPrice,
+          image: primaryImage || "",
+        });
       });
-    });
 
-    actions.append(addBtn, savedBtn);
-    detail.append(title, price, desc, actions);
-    updateSavedIcons();
+      actions.append(addBtn, savedBtn);
+      detail.append(title, price, desc, actions);
+      updateSavedIcons();
+    }
   } catch (err) {
-    detail.innerHTML = `<p class="products-empty">Product unavailable.</p>`;
+    if (detail) detail.innerHTML = `<p class="products-empty">Product unavailable.</p>`;
   }
 }
 
