@@ -197,7 +197,7 @@ function ensureFooterNav() {
   footer.className = "footer-nav-right";
   footer.innerHTML = `
     <a href="index.html">HOME</a> ·
-    <a href="creations.html">CREATIONS</a> ·
+    <a href="catalog.html">CATALOG</a> ·
     <a href="cart.html">CART</a> ·
     <a href="contact.html">CONTACT</a> ·
     <a href="login.html">LOGIN</a> ·
@@ -382,18 +382,18 @@ document.addEventListener("DOMContentLoaded", initPageFade);
 /* LOCALE PICKER */
 const localeButtons = document.querySelectorAll(".locale-btn");
 const LOCALE_KEY = "preferredLocale";
-const LOCALE_PAGES = ["index", "creations", "privacy", "contact", "login", "cart"];
+const LOCALE_PAGES = ["index", "catalog", "privacy", "contact", "login", "cart"];
 const LEGACY_REDIRECTS = {};
 const translations = {
   en: {
     "home.title": "OWN LESS. MEAN MORE.",
     "home.subtitle": "Handmade limited-run pieces.",
-    "nav.creations": "CREATIONS",
+    "nav.catalog": "CATALOG",
     "nav.cart": "CART",
     "nav.contact": "CONTACT",
     "nav.login": "LOGIN",
     "nav.privacy": "PRIVACY",
-    "menu.creations": "Creations",
+    "menu.catalog": "Catalog",
     "menu.contact": "Contact",
     "menu.lang_en": "EN",
     "menu.lang_pt": "PT",
@@ -629,12 +629,12 @@ const translations = {
   pt: {
     "home.title": "POSSUI MENOS. SIGNIFICA MAIS.",
     "home.subtitle": "Peças artesanais em edição limitada.",
-    "nav.creations": "CRIAÇÕES",
+    "nav.catalog": "CATALOG",
     "nav.cart": "CARRINHO",
     "nav.contact": "CONTACTO",
     "nav.login": "ENTRAR",
     "nav.privacy": "PRIVACIDADE",
-    "menu.creations": "Criações",
+    "menu.catalog": "Catalog",
     "menu.contact": "Contacto",
     "menu.lang_en": "EN",
     "menu.lang_pt": "PT",
@@ -847,12 +847,12 @@ const translations = {
   de: {
     "home.title": "WENIGER BESITZEN. MEHR BEDEUTEN.",
     "home.subtitle": "Handgefertigte Stücke in limitierter Auflage.",
-    "nav.creations": "KREATIONEN",
+    "nav.catalog": "CATALOG",
     "nav.cart": "WARENKORB",
     "nav.contact": "KONTAKT",
     "nav.login": "ANMELDEN",
     "nav.privacy": "DATENSCHUTZ",
-    "menu.creations": "Kreationen",
+    "menu.catalog": "Catalog",
     "menu.contact": "Kontakt",
     "menu.lang_en": "EN",
     "menu.lang_pt": "PT",
@@ -1362,7 +1362,7 @@ async function renderProductPage() {
   }
 
   try {
-    const res = await fetch("products.json", { cache: "no-store" });
+    const res = await fetch("/products.json", { cache: "no-store" });
     if (!res.ok) throw new Error("Fetch failed");
     const products = await res.json();
     const product = Array.isArray(products)
@@ -1397,50 +1397,22 @@ async function renderProductPage() {
     price.className = "product-detail-price";
     price.textContent = product.price || "";
 
-    const desc = document.createElement("p");
-    desc.className = "product-detail-desc";
-    desc.textContent = product.description || "";
-
-    const actions = document.createElement("div");
-    actions.className = "product-detail-actions";
-
     const addBtn = document.createElement("button");
     addBtn.className = "snipcart-add-item";
-      addBtn.textContent = "Add to cart";
+    addBtn.textContent = "Add to cart";
     addBtn.setAttribute("data-item-id", itemId);
     addBtn.setAttribute("data-item-name", product.name || "Product");
     addBtn.setAttribute("data-item-price", itemPrice);
     addBtn.setAttribute("data-item-currency", "EUR");
-      addBtn.setAttribute(
-        "data-item-url",
-        buildStoreUrl((window.location.pathname || "/") + (window.location.search || ""))
-      );
-      addBtn.setAttribute("data-item-description", product.description || "");
-      addBtn.setAttribute("data-item-image", itemImage);
+    addBtn.setAttribute(
+      "data-item-url",
+      buildStoreUrl((window.location.pathname || "/") + (window.location.search || ""))
+    );
+    addBtn.setAttribute("data-item-description", product.description || "");
+    addBtn.setAttribute("data-item-image", itemImage);
 
-    const savedBtn = document.createElement("button");
-    savedBtn.type = "button";
-    savedBtn.className = "saved-toggle saved-link";
-    savedBtn.setAttribute("aria-label", "Add to wishlist");
-    savedBtn.setAttribute("data-item-id", itemId);
-    savedBtn.setAttribute("data-item-name", product.name || "");
-      savedBtn.setAttribute("data-item-price", itemPrice);
-      savedBtn.setAttribute("data-item-image", itemImage);
-    savedBtn.textContent = "Add to wishlist";
-    savedBtn.addEventListener("click", () => {
-      toggleSavedItem({
-        id: itemId,
-        name: product.name || "Saved item",
-          price: product.price || "",
-          numericPrice: itemPrice,
-          image: itemImage || "",
-      });
-    });
-
-    actions.append(addBtn, savedBtn);
-      detail.append(title, price, desc, actions);
-      detail.removeAttribute("aria-hidden");
-    updateSavedIcons();
+    detail.append(title, price, addBtn);
+    detail.removeAttribute("aria-hidden");
   } catch (err) {
     detail.innerHTML = `<p class="products-empty">Product unavailable.</p>`;
   }
@@ -1467,7 +1439,7 @@ function renderSavedPage() {
     card.className = "saved-card";
 
     const link = document.createElement("a");
-    link.href = `product.html?id=${item.id}`;
+    link.href = `/product.html?id=${item.id}`;
     link.className = "product-link";
 
     const imgWrap = document.createElement("div");
@@ -1484,7 +1456,7 @@ function renderSavedPage() {
     title.className = "saved-name";
     title.textContent = item.name || "";
     const titleLink = document.createElement("a");
-    titleLink.href = `product.html?id=${item.id}`;
+    titleLink.href = `/product.html?id=${item.id}`;
     titleLink.className = "product-link";
     titleLink.appendChild(title);
     const price = document.createElement("p");
@@ -1739,66 +1711,44 @@ function buildItemId(product) {
   return cleaned || "product";
 }
 
-const productList = document.getElementById("product-list");
+const catalogGrid = document.getElementById("catalog-grid");
 
-async function loadProducts() {
-  if (!productList) return;
+async function renderCatalogGrid() {
+  if (!catalogGrid) return;
 
   try {
-    const res = await fetch("products.json", { cache: "no-store" });
+    const res = await fetch("/products.json", { cache: "no-store" });
     if (!res.ok) throw new Error("Fetch failed");
     const products = await res.json();
 
     if (!Array.isArray(products) || products.length === 0) {
-      productList.innerHTML = `<p class="products-empty">Products will appear here.</p>`;
+      catalogGrid.innerHTML = `<p class="products-empty">Products will appear here.</p>`;
       return;
     }
 
-    productList.innerHTML = "";
+    catalogGrid.innerHTML = "";
     products.forEach((product) => {
-      const card = document.createElement("section");
-      card.className = "product-card";
-      card.setAttribute("data-item-id", buildItemId(product));
-
-      const link = document.createElement("a");
-      link.href = `product.html?id=${buildItemId(product)}`;
-      link.className = "product-link";
-
-      const imageWrap = document.createElement("div");
-      imageWrap.className = "product-image";
-      const frame = document.createElement("div");
-      frame.className = "product-image-frame";
-      const img = document.createElement("img");
+      const slug = buildItemId(product);
       const images = Array.isArray(product.images) && product.images.length ? product.images : [product.image];
-      img.src = images[0];
+      const primaryImage = images[0] ? buildStoreUrl(images[0]) : "";
+
+      const card = document.createElement("a");
+      card.className = "catalog-card";
+      card.href = `/product.html?id=${slug}`;
+
+      const img = document.createElement("img");
+      img.src = primaryImage;
       img.alt = product.name || "Product image";
-      frame.appendChild(img);
-      imageWrap.appendChild(frame);
 
-      const meta = document.createElement("div");
-      meta.className = "product-meta";
-
-      const name = document.createElement("h3");
-      name.className = "product-name";
-      name.textContent = product.name || "";
-
-      const price = document.createElement("p");
-      price.className = "product-price";
-      price.textContent = product.price || "";
-
-      meta.append(name, price);
-      link.append(imageWrap, meta);
-      card.append(link);
-
-      productList.appendChild(card);
+      card.appendChild(img);
+      catalogGrid.appendChild(card);
     });
-    updateSavedIcons();
   } catch (error) {
-    productList.innerHTML = `<p class="products-empty">Products unavailable. Check back soon.</p>`;
+    catalogGrid.innerHTML = `<p class="products-empty">Products unavailable. Check back soon.</p>`;
   }
 }
 
-loadProducts();
+renderCatalogGrid();
 
 /* CONTACT FORM */
 const CONTACT_ENDPOINT = "https://formspree.io/f/mzzbgngb";

@@ -7,8 +7,8 @@
   const dict = {
     de: {
       "HOME": "START",
-      "Creations": "Kreationen",
-      "CREATIONS": "KREATIONEN",
+      "Catalog": "Katalog",
+      "CATALOG": "KATALOG",
       "CART": "WARENKORB",
       "CONTACT": "KONTAKT",
       "LOGIN": "LOGIN",
@@ -31,8 +31,8 @@
     },
     pt: {
       "HOME": "INÍCIO",
-      "Creations": "Criações",
-      "CREATIONS": "CRIAÇÕES",
+      "Catalog": "Catálogo",
+      "CATALOG": "CATÁLOGO",
       "CART": "CARRINHO",
       "CONTACT": "CONTACTO",
       "LOGIN": "INICIAR SESSÃO",
