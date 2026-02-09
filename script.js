@@ -1506,12 +1506,15 @@ async function renderProductPage() {
 
       const addBtn = document.createElement("button");
       addBtn.className = "snipcart-add-item";
-      addBtn.textContent = "Add to bag";
+      addBtn.textContent = "Add to cart";
       addBtn.setAttribute("data-item-id", itemId);
       addBtn.setAttribute("data-item-name", product.name || "Product");
       addBtn.setAttribute("data-item-price", itemPrice);
       addBtn.setAttribute("data-item-currency", "EUR");
-      addBtn.setAttribute("data-item-url", buildStoreUrl(window.location.pathname || "/"));
+      addBtn.setAttribute(
+        "data-item-url",
+        buildStoreUrl((window.location.pathname || "/") + (window.location.search || ""))
+      );
       addBtn.setAttribute("data-item-description", product.description || "");
       addBtn.setAttribute("data-item-image", itemImage);
 
@@ -1536,6 +1539,7 @@ async function renderProductPage() {
 
       actions.append(addBtn, savedBtn);
       detail.append(title, price, desc, actions);
+      detail.removeAttribute("aria-hidden");
       updateSavedIcons();
     }
   } catch (err) {
@@ -1611,7 +1615,7 @@ function renderSavedPage() {
           id: item.id,
           name: item.name || "Saved item",
           price: item.numericPrice || formatPrice(item.price || "0"),
-          url: buildStoreUrl(window.location.pathname || "/"),
+          url: buildStoreUrl((window.location.pathname || "/") + (window.location.search || "")),
           image: item.image || "",
         });
       } catch (err) {
