@@ -1471,6 +1471,7 @@ async function renderProductPage() {
       (Array.isArray(product.images) && product.images.length && product.images[0]) ||
       product.image ||
       "";
+    const itemImage = primaryImage ? buildStoreUrl(primaryImage) : "";
 
     if (gallery) {
       gallery.innerHTML = "";
@@ -1512,7 +1513,7 @@ async function renderProductPage() {
       addBtn.setAttribute("data-item-currency", "EUR");
       addBtn.setAttribute("data-item-url", buildStoreUrl(window.location.pathname || "/"));
       addBtn.setAttribute("data-item-description", product.description || "");
-      addBtn.setAttribute("data-item-image", primaryImage);
+      addBtn.setAttribute("data-item-image", itemImage);
 
       const savedBtn = document.createElement("button");
       savedBtn.type = "button";
@@ -1521,7 +1522,7 @@ async function renderProductPage() {
       savedBtn.setAttribute("data-item-id", itemId);
       savedBtn.setAttribute("data-item-name", product.name || "");
       savedBtn.setAttribute("data-item-price", itemPrice);
-      savedBtn.setAttribute("data-item-image", primaryImage);
+      savedBtn.setAttribute("data-item-image", itemImage);
       savedBtn.textContent = "Add to wishlist";
       savedBtn.addEventListener("click", () => {
         toggleSavedItem({
@@ -1529,7 +1530,7 @@ async function renderProductPage() {
           name: product.name || "Saved item",
           price: product.price || "",
           numericPrice: itemPrice,
-          image: primaryImage || "",
+          image: itemImage || "",
         });
       });
 
